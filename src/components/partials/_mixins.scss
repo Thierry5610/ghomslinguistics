@@ -1,0 +1,93 @@
+// Tracking Mixin
+@mixin tracking($percentage) {
+    letter-spacing: calc($percentage * 1em / 100); // Convert percentage to em
+  }
+  
+  // Font Weights
+  $font-weight-regular: 400;
+  $font-weight-medium: 500;
+  $font-weight-semi-bold: 600;
+  $font-weight-bold: 700;
+  
+  // Font Sizes and Line Heights
+  $display-font-sizes: (72px, 60px, 48px, 36px, 30px, 24px);  // 2XL, XL, LG, MD, SM, XS
+  $display-line-heights: (88px, 72px, 60px, 44px, 36px, 32px);
+  
+  $text-font-sizes: (20px, 18px, 16px, 14px, 12px);  // XL, LG, MD, SM, XS
+  $text-line-heights: (30px, 28px, 24px, 20px, 18px);
+  
+  // Mixin for Font Variants
+  @mixin font-variant($font-size, $line-height, $weight, $tracking: null) {
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $weight;
+  
+    @if $tracking != null {
+      @include tracking($tracking);
+    }
+  }
+  
+  // Display Fonts
+  @mixin display-font($size, $line-height, $weight) {
+    @include font-variant($size, $line-height, $weight, -2); // -2% tracking for display fonts
+  }
+  
+  @mixin display-2xl-regular { @include display-font(nth($display-font-sizes, 1), nth($display-line-heights, 1), $font-weight-regular); }
+  @mixin display-2xl-medium  { @include display-font(nth($display-font-sizes, 1), nth($display-line-heights, 1), $font-weight-medium); }
+  @mixin display-2xl-semi-bold { @include display-font(nth($display-font-sizes, 1), nth($display-line-heights, 1), $font-weight-semi-bold); }
+  @mixin display-2xl-bold { @include display-font(nth($display-font-sizes, 1), nth($display-line-heights, 1), $font-weight-bold); }
+  
+  @mixin display-xl-regular { @include display-font(nth($display-font-sizes, 2), nth($display-line-heights, 2), $font-weight-regular); }
+  @mixin display-xl-medium  { @include display-font(nth($display-font-sizes, 2), nth($display-line-heights, 2), $font-weight-medium); }
+  @mixin display-xl-semi-bold { @include display-font(nth($display-font-sizes, 2), nth($display-line-heights, 2), $font-weight-semi-bold); }
+  @mixin display-xl-bold { @include display-font(nth($display-font-sizes, 2), nth($display-line-heights, 2), $font-weight-bold); }
+  
+  @mixin display-lg-regular { @include display-font(nth($display-font-sizes, 3), nth($display-line-heights, 3), $font-weight-regular); }
+  @mixin display-lg-medium  { @include display-font(nth($display-font-sizes, 3), nth($display-line-heights, 3), $font-weight-medium); }
+  @mixin display-lg-semi-bold { @include display-font(nth($display-font-sizes, 3), nth($display-line-heights, 3), $font-weight-semi-bold); }
+  @mixin display-lg-bold { @include display-font(nth($display-font-sizes, 3), nth($display-line-heights, 3), $font-weight-bold); }
+  
+  @mixin display-md-regular { @include display-font(nth($display-font-sizes, 4), nth($display-line-heights, 4), $font-weight-regular); }
+  @mixin display-md-medium  { @include display-font(nth($display-font-sizes, 4), nth($display-line-heights, 4), $font-weight-medium); }
+  @mixin display-md-semi-bold { @include display-font(nth($display-font-sizes, 4), nth($display-line-heights, 4), $font-weight-semi-bold); }
+  @mixin display-md-bold { @include display-font(nth($display-font-sizes, 4), nth($display-line-heights, 4), $font-weight-bold); }
+  
+  @mixin display-sm-regular { @include display-font(nth($display-font-sizes, 5), nth($display-line-heights, 5), $font-weight-regular); }
+  @mixin display-sm-medium  { @include display-font(nth($display-font-sizes, 5), nth($display-line-heights, 5), $font-weight-medium); }
+  @mixin display-sm-semi-bold { @include display-font(nth($display-font-sizes, 5), nth($display-line-heights, 5), $font-weight-semi-bold); }
+  @mixin display-sm-bold { @include display-font(nth($display-font-sizes, 5), nth($display-line-heights, 5), $font-weight-bold); }
+
+  @mixin display-xs-regular { @include display-font(nth($display-font-sizes, 6), nth($display-line-heights, 6), $font-weight-regular); }
+  @mixin display-xs-medium  { @include display-font(nth($display-font-sizes, 6), nth($display-line-heights, 6), $font-weight-medium); }
+  @mixin display-xs-semi-bold { @include display-font(nth($display-font-sizes, 6), nth($display-line-heights, 6), $font-weight-semi-bold); }
+  @mixin display-xs-bold { @include display-font(nth($display-font-sizes, 6), nth($display-line-heights, 6), $font-weight-bold); }  
+  // Text Fonts
+  @mixin text-font($size, $line-height, $weight) {
+    @include font-variant($size, $line-height, $weight);
+  }
+  
+  @mixin text-xl-regular { @include text-font(nth($text-font-sizes, 1), nth($text-line-heights, 1), $font-weight-regular); }
+  @mixin text-xl-medium  { @include text-font(nth($text-font-sizes, 1), nth($text-line-heights, 1), $font-weight-medium); }
+  @mixin text-xl-semi-bold { @include text-font(nth($text-font-sizes, 1), nth($text-line-heights, 1), $font-weight-semi-bold); }
+  @mixin text-xl-bold { @include text-font(nth($text-font-sizes, 1), nth($text-line-heights, 1), $font-weight-bold); }
+  
+  @mixin text-lg-regular { @include text-font(nth($text-font-sizes, 2), nth($text-line-heights, 2), $font-weight-regular); }
+  @mixin text-lg-medium  { @include text-font(nth($text-font-sizes, 2), nth($text-line-heights, 2), $font-weight-medium); }
+  @mixin text-lg-semi-bold { @include text-font(nth($text-font-sizes, 2), nth($text-line-heights, 2), $font-weight-semi-bold); }
+  @mixin text-lg-bold { @include text-font(nth($text-font-sizes, 2), nth($text-line-heights, 2), $font-weight-bold); }
+  
+  @mixin text-md-regular { @include text-font(nth($text-font-sizes, 3), nth($text-line-heights, 3), $font-weight-regular); }
+  @mixin text-md-medium  { @include text-font(nth($text-font-sizes, 3), nth($text-line-heights, 3), $font-weight-medium); }
+  @mixin text-md-semi-bold { @include text-font(nth($text-font-sizes, 3), nth($text-line-heights, 3), $font-weight-semi-bold); }
+  @mixin text-md-bold { @include text-font(nth($text-font-sizes, 3), nth($text-line-heights, 3), $font-weight-bold); }
+  
+  @mixin text-sm-regular { @include text-font(nth($text-font-sizes, 4), nth($text-line-heights, 4), $font-weight-regular); }
+  @mixin text-sm-medium  { @include text-font(nth($text-font-sizes, 4), nth($text-line-heights, 4), $font-weight-medium); }
+  @mixin text-sm-semi-bold { @include text-font(nth($text-font-sizes, 4), nth($text-line-heights, 4), $font-weight-semi-bold); }
+  @mixin text-sm-bold { @include text-font(nth($text-font-sizes, 4), nth($text-line-heights, 4), $font-weight-bold); }
+  
+  @mixin text-xs-regular { @include text-font(nth($text-font-sizes, 5), nth($text-line-heights, 5), $font-weight-regular); }
+  @mixin text-xs-medium  { @include text-font(nth($text-font-sizes, 5), nth($text-line-heights, 5), $font-weight-medium); }
+  @mixin text-xs-semi-bold { @include text-font(nth($text-font-sizes, 5), nth($text-line-heights, 5), $font-weight-semi-bold); }
+  @mixin text-xs-bold { @include text-font(nth($text-font-sizes, 5), nth($text-line-heights, 5), $font-weight-bold); }
+  
