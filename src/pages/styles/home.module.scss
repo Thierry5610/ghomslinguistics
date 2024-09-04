@@ -135,7 +135,7 @@
                 @include heading-1($gray-950);
             }
             .testimonial_box {
-                width: 80%;
+                //width: 80%;
             }
         }
     }
@@ -186,6 +186,7 @@
 }
 
 .testimonial {
+    padding: $spacing-10;
     display: flex;
     gap: $spacing-8;
     flex-wrap: wrap;
