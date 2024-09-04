@@ -120,16 +120,17 @@
     }
   }
 
-  @mixin heading-1 {
+  @mixin heading-1($color) {
     text-transform: uppercase;
     @include display-sm-regular;
     position: relative;
+    color: $color;
     &::after {
         content: "";
         display: block;
         position: absolute;
         height: 2px;
-        background-color: $gray-950;
+        background-color: $color;
         width: 50%;
         bottom: -$spacing-4;
         left: 50%;
