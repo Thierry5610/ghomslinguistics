@@ -91,3 +91,51 @@
   @mixin text-xs-semi-bold { @include text-font(nth($text-font-sizes, 5), nth($text-line-heights, 5), $font-weight-semi-bold); }
   @mixin text-xs-bold { @include text-font(nth($text-font-sizes, 5), nth($text-line-heights, 5), $font-weight-bold); }
   
+
+
+  @mixin button-1 {
+    border: none;
+    background-color: $blue-500;
+    color: $white;
+    padding: $spacing-2 $spacing-5;
+    @include text-md-regular;
+    border-radius: $spacing-1;
+    transition: .5s;
+    cursor: pointer;
+    &:hover {
+        background-color: $blue-600;
+    }
+  }
+  @mixin button-2 {
+    border: none;
+    background-color: $gray-500;
+    color: $white;
+    padding: $spacing-2 $spacing-5;
+    @include text-md-regular;
+    border-radius: $spacing-1;
+    transition: .5s;
+    cursor: pointer;
+    &:hover {
+        background-color: $gray-800;
+    }
+  }
+
+  @mixin heading-1 {
+    text-transform: uppercase;
+    @include display-sm-regular;
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 2px;
+        background-color: $gray-950;
+        width: 50%;
+        bottom: -$spacing-4;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @media screen and (max-width:500px) {
+        @include text-xl-regular;
+    }
+  }
