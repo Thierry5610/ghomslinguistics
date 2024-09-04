@@ -94,6 +94,51 @@
             }
         }
     }
+    .partners {
+        background-color: $white;
+        padding: $spacing-12 $spacing-4;
+        .content {
+            margin: 0 auto;
+            max-width: 1240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $spacing-10;
+            h3 {
+                @include heading-1($gray-950);
+            }
+            .logo_box {
+                display: flex;
+                gap: $spacing-8;
+                .logo {
+                    height: 125px;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+    .testimonials {
+        padding: $spacing-12 $spacing-4;
+        background-color: $gray-100;
+        .content {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $spacing-10;
+            h3 {
+                @include heading-1($gray-950);
+            }
+            .testimonial_box {
+                width: 80%;
+            }
+        }
+    }
 }
 
 .hero_card {
@@ -137,6 +182,38 @@
         color: $white;
         width: 70%;
         max-width: 1240px;
+    }
+}
+
+.testimonial {
+    display: flex;
+    gap: $spacing-8;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    &_photo {
+        border-radius: 100%;
+        height: 150px;
+        flex: 0 0 150px;
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &_text {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-4;
+        div:nth-child(1) {
+            @include text-md-regular;
+            color: $gray-950;
+        }
+        div:nth-child(2) {
+            @include text-sm-regular;
+            color: $gray-700;
+        }
     }
 }
 

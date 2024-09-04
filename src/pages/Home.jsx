@@ -23,6 +23,26 @@ const carouselItems = [
 </div>
   ];
 const missionImage = "https://ghomslinguistics.com/wp-content/uploads/2016/09/creamy-935155_1280.jpg"
+const partnerLogos = [
+    "https://ghomslinguistics.com/wp-content/uploads/2024/08/DVK-Logo_1000x1000-300x300.png",
+    "https://ghomslinguistics.com/wp-content/uploads/2024/08/og-image-standard-logo-barmer-data-300x300.jpg"
+]
+const testimonialImage = [
+    "https://ghomslinguistics.com/wp-content/uploads/2024/08/girl-2771936_1920-1024x789.jpg",
+    "https://ghomslinguistics.com/wp-content/uploads/2024/06/pexels-tima-miroshnichenko-5427868-1024x683.jpg"
+]
+const testimonials = [
+    <TestimonialItem
+        author="Jane D."
+        text="The language school far exceeded my expectations. Thanks to the individual support and the practical teaching methods, I made rapid progress. The teachers are committed and the learning environment is excellent. I can recommend this school to anyone who wants to learn a new language effectively!"
+        image={testimonialImage[0]}
+    />,
+    <TestimonialItem
+        author="Derrick D."
+        text="The German course at our school in Cameroon is fantastic! The teachers are competent and motivating. I made rapid progress and feel more confident in German."
+        image={testimonialImage[1]}
+    />
+]
 export default function Home() {
     return(
         <div className={Styles.container}>
@@ -59,12 +79,24 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <div className={Styles.testimonials}>
+                <div className={Styles.content}>
+                    <h3>WHAT OUR STUDENTS SAY</h3>
+                    <div className={Styles.testimonial_box}>
+                        <Carousel items={testimonials}/>
+                    </div>
+                </div>
+            </div>
             <div className={Styles.partners}>
                 <div className={Styles.content}>
                     <h3>OUR PARTNERS</h3>
-                    <div>
-                        <div></div>
-                        <div></div>
+                    <div className={Styles.logo_box}>
+                        <div className={Styles.logo}>
+                            <img src={partnerLogos[0]} alt="logo" />
+                        </div>
+                        <div className={Styles.logo}>
+                            <img src={partnerLogos[1]} alt="logo" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,4 +118,18 @@ function AboutItem({heading,icon,text}){
             </div> 
         </>
     )
+}
+
+function TestimonialItem ({image,author,text}) {
+        return(
+            <div className={Styles.testimonial}>
+                <div className={Styles.testimonial_photo}>
+                    <img src={image} alt={author} />
+                </div>
+                <div className={Styles.testimonial_text}>
+                    <div>{text}</div>
+                    <div>{author}</div>
+                </div>
+            </div>
+        )
 }
