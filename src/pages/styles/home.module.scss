@@ -186,7 +186,7 @@
 }
 
 .testimonial {
-    padding: $spacing-10;
+    padding: $spacing-10 0;
     display: flex;
     gap: $spacing-8;
     flex-wrap: wrap;
@@ -207,6 +207,10 @@
         display: flex;
         flex-direction: column;
         gap: $spacing-4;
+        width: 60%;
+        @media screen and (max-width:800px) {
+           // width: 80%;
+        }
         div:nth-child(1) {
             @include text-md-regular;
             color: $gray-950;
