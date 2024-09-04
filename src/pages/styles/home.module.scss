@@ -1,0 +1,80 @@
+@import '../../components/partials/variables';
+@import '../../components/partials/mixins';
+
+.container {
+    //max-width: 1240px;
+    margin: 0 auto;
+    .hero {
+        height: 90vh;
+    }
+}
+
+.hero_card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-10;
+    justify-content: center;
+    background: transparent;
+    overflow: hidden;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-color: rgba($black,0.4);
+    }
+    img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+    button {
+        border: none;
+        background-color: $blue-500;
+        color: $white;
+        padding: $spacing-2 $spacing-5;
+        @include text-md-regular;
+        border-radius: $spacing-1;
+        transition: .5s;
+        cursor: pointer;
+        &:hover {
+            background-color: $blue-600;
+        }
+    }
+    h2 {
+        @include display-lg-regular;
+        max-width: 1240px;
+        width: 70%;
+        text-transform: uppercase;
+        color: $white;
+    }
+    h3 {
+        @include display-xs-regular;
+        color: $white;
+        width: 70%;
+        max-width: 1240px;
+    }
+}
+
+@media screen and (max-width:800px ) {
+    .container .hero {
+        height: 65vh;
+    }
+    .hero_card {
+        h2 {
+            @include display-md-regular;
+            width: 100%
+        }
+        h3 {
+            @include text-lg-regular;
+            width: 70%;
+        }
+    }
+}
