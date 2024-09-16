@@ -6,6 +6,9 @@
     padding: $spacing-4;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .searchBar {
@@ -31,15 +34,14 @@
 }
 
 .newsContainer {
-    flex: 3;
+    //flex: 3;
     display: flex;
     flex-direction: column;
-    gap: $spacing-4;
+    gap: $spacing-8;
 }
 
 .sidebar {
     flex: 1;
-    margin-left: $spacing-4;
     background-color: $gray-50;
     padding: $spacing-8 $spacing-4;
     border-radius: $spacing-1;
@@ -67,18 +69,18 @@
     display: flex;
     flex-direction: column;
     background-color: $white;
-    border-radius: $spacing-1;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    //border-radius: $spacing-1;
+    //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: $spacing-4;
 
     .entryHeader {
-        margin-bottom: $spacing-3;
+        margin-bottom: $spacing-4;
     
         .entryTitle {
             font-size: 1.5rem;
             @include text-lg-regular;
             color: $blue-500;
-            margin-bottom: $spacing-1;
+            margin-bottom: $spacing-2;
         }
 
         .entryMeta {
@@ -101,6 +103,7 @@
     .entryContent {
         p {
             color: $gray-700;
+            max-width: 80%;
             @include text-xs-regular;
             margin: $spacing-2 0;
         }
@@ -111,48 +114,18 @@
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        align-items: stretch;
         padding: $spacing-2;
     }
-
-    .searchBar {
-        .searchInput {
-            @include text-sm-regular;
-        }
-
-        .searchIcon {
-            font-size: 1.2rem;
-        }
-    }
-
-    .newsContainer {
-        flex: none;
-    }
-
-    .sidebar {
-        margin-left: 0;
-
-        h4 {
-            @include text-lg-regular;
-        }
-
-        ul {
-            li {
-                @include text-md-regular;
-            }
-        }
-    }
-
     .newsItem {
         .entryContent {
             videoEmbed {
-                width: 100%;
-                height: auto;  
+                max-width: 100%;
             }
         }
 
         iframe {
-            width: 100%;  
-            height: auto;  
+            max-width: 100%;  
         }
     }
 }

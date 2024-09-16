@@ -103,7 +103,7 @@ function NewsItem({ title, date, author, videoEmbed, description }) {
             </header>
             <div className={Styles.entryContent}>
                 {videoEmbed}
-                <p>{description}</p>
+                {/* <p>{description}</p> */}
             </div>
         </article>
     );
