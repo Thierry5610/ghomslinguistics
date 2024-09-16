@@ -1,5 +1,4 @@
-// src/components/Carousel.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Styles from './styles/carousel.module.scss';
 
@@ -13,6 +12,12 @@ const Carousel = ({ items }) => {
   const goToNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex === items.length - 1 ? 0 : prevIndex + 1));
   };
+
+  useEffect(() => {
+    const interval = setInterval(goToNext, 3000); // Change 3000 to desired interval in milliseconds
+
+    return () => clearInterval(interval); // Clean up the interval on component unmount
+  }, [items.length]);
 
   return (
     <div className={Styles.carousel}>

@@ -66,7 +66,7 @@ export default function Home() {
                         <AboutItem heading="Practice-oriented lessons" icon={<FaUserFriends />} text="Our lessons are aimed at applying language skills directly in everyday life, through practical exercises, role plays and real communication situations." />
                         <AboutItem heading="Modern teaching methods" icon={<FaBookOpen />} text="We rely on innovative teaching methods and current didactic approaches to make language teaching dynamic and practical." />
                         <AboutItem heading="Flexible course offerings" icon={<FaExchangeAlt />} text="Our school offers a variety of courses that adapt to learners' time and content needs, including intensive courses, evening courses and online learning options." />
-                        <AboutItem heading="Air conditioning" icon={<FaFan />} text="Our school offers you a pleasant learning environment in modern, air-conditioned rooms in which you feel comfortable and can concentrate optimally even on hot days." />
+                        <AboutItem heading="Modern learning space" icon={<FaChalkboardTeacher />} text="Our school offers you a pleasant learning environment in modern, air-conditioned rooms in which you feel comfortable and can concentrate optimally even on hot days." />
                     </div>
                 </div>
             </div>
