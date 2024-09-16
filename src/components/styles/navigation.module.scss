@@ -68,9 +68,11 @@
                 display: flex;
                 align-items: center;
                 gap: $spacing-10;
-                color: $gray-900;
-                div {
+                div,
+                a {
                     cursor: pointer;
+                    text-decoration: none;
+                    color: $gray-900;
                     position: relative;
                     &:not(.search)::after {
                         content: "";
@@ -83,7 +85,7 @@
                         background-color: transparent;
                     }
                     &:hover::after {
-                        background-color: $gray-900;
+                        background-color: $gray-700;
                     }
                 }
                 @include text-sm-regular;
@@ -115,8 +117,10 @@
                 flex-direction: column;
                 gap: $spacing-4;
                 color: $gray-50;
-                div {
+                div,a {
                     cursor: pointer;
+                    color: inherit;
+                    text-decoration: none;
                 }
 
                 .search {

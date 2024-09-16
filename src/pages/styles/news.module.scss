@@ -1,0 +1,149 @@
+@import '../../components/partials/variables';
+@import '../../components/partials/mixins';
+
+.container {
+    display: flex;
+    padding: $spacing-4;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.searchBar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-4;
+
+    .searchInput {
+        width: 100%;
+        padding: $spacing-2;
+        border: 1px solid $gray-300;
+        border-radius: $spacing-1;
+        font-size: $text-font-sizes[2];
+        margin-right: $spacing-2;
+    }
+
+    .searchIcon {
+        cursor: pointer;
+        color: $blue-500;
+        font-size: 1.5rem;
+    }
+}
+
+.newsContainer {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+}
+
+.sidebar {
+    flex: 1;
+    margin-left: $spacing-4;
+    background-color: $gray-100;
+    padding: $spacing-4;
+    border-radius: $spacing-1;
+
+    h4 {
+        color: $blue-500;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            margin: $spacing-1 0;
+        }
+    }
+}
+
+.newsItem {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: $spacing-1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: $spacing-4;
+
+    .entryHeader {
+        margin-bottom: $spacing-3;
+
+        .entryTitle {
+            font-size: 1.5rem;
+            color: $blue-500;
+            margin: 0;
+        }
+
+        .entryMeta {
+            list-style: none;
+            padding: 0;
+
+            li {
+                display: inline;
+                margin-right: $spacing-2;
+
+                .entryDate {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .entryContent {
+        p {
+            color: $gray-700;
+            margin: $spacing-2 0;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: $spacing-2;
+    }
+
+    .searchBar {
+        .searchInput {
+            font-size: $text-font-sizes[1];
+        }
+
+        .searchIcon {
+            font-size: 1.2rem;
+        }
+    }
+
+    .newsContainer {
+        flex: none;
+    }
+
+    .sidebar {
+        margin-left: 0;
+
+        h4 {
+            font-size: $text-font-sizes[1.5];
+        }
+
+        ul {
+            li {
+                @include text-md-regular;
+            }
+        }
+    }
+
+    .newsItem {
+        .entryContent {
+            videoEmbed {
+                width: 100%;
+                height: auto;  
+            }
+        }
+
+        iframe {
+            width: 100%;  
+            height: auto;  
+        }
+    }
+}

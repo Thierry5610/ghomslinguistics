@@ -3,6 +3,7 @@ import Styles from './styles/navigation.module.scss';
 import { IoIosSearch, IoIosMenu } from "react-icons/io";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 export default function Navigation() {
     const logoLink = "https://ghomslinguistics.com/wp-content/uploads/2024/08/cropped-GhomLinguisticsLogo_small.png";
@@ -58,11 +59,11 @@ export default function Navigation() {
                         <img src={logoLink} alt="logo" />
                     </div>
                     <div className={Styles.links}>
-                        <div>Home</div>
-                        <div>News</div>
-                        <div>Registration</div>
-                        <div>Course</div>
-                        <div>About us</div>
+                        <Link to="/">Home</Link>
+                        <Link to="/news">News</Link>
+                        <Link to="/">Registration</Link>
+                        <Link to="/">Course</Link>
+                        <Link to="/">About us</Link>
                         <div className={Styles.search} onClick={() => setIsSearchMenu(true)}>
                             <IoIosSearch />
                         </div>
@@ -83,11 +84,11 @@ export default function Navigation() {
                 <div className={Styles.alt_nav}>
                     <div className={Styles.content}>
                         <div className={Styles.links}>
-                            <div>Home</div>
-                            <div>News</div>
-                            <div>Registration</div>
-                            <div>Course</div>
-                            <div>About us</div>
+                            <Link to="/">Home</Link>
+                            <Link to="/news">News</Link>
+                            <Link to="/">Registration</Link>
+                            <Link to="/">Course</Link>
+                            <Link to="/">About us</Link>
                             <div className={Styles.search}>
                                 <input type="text" />
                                 <IoIosSearch />
