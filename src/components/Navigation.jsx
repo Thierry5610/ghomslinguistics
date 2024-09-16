@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import Styles from './styles/navigation.module.scss'
+import Styles from './styles/navigation.module.scss';
 import { IoIosSearch, IoIosMenu } from "react-icons/io";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
@@ -8,7 +8,26 @@ export default function Navigation() {
     const logoLink = "https://ghomslinguistics.com/wp-content/uploads/2024/08/cropped-GhomLinguisticsLogo_small.png";
     const [isMenu, setIsMenu] = useState(false);
     const [isSearchMenu, setIsSearchMenu] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const searchMenuRef = useRef(null);
+
+    useEffect(() => {
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 200) {
+                setIsScrolled(currentScrollY > lastScrollY);
+                setLastScrollY(currentScrollY);
+            } else {
+                setIsScrolled(false);
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [lastScrollY]);
 
     useEffect(() => {
         function handleClickOutside(event) {
@@ -23,7 +42,7 @@ export default function Navigation() {
     }, []);
 
     return (
-        <div className={Styles.wrapper}>
+        <div className={`${Styles.wrapper} ${isScrolled ? Styles.hide : ''}`}>
             <div className={Styles.container}>
                 <div className={Styles.content}>
                     {isSearchMenu && (
