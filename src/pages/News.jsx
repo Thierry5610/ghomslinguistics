@@ -63,19 +63,25 @@ const News = () => {
                     <input type="text" placeholder="Search..." className={Styles.searchInput} />
                     <FaSearch className={Styles.searchIcon} />
                 </div>
-                <h4>Recent Posts</h4>
-                <ul>
-                    <li>Next School Start June 17, 2024</li>
-                    <li>Next Course Start on April 1</li>
-                </ul>
-                <h4>Archives</h4>
-                <ul>
-                    <li>August 2024</li>
-                </ul>
-                <h4>Categories</h4>
-                <ul>
-                    <li>Uncategorized</li>
-                </ul>
+                <div>
+                    <h4>Recent Posts</h4>
+                    <ul>
+                        <li>Next School Start June 17, 2024</li>
+                        <li>Next Course Start on April 1</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Archives</h4>
+                    <ul>
+                        <li>August 2024</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Categories</h4>
+                    <ul>
+                        <li>Uncategorized</li>
+                    </ul>
+                </div>
             </div>
         </div>
     );
