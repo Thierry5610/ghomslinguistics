@@ -73,16 +73,19 @@
 
     .entryHeader {
         margin-bottom: $spacing-3;
-
+    
         .entryTitle {
             font-size: 1.5rem;
+            @include text-lg-regular;
             color: $blue-500;
-            margin: 0;
+            margin-bottom: $spacing-1;
         }
 
         .entryMeta {
             list-style: none;
             padding: 0;
+            @include text-xs-regular;
+            color: $gray-700;
 
             li {
                 display: inline;
@@ -98,6 +101,7 @@
     .entryContent {
         p {
             color: $gray-700;
+            @include text-xs-regular;
             margin: $spacing-2 0;
         }
     }
