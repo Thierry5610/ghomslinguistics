@@ -53,16 +53,16 @@ const newsData = [
 const News = () => {
     return (
         <div className={Styles.container}>
-            <div className={Styles.searchBar}>
-                <input type="text" placeholder="Search..." className={Styles.searchInput} />
-                <FaSearch className={Styles.searchIcon} />
-            </div>
             <div className={Styles.newsContainer}>
                 {newsData.map((news) => (
                     <NewsItem key={news.id} {...news} />
                 ))}
             </div>
             <div className={Styles.sidebar}>
+                <div className={Styles.searchBar}>
+                    <input type="text" placeholder="Search..." className={Styles.searchInput} />
+                    <FaSearch className={Styles.searchIcon} />
+                </div>
                 <h4>Recent Posts</h4>
                 <ul>
                     <li>Next School Start June 17, 2024</li>
