@@ -25,21 +25,21 @@ export default function Footer() {
                         <h3>Latest news</h3>
                         <div className={Styles.links}>
                             <div>Yaoundé</div>
-                            <div>Nächster Schulbeginn 17. Juni 2024</div>
-                            <div>Nächster Kursstart am 01. April</div>
+                            <div>Next school start date is June 17, 2024</div>
+                            <div>Next course start on April 1st</div>
                         </div>
                     </div>
                     <div className={Styles.links_box}>
                         <h3>Menu</h3>
                         <div className={Styles.links}>
-                            <div>Datenschutzerklärung</div>
+                            <div>Privacy Policy</div>
                             <div>Kontakt</div>
                         </div>
                     </div>
                 </div>
                 <div className={Styles.section_2}>
                     <span>Copyright © 2024 Ghoms Linguistics - </span>
-                    <span>Datenschutzerklärung</span>
+                    <span>Privacy Policy</span>
                 </div>
             </div>
         </div>
