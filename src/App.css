@@ -20,4 +20,8 @@
 }
 .content {
     flex: 1;
+    margin-top: 132px;
+    @media screen and (max-width:500px) {
+        margin-top: 107px;
+    }
 }
