@@ -33,7 +33,7 @@ export default function Footer() {
                         <h3>Menu</h3>
                         <div className={Styles.links}>
                             <div>Privacy Policy</div>
-                            <div>Kontakt</div>
+                            <div>Contact</div>
                         </div>
                     </div>
                 </div>
