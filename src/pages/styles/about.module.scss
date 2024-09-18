@@ -44,6 +44,7 @@
             position: absolute;
             height: 100%;
             width: 100%;
+            object-fit: cover;
             z-index: -2;
         }
         &::after {
@@ -57,10 +58,11 @@
     }
     .impression {
         background-color: $gray-50;
+        padding: $spacing-12 $spacing-8;
         .content {
             max-width: 1240px;
             margin: 0 auto;
-            padding: $spacing-12 $spacing-8;
+            padding-bottom: $spacing-12;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -81,9 +83,9 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 img {
-                    height: auto;
+                    max-height: 300px;
                     width: 40%;
-                    object-fit: contain;
+                    object-fit: cover;
                     @media screen and (max-width: 800px) {
                         width: 80%;
                     }
@@ -91,6 +93,35 @@
                         width: 100%;
                     }
                 }
+            }
+        }
+        .toggle {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: $spacing-10;
+            width: 70%;
+            gap: 1px;
+            background-color: $gray-500;
+            @media screen and (max-width:768px) {
+                width: 100%;
+            }
+            button {
+                flex: 1;
+                outline: none;
+                padding: $spacing-1 $spacing-2;
+                color: $gray-700;
+                cursor: pointer;
+                border: none;
+                border-bottom: 2px solid transparent;
+                background-color: $gray-100;
+
+                @include text-md-regular;
+            }
+            .active {
+                border-bottom: 2px solid $blue-500;
             }
         }
     }

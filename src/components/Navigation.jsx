@@ -84,11 +84,11 @@ export default function Navigation() {
                 <div className={Styles.alt_nav}>
                     <div className={Styles.content}>
                         <div className={Styles.links}>
-                            <Link to="/">Home</Link>
-                            <Link to="/news">News</Link>
-                            <Link to="/">Registration</Link>
-                            <Link to="/">Course</Link>
-                            <Link to="/about">About us</Link>
+                            <Link to="/" onClick={()=>setIsMenu(false)}>Home</Link>
+                            <Link to="/news" onClick={()=>setIsMenu(false)}>News</Link>
+                            <Link to="/" onClick={()=>setIsMenu(false)}>Registration</Link>
+                            <Link to="/" onClick={()=>setIsMenu(false)}>Course</Link>
+                            <Link to="/about" onClick={()=>setIsMenu(false)}>About us</Link>
                             <div className={Styles.search}>
                                 <input type="text" />
                                 <IoIosSearch />
