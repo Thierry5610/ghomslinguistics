@@ -89,7 +89,7 @@
                     @media screen and (max-width: 800px) {
                         width: 80%;
                     }
-                    @media screen and (max-width: 375px) {
+                    @media screen and (max-width: 500px) {
                         width: 100%;
                     }
                 }
@@ -148,6 +148,9 @@
             width: 70%;
             @media screen and (max-width: 800px) {
                 @include display-sm-regular; 
+            }
+            @media screen and (max-width: 800px) {
+                width: 100%; 
             }
         }
         img {
