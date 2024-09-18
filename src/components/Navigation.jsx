@@ -63,7 +63,7 @@ export default function Navigation() {
                         <Link to="/news">News</Link>
                         <Link to="/">Registration</Link>
                         <Link to="/">Course</Link>
-                        <Link to="/">About us</Link>
+                        <Link to="/about">About us</Link>
                         <div className={Styles.search} onClick={() => setIsSearchMenu(true)}>
                             <IoIosSearch />
                         </div>
@@ -88,7 +88,7 @@ export default function Navigation() {
                             <Link to="/news">News</Link>
                             <Link to="/">Registration</Link>
                             <Link to="/">Course</Link>
-                            <Link to="/">About us</Link>
+                            <Link to="/about">About us</Link>
                             <div className={Styles.search}>
                                 <input type="text" />
                                 <IoIosSearch />
