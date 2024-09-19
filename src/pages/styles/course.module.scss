@@ -70,8 +70,12 @@
                     @include text-xl-regular;
                 }
             }
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 800px) {
                 padding: $spacing-8 $spacing-4;
+                .text_section,
+                .image_section {
+                    min-width: auto;
+                }
             }
         }
         .registration {
@@ -79,6 +83,9 @@
            // padding-top: 0;
             display: flex;
             flex-direction: column;
+            @media screen and (max-width:768px) {
+                display: none;
+            }
             .tab_headings {
                 display: flex;
                 justify-content: center;
@@ -98,40 +105,125 @@
                     border-bottom: 2px solid $blue-800;
                 }
             }
-            .tab_section {
-                padding: $spacing-8 $spacing-8;
+            .tab_body {
+                .tab_section {
+                    padding: $spacing-8 $spacing-8;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: $gray-50;
+                    gap: $spacing-8;
+                    .tab_portion {
+                        
+                        h4 {
+                            @include text-md-semi-bold;
+                            color: $gray-800;
+                            margin-bottom: $spacing-2
+                        }
+                        p {
+                            @include text-sm-regular;
+                            color: $gray-700;
+                        }
+                    }
+                    .tab_link {
+                        @include text-md-regular;
+                        color: $blue-500;
+                        align-self: start;
+                    }
+                    .tab_button {
+                        @include text-md-regular;
+                        border: 2px solid $gray-900;
+                        padding: $spacing-2 $spacing-4;
+                        text-decoration: none;
+                        color: $gray-900;
+                        align-self: flex-start;
+                        &:hover {
+                            background-color: $gray-900;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+        }
+        .registration_alt {
+            padding: $spacing-8 0;
+            @media screen and (min-width:800px) {
+                display: none;
+            }
+            .tab_body {
                 display: flex;
                 flex-direction: column;
-                background-color: $gray-50;
-                gap: $spacing-8;
-                .tab_portion {
-                    
-                    h4 {
-                        @include text-md-semi-bold;
-                        color: $gray-800;
-                        margin-bottom: $spacing-2
+                .tab_heading {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: $spacing-4 $spacing-4;
+                    border: 1px solid $gray-200;
+                    background-color: $gray-100;
+                    @include text-md-regular;
+                    text-align: center;
+                    cursor: pointer;
+                    color: $gray-800;
+                    div:nth-child(2){
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
-                    p {
-                        @include text-sm-regular;
-                        color: $gray-700;
+                    svg {
+                        @include text-xl-regular;
+                        transition: .5s;
+                        transform: rotate(0deg);
                     }
                 }
-                .tab_link {
-                    @include text-md-regular;
-                    color: $blue-500;
-                    align-self: start;
-                }
-                .tab_button {
-                    @include text-md-regular;
-                    border: 2px solid $gray-900;
-                    padding: $spacing-2 $spacing-4;
-                    text-decoration: none;
-                    color: $gray-900;
-                    align-self: flex-start;
-                    &:hover {
-                        background-color: $gray-900;
-                        color: $white;
+                .active_tab_heading {
+                    svg {
+                        transform: rotate(90deg);
                     }
+                }
+                .tab_container {
+                    height: 0;
+                    overflow: hidden;
+                    transition: 1s;
+                    .tab_section {
+                        padding: $spacing-8 $spacing-8;
+                        display: flex;
+                        flex-direction: column;
+                        background-color: $gray-50;
+                        gap: $spacing-8;
+                        .tab_portion {
+                            
+                            h4 {
+                                @include text-md-semi-bold;
+                                color: $gray-800;
+                                margin-bottom: $spacing-2
+                            }
+                            p {
+                                @include text-sm-regular;
+                                color: $gray-700;
+                            }
+                        }
+                        .tab_link {
+                            @include text-md-regular;
+                            color: $blue-500;
+                            align-self: start;
+                        }
+                        .tab_button {
+                            @include text-md-regular;
+                            border: 2px solid $gray-900;
+                            padding: $spacing-2 $spacing-4;
+                            text-decoration: none;
+                            cursor: pointer;
+                            color: $gray-900;
+                            align-self: flex-start;
+                            &:hover {
+                                background-color: $gray-900;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+                .active_tab_container {
+                    height: auto;
                 }
             }
         }

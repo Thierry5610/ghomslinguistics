@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Styles from './styles/course.module.scss'
-
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 const germanData = [
     {   
         id:0,
@@ -141,10 +141,18 @@ const heroImage = "https://ghomslinguistics.com/wp-content/uploads/2024/08/desk-
 const sideImage = "https://ghomslinguistics.com/wp-content/uploads/2024/08/table-book-read-open-wood-vintage-674236-pxhere.com_-1024x768.jpg"
 export default function Course() {
     const [activeTabID,setActiveTabID] = useState(0)
+    const [activeTabToggleID,setActiveTabToggleID] = useState('')
     const [tabArray,setTabArray] = useState([])
     useEffect(()=>{
         setTabArray(germanData.filter(data=>data.id===activeTabID))
     },[activeTabID])
+    const toggleTab = function(id){
+        if(id===activeTabToggleID){
+            setActiveTabToggleID('')
+        }else {
+            setActiveTabToggleID(id)
+        }
+    }
     return(
         <div className={Styles.container}>
             <div className={Styles.content}>
@@ -177,7 +185,9 @@ export default function Course() {
                     <div className={Styles.tab_headings}>
                         {germanData.map(data=>{
                             return(
-                                <div className={`${Styles.tab_heading} ${data.id===activeTabID?Styles.active_tab_heading:''}`} onClick={()=>setActiveTabID(data.id)}>{data.heading}</div>
+                                <div className={`${Styles.tab_heading} ${data.id===activeTabID?Styles.active_tab_heading:''}`} onClick={()=>setActiveTabID(data.id)}>
+                                    {data.heading}
+                                </div>
                             )
                         })}
                     </div>
@@ -197,12 +207,37 @@ export default function Course() {
                         })}
                     </div>
                 </div>
+                <div className={Styles.registration_alt}>
+                    <div className={Styles.tab_body}>
+                        {germanData.map(data=>{
+                            return(
+                                <>
+                                    <div className={`${Styles.tab_heading} ${data.id===activeTabToggleID?Styles.active_tab_heading:''}`} onClick={()=>toggleTab(data.id)}>
+                                        <div>{data.heading}</div>
+                                        <div><MdOutlineArrowForwardIos/></div>
+                                    </div>
+                                    <div className={`${Styles.tab_container} ${data.id===activeTabToggleID?Styles.active_tab_container:''}`}>
+                                        <TabSection>
+                                            {data.sectionData.map(section=>{
+                                                return(
+                                                    <TabPortion heading={section.heading} text={section.text}/>
+                                                )
+                                            })}
+                                            {data.sectionLink&&<TabLink text={data.sectionLink.text} link={data.sectionLink.link}/>}
+                                            {data.sectioinCTA&&<TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link}/>}
+                                        </TabSection>
+                                    </div>
+                                </>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
         </div>
     )
 }
 
-function TabPortion({heading,text}){
+function TabPortion({heading,text,...props}){
     return(
         <div className={Styles.tab_portion}>
             <h4>{heading}</h4>
