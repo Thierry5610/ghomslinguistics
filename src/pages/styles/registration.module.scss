@@ -13,8 +13,8 @@
         position: relative;
 
         .image_section {
-            flex: 1;
-            max-height: 500px;
+            flex: 1 1 50%;
+            max-width: 620px;
             position: relative;
             img {
                 width: 100%;
@@ -23,9 +23,10 @@
             }
         }
         .text_section {
-            flex: 1;
+            flex: 1 1 50%;
+            max-width: 620px;
             border: 1px solid $gray-100;
-            padding: $spacing-8 $spacing-4;
+            padding: $spacing-12 $spacing-8;
             display: flex;
             flex-direction: column;
             gap: $spacing-6;
@@ -55,14 +56,24 @@
                     color: white;
                 }
             }
-        }
 
-        @media screen and (max-width: 900px) {
-            flex-direction: column;
-            .image_section {
-                height: 50vh;
-                overflow: hidden;
+            @media screen and (max-width: 400px) {
+                padding: $spacing-8 $spacing-4;
+                h2 {
+                    @include display-xs-regular;
+                }
             }
         }
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            gap: $spacing-12;
+            .image_section,.text_section {
+                flex: 1 1 100%;
+                max-width: none;
+            }
+
+        }
+        
     }
 }
