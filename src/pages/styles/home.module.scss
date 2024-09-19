@@ -97,21 +97,22 @@
     .partners {
         background-color: $white;
         padding: $spacing-12 $spacing-4;
+        padding-bottom: $spacing-4;
         .content {
             margin: 0 auto;
             max-width: 1240px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: $spacing-10;
+            //gap: $spacing-10;
             h3 {
                 @include heading-1($gray-950);
             }
             .logo_box {
                 display: flex;
-                gap: $spacing-8;
+                //gap: $spacing-8;
                 .logo {
-                    height: 125px;
+                    //height: 125px;
                     img {
                         height: 100%;
                         width: 100%;

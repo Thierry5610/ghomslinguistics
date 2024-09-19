@@ -91,12 +91,12 @@ export default function Home() {
                 <div className={Styles.content}>
                     <h3>OUR PARTNERS</h3>
                     <div className={Styles.logo_box}>
-                        <div className={Styles.logo}>
+                        <a href="https://dv-koch.de" className={Styles.logo}>
                             <img src={partnerLogos[0]} alt="logo" />
-                        </div>
-                        <div className={Styles.logo}>
+                        </a>
+                        <a href="https://www.barmer.de" className={Styles.logo}>
                             <img src={partnerLogos[1]} alt="logo" />
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
