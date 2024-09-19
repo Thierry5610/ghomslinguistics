@@ -34,18 +34,20 @@ export default function About() {
     const heroImages = [
         'https://ghomslinguistics.com/wp-content/uploads/2024/08/desk-writing-person-girl-film-student-1242339-pxhere.com_.jpg',
         'https://layouts.siteorigin.com/wp-content/uploads/2017/05/ruler-1246653_1280_parallax.jpg'
-    ]
+    ];
+
     const yImages = [
         'https://ghomslinguistics.com/wp-content/uploads/2024/08/IMG-20240829-WA0222-950x630.jpg',
         'https://ghomslinguistics.com/wp-content/uploads/2024/08/IMG-20240829-WA0011-950x630.jpg',
         'https://ghomslinguistics.com/wp-content/uploads/2024/08/IMG-20240829-WA0008-950x630.jpg',
         'https://ghomslinguistics.com/wp-content/uploads/2024/08/IMG-20240829-WA0219-950x630.jpg',
         'https://ghomslinguistics.com/wp-content/uploads/2024/08/IMG-20240829-WA0013-683x1024.jpg'
-    ]
+    ];
+
     const teamMemberImages = [
         'https://ghomslinguistics.com/wp-content/uploads/2024/08/Leitung_Yaound.png',
         'https://ghomslinguistics.com/wp-content/uploads/2024/08/Sekraeterin_Yaound.png'
-    ]
+    ];
 
     return (
         <div className={Styles.container}>
@@ -94,16 +96,16 @@ export default function About() {
 
             <div className={Styles.team}>
                 <div className={Styles.content}>
-                    <h2>Team in Yaoundé</h2>
+                    <h2>Team in {activeCity}</h2>
                     <p>
-                        The team in Yaoundé is highly qualified, dedicated 
+                        The team in {activeCity} is highly qualified, dedicated 
                         and works harmoniously together to promote student success. 
                         With their passion and professionalism, they create a positive learning atmosphere 
                         and support each learner individually.
                     </p>
                     <div className={Styles.team_cards}>
-                        <TeamMember picture= {teamMemberImages[0]} name="JANE DOE" role="GRAPHIC DESIGNER" funFact="Hanging out with my best friend pretty much anywhere." />
-                        <TeamMember picture= {teamMemberImages[1]} name="JACK DOE" role="LEAD DESIGNER" funFact="Give me my skateboard and set me free." />
+                        <TeamMember picture={teamMemberImages[0]} name="JANE DOE" role="GRAPHIC DESIGNER" funFact="Hanging out with my best friend pretty much anywhere." />
+                        <TeamMember picture={teamMemberImages[1]} name="JACK DOE" role="LEAD DESIGNER" funFact="Give me my skateboard and set me free." />
                     </div>
                 </div>
             </div>
@@ -120,7 +122,7 @@ export default function About() {
     );
 }
 
-const TeamMember = ({ name, role, funFact,picture }) => (
+const TeamMember = ({ name, role, funFact, picture }) => (
     <div className={Styles.team_card}>
         <img src={picture} alt={name} />
         <div className={Styles.card_content}>
