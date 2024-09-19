@@ -1,0 +1,139 @@
+@import '../../components/partials/variables';
+@import '../../components/partials/mixins';
+
+.container {
+    .content {
+        max-width: 1240px;
+        position: relative;
+        margin: 0 auto;
+        .hero {
+            height: 45vh;
+            width: 100%;
+            padding: $spacing-12 $spacing-8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            h2 {
+                @include heading-1($white)
+            }
+            img {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                z-index: -2;
+                object-fit: cover;
+            }
+            &::after {
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                background-color: rgba(0,0,0,0.5);
+                content: "";
+                display: block;
+            }
+        }
+        .description {
+            display: flex;
+            padding: $spacing-12 $spacing-8;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            .image_section,
+            .text_section {
+                flex: 1 1 50%;
+                max-width: 620px;
+                min-width: 400px;
+            }
+            .image_section {
+                order: 1;
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .text_section {
+                padding: $spacing-4 $spacing-8;
+                h3 {
+                    @include display-xs-regular;
+                    color: $gray-900;
+                    margin-bottom: $spacing-6;
+                }
+                p {
+                    @include text-sm-regular;
+                    color: $gray-700;
+                }
+            }
+            @media screen and (max-width: 900px) {
+                gap: $spacing-8;
+                .text_section h3 {
+                    @include text-xl-regular;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                padding: $spacing-8 $spacing-4;
+            }
+        }
+        .registration {
+            padding: $spacing-12 $spacing-8;
+           // padding-top: 0;
+            display: flex;
+            flex-direction: column;
+            .tab_headings {
+                display: flex;
+                justify-content: center;
+                border-width: 1px 1px 0px 1px;
+                border-color: $gray-200;
+                border-style: solid;
+                cursor: pointer;
+                .tab_heading {
+                    flex: 1;
+                    padding: $spacing-4 $spacing-4;
+                    border-bottom: 2px solid $gray-200;
+                    @include text-md-regular;
+                    text-align: center;
+                    color: $gray-800;
+                }
+                .active_tab_heading {
+                    border-bottom: 2px solid $blue-800;
+                }
+            }
+            .tab_section {
+                padding: $spacing-8 $spacing-8;
+                display: flex;
+                flex-direction: column;
+                background-color: $gray-50;
+                gap: $spacing-8;
+                .tab_portion {
+                    
+                    h4 {
+                        @include text-md-semi-bold;
+                        color: $gray-800;
+                        margin-bottom: $spacing-2
+                    }
+                    p {
+                        @include text-sm-regular;
+                        color: $gray-700;
+                    }
+                }
+                .tab_link {
+                    @include text-md-regular;
+                    color: $blue-500;
+                    align-self: start;
+                }
+                .tab_button {
+                    @include text-md-regular;
+                    border: 2px solid $gray-900;
+                    padding: $spacing-2 $spacing-4;
+                    text-decoration: none;
+                    color: $gray-900;
+                    align-self: flex-start;
+                    &:hover {
+                        background-color: $gray-900;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

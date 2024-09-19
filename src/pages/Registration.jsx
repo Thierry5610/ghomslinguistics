@@ -15,8 +15,8 @@ export default function Registration() {
                         Join our community and take the next step towards fluent German or English!
                     </p>
                     <div className={Styles.actions}>
-                        <Link to="/">German Course</Link>
-                        <Link to="/">English Course</Link>
+                        <Link to="/course/german">German Course</Link>
+                        <Link to="/course/english">English Course</Link>
                     </div>
                 </div>
                 <div className={Styles.image_section}>
