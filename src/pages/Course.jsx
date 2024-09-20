@@ -328,8 +328,10 @@ export default function Course() {
         }
         if(language == 'english'){
             setLanguageData(englishData)
+            setTabArray(languageData?.courses?.filter(data=>data.id===activeTabID))
         }else if (language == 'german'){
             setLanguageData(germanData)
+            setTabArray(languageData?.courses?.filter(data=>data.id===activeTabID))
         }
     },[])
     useEffect(()=>{
