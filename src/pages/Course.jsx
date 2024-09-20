@@ -315,36 +315,40 @@ const englishData = {
 const heroImage = "https://ghomslinguistics.com/wp-content/uploads/2024/08/desk-writing-work-hand-man-table-655321-pxhere.com_.jpg"
 const sideImage = "https://ghomslinguistics.com/wp-content/uploads/2024/08/table-book-read-open-wood-vintage-674236-pxhere.com_-1024x768.jpg"
 export default function Course() {
-    const {language} = useParams()
-    const navigate = useNavigate()
-    const [activeTabID,setActiveTabID] = useState(0)
-    const [activeTabToggleID,setActiveTabToggleID] = useState([])
-    const [languageData,setLanguageData] = useState({})
-    const [tabArray,setTabArray] = useState([])
-    useEffect(()=>{
-        console.log(language)
-        if(language!="english"&&language!="german"){
-            navigate('/register')
+    const { language } = useParams();
+    const navigate = useNavigate();
+    const [activeTabID, setActiveTabID] = useState(0);
+    const [activeTabToggleID, setActiveTabToggleID] = useState([]);
+    const [languageData, setLanguageData] = useState({});
+    const [tabArray, setTabArray] = useState([]);
+
+    useEffect(() => {
+        if (language !== "english" && language !== "german") {
+            navigate('/register');
+        } else {
+            const data = language === 'english' ? englishData : germanData;
+            setLanguageData(data);
+            setActiveTabID(data.courses[0]?.id || 0); // Set the active tab ID to the first course's ID if it exists
         }
-        if(language == 'english'){
-            setLanguageData(englishData)
-            setTabArray(languageData?.courses?.filter(data=>data.id===activeTabID))
-        }else if (language == 'german'){
-            setLanguageData(germanData)
-            setTabArray(languageData?.courses?.filter(data=>data.id===activeTabID))
+    }, [language, navigate]);
+
+    useEffect(() => {
+        if (languageData?.courses) {
+            setTabArray(languageData.courses.filter(data => data.id === activeTabID));
         }
-    },[])
-    useEffect(()=>{
-        setTabArray(languageData?.courses?.filter(data=>data.id===activeTabID))
-    },[activeTabID])
-    const toggleTab = function(id){
-        if(activeTabToggleID.includes(id)){
-            setActiveTabToggleID(current=>current.filter(data=>data!==id))
-        }else {
-            setActiveTabToggleID(current=>[...current,id])
-        }
-    }
-    return(
+    }, [activeTabID, languageData]);
+
+    const toggleTab = (id) => {
+        setActiveTabToggleID((current) => {
+            if (current.includes(id)) {
+                return current.filter(data => data !== id);
+            } else {
+                return [...current, id];
+            }
+        });
+    };
+
+    return (
         <div className={Styles.container}>
             <div className={Styles.content}>
                 <div className={Styles.hero}>
@@ -355,65 +359,60 @@ export default function Course() {
                     <div className={Styles.image_section}><img src={sideImage} alt="book" /></div>
                     <div className={Styles.text_section}>
                         <h3>{languageData?.headline2}</h3>
-                        <p>
-                            {languageData?.description}
-                        </p>
+                        <p>{languageData?.description}</p>
                     </div>
                 </div>
                 <div className={Styles.registration}>
                     <div className={Styles.tab_headings}>
-                        {languageData?.courses?.map(data=>{
-                            return(
-                                <div className={`${Styles.tab_heading} ${data.id===activeTabID?Styles.active_tab_heading:''}`} onClick={()=>setActiveTabID(data.id)}>
-                                    {data.heading}
-                                </div>
-                            )
-                        })}
+                        {languageData?.courses?.map(data => (
+                            <div
+                                key={data.id}
+                                className={`${Styles.tab_heading} ${data.id === activeTabID ? Styles.active_tab_heading : ''}`}
+                                onClick={() => setActiveTabID(data.id)}
+                            >
+                                {data.heading}
+                            </div>
+                        ))}
                     </div>
                     <div className={Styles.tab_body}>
-                        {tabArray?.map(data=>{
-                            return(
-                                <TabSection>
-                                    {data?.sectionData?.map(section=>{
-                                        return(
-                                            <TabPortion heading={section.heading} text={section.text}/>
-                                        )
-                                    })}
-                                    {data?.sectionLink&&<TabLink text={data.sectionLink.text} link={data.sectionLink.link}/>}
-                                    {data?.sectioinCTA&&<TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link}/>}
-                                </TabSection>
-                            )
-                        })}
+                        {tabArray?.map(data => (
+                            <TabSection key={data.id}>
+                                {data?.sectionData?.map(section => (
+                                    <TabPortion key={section.heading} heading={section.heading} text={section.text} />
+                                ))}
+                                {data?.sectionLink && <TabLink text={data.sectionLink.text} link={data.sectionLink.link} />}
+                                {data?.sectioinCTA && <TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link} />}
+                            </TabSection>
+                        ))}
                     </div>
                 </div>
                 <div className={Styles.registration_alt}>
                     <div className={Styles.tab_body}>
-                        {languageData?.courses?.map(data=>{
-                            return(
-                                <>
-                                    <div className={`${Styles.tab_heading} ${activeTabToggleID.includes(data.id)?Styles.active_tab_heading:''}`} onClick={()=>toggleTab(data.id)}>
-                                        <div>{data.heading}</div>
-                                        <div><MdOutlineArrowForwardIos/></div>
-                                    </div>
-                                    <div className={`${Styles.tab_container} ${activeTabToggleID.includes(data.id)?Styles.active_tab_container:''}`}>
-                                        <TabSection>
-                                            {data.sectionData.map(section=>{
-                                                return(
-                                                    <TabPortion heading={section.heading} text={section.text}/>
-                                                )
-                                            })}
-                                            {data.sectionLink&&<TabLink text={data.sectionLink.text} link={data.sectionLink.link}/>}
-                                            {data.sectioinCTA&&<TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link}/>}
-                                        </TabSection>
-                                    </div>
-                                </>
-                            )
-                        })}
+                        {languageData?.courses?.map(data => (
+                            <div key={data.id}>
+                                <div
+                                    className={`${Styles.tab_heading} ${activeTabToggleID.includes(data.id) ? Styles.active_tab_heading : ''}`}
+                                    onClick={() => toggleTab(data.id)}
+                                >
+                                    <div>{data.heading}</div>
+                                    <div><MdOutlineArrowForwardIos /></div>
+                                </div>
+                                <div className={`${Styles.tab_container} ${activeTabToggleID.includes(data.id) ? Styles.active_tab_container : ''}`}>
+                                    <TabSection>
+                                        {data.sectionData.map(section => (
+                                            <TabPortion key={section.heading} heading={section.heading} text={section.text} />
+                                        ))}
+                                        {data.sectionLink && <TabLink text={data.sectionLink.text} link={data.sectionLink.link} />}
+                                        {data.sectioinCTA && <TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link} />}
+                                    </TabSection>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 function TabPortion({heading,text,...props}){
