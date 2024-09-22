@@ -156,6 +156,9 @@
     align-items: center;
     height: 100%;
     width: 100%;
+    @media screen and (max-width:500px) {
+        gap: $spacing-8;
+    }
     &::after {
         content: "";
         display: block;
