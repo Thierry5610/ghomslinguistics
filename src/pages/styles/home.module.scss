@@ -20,7 +20,7 @@
         h3 {
             @include display-xs-regular;
             color: $gray-950;
-            @media screen and (max-width: 400px) {
+            @media screen and (max-width: 375px) {
                 @include text-xl-regular;
             }
         }
