@@ -20,6 +20,9 @@
         h3 {
             @include display-xs-regular;
             color: $gray-950;
+            @media screen and (max-width: 400px) {
+                @include text-xl-regular;
+            }
         }
     }
     .about_section {
