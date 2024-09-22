@@ -7,14 +7,14 @@
     .content {
         display: flex;
         justify-content: space-between;
-        max-width: 1240px;
+        max-width: 124rem;
         margin: 0 auto;
         flex-wrap: wrap;
         position: relative;
 
         .image_section {
             flex: 1 1 50%;
-            max-width: 620px;
+            max-width: 62rem;
             position: relative;
             img {
                 width: 100%;
@@ -24,7 +24,7 @@
         }
         .text_section {
             flex: 1 1 50%;
-            max-width: 620px;
+            max-width: 62rem;
             border: 1px solid $gray-100;
             padding: $spacing-12 $spacing-8;
             display: flex;
@@ -49,6 +49,7 @@
                 text-decoration: none;
                 color: $gray-800;
                 border: 2px solid $gray-950;
+                @include text-md-regular;
                 padding: $spacing-3 $spacing-5;
 
                 &:hover {

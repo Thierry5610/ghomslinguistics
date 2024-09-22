@@ -4,7 +4,7 @@
 .container {
     display: flex;
     padding: $spacing-4;
-    max-width: 1240px;
+    max-width: 124rem;
     @media screen and (min-width:1000px) {
         gap: $spacing-12;
     }
