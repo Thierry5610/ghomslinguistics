@@ -45,7 +45,7 @@ const carouselItems = [
     <h3>
     Language testing center
     German and English</h3>
-    <button onClick={()=>navigate('/course')}>Learn more</button>
+    <button onClick={()=>navigate('/language')}>Learn more</button>
 </div>
   ];
     return(
