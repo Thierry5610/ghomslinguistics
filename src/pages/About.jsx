@@ -1,4 +1,4 @@
-import { act, useState } from 'react';
+import { act, useEffect, useState } from 'react';
 import Styles from './styles/about.module.scss';
 
 const CityContent = ({ city, description, images }) => (
@@ -101,14 +101,15 @@ export default function About() {
                 </div>
             </div>
 
-            <div className={Styles.clients}>
+            {/* <div className={Styles.clients}>
                 <h3>Our clients</h3>
                 <p>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
                     laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
                     architecto beatae vitae dicta sunt explicabo.
                 </p>
-            </div>
+            </div> */}
+            <Testimonials/>
         </div>
     );
 }
@@ -122,3 +123,46 @@ const TeamMember = ({ name, role, funFact, picture }) => (
         </div>
     </div>
 );
+
+const Testimonials = () => {
+    const testimonials = [
+        { text: "The language training I received changed my life! I can now confidently communicate in English and travel the world.", author: "Sarah Johnson" },
+        { text: "The interactive lessons and supportive teachers made learning a new language enjoyable and effective.", author: "Michael Smith" },
+        { text: "I never thought I could learn a language so quickly. The small class sizes really helped me thrive.", author: "Laura Williams" },
+        { text: "The immersive experience at this center is unmatched. I've made great friends while improving my language skills!", author: "David Brown" },
+        { text: "Thanks to the amazing faculty, I achieved my language goals faster than I ever imagined!", author: "Emma Davis" }
+    ];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [displayText, setDisplayText] = useState('');
+    
+
+    useEffect(() => {
+        let i = 0;
+        const text = testimonials[currentIndex].text;
+
+        const interval = setInterval(() => {
+            if (i < text.length-1) {
+                setDisplayText((prev) => prev + text[i]);
+                i++;
+            } else {
+                clearInterval(interval);
+                setTimeout(() => {
+                    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+                    setDisplayText('');
+                }, 2000); // Pause before showing the next testimonial
+            }
+        }, 50); // Adjust typing speed
+
+        return () => clearInterval(interval);
+    }, [currentIndex]);
+
+    return (
+        <div className={Styles.testimonials}>
+            <h3>What our students say</h3>
+            <p>"{displayText}"</p>
+            <p>- {testimonials[currentIndex].author}</p>
+        </div>
+    );
+};
+

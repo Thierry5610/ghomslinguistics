@@ -219,6 +219,31 @@
             text-align: center;
         }
     }
+    .testimonials {
+        padding: $spacing-12 $spacing-8;
+        background-color: $blue-800;
+        color: $white;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-8;
+    
+        h3 {
+            @include heading-1($white);
+        }
+    
+        p {
+            @include text-md-regular;
+            width: 70%;
+            margin: 0 auto;
+            @media screen and (max-width:500px) {
+                width: 100%;
+            }
+        }
+    }
+    
 }
 
 
