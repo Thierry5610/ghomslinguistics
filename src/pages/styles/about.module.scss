@@ -125,13 +125,14 @@
             }
         }
     }
-    .hero_two {
+    .map {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: $spacing-12 $spacing-8;
+        //padding: $spacing-12 $spacing-8;
         height: 80vh;
+        overflow: hidden;
         position: relative;
         // &::after {
         //     content: "";
@@ -141,26 +142,12 @@
         //     background: rgba($black,.4);
         //     z-index: -1;
         // }
-        h3 {
-            @include display-md-regular;
-            color: $white;
-            text-align: center;
-            width: 70%;
-            @media screen and (max-width: 800px) {
-                @include display-sm-regular; 
-            }
-            @media screen and (max-width: 500px) {
-                width: 100%; 
-                @include display-xs-regular; 
-            }
-        }
-        img {
-            height: 100%;
+        iframe {
             width: 100%;
-            position: absolute;
-            z-index: -2;
-            object-fit: cover;
+            height: 100%;
+            border: 0;
         }
+        
     }
     .team {
         background-color: $white;
@@ -238,7 +225,6 @@
 @media screen and (max-width: 800px) {
         .container .hero p,
         .container .impression .content p,
-        .container .hero_two h3,
         .container .team .content p,
         .container .clients p {
             width: 100%;

@@ -7,13 +7,13 @@ import News from "./pages/News";
 import About from "./pages/About";
 import Registration from "./pages/Registration";
 import Course from "./pages/Course";
-import ScrollToTop from "./components/ScrollToTop"; // Import the component
+import ScrollToTop from "./components/ScrollToTop"; 
 
 function App() {
   return (
     <div className="container">
       <Navigation />
-      <ScrollToTop /> {/* Add ScrollToTop here */}
+      <ScrollToTop />
       <div className="content">
         <Routes>
           <Route index element={<Home />} />

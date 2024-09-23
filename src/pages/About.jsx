@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { act, useState } from 'react';
 import Styles from './styles/about.module.scss';
 
 const CityContent = ({ city, description, images }) => (
@@ -80,18 +80,9 @@ export default function About() {
             </div>
 
             <div 
-                className={Styles.hero_two}
-                style={{
-                    background: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)), url('${heroImages[1]}')`,
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                    backgroundAttachment: "fixed"
-                }}
+                className={Styles.map}
             >
-                <h3>
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-                </h3>
+                {activeCity==='Yaoundé'?<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254777.89709898565!2d11.34563242625423!3d3.8306320078228397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf7a309a7977%3A0x7f54bad35e693c51!2zWWFvdW5kw6k!5e0!3m2!1sen!2scm!4v1727100243621!5m2!1sen!2scm" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>:<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127357.54623148331!2d9.659400768367393!3d4.0360708386441955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061128be2e1fe6d%3A0x92daa1444781c48b!2sDouala!5e0!3m2!1sen!2scm!4v1727111160663!5m2!1sen!2scm" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>}
             </div>
 
             <div className={Styles.team}>
