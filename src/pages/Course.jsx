@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Styles from './styles/course.module.scss'
 import { MdOutlineArrowForwardIos } from "react-icons/md";
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 const germanData = {
     headline: "German as a foreign language",
     headline2: "What is a German course?",
@@ -33,7 +33,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"https://ghomslinguistics.com/anmeldung/"
+                link:"/register"
             }
         },
         {
@@ -59,7 +59,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"https://ghomslinguistics.com/anmeldung/"
+                link:"/register"
             }
         },
         {
@@ -85,7 +85,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"https://ghomslinguistics.com/anmeldung/"
+                link:"/register"
             }
         },
         {
@@ -111,7 +111,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"https://ghomslinguistics.com/anmeldung/"
+                link:"/register"
             }
         },
         {
@@ -137,7 +137,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"https://ghomslinguistics.com/anmeldung/"
+                link:"/register"
             }
         }
     ],
@@ -184,11 +184,11 @@ const englishData = {
             ],
             sectionLink: {
                 text: "telcA1",
-                link: "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-a1.html"
+                link: "https://www.telc.net/en/language-examinations/certificate-exams/english/"
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"https://ghomslinguistics.com/anmeldung/"
+                link:"/register"
             }
         },
         {
@@ -210,11 +210,11 @@ const englishData = {
             ],
             sectionLink: {
                 text: "telcA2",
-                link: "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-a2.html"
+                link: "https://www.telc.net/en/language-examinations/certificate-exams/english/"
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"https://ghomslinguistics.com/anmeldung/"
+                link:"/register"
             }
         },
         {
@@ -236,11 +236,11 @@ const englishData = {
             ],
             sectionLink: {
                 text: "telcB1",
-                link: "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/zertifikat-deutsch-telc-deutsch-b1.html"
+                link: "https://www.telc.net/en/language-examinations/certificate-exams/english/"
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"https://ghomslinguistics.com/anmeldung/"
+                link:"/register"
             }
         },
         {
@@ -262,11 +262,11 @@ const englishData = {
             ],
             sectionLink: {
                 text: "telcB2",
-                link: "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-b2.html"
+                link: "https://www.telc.net/en/language-examinations/certificate-exams/english/"
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"https://ghomslinguistics.com/anmeldung/"
+                link:"/register"
             }
         },
         {
@@ -288,11 +288,11 @@ const englishData = {
             ],
             sectionLink: {
                 text: "telcC1",
-                link: "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-c1-hochschule.html#"
+                link: "https://www.telc.net/en/language-examinations/certificate-exams/english/ttps://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-c1-hochschule.html#"
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"https://ghomslinguistics.com/anmeldung/"
+                link:"/register"
             }
         }
     ],
@@ -440,7 +440,7 @@ function TabLink ({text,link}){
 
 function TabButton ({text,link}){
     return(
-        <a  className={Styles.tab_button} href={link}>{text}</a>
+        <Link  className={Styles.tab_button} to={link}>{text}</Link>
     )
 }
 

@@ -61,8 +61,8 @@ export default function Navigation() {
                     <div className={Styles.links}>
                         <Link to="/">Home</Link>
                         <Link to="/news">News</Link>
-                        <Link to="/register">Registration</Link>
-                        <Link to="/">Course</Link>
+                        <Link to="/">Registration</Link>
+                        <Link to="/language">Course</Link>
                         <Link to="/about">About us</Link>
                         <div className={Styles.search} onClick={() => setIsSearchMenu(true)}>
                             <IoIosSearch />
@@ -86,8 +86,8 @@ export default function Navigation() {
                         <div className={Styles.links}>
                             <Link to="/" onClick={()=>setIsMenu(false)}>Home</Link>
                             <Link to="/news" onClick={()=>setIsMenu(false)}>News</Link>
-                            <Link to="/register" onClick={()=>setIsMenu(false)}>Registration</Link>
-                            <Link to="/" onClick={()=>setIsMenu(false)}>Course</Link>
+                            <Link to="/" onClick={()=>setIsMenu(false)}>Registration</Link>
+                            <Link to="/language" onClick={()=>setIsMenu(false)}>Course</Link>
                             <Link to="/about" onClick={()=>setIsMenu(false)}>About us</Link>
                             <div className={Styles.search}>
                                 <input type="text" />
