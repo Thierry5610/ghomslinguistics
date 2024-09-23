@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Styles from './styles/registration.module.scss'
-export default function Registration() {
+export default function Languages() {
     const image = "https://ghomslinguistics.com/wp-content/uploads/2024/08/table-book-read-open-wood-vintage-674236-pxhere.com_.jpg"
     return(
         <div className={Styles.container}>
