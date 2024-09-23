@@ -138,7 +138,7 @@ const Testimonials = () => {
     
 
     useEffect(() => {
-        let i = 0;
+        let i = -1;
         const text = testimonials[currentIndex].text;
 
         const interval = setInterval(() => {
@@ -150,7 +150,7 @@ const Testimonials = () => {
                 setTimeout(() => {
                     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
                     setDisplayText('');
-                }, 2000); // Pause before showing the next testimonial
+                }, 2500); // Pause before showing the next testimonial
             }
         }, 50); // Adjust typing speed
 
