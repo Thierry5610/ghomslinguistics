@@ -33,7 +33,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/register"
+                link:"/language"
             }
         },
         {
@@ -59,7 +59,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/register"
+                link:"/language"
             }
         },
         {
@@ -85,7 +85,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/register"
+                link:"/language"
             }
         },
         {
@@ -111,7 +111,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/register"
+                link:"/language"
             }
         },
         {
@@ -137,7 +137,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/register"
+                link:"/language"
             }
         }
     ],
@@ -188,7 +188,7 @@ const englishData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/register"
+                link:"/language"
             }
         },
         {
@@ -214,7 +214,7 @@ const englishData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/register"
+                link:"/language"
             }
         },
         {
@@ -240,7 +240,7 @@ const englishData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/register"
+                link:"/language"
             }
         },
         {
@@ -266,7 +266,7 @@ const englishData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/register"
+                link:"/language"
             }
         },
         {
@@ -292,7 +292,7 @@ const englishData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/register"
+                link:"/language"
             }
         }
     ],
@@ -324,7 +324,7 @@ export default function Course() {
 
     useEffect(() => {
         if (language !== "english" && language !== "german") {
-            navigate('/register');
+            navigate('/language');
         } else {
             const data = language === 'english' ? englishData : germanData;
             setLanguageData(data);
