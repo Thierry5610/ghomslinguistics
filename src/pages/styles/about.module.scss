@@ -126,13 +126,26 @@
         }
     }
     .location_text {
-        max-width: 124rem;
-        padding: $spacing-8 $spacing-8;
-        p {
-            @include text-md-regular;
-            padding: $spacing-2;
-            color: $gray-700;
-            border-left: .4rem solid $blue-500;
+        background-color: $gray-50;
+        padding: $spacing-12 $spacing-8;
+        padding-top: 0;
+        .container {
+            max-width: 124rem;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            //padding: $spacing-8 $spacing-8;
+            p {
+                @include text-md-regular;
+                padding: $spacing-4;
+                color: $blue-900;
+                flex: 1;
+                background-color: $blue-200;
+                border: 2px solid $blue-300;
+                //border-left: .4rem solid $blue-500;
+            }
         }
     }
     .map {
