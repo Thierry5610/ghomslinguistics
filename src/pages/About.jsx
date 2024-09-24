@@ -130,11 +130,11 @@ const TeamMember = ({ name, role, funFact, picture }) => (
 
 const Testimonials = () => {
     const testimonials = [
-        { text: "The language training I received changed my life! I can now confidently communicate in English and travel the world.", author: "Sarah Johnson" },
-        { text: "The interactive lessons and supportive teachers made learning a new language enjoyable and effective.", author: "Michael Smith" },
-        { text: "I never thought I could learn a language so quickly. The small class sizes really helped me thrive.", author: "Laura Williams" },
-        { text: "The immersive experience at this center is unmatched. I've made great friends while improving my language skills!", author: "David Brown" },
-        { text: "Thanks to the amazing faculty, I achieved my language goals faster than I ever imagined!", author: "Emma Davis" }
+        { text: "The language training I received changed my life! I can now confidently communicate in English and travel the world.", author: "Mireille Kamga" },
+        { text: "The interactive lessons and supportive teachers made learning a new language enjoyable and effective.", author: "Adama Ndong" },
+        { text: "I never thought I could learn a language so quickly. The small class sizes really helped me thrive.", author: "Fotso Jean" },
+        { text: "The immersive experience at this center is unmatched. I've made great friends while improving my language skills!", author: "Nji Tchoua" },
+        { text: "Thanks to the amazing faculty, I achieved my language goals faster than I ever imagined!", author: "Fatou Simo" }
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
