@@ -99,7 +99,7 @@ export default function About() {
                         and support each learner individually.
                     </p>
                     <div className={Styles.team_cards}>
-                        <TeamMember picture={teamMemberImages[0]} name="SOLANGE MVONDO" role="GRAPHIC DESIGNER" funFact="Hanging out with my best friend pretty much anywhere." />
+                        <TeamMember picture={teamMemberImages[0]} name="SOLANGE FOKA" role="GRAPHIC DESIGNER" funFact="Hanging out with my best friend pretty much anywhere." />
                         <TeamMember picture={teamMemberImages[1]} name="MARIAM FON" role="LEAD DESIGNER" funFact="Give me my skateboard and set me free." />
                     </div>
                 </div>
