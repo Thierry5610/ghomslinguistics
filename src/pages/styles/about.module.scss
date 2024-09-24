@@ -62,7 +62,7 @@
         .content {
             max-width: 124rem;
             margin: 0 auto;
-            padding-bottom: $spacing-12;
+            //padding-bottom: $spacing-12;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -123,6 +123,16 @@
             .active {
                 border-bottom: 2px solid $blue-500;
             }
+        }
+    }
+    .location_text {
+        max-width: 124rem;
+        padding: $spacing-8 $spacing-8;
+        p {
+            @include text-md-regular;
+            padding: $spacing-2;
+            color: $gray-700;
+            border-left: .4rem solid $blue-500;
         }
     }
     .map {

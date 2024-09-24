@@ -78,7 +78,9 @@ export default function About() {
                     images={yImages}
                 />
             </div>
-
+            <div className={Styles.location_text}>
+                <p>{activeCity === 'Yaoundé'?"In Yaoundé, we are located on the new omnisport road next to the Pharmacie le Bon Berger.":"In Douala we are located in the Ange Raphael district, opposite to the UBA bank."}</p>
+            </div>
             <div 
                 className={Styles.map}
             >
