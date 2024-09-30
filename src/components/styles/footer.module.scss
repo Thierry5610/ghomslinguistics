@@ -117,10 +117,10 @@
             }
         }
         h1 {
-            @include display-sm-semi-bold;
+            @include display-sm-medium;
             color: $gray-900;
             @media screen and (max-width:768px) {
-                @include text-xl-semi-bold;
+                @include text-xl-medium;
             }
         }
         form {

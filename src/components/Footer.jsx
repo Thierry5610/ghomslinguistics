@@ -1,18 +1,38 @@
 import React, { useState } from 'react';
 import Styles from './styles/footer.module.scss';
 import { Link } from 'react-router-dom';
-import { IoMdClose } from "react-icons/io";
+import { DataProtectionModal } from './DataProtectionModal';
+import ContactModal from './ContactModal';
 
 export default function Footer() {
     const [isModalOpen, setModalOpen] = useState(false);
+    const [isContactModalOpen, setContactModalOpen] = useState(false);
+    const [isDataProtectionOpen, setDataProtectionOpen] = useState(false);
     const imageSrc = "https://ghomslinguistics.com/wp-content/uploads/2024/08/cropped-GhomLinguisticsLogo_small.png";
 
-    const handleOpenModal = () => {
-        setModalOpen(true);
+    const handleOpenContactModal = () => {
+        setContactModalOpen(true);
     };
 
-    const handleCloseModal = () => {
-        setModalOpen(false);
+    const handleCloseContactModal = () => {
+        setContactModalOpen(false);
+    };
+
+    const handleOpenDataProtectionModal = () => {
+        setDataProtectionOpen(true);
+    };
+
+    const handleCloseDataProtectionModal = () => {
+        setDataProtectionOpen(false);
+    };
+
+    const handleAcceptDataProtection = () => {
+        setDataProtectionOpen(false);
+    };
+
+    const handleContactFromDataProtection = () => {
+        setDataProtectionOpen(false);
+        setContactModalOpen(true);
     };
 
     return (
@@ -48,38 +68,26 @@ export default function Footer() {
                         <div className={Styles.links_box}>
                             <h3>Menu</h3>
                             <div className={Styles.links}>
-                                <Link to="/">Privacy Policy</Link>
-                                <Link to="#" onClick={handleOpenModal}>Contact</Link> {/* Updated to open modal */}
+                            <Link to="#" onClick={handleOpenDataProtectionModal}>Data Protection</Link>
+                                <Link to="#" onClick={handleOpenContactModal}>Contact</Link> {/* Updated to open modal */}
                             </div>
                         </div>
                     </div>
                     <div className={Styles.section_2}>
                         <span>Copyright © 2024 Ghoms Linguistics - </span>
-                        <Link to="/">Privacy Policy</Link>
+                        <Link to="#" onClick={handleOpenDataProtectionModal}>Data Protection</Link>
                     </div>
                 </div>
             </div>
-            {isModalOpen && <ContactModal onClose={handleCloseModal} />} {/* Render modal conditionally */}
+            {isDataProtectionOpen && (
+                <DataProtectionModal
+                    onClose={handleAcceptDataProtection}
+                    onContact={handleContactFromDataProtection}
+                />
+            )}
+            {isContactModalOpen && <ContactModal onClose={handleCloseContactModal} />}        
         </>
     )
 }
 
-const ContactModal = ({ onClose }) => {
-    return (
-        <div className={Styles.modal}>
-            <div className={Styles.content}>
-                <div className={Styles.close_button} onClick={onClose}> {/* Add onClick to close button */}
-                    <IoMdClose />
-                </div>
-                <h1>Contact Us</h1>
-                <form className={Styles.contact_form}>
-                    <input className={Styles.form_input} type="text" placeholder='Your name' />
-                    <input className={Styles.form_input} type="email" placeholder='Your email' />
-                    <input className={Styles.form_input} type="text" placeholder='Subject' />
-                    <textarea name="message" className={Styles.form_textarea} placeholder='Message' />
-                    <button type="submit">Send mail</button>
-                </form>
-            </div>
-        </div>
-    )
-}
+

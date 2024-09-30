@@ -1,0 +1,88 @@
+@import '../partials//variables';
+@import '../partials/mixins';
+
+.modal {
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background-color: rgba($black,.6);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+        background-color: $white;
+        max-width: 90rem;
+        min-width: 62rem;
+        max-height: 90vh;
+        overflow-y: scroll;
+        border-radius: $spacing-2;
+        padding: $spacing-8;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 4px 8px rgba($black, .3);
+        gap: $spacing-8;
+        position: relative;
+        @media screen and (max-width:768px) {
+            min-width: auto;
+            width: 95%;
+        }
+        .close_button {
+            cursor: pointer;
+            position: absolute;
+            right: 2.5rem;
+            top: 2.5rem;
+            padding: .5rem;
+            border: 1.5px solid $gray-700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            svg {
+                @include text-lg-regular;
+                color: $gray-700;
+            }
+        }
+        h1 {
+            @include display-sm-medium;
+            color: $gray-900;
+            @media screen and (max-width:768px) {
+                @include text-xl-medium;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-4;
+            .form_input {
+                outline: none;
+                border: 2px solid $gray-200;
+                padding: $spacing-3 $spacing-4;
+                @include text-sm-regular;
+                color: $gray-500;
+            }
+            .form_textarea {
+                resize: none;
+                border: 2px solid $gray-200;
+                @include text-sm-regular;
+                color: $gray-500;
+                padding: $spacing-4;
+                outline: none;
+                min-height: 20rem;
+            }
+            button {
+                padding: .8rem 1.6rem;
+                @include text-md-regular;
+                color: $gray-900;
+                background-color: $white;
+                border: 2px solid $gray-900;
+                width: fit-content;
+                cursor: pointer;
+                &:hover {
+                    background-color: $gray-900;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
