@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Styles from './styles/dataprotection.module.scss';
 import { IoMdClose } from "react-icons/io";
 
 export const DataProtectionModal = ({ onClose, onContact }) => {
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
     return (
         <div className={Styles.modal} aria-hidden="false" aria-modal="true" role="dialog">
             <div className={Styles.content}>
