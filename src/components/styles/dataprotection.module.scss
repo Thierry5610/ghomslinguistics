@@ -28,20 +28,7 @@
             width: 95%;
         }
         .close_button {
-            cursor: pointer;
-            position: absolute;
-            right: 2.5rem;
-            top: 2.5rem;
-            padding: .5rem;
-            border: 1.5px solid $gray-700;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 100%;
-            svg {
-                @include text-lg-regular;
-                color: $gray-700;
-            }
+            @include close_button;
         }
         h1 {
             @include display-sm-medium;

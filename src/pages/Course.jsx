@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Styles from './styles/course.module.scss'
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import RegisterCourseModal from './RegisterCourseModal';
 const germanData = {
     headline: "German as a foreign language",
     headline2: "What is a German course?",
@@ -33,7 +34,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/language"
+                link:"#"
             }
         },
         {
@@ -59,7 +60,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/language"
+                link:"#"
             }
         },
         {
@@ -85,7 +86,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/language"
+                link:"#"
             }
         },
         {
@@ -111,7 +112,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/language"
+                link:"#"
             }
         },
         {
@@ -137,7 +138,7 @@ const germanData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/language"
+                link:"#"
             }
         }
     ],
@@ -188,7 +189,7 @@ const englishData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/language"
+                link:"#"
             }
         },
         {
@@ -214,7 +215,7 @@ const englishData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/language"
+                link:"#"
             }
         },
         {
@@ -240,7 +241,7 @@ const englishData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/language"
+                link:"#"
             }
         },
         {
@@ -266,7 +267,7 @@ const englishData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/language"
+                link:"#"
             }
         },
         {
@@ -292,7 +293,7 @@ const englishData = {
             },
             sectioinCTA: {
                 text:"Register here!",
-                link:"/language"
+                link:"#"
             }
         }
     ],
@@ -321,6 +322,7 @@ export default function Course() {
     const [activeTabToggleID, setActiveTabToggleID] = useState([]);
     const [languageData, setLanguageData] = useState({});
     const [tabArray, setTabArray] = useState([]);
+    const [isRegisterModalOpen,setIsRegisterModalOpen] = useState(false)
 
     useEffect(() => {
         if (language !== "english" && language !== "german") {
@@ -349,69 +351,72 @@ export default function Course() {
     };
 
     return (
-        <div className={Styles.container}>
-            <div className={Styles.content}>
-                <div className={Styles.hero}>
-                    <img src={heroImage} alt="hero" />
-                    <h2>{languageData?.headline}</h2>
-                </div>
-                <div className={Styles.description}>
-                    <div className={Styles.image_section}><img src={sideImage} alt="book" /></div>
-                    <div className={Styles.text_section}>
-                        <h3>{languageData?.headline2}</h3>
-                        <p>{languageData?.description}</p>
+        <>
+            <div className={Styles.container}>
+                <div className={Styles.content}>
+                    <div className={Styles.hero}>
+                        <img src={heroImage} alt="hero" />
+                        <h2>{languageData?.headline}</h2>
                     </div>
-                </div>
-                <div className={Styles.registration}>
-                    <div className={Styles.tab_headings}>
-                        {languageData?.courses?.map(data => (
-                            <div
-                                key={data.id}
-                                className={`${Styles.tab_heading} ${data.id === activeTabID ? Styles.active_tab_heading : ''}`}
-                                onClick={() => setActiveTabID(data.id)}
-                            >
-                                {data.heading}
-                            </div>
-                        ))}
+                    <div className={Styles.description}>
+                        <div className={Styles.image_section}><img src={sideImage} alt="book" /></div>
+                        <div className={Styles.text_section}>
+                            <h3>{languageData?.headline2}</h3>
+                            <p>{languageData?.description}</p>
+                        </div>
                     </div>
-                    <div className={Styles.tab_body}>
-                        {tabArray?.map(data => (
-                            <TabSection key={data.id}>
-                                {data?.sectionData?.map(section => (
-                                    <TabPortion key={section.heading} heading={section.heading} text={section.text} />
-                                ))}
-                                {data?.sectionLink && <TabLink text={data.sectionLink.text} link={data.sectionLink.link} />}
-                                {data?.sectioinCTA && <TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link} />}
-                            </TabSection>
-                        ))}
-                    </div>
-                </div>
-                <div className={Styles.registration_alt}>
-                    <div className={Styles.tab_body}>
-                        {languageData?.courses?.map(data => (
-                            <div key={data.id}>
+                    <div className={Styles.registration}>
+                        <div className={Styles.tab_headings}>
+                            {languageData?.courses?.map(data => (
                                 <div
-                                    className={`${Styles.tab_heading} ${activeTabToggleID.includes(data.id) ? Styles.active_tab_heading : ''}`}
-                                    onClick={() => toggleTab(data.id)}
+                                    key={data.id}
+                                    className={`${Styles.tab_heading} ${data.id === activeTabID ? Styles.active_tab_heading : ''}`}
+                                    onClick={() => setActiveTabID(data.id)}
                                 >
-                                    <div>{data.heading}</div>
-                                    <div><MdOutlineArrowForwardIos /></div>
+                                    {data.heading}
                                 </div>
-                                <div className={`${Styles.tab_container} ${activeTabToggleID.includes(data.id) ? Styles.active_tab_container : ''}`}>
-                                    <TabSection>
-                                        {data.sectionData.map(section => (
-                                            <TabPortion key={section.heading} heading={section.heading} text={section.text} />
-                                        ))}
-                                        {data.sectionLink && <TabLink text={data.sectionLink.text} link={data.sectionLink.link} />}
-                                        {data.sectioinCTA && <TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link} />}
-                                    </TabSection>
+                            ))}
+                        </div>
+                        <div className={Styles.tab_body}>
+                            {tabArray?.map(data => (
+                                <TabSection key={data.id}>
+                                    {data?.sectionData?.map(section => (
+                                        <TabPortion key={section.heading} heading={section.heading} text={section.text} />
+                                    ))}
+                                    {data?.sectionLink && <TabLink text={data.sectionLink.text} link={data.sectionLink.link} />}
+                                    {data?.sectioinCTA && <TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link} />}
+                                </TabSection>
+                            ))}
+                        </div>
+                    </div>
+                    <div className={Styles.registration_alt}>
+                        <div className={Styles.tab_body}>
+                            {languageData?.courses?.map(data => (
+                                <div key={data.id}>
+                                    <div
+                                        className={`${Styles.tab_heading} ${activeTabToggleID.includes(data.id) ? Styles.active_tab_heading : ''}`}
+                                        onClick={() => toggleTab(data.id)}
+                                    >
+                                        <div>{data.heading}</div>
+                                        <div><MdOutlineArrowForwardIos /></div>
+                                    </div>
+                                    <div className={`${Styles.tab_container} ${activeTabToggleID.includes(data.id) ? Styles.active_tab_container : ''}`}>
+                                        <TabSection>
+                                            {data.sectionData.map(section => (
+                                                <TabPortion key={section.heading} heading={section.heading} text={section.text} />
+                                            ))}
+                                            {data.sectionLink && <TabLink text={data.sectionLink.text} link={data.sectionLink.link} />}
+                                            {data.sectioinCTA && <TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link} onClick={()=>setIsRegisterModalOpen(true)}/>}
+                                        </TabSection>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            {isRegisterModalOpen&&<RegisterCourseModal language={language} onClose={()=>setIsRegisterModalOpen(false)}/>}
+        </>
     );
 }
 
@@ -438,9 +443,9 @@ function TabLink ({text,link}){
     )
 }
 
-function TabButton ({text,link}){
+function TabButton ({text,link,onClick}){
     return(
-        <Link  className={Styles.tab_button} to={link}>{text}</Link>
+        <Link  onClick={onClick} className={Styles.tab_button} to={link}>{text}</Link>
     )
 }
 

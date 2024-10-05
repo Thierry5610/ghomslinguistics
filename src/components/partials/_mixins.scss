@@ -140,3 +140,20 @@
         @include text-xl-regular;
     }
   }
+
+  @mixin close_button {
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    padding: .5rem;
+    border: 1.5px solid $gray-700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    svg {
+        @include text-lg-regular;
+        color: $gray-700;
+    }
+}
