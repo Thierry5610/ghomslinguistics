@@ -2,8 +2,7 @@
 @import '../partials/mixins';
 
 .modal {
-    height: 100%;
-    width: 100%;
+    inset: 0;
     z-index: 10000;
     background-color: rgba($black,.6);
     position: fixed;
@@ -57,7 +56,7 @@
                 outline: none;
                 min-height: 20rem;
             }
-            button {
+            .button {
                 padding: .8rem 1.6rem;
                 @include text-md-regular;
                 color: $gray-900;
@@ -69,6 +68,9 @@
                     background-color: $gray-900;
                     color: $white;
                 }
+            }
+            .cta {
+                @include button-1;
             }
         }
     }

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Styles from './styles/contact.module.scss';
 import { IoMdClose } from "react-icons/io";
 
-const ContactModal = ({ onClose }) => {
+const RegisterModal = ({ course, onClose }) => {
     useEffect(() => {
         document.body.style.overflow = 'hidden';
         return () => {
@@ -15,17 +15,18 @@ const ContactModal = ({ onClose }) => {
                 <div className={Styles.close_button} onClick={onClose}> {/* Add onClick to close button */}
                     <IoMdClose />
                 </div>
-                <h1>Contact Us</h1>
+                <h1>Fill in the form to register</h1>
                 <form className={Styles.contact_form}>
                     <input className={Styles.form_input} type="text" placeholder='Your name' />
-                    <input className={Styles.form_input} type="email" placeholder='Your email' />
-                    <input className={Styles.form_input} type="text" placeholder='Subject' />
+                    <input className={Styles.form_input} type="email" placeholder='Your surname' />
+                    <input className={Styles.form_input} type="email" placeholder='Telephone' />
+                    <input className={Styles.form_input} type="text" placeholder='Email' />
                     <textarea name="message" className={Styles.form_textarea} placeholder='Message' />
-                    <button className={Styles.button} type="submit">Send mail</button>
+                    <button type="submit" className={Styles.cta}>Register</button>
                 </form>
             </div>
         </div>
     )
 }
 
-export default ContactModal
+export default RegisterModal

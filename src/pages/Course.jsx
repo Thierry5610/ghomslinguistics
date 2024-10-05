@@ -3,6 +3,7 @@ import Styles from './styles/course.module.scss'
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import RegisterCourseModal from './RegisterCourseModal';
+import RegisterModal from '../components/RegisterModal';
 const germanData = {
     headline: "German as a foreign language",
     headline2: "What is a German course?",
@@ -322,7 +323,10 @@ export default function Course() {
     const [activeTabToggleID, setActiveTabToggleID] = useState([]);
     const [languageData, setLanguageData] = useState({});
     const [tabArray, setTabArray] = useState([]);
+    const [isCoursesModalOpen,setIsCoursesModalOpen] = useState(false)
     const [isRegisterModalOpen,setIsRegisterModalOpen] = useState(false)
+    
+    
 
     useEffect(() => {
         if (language !== "english" && language !== "german") {
@@ -384,7 +388,7 @@ export default function Course() {
                                         <TabPortion key={section.heading} heading={section.heading} text={section.text} />
                                     ))}
                                     {data?.sectionLink && <TabLink text={data.sectionLink.text} link={data.sectionLink.link} />}
-                                    {data?.sectioinCTA && <TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link} />}
+                                    {data?.sectioinCTA && <TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link}  onClick={()=>setIsCoursesModalOpen(true)}/>}
                                 </TabSection>
                             ))}
                         </div>
@@ -406,7 +410,7 @@ export default function Course() {
                                                 <TabPortion key={section.heading} heading={section.heading} text={section.text} />
                                             ))}
                                             {data.sectionLink && <TabLink text={data.sectionLink.text} link={data.sectionLink.link} />}
-                                            {data.sectioinCTA && <TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link} onClick={()=>setIsRegisterModalOpen(true)}/>}
+                                            {data.sectioinCTA && <TabButton text={data.sectioinCTA.text} link={data.sectioinCTA.link} onClick={()=>setIsCoursesModalOpen(true)}/>}
                                         </TabSection>
                                     </div>
                                 </div>
@@ -415,7 +419,8 @@ export default function Course() {
                     </div>
                 </div>
             </div>
-            {isRegisterModalOpen&&<RegisterCourseModal language={language} onClose={()=>setIsRegisterModalOpen(false)}/>}
+            {isCoursesModalOpen&&<RegisterCourseModal onOpenCta={()=>{setIsCoursesModalOpen(false);setIsRegisterModalOpen(true)}} language={language} onClose={()=>setIsCoursesModalOpen(false)}/>}
+            {isRegisterModalOpen&&<RegisterModal onClose={()=>setIsRegisterModalOpen(false)}/>}
         </>
     );
 }
