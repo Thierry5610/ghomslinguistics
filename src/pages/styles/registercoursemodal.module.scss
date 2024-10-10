@@ -1,89 +1,147 @@
 @import '../../components/partials/variables';
 @import '../../components/partials/mixins';
 
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #FF6584;
+    --text-color: #2D3748;
+    --background-color: #F7FAFC;
+}
 
 .container {
     position: fixed;
     inset: 0;
     overflow: hidden;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    
+
     .content {
         background-color: $white;
-        border-radius: $spacing-4;
+        border-radius: $spacing-2;
         padding: $spacing-10 $spacing-8;
-        max-width: 62rem;
+        max-width: 90rem;
         position: relative;
         max-height: 95vh;
         width: 90%;       
         display: flex;
         flex-direction: column;
+        //align-items: center;
         gap: $spacing-8;
-        .close_button {
+
+        .closeButton {
             @include close_button;
         }
+
         h1 {
             @include display-xs-regular;
             color: $gray-900;
+            align-self: center;
             max-width: 90%;
             text-transform: uppercase;
             @media screen and (max-width:768px) {
                 @include text-xl-medium;
             } 
         }
+
         .cards {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: $spacing-1;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: $spacing-7;
+            width: calc(50% - $spacing-7);
+            min-width: 30rem;
+            display: flex;
             flex-direction: column;
-            gap: $spacing-4;
-            align-items: stretch;
-            //overflow-y: scroll;
-            flex: 1;
-            @media screen and (max-width:768px) {
-                overflow-x: scroll;
-            } 
-            .card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background-color: $blue-500;
+                //background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            }
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 35px rgba(108, 99, 255, 0.2);
+            }
+
+            .cardHeader {
+                @include display-sm-bold;
+                margin-bottom: $spacing-6;
+                color: $gray-900;
+            }
+
+            .cardContent {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: $spacing-6;
+                margin-bottom: $spacing-7;
+            }
+
+            .cardItem {
                 display: flex;
-                gap: $spacing-4;
-                justify-content: space-between;
-                .details {
+                align-items: center;
+
+                svg {
+                    font-size: 24px;
+                    color: $blue-500;
+                    margin-right: $spacing-4;
+                    transition: transform 0.3s ease;
+                }
+
+                &:hover svg {
+                    transform: scale(1.2) rotate(5deg);
+                }
+
+                .cardItemText {
                     display: flex;
-                    border: 1.5px solid $gray-200;
-                    border-radius: $spacing-1;
-                    gap: $spacing-3;
-                    justify-content: space-between;
-                    flex: 1;
-                    align-items: stretch;
-                    padding: $spacing-3;
-                    @include text-sm-regular;
-                    color: $gray-800;
-                    .level,.location{
-                        @include text-md-medium;
+                    flex-direction: column;
+
+                    .cardItemLabel {
+                        @include text-xs-semi-bold;
                         text-transform: uppercase;
+                        letter-spacing: 1px;
+                        color: $gray-400;
+                        margin-bottom: 2px;
+                    }
+
+                    .cardItemValue {
+                        @include text-md-semi-bold;
                         color: $gray-900;
                     }
-                    div {
-                        display: flex;
-                        text-wrap: nowrap;
-                        align-items: center;
-                        gap: $spacing-1;
-                        &:not(:last-child){
-                            padding-right: $spacing-2;
-                            border-right: 4px dotted $gray-400;
-                        }
-                        svg {
-                            @include text-lg-regular;
-                            color: $blue-500;
-                        }
-                    }
-                } 
-                .cta {
-                    @include button-1;
                 }
             }
+
+            .registerBtn {
+                @include button-1;
+                @include text-md-regular;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
     }
 }
