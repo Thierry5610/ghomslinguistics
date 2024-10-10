@@ -51,6 +51,9 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
+            @media screen and (max-width:768px) {
+                overflow-y: scroll;
+            } 
         }
 
         .card {
