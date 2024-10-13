@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Styles from './styles/registration_language.module.scss'
 export default function Languages() {
-    const image = "https://ghomslinguistics.com/wp-content/uploads/2024/08/table-book-read-open-wood-vintage-674236-pxhere.com_.jpg"
+    const image = "/images/site-images/table-book-read-open-wood-vintage-674236-pxhere.com_-1024x768.jpg"
     return(
         <div className={Styles.container}>
            <div className={Styles.content}>

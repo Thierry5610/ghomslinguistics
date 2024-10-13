@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Styles from './styles/registration_language.module.scss'
 export default function Registration() {
-    const image = "https://ghomslinguistics.com/wp-content/uploads/2024/08/school-1063556_1920-1024x756.jpg"
+    const image = "/images/site-images/school-1063556_1920-1024x756.jpg"
     return(
         <div className={Styles.container}>
            <div className={Styles.content}>

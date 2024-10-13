@@ -4,18 +4,18 @@ import { useNavigate} from 'react-router-dom';
 
 import { FaChalkboardTeacher, FaQuestionCircle, FaUserFriends, FaBookOpen, FaExchangeAlt, FaFan } from 'react-icons/fa'
 const heroImages = [
-    "https://ghomslinguistics.com/wp-content/uploads/2024/08/table-book-read-open-wood-vintage-674236-pxhere.com_.jpg",
-    "https://ghomslinguistics.com/wp-content/uploads/2024/06/pexels-tima-miroshnichenko-5427868-1536x1024.jpg"
+    "/images/site-images/table-book-read-open-wood-vintage-674236-pxhere.com_.jpg",
+    "/images/site-images/pexels-tima-miroshnichenko-5427868-1536x1024.jpg"
 ]
 
-const missionImage = "https://ghomslinguistics.com/wp-content/uploads/2016/09/creamy-935155_1280.jpg"
+const missionImage = "/images/site-images/creamy-935155_1280.jpg"
 const partnerLogos = [
-    "https://ghomslinguistics.com/wp-content/uploads/2024/08/DVK-Logo_1000x1000-300x300.png",
-    "https://ghomslinguistics.com/wp-content/uploads/2024/08/og-image-standard-logo-barmer-data-300x300.jpg"
+    "/images/site-images/DVK-Logo_1000x1000-300x300.png",
+    "/images/site-images/og-image-standard-logo-barmer-data-300x300.jpg"
 ]
 const testimonialImage = [
-    "https://ghomslinguistics.com/wp-content/uploads/2024/08/girl-2771936_1920-1024x789.jpg",
-    "https://ghomslinguistics.com/wp-content/uploads/2024/06/pexels-tima-miroshnichenko-5427868-1024x683.jpg"
+    "/images/site-images/girl-2771936_1920-1024x789.jpg",
+    "/images/site-images/pexels-tima-miroshnichenko-5427868-1024x683.jpg"
 ]
 const testimonials = [
     <TestimonialItem

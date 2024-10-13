@@ -314,8 +314,8 @@ const englishData = {
         Visit our school in Cameroon and start your journey into English language and culture today!
     `
 }
-const heroImage = "https://ghomslinguistics.com/wp-content/uploads/2024/08/desk-writing-work-hand-man-table-655321-pxhere.com_.jpg"
-const sideImage = "https://ghomslinguistics.com/wp-content/uploads/2024/08/table-book-read-open-wood-vintage-674236-pxhere.com_-1024x768.jpg"
+const heroImage = "/images/site-images/desk-writing-work-hand-man-table-655321-pxhere.com_.jpg"
+const sideImage = "/images/site-images/table-book-read-open-wood-vintage-674236-pxhere.com_-1024x768.jpg"
 export default function Course() {
     const { language } = useParams();
     const navigate = useNavigate();

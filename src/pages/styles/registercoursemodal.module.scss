@@ -1,12 +1,7 @@
 @import '../../components/partials/variables';
 @import '../../components/partials/mixins';
 
-:root {
-    --primary-color: #6C63FF;
-    --secondary-color: #FF6584;
-    --text-color: #2D3748;
-    --background-color: #F7FAFC;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 .container {
     position: fixed;

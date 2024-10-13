@@ -32,21 +32,30 @@ export default function About() {
     `;
 
     const heroImages = [
-        'https://ghomslinguistics.com/wp-content/uploads/2024/08/desk-writing-person-girl-film-student-1242339-pxhere.com_.jpg',
-        'https://layouts.siteorigin.com/wp-content/uploads/2017/05/ruler-1246653_1280_parallax.jpg'
+        '/images/site-images/desk-writing-person-girl-film-student-1242339-pxhere.com_.jpg',
+        '/images/site-images/ruler-1246653_1280_parallax.jpg'
     ];
 
     const yImages = [
-        'https://ghomslinguistics.com/wp-content/uploads/2024/08/IMG-20240829-WA0222-950x630.jpg',
-        'https://ghomslinguistics.com/wp-content/uploads/2024/08/IMG-20240829-WA0011-950x630.jpg',
-        'https://ghomslinguistics.com/wp-content/uploads/2024/08/IMG-20240829-WA0008-950x630.jpg',
-        'https://ghomslinguistics.com/wp-content/uploads/2024/08/IMG-20240829-WA0219-950x630.jpg',
-        'https://ghomslinguistics.com/wp-content/uploads/2024/08/IMG-20240829-WA0013-683x1024.jpg'
+        '/images/yaounde/IMG-20240829-WA0222-950x630.jpg',
+        '/images/yaounde/IMG-20240829-WA0011-950x630.jpg',
+        '/images/yaounde/IMG-20240829-WA0008-950x630.jpg',
+        '/images/yaounde/IMG-20240829-WA0219-950x630.jpg',
+        '/images/yaounde/IMG-20240829-WA0013-683x1024.jpg'
     ];
 
+    const dImages = [
+        '/images/douala/IMG-20240928-WA0004.jpg',
+        '/images/douala/IMG-20240928-WA0005.jpg',
+        '/images/douala/IMG-20240928-WA0006.jpg',
+        '/images/douala/IMG-20240928-WA0007.jpg',
+        '/images/douala/IMG-20240928-WA0008.jpg',
+        '/images/douala/IMG-20240928-WA0009.jpg'
+    ]
+
     const teamMemberImages = [
-        'https://ghomslinguistics.com/wp-content/uploads/2024/08/Leitung_Yaound.png',
-        'https://ghomslinguistics.com/wp-content/uploads/2024/08/Sekraeterin_Yaound.png'
+        '/images/team/Leitung_Yaound.png',
+        '/images/team/Sekraeterin_Yaound.png'
     ];
 
     return (
@@ -75,7 +84,7 @@ export default function About() {
                 <CityContent 
                     city={activeCity} 
                     description={activeCity === 'Yaoundé' ? yaoundeDescription : doualaDescription}
-                    images={yImages}
+                    images={activeCity === 'Douala'? dImages: yImages}
                 />
             </div>
             <div className={Styles.location_text}>
