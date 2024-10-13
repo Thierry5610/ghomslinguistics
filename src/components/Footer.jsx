@@ -8,7 +8,7 @@ export default function Footer() {
     const [isModalOpen, setModalOpen] = useState(false);
     const [isContactModalOpen, setContactModalOpen] = useState(false);
     const [isDataProtectionOpen, setDataProtectionOpen] = useState(false);
-    const imageSrc = "https://ghomslinguistics.com/wp-content/uploads/2024/08/cropped-GhomLinguisticsLogo_small.png";
+    const imageSrc = "/images/logo/cropped-GhomLinguisticsLogo_small.png";
 
     const handleOpenContactModal = () => {
         setContactModalOpen(true);

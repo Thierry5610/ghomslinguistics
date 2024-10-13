@@ -6,7 +6,7 @@ import { IoMdClose } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
 export default function Navigation() {
-    const logoLink = "https://ghomslinguistics.com/wp-content/uploads/2024/08/cropped-GhomLinguisticsLogo_small.png";
+    const logoLink = "/images/logo/cropped-GhomLinguisticsLogo_small.png";
     const [isMenu, setIsMenu] = useState(false);
     const [isSearchMenu, setIsSearchMenu] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);

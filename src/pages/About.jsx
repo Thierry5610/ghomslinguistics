@@ -45,18 +45,21 @@ export default function About() {
     ];
 
     const dImages = [
-        '/images/douala/IMG-20240928-WA0004.jpg',
-        '/images/douala/IMG-20240928-WA0005.jpg',
+        '/images/douala/IMG-20241013-WA0006.jpg',
+        '/images/douala/IMG-20241013-WA0008.jpg',
         '/images/douala/IMG-20240928-WA0006.jpg',
-        '/images/douala/IMG-20240928-WA0007.jpg',
-        '/images/douala/IMG-20240928-WA0008.jpg',
-        '/images/douala/IMG-20240928-WA0009.jpg'
+        '/images/douala/IMG-20240928-WA0005.jpg',
+        '/images/douala/IMG-20241013-WA0004.jpg',
+        '/images/douala/IMG-20240928-WA0007.jpg'
     ]
 
-    const teamMemberImages = [
+    const yTeamMemberImages = [
         '/images/team/Leitung_Yaound.png',
         '/images/team/Sekraeterin_Yaound.png'
     ];
+    const dTeamMemberImages = [
+        '/images/team/IMG-20241013-WA0010.jpg'
+    ]
 
     return (
         <div className={Styles.container}>
@@ -108,8 +111,12 @@ export default function About() {
                         and support each learner individually.
                     </p>
                     <div className={Styles.team_cards}>
-                        <TeamMember picture={teamMemberImages[0]} name="SOLANGE MVONDO" role="GRAPHIC DESIGNER" funFact="Hanging out with my best friend pretty much anywhere." />
-                        <TeamMember picture={teamMemberImages[1]} name="MARIAM FON" role="LEAD DESIGNER" funFact="Give me my skateboard and set me free." />
+                        {activeCity == 'Yaoundé'?<>
+                            <TeamMember picture={yTeamMemberImages[0]} name="SOLANGE MVONDO" role="GRAPHIC DESIGNER" funFact="Hanging out with my best friend pretty much anywhere." />
+                            <TeamMember picture={yTeamMemberImages[1]} name="MARIAM FON" role="LEAD DESIGNER" funFact="Give me my skateboard and set me free." />                    
+                        </>:<>
+                            <TeamMember picture={dTeamMemberImages[0]} name="SERENA KANDEM" role="GRAPHIC DESIGNER" funFact="Hanging out with my best friend pretty much anywhere." /> 
+                        </>}
                     </div>
                 </div>
             </div>
