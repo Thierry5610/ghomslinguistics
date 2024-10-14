@@ -70,8 +70,8 @@
                 display: flex;
                 align-items: center;
                 gap: $spacing-10;
-                div,
-                a {
+                &>div:not(.locale_box),
+                &>a {
                     cursor: pointer;
                     text-decoration: none;
                     color: $gray-900;
@@ -103,8 +103,55 @@
                 cursor: pointer;
                 display: none;
             }
+            .locale_box {
+                display: flex;
+                position: relative;
+                align-items: center;
+                gap: $spacing-1;
+                @include text-sm-regular;
+                color: $gray-900;
+                cursor: pointer;
+                svg {
+                    color: $gray-800;
+                    @media screen and (max-width:768px) {
+                        font-size: 2.0rem;
+                    }
+                }
+                &>span {
+                    @media screen and (max-width:768px) {
+                        display: none;
+                    }
+                }
+                .locales_select {
+                    position: absolute;
+                    bottom: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: $spacing-2;
+                    left: 0;
+                    border: 1px solid $gray-300;
+                    border-radius: $spacing-1;
+                    transform: translate(0%,105%);
+                    background-color: $white;
+                    padding: $spacing-2;
+                    @media screen and (max-width:768px) {
+                        transform: translate(-50%,105%); 
+                    }
+                    div {
+                        display: flex;
+                        align-items: center;
+                        @include text-xs-regular;
+                        color: $gray-800;
+                        gap: $spacing-1;
+                        svg {
+                            height: 1.6rem;
+                        }
+                    }
+                }
+            }
         }
     }
+
     .alt_nav {
         display: none;
         transition: .5s;
@@ -162,7 +209,10 @@
 @media screen and (max-width:744px) {
     .wrapper .container .content {
        .links {
-            display: none;
+            &>div:not(.locale_box),
+            a {
+                display: none;
+            }
        }
        .menu {
             display: block;

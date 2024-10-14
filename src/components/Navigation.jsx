@@ -4,14 +4,19 @@ import { IoIosSearch, IoIosMenu } from "react-icons/io";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import { LuCheck, LuGlobe, LuMenu, LuX } from 'react-icons/lu';
+import { English, French, German } from './Flags';
 
 export default function Navigation() {
     const logoLink = "/images/logo/cropped-GhomLinguisticsLogo_small.png";
     const [isMenu, setIsMenu] = useState(false);
     const [isSearchMenu, setIsSearchMenu] = useState(false);
+    const [isLangMenu, setIsLangMenu] = useState(false);
+    const [lang, setLang] = useState('English');
     const [isScrolled, setIsScrolled] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const searchMenuRef = useRef(null);
+    const langSelectRef = useRef(null);
 
     useEffect(() => {
         function handleScroll() {
@@ -34,6 +39,9 @@ export default function Navigation() {
         function handleClickOutside(event) {
             if (searchMenuRef.current && !searchMenuRef.current.contains(event.target)) {
                 setIsSearchMenu(false);
+            }
+            if (langSelectRef.current && !langSelectRef.current.contains(event.target)) {
+                setIsLangMenu(false);
             }
         }
         document.addEventListener('mousedown', handleClickOutside);
@@ -64,18 +72,41 @@ export default function Navigation() {
                         <Link to="/register">Registration</Link>
                         <Link to="/language">Course</Link>
                         <Link to="/about">About us</Link>
+                        <div className={Styles.locale_box} onClick={()=>setIsLangMenu((curr)=>!curr)}>
+                            <LuGlobe/>
+                            <span>{lang}</span>
+                            {isLangMenu&&(
+                                <div className={Styles.locales_select} ref={langSelectRef}>
+                                    <div onClick={()=>setLang('English')}>
+                                        <English/>
+                                        <span>English</span>
+                                        {lang=='English'&&<LuCheck/>}
+                                    </div>
+                                    <div onClick={()=>setLang('French')}>
+                                        <French/>
+                                        <span>French</span>
+                                        {lang=='French'&&<LuCheck/>}
+                                    </div>
+                                    <div onClick={()=>setLang('German')}>
+                                        <German/>
+                                        <span>German</span>
+                                        {lang=='German'&&<LuCheck/>}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                         <div className={Styles.search} onClick={() => setIsSearchMenu(true)}>
                             <IoIosSearch />
                         </div>
                     </div> 
                     {!isMenu && (
                         <div className={Styles.menu} onClick={() => setIsMenu(true)}>
-                            <IoIosMenu />
+                            <LuMenu />
                         </div>
                     )}
                     {isMenu && (
                         <div className={Styles.menu} onClick={() => setIsMenu(false)}>
-                            <IoMdClose />
+                            <LuX />
                         </div>
                     )}
                 </div>
