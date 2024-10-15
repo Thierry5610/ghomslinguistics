@@ -1,0 +1,62 @@
+{
+    "modalTitle": "Datenschutz-Erklärung",
+    "introductionTitle": "Einleitung",
+    "introductionText": "Wir, GHOMS LINGUISTICS, verpflichten uns, die Privatsphäre und Sicherheit Ihrer persönlichen Daten zu schützen. Diese Erklärung erläutert, wie wir die uns bereitgestellten Informationen in Übereinstimmung mit den relevanten Datenschutzgesetzen in Kamerun und international erheben, verwenden und schützen.",
+    "dataCollectionTitle": "1. Datenerhebung",
+    "dataCollectionPurpose": "Wir erheben personenbezogene Daten zu folgenden Zwecken:",
+    "dataCollectionList": [
+        "Registrierung und Einschreibung von Schülern",
+        "Kursmanagement und Planung",
+        "Kommunikation mit Schülern und Eltern",
+        "Zahlungs- und Abrechnungszwecke"
+    ],
+    "personalDataCollected": "Die erhobenen personenbezogenen Daten umfassen:",
+    "personalDataList": [
+        "Vollständiger Name",
+        "Geburtsdatum",
+        "Kontaktdaten (E-Mail, Telefonnummer, Adresse)",
+        "Nationalität und Sprachkenntnisse",
+        "Zahlungsdetails"
+    ],
+    "useOfPersonalDataTitle": "2. Verwendung personenbezogener Daten",
+    "useOfPersonalDataText": "Ihre personenbezogenen Daten werden ausschließlich für folgende Zwecke verwendet:",
+    "useOfPersonalDataList": [
+        "Verwaltung des Bildungsprozesses und Bereitstellung von Dienstleistungen",
+        "Information über Schulaktualisierungen und Veranstaltungen",
+        "Bearbeitung von Zahlungen und Erfüllung vertraglicher Verpflichtungen"
+    ],
+    "noMarketingText": "Wir werden Ihre personenbezogenen Daten nicht zu Marketingzwecken verwenden, es sei denn, Sie haben ausdrücklich zugestimmt.",
+    "dataSharingTitle": "3. Datenweitergabe",
+    "dataSharingText": "Wir werden Ihre personenbezogenen Daten nicht an Dritte weitergeben, es sei denn:",
+    "dataSharingList": [
+        "Es ist gesetzlich vorgeschrieben",
+        "Sie haben uns Ihre Zustimmung gegeben",
+        "Es ist notwendig, um unsere vertraglichen Verpflichtungen zu erfüllen (z.B. Weitergabe an Lehrkräfte zur Kursverwaltung)"
+    ],
+    "dataSecurityTitle": "4. Datensicherheit",
+    "dataSecurityText": "Wir ergreifen angemessene technische und organisatorische Maßnahmen, um Ihre Daten vor unbefugtem Zugriff, Änderung oder Offenlegung zu schützen. Alle persönlichen Informationen werden sicher gespeichert, und nur autorisierte Personen haben Zugang.",
+    "dataRetentionTitle": "5. Datenaufbewahrung",
+    "dataRetentionText": "Wir bewahren Ihre personenbezogenen Daten so lange auf, wie es erforderlich ist, um unsere rechtlichen und vertraglichen Verpflichtungen zu erfüllen. Nach Ablauf dieser Frist werden wir Ihre Informationen sicher löschen oder anonymisieren.",
+    "yourRightsTitle": "6. Ihre Rechte",
+    "yourRightsText": "Als betroffene Person haben Sie folgende Rechte:",
+    "yourRightsList": [
+        "Das Recht auf Zugang und Anforderung einer Kopie Ihrer Daten",
+        "Das Recht zur Berichtigung unrichtiger Daten",
+        "Das Recht, Ihre Einwilligung zur Datenverarbeitung zu widerrufen",
+        "Das Recht auf Löschung oder Einschränkung Ihrer Daten"
+    ],
+    "exerciseRightsText": "Um eines dieser Rechte auszuüben, kontaktieren Sie uns bitte unter [Mail is coming].",
+    "changesToDeclarationTitle": "7. Änderungen dieser Erklärung",
+    "changesToDeclarationText": "Wir behalten uns das Recht vor, diese Datenschutzerklärung nach Bedarf zu aktualisieren. Änderungen werden über unsere Website oder direkt an Schüler und Eltern kommuniziert.",
+    "contactInformationTitle": "Kontaktinformationen",
+    "contactInformationText": "Wenn Sie Fragen zu dieser Datenschutz-Erklärung oder zu Ihren personenbezogenen Daten haben, kontaktieren Sie uns bitte unter:",
+    "contactDetails": {
+        "name": "GHOMS LINGUISTICS",
+        "addressDouala": "Adresse Douala: Gegenüber der UBA CAMEROUN Universitätsagentur, 3P3P+GQ6, Ange Raphaël, Douala, Kamerun",
+        "addressYaounde": "Adresse Yaoundé: Neue Omnisportstraße nahe der Pharmacie Le Bon Berger, Yaoundé, Kamerun",
+        "email": "E-Mail: [Mail is coming]",
+        "phone": "Telefon: +23 7 6 93 07 17 89 / +49 17614267516"
+    },
+    "acceptButton": "Akzeptieren",
+    "contactButton": "Kontakt"
+}

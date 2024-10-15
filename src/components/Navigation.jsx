@@ -4,10 +4,12 @@ import { IoIosSearch } from "react-icons/io";
 import { LuCheck, LuGlobe, LuMenu, LuX } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 import { English, French, German } from './Flags';
-import i18n from '../i18n'; // Import your i18next configuration
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook for translations
+import i18n from '../i18n';
 
 export default function Navigation() {
     const logoLink = "/images/logo/cropped-GhomLinguisticsLogo_small.png";
+    const { t } = useTranslation('navigation'); // Get the translation function
     const [isMenu, setIsMenu] = useState(false);
     const [isSearchMenu, setIsSearchMenu] = useState(false);
     const [isLangMenu, setIsLangMenu] = useState(false);
@@ -43,6 +45,7 @@ export default function Navigation() {
                 setIsLangMenu(false);
             }
         }
+
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
@@ -50,9 +53,9 @@ export default function Navigation() {
     }, []);
 
     const changeLanguage = (language) => {
-        i18n.changeLanguage(language); // Change the language in i18next
-        setLang(language); // Update the selected language state
-        setIsLangMenu(false); // Close the language menu
+        i18n.changeLanguage(language);
+        setLang(language);
+        setIsLangMenu(false);
     };
 
     return (
@@ -60,22 +63,19 @@ export default function Navigation() {
             <div className={Styles.container}>
                 <div className={Styles.content}>
                     {isSearchMenu && (
-                        <div
-                            ref={searchMenuRef}
-                            className={Styles.search_menu}
-                        >
-                            <input type="text" />
+                        <div ref={searchMenuRef} className={Styles.search_menu}>
+                            <input type="text" placeholder={t('search')} /> {/* Translate placeholder */}
                         </div>
                     )}
                     <div className={Styles.logo}>
-                        <img src={logoLink} alt="logo" />
+                        <img src={logoLink} alt={t('logo_alt')} /> {/* Translate alt text */}
                     </div>
                     <div className={Styles.links}>
-                        <Link to="/">Home</Link>
-                        <Link to="/news">News</Link>
-                        <Link to="/register">Registration</Link>
-                        <Link to="/language">Course</Link>
-                        <Link to="/about">About us</Link>
+                        <Link to="/">{t('navigation.home')}</Link>
+                        <Link to="/news">{t('navigation.news')}</Link>
+                        <Link to="/register">{t('navigation.registration')}</Link>
+                        <Link to="/language">{t('navigation.course')}</Link>
+                        <Link to="/about">{t('navigation.about_us')}</Link>
                         <div className={Styles.locale_box} onClick={() => setIsLangMenu((curr) => !curr)}>
                             <LuGlobe />
                             <span>{lang}</span>
@@ -83,17 +83,17 @@ export default function Navigation() {
                                 <div className={Styles.locales_select} ref={langSelectRef}>
                                     <div onClick={() => changeLanguage('en')}>
                                         <English />
-                                        <span>English</span>
+                                        <span>{t('languages.english')}</span>
                                         {lang === 'en' && <LuCheck />}
                                     </div>
                                     <div onClick={() => changeLanguage('fr')}>
                                         <French />
-                                        <span>French</span>
+                                        <span>{t('languages.french')}</span>
                                         {lang === 'fr' && <LuCheck />}
                                     </div>
                                     <div onClick={() => changeLanguage('de')}>
                                         <German />
-                                        <span>German</span>
+                                        <span>{t('languages.german')}</span>
                                         {lang === 'de' && <LuCheck />}
                                     </div>
                                 </div>
@@ -119,11 +119,11 @@ export default function Navigation() {
                 <div className={Styles.alt_nav}>
                     <div className={Styles.content}>
                         <div className={Styles.links}>
-                            <Link to="/" onClick={() => setIsMenu(false)}>Home</Link>
-                            <Link to="/news" onClick={() => setIsMenu(false)}>News</Link>
-                            <Link to="/register" onClick={() => setIsMenu(false)}>Registration</Link>
-                            <Link to="/language" onClick={() => setIsMenu(false)}>Course</Link>
-                            <Link to="/about" onClick={() => setIsMenu(false)}>About us</Link>
+                            <Link to="/" onClick={() => setIsMenu(false)}>{t('navigation.home')}</Link>
+                            <Link to="/news" onClick={() => setIsMenu(false)}>{t('navigation.news')}</Link>
+                            <Link to="/register" onClick={() => setIsMenu(false)}>{t('navigation.registration')}</Link>
+                            <Link to="/language" onClick={() => setIsMenu(false)}>{t('navigation.course')}</Link>
+                            <Link to="/about" onClick={() => setIsMenu(false)}>{t('navigation.about_us')}</Link>
                         </div>
                     </div>
                 </div>

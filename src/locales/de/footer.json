@@ -1,0 +1,21 @@
+{
+    "footer": {
+        "logo_alt": "Logo",
+        "ghoms_linguistic": "GHOMS LINGUISTIK",
+        "address": {
+            "street": "Ange Raphael",
+            "city": "Douala, Kamerun"
+        },
+        "phone": "+23 7 6 93 07 17 89",
+        "latest_news": "Neueste Nachrichten",
+        "news": {
+            "location": "Yaoundé",
+            "start_date": "Nächstes Schulstartdatum ist der {{date}}",
+            "course_start": "Nächster Kurs beginnt am {{date}}"
+        },
+        "menu": "Menü",
+        "data_protection": "Datenschutz",
+        "contact": "Kontakt",
+        "copyright": "Urheberrecht © {{year}} Ghoms Linguistics"
+    }
+}

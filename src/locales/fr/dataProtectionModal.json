@@ -1,0 +1,62 @@
+{
+    "modalTitle": "Déclaration de Protection des Données",
+    "introductionTitle": "Introduction",
+    "introductionText": "Nous, GHOMS LINGUISTICS, nous engageons à protéger la vie privée et la sécurité de vos données personnelles. Cette déclaration explique comment nous collectons, utilisons et protégeons les informations qui nous sont fournies conformément aux lois sur la protection des données pertinentes au Cameroun et à l'international.",
+    "dataCollectionTitle": "1. Collecte de Données",
+    "dataCollectionPurpose": "Nous collectons des données personnelles aux fins suivantes :",
+    "dataCollectionList": [
+        "Inscription et enregistrement des étudiants",
+        "Gestion et planification des cours",
+        "Communication avec les étudiants et les parents",
+        "Fins de paiement et de facturation"
+    ],
+    "personalDataCollected": "Les données personnelles collectées comprennent :",
+    "personalDataList": [
+        "Nom complet",
+        "Date de naissance",
+        "Coordonnées (email, numéro de téléphone, adresse)",
+        "Nationalité et compétences linguistiques",
+        "Détails de paiement"
+    ],
+    "useOfPersonalDataTitle": "2. Utilisation des Données Personnelles",
+    "useOfPersonalDataText": "Vos données personnelles sont utilisées uniquement pour :",
+    "useOfPersonalDataList": [
+        "Gérer le processus éducatif et fournir des services",
+        "Vous tenir informé des mises à jour et des événements de l'école",
+        "Traiter les paiements et remplir nos obligations contractuelles"
+    ],
+    "noMarketingText": "Nous n'utiliserons pas vos données personnelles à des fins de marketing sans votre consentement explicite.",
+    "dataSharingTitle": "3. Partage des Données",
+    "dataSharingText": "Nous ne partagerons pas vos données personnelles avec des tiers sauf si :",
+    "dataSharingList": [
+        "C'est requis par la loi",
+        "Vous nous avez donné votre consentement",
+        "C'est nécessaire pour remplir nos obligations contractuelles (par exemple, partager avec des instructeurs pour l'administration des cours)"
+    ],
+    "dataSecurityTitle": "4. Sécurité des Données",
+    "dataSecurityText": "Nous prenons des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès, modification ou divulgation non autorisés. Toutes les informations personnelles sont stockées en toute sécurité, et seuls le personnel autorisé y a accès.",
+    "dataRetentionTitle": "5. Conservation des Données",
+    "dataRetentionText": "Nous conservons vos données personnelles aussi longtemps que nécessaire pour remplir nos obligations légales et contractuelles. Après cette période, nous supprimerons ou anonymiserons vos informations en toute sécurité.",
+    "yourRightsTitle": "6. Vos Droits",
+    "yourRightsText": "En tant que personne concernée, vous avez les droits suivants :",
+    "yourRightsList": [
+        "Le droit d'accéder et de demander une copie de vos données",
+        "Le droit de corriger des données inexactes",
+        "Le droit de retirer votre consentement au traitement des données",
+        "Le droit de demander la suppression ou la restriction de vos données"
+    ],
+    "exerciseRightsText": "Pour exercer l'un de ces droits, veuillez nous contacter à [Mail is coming].",
+    "changesToDeclarationTitle": "7. Changements à Cette Déclaration",
+    "changesToDeclarationText": "Nous nous réservons le droit de mettre à jour cette déclaration de protection des données si nécessaire. Tout changement sera communiqué via notre site web ou directement aux étudiants et aux parents.",
+    "contactInformationTitle": "Informations de Contact",
+    "contactInformationText": "Si vous avez des questions concernant cette Déclaration de Protection des Données ou vos données personnelles, veuillez nous contacter à :",
+    "contactDetails": {
+        "name": "GHOMS LINGUISTICS",
+        "addressDouala": "Adresse Douala : En face de l'agence universitaire UBA CAMEROUN, 3P3P+GQ6, Ange Raphaël, Douala, Cameroun",
+        "addressYaounde": "Adresse Yaoundé : Nouvelle route omnisport près de la Pharmacie Le Bon Berger, Yaoundé, Cameroun",
+        "email": "Email : [Mail is coming]",
+        "phone": "Téléphone : +23 7 6 93 07 17 89 / +49 17614267516"
+    },
+    "acceptButton": "Accepter",
+    "contactButton": "Contact"
+}

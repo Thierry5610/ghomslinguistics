@@ -1,0 +1,63 @@
+{
+    "modalTitle": "Data Protection Declaration",
+    "introductionTitle": "Introduction",
+    "introductionText": "We, GHOMS LINGUISTICS, are committed to protecting the privacy and security of your personal data. This declaration explains how we collect, use, and protect the information provided to us in compliance with the relevant data protection laws in Cameroon and internationally.",
+    "dataCollectionTitle": "1. Data Collection",
+    "dataCollectionPurpose": "We collect personal data for the following purposes:",
+    "dataCollectionList": [
+      "Student registration and enrollment",
+      "Course management and scheduling",
+      "Communication with students and parents",
+      "Payment and billing purposes"
+    ],
+    "personalDataCollected": "The personal data collected includes:",
+    "personalDataList": [
+      "Full name",
+      "Date of birth",
+      "Contact details (email, phone number, address)",
+      "Nationality and language proficiency",
+      "Payment details"
+    ],
+    "useOfPersonalDataTitle": "2. Use of Personal Data",
+    "useOfPersonalDataText": "Your personal data is used solely for:",
+    "useOfPersonalDataList": [
+      "Managing the educational process and providing services",
+      "Keeping you informed about school updates and events",
+      "Processing payments and fulfilling contractual obligations"
+    ],
+    "noMarketingText": "We will not use your personal data for marketing purposes without your explicit consent.",
+    "dataSharingTitle": "3. Data Sharing",
+    "dataSharingText": "We will not share your personal data with third parties unless:",
+    "dataSharingList": [
+      "It is required by law",
+      "You have given us consent",
+      "It is necessary to perform our contractual obligations (e.g., sharing with instructors for class administration)"
+    ],
+    "dataSecurityTitle": "4. Data Security",
+    "dataSecurityText": "We take appropriate technical and organizational measures to protect your data from unauthorized access, alteration, or disclosure. All personal information is stored securely, and only authorized personnel have access.",
+    "dataRetentionTitle": "5. Data Retention",
+    "dataRetentionText": "We retain your personal data for as long as necessary to fulfill our legal and contractual obligations. After this period, we will securely delete or anonymize your information.",
+    "yourRightsTitle": "6. Your Rights",
+    "yourRightsText": "As a data subject, you have the following rights:",
+    "yourRightsList": [
+      "The right to access and request a copy of your data",
+      "The right to correct inaccurate data",
+      "The right to withdraw your consent to data processing",
+      "The right to request deletion or restriction of your data"
+    ],
+    "exerciseRightsText": "To exercise any of these rights, please contact us at [Mail is coming].",
+    "changesToDeclarationTitle": "7. Changes to This Declaration",
+    "changesToDeclarationText": "We reserve the right to update this data protection declaration as needed. Any changes will be communicated via our website or directly to students and parents.",
+    "contactInformationTitle": "Contact Information",
+    "contactInformationText": "If you have any questions regarding this Data Protection Declaration or your personal data, please contact us at:",
+    "contactDetails": {
+      "name": "GHOMS LINGUISTICS",
+      "addressDouala": "Address Douala: Opposite to UBA CAMEROUN University Agency, 3P3P+GQ6, Ange Raphaël, Douala, Cameroon",
+      "addressYaounde": "Address Yaounde: New onnisport road near Pharmacie Le Bon Berger, Yaoundé, Cameroon",
+      "email": "Email: [Mail is coming]",
+      "phone": "Phone: +23 7 6 93 07 17 89 / +49 17614267516"
+    },
+    "acceptButton": "Accept",
+    "contactButton": "Contact"
+  }
+  

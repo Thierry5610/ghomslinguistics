@@ -1,0 +1,16 @@
+{
+    "navigation": {
+        "home": "Startseite",
+        "news": "Nachrichten",
+        "registration": "Registrierung",
+        "course": "Kurs",
+        "about_us": "Über uns"
+    },
+    "languages": {
+        "english": "Englisch",
+        "french": "Französisch",
+        "german": "Deutsch"
+    },
+    "search": "Suche",
+    "logo_alt": "Logo"
+}
