@@ -1,0 +1,12 @@
+{
+    "registerTitle": {
+        "english": "Inscrivez-vous aux cours d'anglais",
+        "german": "Inscrivez-vous aux cours d'allemand"
+    },
+    "locationLabel": "Lieu",
+    "dateLabel": "Date",
+    "durationLabel": "Durée",
+    "priceLabel": "Prix",
+    "registerButton": "S'inscrire maintenant",
+    "hoursPerDay": "{{duration}} heures/jour"
+}

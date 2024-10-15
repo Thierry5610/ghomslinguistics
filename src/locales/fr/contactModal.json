@@ -1,0 +1,8 @@
+{
+    "contactTitle": "Contactez-nous",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Votre email",
+    "subjectPlaceholder": "Objet",
+    "messagePlaceholder": "Message",
+    "sendButton": "Envoyer le mail"
+}

@@ -1,9 +1,12 @@
+import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Styles from './styles/registercoursemodal.module.scss';
-import { IoMdClose } from "react-icons/io";
-import { useEffect } from 'react';
+import { IoMdClose } from 'react-icons/io';
 import { LuCalendarDays, LuClock, LuMapPin, LuTag } from 'react-icons/lu';
 
 export default function RegisterCourseModal({ language, onClose, onOpenCta }) {
+    const { t } = useTranslation('registerCourseModal');
+
     useEffect(() => {
         document.body.style.overflow = 'hidden';
         return () => {
@@ -45,7 +48,6 @@ export default function RegisterCourseModal({ language, onClose, onOpenCta }) {
             duration: 3,
             price: "150000 XAF"
         }
-        // Add more courses as needed
     ];
 
     return (
@@ -54,7 +56,7 @@ export default function RegisterCourseModal({ language, onClose, onOpenCta }) {
                 <div className={Styles.closeButton} onClick={onClose}>
                     <IoMdClose />
                 </div>
-                <h1>Register for {language} courses</h1>
+                <h1>{language=='english'?t('registerTitle.english'):t('registerTitle.german')}</h1>
                 <div className={Styles.cards}>
                     {courses.map((course, index) => (
                         <CourseCard
@@ -75,6 +77,8 @@ export default function RegisterCourseModal({ language, onClose, onOpenCta }) {
 }
 
 function CourseCard({ level, startDate, endDate, location, duration, price, action }) {
+    const { t } = useTranslation('registerCourseModal');
+
     return (
         <div className={Styles.card}>
             <div className={Styles.cardHeader}>{level}</div>
@@ -82,33 +86,33 @@ function CourseCard({ level, startDate, endDate, location, duration, price, acti
                 <div className={Styles.cardItem}>
                     <LuMapPin />
                     <div className={Styles.cardItemText}>
-                        <span className={Styles.cardItemLabel}>Location</span>
+                        <span className={Styles.cardItemLabel}>{t('locationLabel')}</span>
                         <span className={Styles.cardItemValue}>{location}</span>
                     </div>
                 </div>
                 <div className={Styles.cardItem}>
                     <LuCalendarDays />
                     <div className={Styles.cardItemText}>
-                        <span className={Styles.cardItemLabel}>Date</span>
+                        <span className={Styles.cardItemLabel}>{t('dateLabel')}</span>
                         <span className={Styles.cardItemValue}>{`${startDate} - ${endDate}`}</span>
                     </div>
                 </div>
                 <div className={Styles.cardItem}>
                     <LuClock />
                     <div className={Styles.cardItemText}>
-                        <span className={Styles.cardItemLabel}>Duration</span>
-                        <span className={Styles.cardItemValue}>{duration} hours/day</span>
+                        <span className={Styles.cardItemLabel}>{t('durationLabel')}</span>
+                        <span className={Styles.cardItemValue}>{t('hoursPerDay', { duration })}</span>
                     </div>
                 </div>
                 <div className={Styles.cardItem}>
                     <LuTag />
                     <div className={Styles.cardItemText}>
-                        <span className={Styles.cardItemLabel}>Price</span>
+                        <span className={Styles.cardItemLabel}>{t('priceLabel')}</span>
                         <span className={Styles.cardItemValue}>{price}</span>
                     </div>
                 </div>
             </div>
-            <button className={Styles.registerBtn} onClick={action}>Register Now</button>
+            <button className={Styles.registerBtn} onClick={action}>{t('registerButton')}</button>
         </div>
     );
 }
