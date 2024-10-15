@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "heading": "À propos de nous",
+        "paragraph": "« Nous croyons que la langue construit des ponts et ouvre des chemins vers de nouvelles possibilités. »"
+    },
+    "city_description": {
+        "Yaoundé": {
+            "heading": "Impression de l'école de Yaoundé",
+            "description": "L'école de langues à Yaoundé est moderne et dispose de salles de classe climatisées pour un environnement d'apprentissage confortable. Les cours de langue sont conçus pour être efficaces en utilisant des méthodes d'enseignement interactives et la dernière technologie. De petits groupes permettent une attention personnelle et favorisent des progrès d'apprentissage rapides."
+        },
+        "Douala": {
+            "heading": "Impression de l'école de Douala",
+            "description": "L'école de langues à Douala offre des installations à la pointe de la technologie et une atmosphère dynamique qui encourage l'apprentissage interactif. Nos enseignants dévoués utilisent des méthodes d'enseignement innovantes pour garantir que chaque élève s'épanouisse dans un environnement de soutien."
+        }
+    },
+    "location_text": {
+        "Yaoundé": "À Yaoundé, nous sommes situés sur la nouvelle route omnisport, à côté de la Pharmacie le Bon Berger.",
+        "Douala": "À Douala, nous sommes situés dans le quartier Ange Raphael, en face de la banque UBA."
+    },
+    "team": {
+        "Yaoundé": {
+            "heading": "Équipe à Yaoundé",
+            "paragraph": "L'équipe à Yaoundé est hautement qualifiée, dévouée et travaille harmonieusement ensemble pour promouvoir le succès des étudiants. Avec leur passion et leur professionnalisme, ils créent une atmosphère d'apprentissage positive et soutiennent chaque apprenant individuellement.",
+            "members": [
+                {
+                    "name": "SOLANGE MVONDO",
+                    "role": "DESIGNER GRAPHIQUE",
+                    "funFact": "Sortir avec ma meilleure amie à peu près n'importe où.",
+                    "image": "/images/team/Leitung_Yaound.png"
+                },
+                {
+                    "name": "MARIAM FON",
+                    "role": "DESIGNER PRINCIPAL",
+                    "funFact": "Donnez-moi mon skateboard et laissez-moi libre.",
+                    "image": "/images/team/Sekraeterin_Yaound.png"
+                }
+            ]
+        },
+        "Douala": {
+            "heading": "Équipe à Douala",
+            "paragraph": "L'équipe à Douala est hautement qualifiée, dévouée et travaille harmonieusement ensemble pour promouvoir le succès des étudiants. Avec leur passion et leur professionnalisme, ils créent une atmosphère d'apprentissage positive et soutiennent chaque apprenant individuellement.",
+            "members": [
+                {
+                    "name": "SERENA KANDEM",
+                    "role": "DESIGNER GRAPHIQUE",
+                    "funFact": "Sortir avec ma meilleure amie à peu près n'importe où.",
+                    "image": "/images/team/IMG-20241013-WA0010.jpg"
+                }
+            ]
+        }
+    },
+    "testimonials": {
+        "heading": "Ce que nos étudiants disent",
+        "testimonials": [
+            { "text": "  La formation linguistique que j'ai reçue a changé ma vie ! Je peux maintenant communiquer en anglais avec confiance et voyager à travers le monde.", "author": "Mireille Kamga" },
+            { "text": " Les leçons interactives et les enseignants bienveillants ont rendu l'apprentissage d'une nouvelle langue agréable et efficace.", "author": "Adama Ndong" },
+            { "text": " Je n'ai jamais pensé que je pourrais apprendre une langue si rapidement. La taille réduite des classes m'a vraiment aidé à m'épanouir.", "author": "Fotso Jean" },
+            { "text": " L'expérience immersive dans ce centre est inégalée. Je me suis fait de bons amis tout en améliorant mes compétences linguistiques !", "author": "Nji Tchoua" },
+            { "text": " Grâce au personnel incroyable, j'ai atteint mes objectifs linguistiques plus rapidement que je ne l'avais jamais imaginé !", "author": "Fatou Simo" }
+        ]
+    }
+}

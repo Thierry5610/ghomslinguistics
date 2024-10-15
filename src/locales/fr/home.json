@@ -1,0 +1,68 @@
+{
+    "carousel": [
+      {
+        "title": "La langue ouvre des mondes – découvrez le vôtre avec nous !",
+        "subtitle": "École de langue pour les langues allemande et anglaise",
+        "button": "En savoir plus"
+      },
+      {
+        "title": "Apprenez des langues, connectez des cultures – votre avenir commence ici !",
+        "subtitle": "Centre de tests de langue\nAllemand et Anglais",
+        "button": "En savoir plus"
+      }
+    ],
+    "cta_section": {
+      "text": "« Maîtrisez le monde des langues – commencez votre voyage avec nous ! »",
+      "button": "En savoir plus"
+    },
+    "about_section": {
+      "heading": "CE QUI NOUS REND DIFFÉRENTS",
+      "points": [
+        {
+          "heading": "Enseignants expérimentés",
+          "text": "Notre équipe se compose d'enseignants qualifiés et expérimentés qui sont passionnés par l'efficacité et l'inspiration dans le processus d'apprentissage."
+        },
+        {
+          "heading": "Soutien individuel",
+          "text": "Nous attachons une grande importance au soutien personnel de nos étudiants et offrons des programmes d'apprentissage sur mesure adaptés aux besoins et objectifs individuels."
+        },
+        {
+          "heading": "Cours orientés vers la pratique",
+          "text": "Nos cours visent à appliquer les compétences linguistiques directement dans la vie quotidienne, à travers des exercices pratiques, des jeux de rôle et des situations de communication réelles."
+        },
+        {
+          "heading": "Méthodes d'enseignement modernes",
+          "text": "Nous nous appuyons sur des méthodes d'enseignement innovantes et des approches didactiques actuelles pour rendre l'enseignement des langues dynamique et pratique."
+        },
+        {
+          "heading": "Offre de cours flexible",
+          "text": "Notre école propose une variété de cours qui s'adaptent aux besoins temporels et de contenu des apprenants, y compris des cours intensifs, des cours du soir et des options d'apprentissage en ligne."
+        },
+        {
+          "heading": "Espace d'apprentissage moderne",
+          "text": "Notre école vous offre un environnement d'apprentissage agréable dans des salles modernes et climatisées où vous vous sentez à l'aise et pouvez vous concentrer de manière optimale même par temps chaud."
+        }
+      ]
+    },
+    "mission": {
+      "heading": "NOTRE DÉCLARATION DE MISSION",
+      "text": "Dans notre école de langues, les personnes sont au centre. Nous croyons fermement que la langue est la clé d'un avenir réussi et connecté. Notre objectif est de permettre aux personnes de tous âges et de toutes cultures d'atteindre leurs objectifs personnels et professionnels grâce à une éducation linguistique de haute qualité. Nous comptons sur un soutien individuel, des méthodes d'enseignement modernes et un environnement d'apprentissage interculturel dans lequel le respect, l'ouverture et la curiosité sont primordiaux. Notre passion est de créer des ponts entre les personnes et de préparer le terrain pour une meilleure compréhension et une meilleure solidarité."
+    },
+    "testimonials": {
+      "heading": "CE QUE NOS ÉTUDIANTS DISENT",
+      "items": [
+        {
+          "author": "Jane D.",
+          "text": "L'école de langues a largement dépassé mes attentes. Grâce au soutien individuel et aux méthodes d'enseignement pratiques, j'ai progressé rapidement. Les enseignants sont engagés et l'environnement d'apprentissage est excellent. Je recommande cette école à quiconque souhaite apprendre une nouvelle langue efficacement !"
+        },
+        {
+          "author": "Derrick D.",
+          "text": "Le cours d'allemand dans notre école au Cameroun est fantastique ! Les enseignants sont compétents et motivants. J'ai progressé rapidement et je me sens plus confiant en allemand."
+        }
+      ]
+    },
+    "partners": {
+      "heading": "NOS PARTENAIRES"
+    }
+  }
+  

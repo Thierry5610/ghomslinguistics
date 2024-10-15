@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "heading": "Über uns",
+        "paragraph": "„Wir glauben, dass Sprache Brücken baut und Wege zu neuen Möglichkeiten öffnet.“"
+    },
+    "city_description": {
+        "Yaoundé": {
+            "heading": "Eindruck von der Schule in Yaoundé",
+            "description": "Die Sprachschule in Yaoundé ist modern ausgestattet und bietet klimatisierte Klassenzimmer für eine komfortable Lernumgebung. Die Sprachkurse sind so gestaltet, dass sie effektiv sind, unter Verwendung interaktiver Lehrmethoden und neuester Technologie. Kleine Gruppen ermöglichen persönliche Betreuung und fördern schnelle Lernfortschritte."
+        },
+        "Douala": {
+            "heading": "Eindruck von der Schule in Douala",
+            "description": "Die Sprachschule in Douala bietet hochmoderne Einrichtungen und eine lebendige Atmosphäre, die interaktives Lernen fördert. Unsere engagierten Lehrkräfte nutzen innovative Lehrmethoden, um sicherzustellen, dass jeder Schüler in einer unterstützenden Umgebung gedeiht."
+        }
+    },
+    "location_text": {
+        "Yaoundé": "In Yaoundé befinden wir uns in der neuen Omnisportstraße, neben der Pharmacie le Bon Berger.",
+        "Douala": "In Douala sind wir im Stadtteil Ange Raphael, gegenüber der UBA-Bank."
+    },
+    "team": {
+        "Yaoundé": {
+            "heading": "Team in Yaoundé",
+            "paragraph": "Das Team in Yaoundé ist hochqualifiziert, engagiert und arbeitet harmonisch zusammen, um den Erfolg der Schüler zu fördern. Mit ihrer Leidenschaft und Professionalität schaffen sie eine positive Lernatmosphäre und unterstützen jeden Lernenden individuell.",
+            "members": [
+                {
+                    "name": "SOLANGE MVONDO",
+                    "role": "GRAPHIC DESIGNER",
+                    "funFact": "Mit meiner besten Freundin überall abhängen.",
+                    "image": "/images/team/Leitung_Yaound.png"
+                },
+                {
+                    "name": "MARIAM FON",
+                    "role": "LEAD DESIGNER",
+                    "funFact": "Gib mir mein Skateboard und lass mich frei.",
+                    "image": "/images/team/Sekraeterin_Yaound.png"
+                }
+            ]
+        },
+        "Douala": {
+            "heading": "Team in Douala",
+            "paragraph": "Das Team in Douala ist hochqualifiziert, engagiert und arbeitet harmonisch zusammen, um den Erfolg der Schüler zu fördern. Mit ihrer Leidenschaft und Professionalität schaffen sie eine positive Lernatmosphäre und unterstützen jeden Lernenden individuell.",
+            "members": [
+                {
+                    "name": "SERENA KANDEM",
+                    "role": "GRAPHIC DESIGNER",
+                    "funFact": "Mit meiner besten Freundin überall abhängen.",
+                    "image": "/images/team/IMG-20241013-WA0010.jpg"
+                }
+            ]
+        }
+    },
+    "testimonials": {
+        "heading": "Was unsere Schüler sagen",
+        "testimonials": [
+            { "text": "  Die Sprachschule hat mein Leben verändert! Ich kann jetzt selbstbewusst Englisch sprechen und die Welt bereisen.", "author": "Mireille Kamga" },
+            { "text": " Der interaktive Unterricht und die unterstützenden Lehrer machten das Erlernen einer neuen Sprache angenehm und effektiv.", "author": "Adama Ndong" },
+            { "text": " Ich hätte nie gedacht, dass ich eine Sprache so schnell lernen könnte. Die kleinen Klassen haben mir wirklich geholfen, zu gedeihen.", "author": "Fotso Jean" },
+            { "text": " Die immersive Erfahrung in diesem Zentrum ist unvergleichlich. Ich habe großartige Freunde gefunden, während ich meine Sprachkenntnisse verbessert habe!", "author": "Nji Tchoua" },
+            { "text": " Dank der großartigen Lehrkräfte habe ich meine Sprachziele schneller erreicht, als ich jemals gedacht hätte!", "author": "Fatou Simo" }
+        ]
+    }
+}

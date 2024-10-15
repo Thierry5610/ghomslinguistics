@@ -1,0 +1,68 @@
+{
+    "carousel": [
+      {
+        "title": "Sprache eröffnet Welten – entdecke deine mit uns!",
+        "subtitle": "Sprachschule für die deutschen und englischen Sprachen",
+        "button": "Mehr erfahren"
+      },
+      {
+        "title": "Sprachen lernen, Kulturen verbinden – deine Zukunft beginnt hier!",
+        "subtitle": "Sprachtestzentrum\nDeutsch und Englisch",
+        "button": "Mehr erfahren"
+      }
+    ],
+    "cta_section": {
+      "text": "„Beherrsche die Welt der Sprachen – beginne deine Reise mit uns!“",
+      "button": "Mehr erfahren"
+    },
+    "about_section": {
+      "heading": "WAS UNS ANDERS MACHT",
+      "points": [
+        {
+          "heading": "Erfahrene Lehrkräfte",
+          "text": "Unser Team besteht aus qualifizierten und erfahrenen Sprachlehrern, die leidenschaftlich daran interessiert sind, den Lernprozess effizient und inspirierend zu gestalten."
+        },
+        {
+          "heading": "Individuelle Unterstützung",
+          "text": "Wir legen großen Wert auf persönliche Unterstützung für unsere Schüler und bieten maßgeschneiderte Lernprogramme, die auf individuelle Bedürfnisse und Ziele zugeschnitten sind."
+        },
+        {
+          "heading": "Praxisorientierter Unterricht",
+          "text": "Unser Unterricht zielt darauf ab, Sprachkenntnisse direkt im Alltag anzuwenden, durch praktische Übungen, Rollenspiele und echte Kommunikationssituationen."
+        },
+        {
+          "heading": "Moderne Lehrmethoden",
+          "text": "Wir setzen auf innovative Lehrmethoden und aktuelle didaktische Ansätze, um den Sprachunterricht dynamisch und praxisnah zu gestalten."
+        },
+        {
+          "heading": "Flexible Kursangebote",
+          "text": "Unsere Schule bietet eine Vielzahl von Kursen, die sich an den zeitlichen und inhaltlichen Bedürfnissen der Lernenden orientieren, einschließlich Intensivkursen, Abendkursen und Online-Lernmöglichkeiten."
+        },
+        {
+          "heading": "Moderne Lernumgebung",
+          "text": "Unsere Schule bietet Ihnen ein angenehmes Lernumfeld in modernen, klimatisierten Räumen, in denen Sie sich wohlfühlen und selbst an heißen Tagen optimal konzentrieren können."
+        }
+      ]
+    },
+    "mission": {
+      "heading": "UNSEREN MISSIONSAUSSAGE",
+      "text": "In unserer Sprachschule stehen die Menschen im Mittelpunkt. Wir sind fest davon überzeugt, dass Sprache der Schlüssel zu einer erfolgreichen und vernetzten Zukunft ist. Unser Ziel ist es, Menschen aller Altersgruppen und Kulturen zu ermöglichen, ihre persönlichen und beruflichen Ziele durch hochwertige Sprachbildung zu erreichen. Wir setzen auf individuelle Unterstützung, moderne Lehrmethoden und ein interkulturelles Lernumfeld, in dem Respekt, Offenheit und Neugierde an erster Stelle stehen. Unsere Leidenschaft ist es, Brücken zwischen Menschen zu bauen und den Weg für ein besseres Verständnis und Miteinander zu ebnen."
+    },
+    "testimonials": {
+      "heading": "WAS UNSERE STUDIERENDEN SAGEN",
+      "items": [
+        {
+          "author": "Jane D.",
+          "text": "Die Sprachschule hat meine Erwartungen bei weitem übertroffen. Dank der individuellen Unterstützung und der praktischen Lehrmethoden habe ich schnell Fortschritte gemacht. Die Lehrkräfte sind engagiert und das Lernumfeld ist ausgezeichnet. Ich kann diese Schule jedem empfehlen, der effektiv eine neue Sprache lernen möchte!"
+        },
+        {
+          "author": "Derrick D.",
+          "text": "Der Deutschkurs an unserer Schule in Kamerun ist fantastisch! Die Lehrer sind kompetent und motivierend. Ich habe schnell Fortschritte gemacht und fühle mich in Deutsch sicherer."
+        }
+      ]
+    },
+    "partners": {
+      "heading": "UNSERE PARTNER"
+    }
+  }
+  

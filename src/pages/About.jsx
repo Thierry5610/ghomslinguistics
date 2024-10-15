@@ -1,19 +1,24 @@
 import { act, useEffect, useState } from 'react';
 import Styles from './styles/about.module.scss';
+import { useTranslation } from 'react-i18next';
 
-const CityContent = ({ city, description, images }) => (
-    <div className={Styles.content}>
-        <h3>Impression of {city} school</h3>
-        <p>{description}</p>
-        <div className={Styles.gallery}>
-            {images.map((img, index) => (
-                <img key={index} src={img} alt={`${city}`} />
-            ))}
+const CityContent = ({ city, description, activeCity, images }) => {
+    const {t} = useTranslation('about')
+    return (
+        <div className={Styles.content}>
+            <h3>{t(`city_description.${activeCity}.heading`)}</h3>
+            <p>{description}</p>
+            <div className={Styles.gallery}>
+                {images.map((img, index) => (
+                    <img key={index} src={img} alt={`${city}`} />
+                ))}
+            </div>
         </div>
-    </div>
-);
+    )
+};
 
 export default function About() {
+    const {t} = useTranslation('about')
     const [activeCity, setActiveCity] = useState('Yaoundé');
 
     const yaoundeDescription = `
@@ -65,8 +70,8 @@ export default function About() {
         <div className={Styles.container}>
             <div className={Styles.hero}>
                 <img src={heroImages[0]} alt="hero" />
-                <h2>About us</h2>
-                <p>"We believe that language builds bridges and opens paths to new possibilities."</p>
+                <h2>{t('hero.heading')}</h2>
+                <p>{t('hero.paragraph')}</p>
             </div>
             
             <div className={Styles.impression}>
@@ -86,13 +91,14 @@ export default function About() {
                 </div>
                 <CityContent 
                     city={activeCity} 
-                    description={activeCity === 'Yaoundé' ? yaoundeDescription : doualaDescription}
+                    activeCity={activeCity}
+                    description={activeCity === 'Yaoundé' ? t('city_description.Yaoundé.description') : t('city_description.Douala.description')}
                     images={activeCity === 'Douala'? dImages: yImages}
                 />
             </div>
             <div className={Styles.location_text}>
                 <div className={Styles.container}>
-                    <p>{activeCity === 'Yaoundé'?"In Yaoundé, we are located on the new omnisport road next to the Pharmacie le Bon Berger.":"In Douala we are located in the Ange Raphael district, opposite to the UBA bank."}</p>
+                    <p>{activeCity === 'Yaoundé'?t('location_text.Yaoundé'):t('location_text.Douala')}</p>
                 </div>
             </div>
             <div 
@@ -103,20 +109,16 @@ export default function About() {
 
             <div className={Styles.team}>
                 <div className={Styles.content}>
-                    <h2>Team in {activeCity}</h2>
+                    <h2>{t(`team.${activeCity}.heading`)}</h2>
                     <p>
-                        The team in {activeCity} is highly qualified, dedicated 
-                        and works harmoniously together to promote student success. 
-                        With their passion and professionalism, they create a positive learning atmosphere 
-                        and support each learner individually.
+                        {t(`team.${activeCity}.paragraph`)}
                     </p>
                     <div className={Styles.team_cards}>
-                        {activeCity == 'Yaoundé'?<>
-                            <TeamMember picture={yTeamMemberImages[0]} name="SOLANGE MVONDO" role="GRAPHIC DESIGNER" funFact="Hanging out with my best friend pretty much anywhere." />
-                            <TeamMember picture={yTeamMemberImages[1]} name="MARIAM FON" role="LEAD DESIGNER" funFact="Give me my skateboard and set me free." />                    
-                        </>:<>
-                            <TeamMember picture={dTeamMemberImages[0]} name="SERENA KANDEM" role="GRAPHIC DESIGNER" funFact="Hanging out with my best friend pretty much anywhere." /> 
-                        </>}
+                        {t(`team.${activeCity}.members`,{returnObjects:true}).map((member,index)=>{
+                            return(
+                                <TeamMember key={index} picture={member.image} role={member.role} name={member.name} funFact={member.funFact}/>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
@@ -145,13 +147,8 @@ const TeamMember = ({ name, role, funFact, picture }) => (
 );
 
 const Testimonials = () => {
-    const testimonials = [
-        { text: "  The language training I received changed my life! I can now confidently communicate in English and travel the world.", author: "Mireille Kamga" },
-        { text: " The interactive lessons and supportive teachers made learning a new language enjoyable and effective.", author: "Adama Ndong" },
-        { text: " I never thought I could learn a language so quickly. The small class sizes really helped me thrive.", author: "Fotso Jean" },
-        { text: " The immersive experience at this center is unmatched. I've made great friends while improving my language skills!", author: "Nji Tchoua" },
-        { text: " Thanks to the amazing faculty, I achieved my language goals faster than I ever imagined!", author: "Fatou Simo" }
-    ];
+    const {t} = useTranslation('about')
+    const testimonials = t('testimonials.testimonials',{returnObjects:true});
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [displayText, setDisplayText] = useState('');
@@ -179,7 +176,7 @@ const Testimonials = () => {
 
     return (
         <div className={Styles.testimonials}>
-            <h3>What our students say</h3>
+            <h3>{t('testimonials.heading')}</h3>
             <p>"{displayText}"</p>
             <p>- {testimonials[currentIndex].author}</p>
         </div>

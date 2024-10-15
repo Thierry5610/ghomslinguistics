@@ -1,0 +1,68 @@
+{
+    "carousel": [
+      {
+        "title": "Language opens worlds – discover yours with us!",
+        "subtitle": "Language school for the German and English languages",
+        "button": "Learn more"
+      },
+      {
+        "title": "Learn languages, connect cultures – your future begins here!",
+        "subtitle": "Language testing center\nGerman and English",
+        "button": "Learn more"
+      }
+    ],
+    "cta_section": {
+      "text": "“Master the world of languages ​​– start your journey with us!”",
+      "button": "Learn more"
+    },
+    "about_section": {
+      "heading": "WHAT MAKES US DIFFERENT",
+      "points": [
+        {
+          "heading": "Experienced teachers",
+          "text": "Our team consists of qualified and experienced language teachers who are passionate about making the learning process efficient and inspiring."
+        },
+        {
+          "heading": "Individual support",
+          "text": "We attach great importance to personal support for our students and offer tailor-made learning programs tailored to individual needs and goals."
+        },
+        {
+          "heading": "Practice-oriented lessons",
+          "text": "Our lessons are aimed at applying language skills directly in everyday life, through practical exercises, role plays and real communication situations."
+        },
+        {
+          "heading": "Modern teaching methods",
+          "text": "We rely on innovative teaching methods and current didactic approaches to make language teaching dynamic and practical."
+        },
+        {
+          "heading": "Flexible course offerings",
+          "text": "Our school offers a variety of courses that adapt to learners' time and content needs, including intensive courses, evening courses, and online learning options."
+        },
+        {
+          "heading": "Modern learning space",
+          "text": "Our school offers you a pleasant learning environment in modern, air-conditioned rooms in which you feel comfortable and can concentrate optimally even on hot days."
+        }
+      ]
+    },
+    "mission": {
+      "heading": "OUR MISSION STATEMENT",
+      "text": "At our language school, people are the focus. We firmly believe that language is the key to a successful and connected future. Our goal is to enable people of all ages and cultures to achieve their personal and professional goals through high-quality language education. We rely on individual support, modern teaching methods and an intercultural learning environment in which respect, openness and curiosity are paramount. Our passion is to build bridges between people and pave the way for better understanding and togetherness."
+    },
+    "testimonials": {
+      "heading": "WHAT OUR STUDENTS SAY",
+      "items": [
+        {
+          "author": "Jane D.",
+          "text": "The language school far exceeded my expectations. Thanks to the individual support and the practical teaching methods, I made rapid progress. The teachers are committed and the learning environment is excellent. I can recommend this school to anyone who wants to learn a new language effectively!"
+        },
+        {
+          "author": "Derrick D.",
+          "text": "The German course at our school in Cameroon is fantastic! The teachers are competent and motivating. I made rapid progress and feel more confident in German."
+        }
+      ]
+    },
+    "partners": {
+      "heading": "OUR PARTNERS"
+    }
+  }
+  
