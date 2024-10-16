@@ -1,0 +1,285 @@
+{
+    "germanData": {
+      "headline": "L'allemand comme langue étrangère",
+      "headline2": "Qu'est-ce qu'un cours d'allemand ?",
+      "courses": [
+        {
+          "id": 0,
+          "heading": "Cours d'allemand A1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Un cours d'allemand A1 est un cours d'introduction qui enseigne les compétences linguistiques de base. Dans ce cours, vous apprendrez la grammaire simple, le vocabulaire de base et des expressions quotidiennes. L'objectif est de pouvoir avoir des conversations simples et de se repérer dans des situations de la vie quotidienne typiques. Idéal pour les débutants sans connaissances préalables."
+            },
+            {
+              "heading": "Puis-je participer au cours d'allemand A1 sans connaissance de l'allemand ?",
+              "text": "Oui. Le cours est un cours pour débutants et s'adresse aux personnes qui n'ont aucune connaissance préalable de la langue allemande. En même temps, le cours A1 vous familiarisera avec la langue allemande et vous enseignera un vocabulaire de base pour vous permettre de communiquer facilement en allemand pour la première fois."
+            },
+            {
+              "heading": "Portée - Évaluation",
+              "text": "Le cours, qui comprend environ 200 unités d'enseignement, se termine par l'examen A1. Cela comprend des sections sur la grammaire, la compréhension écrite, la compréhension orale et la production de texte."
+            },
+            {
+              "heading": "Durée",
+              "text": "Le cours dure deux mois et se déroule du lundi au vendredi (environ 20 heures par semaine). À la fin du cours, les participants auront les bases pour lire et écrire en allemand. Ils pourront parler d'eux-mêmes et avoir des conversations simples."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcA1",
+            "link": "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-a1.html"
+          },
+          "sectionCTA": {
+            "text": "Inscrivez-vous ici !",
+            "link": "#"
+          }
+        },
+        {
+          "id": 1,
+          "heading": "Cours d'allemand A2",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Un cours d'allemand A2 repose sur les bases de A1 et approfondit vos compétences linguistiques. Vous apprendrez à mieux vous exprimer dans des situations quotidiennes, à comprendre des textes simples et à tenir des conversations sur des sujets familiers. Idéal pour les apprenants ayant des connaissances de base qui souhaitent élargir leurs compétences."
+            },
+            {
+              "heading": "Portée - Évaluation",
+              "text": "Le cours, qui comprend environ 200 unités d'enseignement, se termine par l'examen écrit et oral A2. L'examen écrit contient des sections sur la grammaire, la compréhension écrite, la compréhension orale et la production de texte."
+            },
+            {
+              "heading": "Durée",
+              "text": "Le cours dure deux mois et se déroule du lundi au vendredi (environ 20 heures par semaine)."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcA2",
+            "link": "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-a2.html"
+          },
+          "sectionCTA": {
+            "text": "Inscrivez-vous ici !",
+            "link": "#"
+          }
+        },
+        {
+          "id": 2,
+          "heading": "Cours d'allemand B1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Un cours d'allemand B1 approfondit vos compétences linguistiques et favorise l'utilisation autonome de la langue allemande. Vous apprendrez à comprendre des textes plus complexes, à vous exprimer clairement et en détail et à participer activement à des conversations sur la vie quotidienne et le travail. Idéal pour les apprenants avancés qui souhaitent développer davantage leurs compétences linguistiques."
+            },
+            {
+              "heading": "Portée - Évaluation",
+              "text": "Le cours, qui comprend environ 200 unités d'enseignement, se termine par l'examen écrit et oral B1. L'examen écrit contient donc des sections sur la grammaire, la compréhension écrite, la compréhension orale et la production de texte."
+            },
+            {
+              "heading": "Durée",
+              "text": "Le cours dure deux mois et se déroule du lundi au vendredi (environ 20 heures par semaine)."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcB1",
+            "link": "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/zertifikat-deutsch-telc-deutsch-b1.html"
+          },
+          "sectionCTA": {
+            "text": "Inscrivez-vous ici !",
+            "link": "#"
+          }
+        },
+        {
+          "id": 3,
+          "heading": "Cours d'allemand B2",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Un cours d'allemand B2 améliore vos compétences linguistiques pour des situations exigeantes. Vous apprendrez à comprendre des textes complexes, à communiquer de manière fluide et spontanée, et à présenter des arguments clairement. Idéal pour les apprenants avancés qui souhaitent parler et écrire l'allemand avec confiance dans des contextes académiques ou professionnels."
+            },
+            {
+              "heading": "Portée - Évaluation",
+              "text": "À la fin du cours B2, il y a à la fois un examen écrit et un examen oral B2. L'examen écrit contient des parties sur la grammaire, la lecture, l'écoute et la production de texte."
+            },
+            {
+              "heading": "Durée",
+              "text": "Le cours dure deux mois et se déroule du lundi au vendredi (environ 20 heures par semaine)."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcB2",
+            "link": "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-b2.html"
+          },
+          "sectionCTA": {
+            "text": "Inscrivez-vous ici !",
+            "link": "#"
+          }
+        },
+        {
+          "id": 4,
+          "heading": "Cours d'allemand C1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Un cours d'allemand C1 portera vos compétences linguistiques à un niveau presque natif. Vous apprendrez à comprendre des textes complexes, à vous exprimer de manière fluide et spontanée, et à expliquer des sujets complexes clairement. Idéal pour les apprenants qui souhaitent utiliser l'allemand avec confiance dans des contextes académiques ou professionnels."
+            },
+            {
+              "heading": "Portée - Évaluation",
+              "text": "À la fin du cours C1, il y a à la fois un examen écrit et un examen oral C1. L'examen écrit contient des parties sur la grammaire, la lecture, l'écoute et la production de texte."
+            },
+            {
+              "heading": "Durée",
+              "text": "Le cours dure deux mois et se déroule du lundi au vendredi (environ 20 heures par semaine)."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcC1",
+            "link": "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-c1-hochschule.html"
+          },
+          "sectionCTA": {
+            "text": "Inscrivez-vous ici !",
+            "link": "#"
+          }
+        }
+      ],
+      "description": "Un cours d'allemand est une opportunité d'apprentissage structurée qui vous permet d'apprendre ou d'améliorer votre langue allemande. Dans notre école au Cameroun, nous offrons des cours d'allemand pour les débutants et les apprenants avancés, adaptés aux besoins et aux capacités individuelles des apprenants. Nos cours d'allemand couvrent tous les aspects importants de la langue, y compris la grammaire, le vocabulaire, la prononciation et les compétences en conversation. Grâce à des exercices interactifs, des applications pratiques et des insights culturels, nous favorisons une compréhension approfondie et une communication efficace en allemand. Les cours sont animés par des enseignants qualifiés ayant une vaste expérience dans l'enseignement de l'allemand comme langue étrangère. Notre objectif est de donner aux apprenants la capacité de s'exprimer avec confiance et précision en allemand dans diverses situations quotidiennes et professionnelles. Que vous souhaitiez apprendre l'allemand pour votre carrière, vos études ou vos intérêts personnels, notre cours d'allemand vous fournira les outils et les connaissances nécessaires pour atteindre vos objectifs linguistiques. Visitez notre école au Cameroun et commencez votre voyage dans la langue et la culture allemandes dès aujourd'hui !"
+    },
+    "englishData": {
+      "headline": "L'anglais comme langue étrangère",
+      "headline2": "Qu'est-ce qu'un cours d'anglais ?",
+      "courses": [
+        {
+          "id": 0,
+          "heading": "Cours d'anglais A1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Un cours d'anglais A1 est un cours d'introduction qui enseigne les compétences linguistiques de base. Dans ce cours, vous apprendrez la grammaire simple, le vocabulaire de base et des expressions quotidiennes. L'objectif est de pouvoir avoir des conversations simples et de se repérer dans des situations de la vie quotidienne typiques. Idéal pour les débutants sans connaissances préalables."
+            },
+            {
+              "heading": "Puis-je participer au cours d'anglais A1 sans connaissance de l'anglais ?",
+              "text": "Oui. Le cours est un cours pour débutants et s'adresse aux personnes qui n'ont aucune connaissance préalable de la langue anglaise. En même temps, le cours A1 vous familiarisera avec la langue anglaise et vous enseignera un vocabulaire de base pour vous permettre de communiquer facilement en anglais pour la première fois."
+            },
+            {
+              "heading": "Portée - Évaluation",
+              "text": "Le cours, qui comprend environ 200 unités d'enseignement, se termine par l'examen A1. Cela comprend des sections sur la grammaire, la compréhension écrite, la compréhension orale et la production de texte."
+            },
+            {
+              "heading": "Durée",
+              "text": "Le cours dure deux mois et se déroule du lundi au vendredi (environ 20 heures par semaine). À la fin du cours, les participants auront les bases pour lire et écrire en anglais. Ils pourront parler d'eux-mêmes et avoir des conversations simples."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcA1",
+            "link": "https://www.telc.net/en/language-examinations/certificate-exams/english/"
+          },
+          "sectionCTA": {
+            "text": "Inscrivez-vous ici !",
+            "link": "#"
+          }
+        },
+        {
+          "id": 1,
+          "heading": "Cours d'anglais A2",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Un cours d'anglais A2 repose sur les bases de A1 et approfondit vos compétences linguistiques. Vous apprendrez à mieux vous exprimer dans des situations quotidiennes, à comprendre des textes simples et à tenir des conversations sur des sujets familiers. Idéal pour les apprenants ayant des connaissances de base qui souhaitent élargir leurs compétences."
+            },
+            {
+              "heading": "Portée - Évaluation",
+              "text": "Le cours, qui comprend environ 200 unités d'enseignement, se termine par l'examen écrit et oral A2. L'examen écrit contient des sections sur la grammaire, la compréhension écrite, la compréhension orale et la production de texte."
+            },
+            {
+              "heading": "Durée",
+              "text": "Le cours dure deux mois et se déroule du lundi au vendredi (environ 20 heures par semaine)."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcA2",
+            "link": "https://www.telc.net/en/language-examinations/certificate-exams/english/"
+          },
+          "sectionCTA": {
+            "text": "Inscrivez-vous ici !",
+            "link": "#"
+          }
+        },
+        {
+          "id": 2,
+          "heading": "Cours d'anglais B1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Un cours d'anglais B1 approfondit vos compétences linguistiques et favorise l'utilisation autonome de la langue anglaise. Vous apprendrez à comprendre des textes plus complexes, à vous exprimer clairement et en détail et à participer activement à des conversations sur la vie quotidienne et le travail. Idéal pour les apprenants avancés qui souhaitent développer davantage leurs compétences linguistiques."
+            },
+            {
+              "heading": "Portée - Évaluation",
+              "text": "Le cours, qui comprend environ 200 unités d'enseignement, se termine par l'examen écrit et oral B1. L'examen écrit contient donc des sections sur la grammaire, la compréhension écrite, la compréhension orale et la production de texte."
+            },
+            {
+              "heading": "Durée",
+              "text": "Le cours dure deux mois et se déroule du lundi au vendredi (environ 20 heures par semaine)."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcB1",
+            "link": "https://www.telc.net/en/language-examinations/certificate-exams/english/"
+          },
+          "sectionCTA": {
+            "text": "Inscrivez-vous ici !",
+            "link": "#"
+          }
+        },
+        {
+          "id": 3,
+          "heading": "Cours d'anglais B2",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Un cours d'anglais B2 améliore vos compétences linguistiques pour des situations exigeantes. Vous apprendrez à comprendre des textes complexes, à communiquer de manière fluide et spontanée, et à présenter des arguments clairement. Idéal pour les apprenants avancés qui souhaitent parler et écrire l'anglais avec confiance dans des contextes académiques ou professionnels."
+            },
+            {
+              "heading": "Portée - Évaluation",
+              "text": "À la fin du cours B2, il y a à la fois un examen écrit et un examen oral B2. L'examen écrit contient des parties sur la grammaire, la lecture, l'écoute et la production de texte."
+            },
+            {
+              "heading": "Durée",
+              "text": "Le cours dure deux mois et se déroule du lundi au vendredi (environ 20 heures par semaine)."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcB2",
+            "link": "https://www.telc.net/en/language-examinations/certificate-exams/english/"
+          },
+          "sectionCTA": {
+            "text": "Inscrivez-vous ici !",
+            "link": "#"
+          }
+        },
+        {
+          "id": 4,
+          "heading": "Cours d'anglais C1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Un cours d'anglais C1 portera vos compétences linguistiques à un niveau presque natif. Vous apprendrez à comprendre des textes complexes, à vous exprimer de manière fluide et spontanée, et à expliquer des sujets complexes clairement. Idéal pour les apprenants qui souhaitent utiliser l'anglais avec confiance dans des contextes académiques ou professionnels."
+            },
+            {
+              "heading": "Portée - Évaluation",
+              "text": "À la fin du cours C1, il y a à la fois un examen écrit et un examen oral C1. L'examen écrit contient des parties sur la grammaire, la lecture, l'écoute et la production de texte."
+            },
+            {
+              "heading": "Durée",
+              "text": "Le cours dure deux mois et se déroule du lundi au vendredi (environ 20 heures par semaine)."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcC1",
+            "link": "https://www.telc.net/en/language-examinations/certificate-exams/english/"
+          },
+          "sectionCTA": {
+            "text": "Inscrivez-vous ici !",
+            "link": "#"
+          }
+        }
+      ],
+      "description": "Un cours d'anglais est une opportunité d'apprentissage structurée qui vous permet d'apprendre ou d'améliorer votre langue anglaise. Dans notre école au Cameroun, nous offrons des cours d'anglais pour les débutants et les apprenants avancés, adaptés aux besoins et aux capacités individuelles des apprenants. Nos cours d'anglais couvrent tous les aspects importants de la langue, y compris la grammaire, le vocabulaire, la prononciation et les compétences en conversation. Grâce à des exercices interactifs, des applications pratiques et des insights culturels, nous favorisons une compréhension approfondie et une communication efficace en anglais. Les cours sont animés par des enseignants qualifiés ayant une vaste expérience dans l'enseignement de l'anglais comme langue étrangère. Notre objectif est de donner aux apprenants la capacité de s'exprimer avec confiance et précision en anglais dans diverses situations quotidiennes et professionnelles. Que vous souhaitiez apprendre l'anglais pour votre carrière, vos études ou vos intérêts personnels, notre cours d'anglais vous fournira les outils et les connaissances nécessaires pour atteindre vos objectifs linguistiques. Visitez notre école au Cameroun et commencez votre voyage dans la langue et la culture anglaises dès aujourd'hui !"
+    }
+  }
+  

@@ -14,7 +14,7 @@ import contactModalEN from './locales/en/contactModal.json'
 import dataProtectionModalEN from './locales/en/dataProtectionModal.json'
 import navigationEN from './locales/en/navigation.json'
 import footerEN from './locales/en/footer.json'
-// import courseEN from './locales/en/course.json'
+import courseEN from './locales/en/course.json'
 
 import homeFR from './locales/fr/home.json';
 import aboutFR from './locales/fr/about.json';
@@ -27,7 +27,7 @@ import contactModalFR from './locales/fr/contactModal.json'
 import dataProtectionModalFR from './locales/fr/dataProtectionModal.json'
 import navigationFR from './locales/fr/navigation.json'
 import footerFR from './locales/fr/footer.json'
-// import courseFR from './locales/fr/course.json'
+import courseFR from './locales/fr/course.json'
 
 import homeDE from './locales/de/home.json';
 import aboutDE from './locales/de/about.json';
@@ -40,7 +40,7 @@ import contactModalDE from './locales/de/contactModal.json'
 import dataProtectionModalDE from './locales/de/dataProtectionModal.json'
 import navigationDE from './locales/de/navigation.json'
 import footerDE from './locales/de/footer.json'
-// import courseDE from './locales/de/course.json'
+import courseDE from './locales/de/course.json'
 
 // Configure i18next
 i18n
@@ -60,7 +60,7 @@ i18n
         dataProtectionModal: dataProtectionModalEN,
         navigation: navigationEN,
         footer: footerEN,
-        // course: courseEN
+        course: courseEN
       },
       fr: {
         home: homeFR,
@@ -74,7 +74,7 @@ i18n
         dataProtectionModal: dataProtectionModalFR,
         navigation: navigationFR,
         footer: footerFR,
-        // course: courseFR
+        course: courseFR
       },
       de: {
         home: homeDE,
@@ -88,7 +88,7 @@ i18n
         dataProtectionModal: dataProtectionModalDE,
         navigation: navigationDE,
         footer: footerDE,
-        // course: courseDE
+        course: courseDE
       },
     },
     fallbackLng: 'en', // Fallback language

@@ -1,0 +1,285 @@
+{
+    "germanData": {
+      "headline": "Deutsch als Fremdsprache",
+      "headline2": "Was ist ein Deutschkurs?",
+      "courses": [
+        {
+          "id": 0,
+          "heading": "Deutschkurs A1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Ein Deutschkurs A1 ist ein Einführungskurs, der grundlegende Sprachfähigkeiten vermittelt. In diesem Kurs lernen Sie einfache Grammatik, Grundwortschatz und alltägliche Ausdrücke. Ziel ist es, einfache Gespräche führen zu können und sich in typischen Alltagssituationen zurechtzufinden. Ideal für Anfänger ohne Vorkenntnisse."
+            },
+            {
+              "heading": "Kann ich am Deutschkurs A1 ohne Deutschkenntnisse teilnehmen?",
+              "text": "Ja. Der Kurs ist ein Anfängerkurs und richtet sich an Personen, die keine Vorkenntnisse der deutschen Sprache haben. Gleichzeitig wird der A1-Kurs Sie mit der deutschen Sprache vertraut machen und Ihnen grundlegendes Vokabular beibringen, damit Sie sich zum ersten Mal leicht auf Deutsch verständigen können."
+            },
+            {
+              "heading": "Umfang - Prüfung",
+              "text": "Der Kurs, der etwa 200 Unterrichtseinheiten umfasst, endet mit der A1-Prüfung. Diese umfasst Abschnitte zu Grammatik, Leseverständnis, Hörverständnis und Textproduktion."
+            },
+            {
+              "heading": "Dauer",
+              "text": "Der Kurs dauert zwei Monate und findet von Montag bis Freitag (ca. 20 Stunden pro Woche) statt. Am Ende des Kurses haben die Teilnehmer die Grundlagen zum Lesen und Schreiben in Deutsch. Sie können über sich selbst sprechen und einfache Gespräche führen."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcA1",
+            "link": "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-a1.html"
+          },
+          "sectionCTA": {
+            "text": "Hier anmelden!",
+            "link": "#"
+          }
+        },
+        {
+          "id": 1,
+          "heading": "Deutschkurs A2",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Ein Deutschkurs A2 baut auf den Grundlagen von A1 auf und vertieft Ihre Sprachkenntnisse. Sie lernen, sich in Alltagssituationen besser auszudrücken, einfache Texte zu verstehen und Gespräche über vertraute Themen zu führen. Ideal für Lernende mit Grundkenntnissen, die ihre Fähigkeiten erweitern möchten."
+            },
+            {
+              "heading": "Umfang - Prüfung",
+              "text": "Der Kurs, der etwa 200 Unterrichtseinheiten umfasst, endet mit der schriftlichen und mündlichen A2-Prüfung. Die schriftliche Prüfung enthält Abschnitte zu Grammatik, Leseverständnis, Hörverständnis und Textproduktion."
+            },
+            {
+              "heading": "Dauer",
+              "text": "Der Kurs dauert zwei Monate und findet von Montag bis Freitag (ca. 20 Stunden pro Woche) statt."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcA2",
+            "link": "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-a2.html"
+          },
+          "sectionCTA": {
+            "text": "Hier anmelden!",
+            "link": "#"
+          }
+        },
+        {
+          "id": 2,
+          "heading": "Deutschkurs B1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Ein Deutschkurs B1 vertieft Ihre Sprachkenntnisse und fördert die eigenständige Nutzung der deutschen Sprache. Sie lernen, komplexere Texte zu verstehen, sich klar und detailliert auszudrücken und aktiv an Gesprächen über Alltag und Arbeit teilzunehmen. Ideal für fortgeschrittene Lernende, die ihre Sprachkenntnisse weiterentwickeln möchten."
+            },
+            {
+              "heading": "Umfang - Prüfung",
+              "text": "Der Kurs, der etwa 200 Unterrichtseinheiten umfasst, endet mit der schriftlichen und mündlichen B1-Prüfung. Die schriftliche Prüfung enthält daher Abschnitte zu Grammatik, Leseverständnis, Hörverständnis und Textproduktion."
+            },
+            {
+              "heading": "Dauer",
+              "text": "Der Kurs dauert zwei Monate und findet von Montag bis Freitag (ca. 20 Stunden pro Woche) statt."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcB1",
+            "link": "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/zertifikat-deutsch-telc-deutsch-b1.html"
+          },
+          "sectionCTA": {
+            "text": "Hier anmelden!",
+            "link": "#"
+          }
+        },
+        {
+          "id": 3,
+          "heading": "Deutschkurs B2",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Ein Deutschkurs B2 verbessert Ihre Sprachkenntnisse für anspruchsvolle Situationen. Sie lernen, komplexe Texte zu verstehen, fließend und spontan zu kommunizieren und Argumente klar darzustellen. Ideal für fortgeschrittene Lernende, die sicher in akademischen oder beruflichen Kontexten Deutsch sprechen und schreiben möchten."
+            },
+            {
+              "heading": "Umfang - Prüfung",
+              "text": "Am Ende des B2-Kurses gibt es sowohl eine schriftliche als auch eine mündliche B2-Prüfung. Die schriftliche Prüfung enthält Teile zu Grammatik, Lesen, Hören und Textproduktion."
+            },
+            {
+              "heading": "Dauer",
+              "text": "Der Kurs dauert zwei Monate und findet von Montag bis Freitag (ca. 20 Stunden pro Woche) statt."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcB2",
+            "link": "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-b2.html"
+          },
+          "sectionCTA": {
+            "text": "Hier anmelden!",
+            "link": "#"
+          }
+        },
+        {
+          "id": 4,
+          "heading": "Deutschkurs C1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Ein Deutschkurs C1 bringt Ihre Sprachkenntnisse auf ein fast muttersprachliches Niveau. Sie lernen, komplexe Texte zu verstehen, sich fließend und spontan auszudrücken und komplexe Sachverhalte klar zu erläutern. Ideal für Lernende, die Deutsch sicher in akademischen oder beruflichen Kontexten verwenden möchten."
+            },
+            {
+              "heading": "Umfang - Prüfung",
+              "text": "Am Ende des C1-Kurses gibt es sowohl eine schriftliche als auch eine mündliche C1-Prüfung. Die schriftliche Prüfung enthält Teile zu Grammatik, Lesen, Hören und Textproduktion."
+            },
+            {
+              "heading": "Dauer",
+              "text": "Der Kurs dauert zwei Monate und findet von Montag bis Freitag (ca. 20 Stunden pro Woche) statt."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcC1",
+            "link": "https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-c1-hochschule.html"
+          },
+          "sectionCTA": {
+            "text": "Hier anmelden!",
+            "link": "#"
+          }
+        }
+      ],
+      "description": "Ein Deutschkurs ist eine strukturierte Lernmöglichkeit, die es Ihnen ermöglicht, die deutsche Sprache zu erlernen oder zu verbessern. An unserer Schule in Kamerun bieten wir Deutschkurse für Anfänger bis Fortgeschrittene an, die auf die individuellen Bedürfnisse und Fähigkeiten der Lernenden zugeschnitten sind. Unsere Deutschkurse decken alle wichtigen Aspekte der Sprache ab, einschließlich Grammatik, Wortschatz, Aussprache und Gesprächsführung. Durch interaktive Übungen, praktische Anwendungen und kulturelle Einblicke fördern wir ein tiefes Verständnis und eine effektive Kommunikation auf Deutsch. Die Kurse werden von qualifizierten Lehrern geleitet, die über umfangreiche Erfahrung im Unterrichten von Deutsch als Fremdsprache verfügen. Unser Ziel ist es, den Lernenden die Fähigkeit zu geben, sich selbstbewusst und korrekt in Deutsch in einer Vielzahl von Alltagssituationen und beruflichen Kontexten auszudrücken. Egal, ob Sie Deutsch für Ihre Karriere, Ihr Studium oder persönliche Interessen lernen möchten, unser Deutschkurs wird Ihnen die Werkzeuge und das Wissen vermitteln, um Ihre Sprachziele zu erreichen. Besuchen Sie unsere Schule in Kamerun und beginnen Sie noch heute Ihre Reise in die deutsche Sprache und Kultur!"
+    },
+    "englishData": {
+      "headline": "Englisch als Fremdsprache",
+      "headline2": "Was ist ein Englischkurs?",
+      "courses": [
+        {
+          "id": 0,
+          "heading": "Englischkurs A1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Ein Englischkurs A1 ist ein Einführungskurs, der grundlegende Sprachfähigkeiten vermittelt. In diesem Kurs lernen Sie einfache Grammatik, Grundwortschatz und alltägliche Ausdrücke. Ziel ist es, einfache Gespräche führen zu können und sich in typischen Alltagssituationen zurechtzufinden. Ideal für Anfänger ohne Vorkenntnisse."
+            },
+            {
+              "heading": "Kann ich am Englischkurs A1 ohne Englischkenntnisse teilnehmen?",
+              "text": "Ja. Der Kurs ist ein Anfängerkurs und richtet sich an Personen, die keine Vorkenntnisse der englischen Sprache haben. Gleichzeitig wird der A1-Kurs Sie mit der englischen Sprache vertraut machen und Ihnen grundlegendes Vokabular beibringen, damit Sie sich zum ersten Mal leicht auf Englisch verständigen können."
+            },
+            {
+              "heading": "Umfang - Prüfung",
+              "text": "Der Kurs, der etwa 200 Unterrichtseinheiten umfasst, endet mit der A1-Prüfung. Diese umfasst Abschnitte zu Grammatik, Leseverständnis, Hörverständnis und Textproduktion."
+            },
+            {
+              "heading": "Dauer",
+              "text": "Der Kurs dauert zwei Monate und findet von Montag bis Freitag (ca. 20 Stunden pro Woche) statt. Am Ende des Kurses haben die Teilnehmer die Grundlagen zum Lesen und Schreiben in Englisch. Sie können über sich selbst sprechen und einfache Gespräche führen."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcA1",
+            "link": "https://www.telc.net/en/language-examinations/certificate-exams/english/"
+          },
+          "sectionCTA": {
+            "text": "Hier anmelden!",
+            "link": "#"
+          }
+        },
+        {
+          "id": 1,
+          "heading": "Englischkurs A2",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Ein Englischkurs A2 baut auf den Grundlagen von A1 auf und vertieft Ihre Sprachkenntnisse. Sie lernen, sich in Alltagssituationen besser auszudrücken, einfache Texte zu verstehen und Gespräche über vertraute Themen zu führen. Ideal für Lernende mit Grundkenntnissen, die ihre Fähigkeiten erweitern möchten."
+            },
+            {
+              "heading": "Umfang - Prüfung",
+              "text": "Der Kurs, der etwa 200 Unterrichtseinheiten umfasst, endet mit der schriftlichen und mündlichen A2-Prüfung. Die schriftliche Prüfung enthält Abschnitte zu Grammatik, Leseverständnis, Hörverständnis und Textproduktion."
+            },
+            {
+              "heading": "Dauer",
+              "text": "Der Kurs dauert zwei Monate und findet von Montag bis Freitag (ca. 20 Stunden pro Woche) statt."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcA2",
+            "link": "https://www.telc.net/en/language-examinations/certificate-exams/english/"
+          },
+          "sectionCTA": {
+            "text": "Hier anmelden!",
+            "link": "#"
+          }
+        },
+        {
+          "id": 2,
+          "heading": "Englischkurs B1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Ein Englischkurs B1 vertieft Ihre Sprachkenntnisse und fördert die eigenständige Nutzung der englischen Sprache. Sie lernen, komplexere Texte zu verstehen, sich klar und detailliert auszudrücken und aktiv an Gesprächen über Alltag und Arbeit teilzunehmen. Ideal für fortgeschrittene Lernende, die ihre Sprachkenntnisse weiterentwickeln möchten."
+            },
+            {
+              "heading": "Umfang - Prüfung",
+              "text": "Der Kurs, der etwa 200 Unterrichtseinheiten umfasst, endet mit der schriftlichen und mündlichen B1-Prüfung. Die schriftliche Prüfung enthält daher Abschnitte zu Grammatik, Leseverständnis, Hörverständnis und Textproduktion."
+            },
+            {
+              "heading": "Dauer",
+              "text": "Der Kurs dauert zwei Monate und findet von Montag bis Freitag (ca. 20 Stunden pro Woche) statt."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcB1",
+            "link": "https://www.telc.net/en/language-examinations/certificate-exams/english/"
+          },
+          "sectionCTA": {
+            "text": "Hier anmelden!",
+            "link": "#"
+          }
+        },
+        {
+          "id": 3,
+          "heading": "Englischkurs B2",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Ein Englischkurs B2 verbessert Ihre Sprachkenntnisse für anspruchsvolle Situationen. Sie lernen, komplexe Texte zu verstehen, fließend und spontan zu kommunizieren und Argumente klar darzustellen. Ideal für fortgeschrittene Lernende, die sicher in akademischen oder beruflichen Kontexten Englisch sprechen und schreiben möchten."
+            },
+            {
+              "heading": "Umfang - Prüfung",
+              "text": "Am Ende des B2-Kurses gibt es sowohl eine schriftliche als auch eine mündliche B2-Prüfung. Die schriftliche Prüfung enthält Teile zu Grammatik, Lesen, Hören und Textproduktion."
+            },
+            {
+              "heading": "Dauer",
+              "text": "Der Kurs dauert zwei Monate und findet von Montag bis Freitag (ca. 20 Stunden pro Woche) statt."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcB2",
+            "link": "https://www.telc.net/en/language-examinations/certificate-exams/english/"
+          },
+          "sectionCTA": {
+            "text": "Hier anmelden!",
+            "link": "#"
+          }
+        },
+        {
+          "id": 4,
+          "heading": "Englischkurs C1",
+          "sectionData": [
+            {
+              "heading": "",
+              "text": "Ein Englischkurs C1 bringt Ihre Sprachkenntnisse auf ein fast muttersprachliches Niveau. Sie lernen, komplexe Texte zu verstehen, sich fließend und spontan auszudrücken und komplexe Sachverhalte klar zu erläutern. Ideal für Lernende, die Englisch sicher in akademischen oder beruflichen Kontexten verwenden möchten."
+            },
+            {
+              "heading": "Umfang - Prüfung",
+              "text": "Am Ende des C1-Kurses gibt es sowohl eine schriftliche als auch eine mündliche C1-Prüfung. Die schriftliche Prüfung enthält Teile zu Grammatik, Lesen, Hören und Textproduktion."
+            },
+            {
+              "heading": "Dauer",
+              "text": "Der Kurs dauert zwei Monate und findet von Montag bis Freitag (ca. 20 Stunden pro Woche) statt."
+            }
+          ],
+          "sectionLink": {
+            "text": "telcC1",
+            "link": "https://www.telc.net/en/language-examinations/certificate-exams/english/"
+          },
+          "sectionCTA": {
+            "text": "Hier anmelden!",
+            "link": "#"
+          }
+        }
+      ],
+      "description": "Ein Englischkurs ist eine strukturierte Lernmöglichkeit, die es Ihnen ermöglicht, die englische Sprache zu erlernen oder zu verbessern. An unserer Schule in Kamerun bieten wir Englischkurse für Anfänger bis Fortgeschrittene an, die auf die individuellen Bedürfnisse und Fähigkeiten der Lernenden zugeschnitten sind. Unsere Englischkurse decken alle wichtigen Aspekte der Sprache ab, einschließlich Grammatik, Wortschatz, Aussprache und Gesprächsführung. Durch interaktive Übungen, praktische Anwendungen und kulturelle Einblicke fördern wir ein tiefes Verständnis und eine effektive Kommunikation auf Englisch. Die Kurse werden von qualifizierten Lehrern geleitet, die über umfangreiche Erfahrung im Unterrichten von Englisch als Fremdsprache verfügen. Unser Ziel ist es, den Lernenden die Fähigkeit zu geben, sich selbstbewusst und korrekt in Englisch in einer Vielzahl von Alltagssituationen und beruflichen Kontexten auszudrücken. Egal, ob Sie Englisch für Ihre Karriere, Ihr Studium oder persönliche Interessen lernen möchten, unser Englischkurs wird Ihnen die Werkzeuge und das Wissen vermitteln, um Ihre Sprachziele zu erreichen. Besuchen Sie unsere Schule in Kamerun und beginnen Sie noch heute Ihre Reise in die englische Sprache und Kultur!"
+    }
+  }
+  
