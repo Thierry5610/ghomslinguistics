@@ -30,7 +30,8 @@
             @include close_button
         }
         h1 {
-            @include display-sm-medium;
+            @include display-xs-medium;
+            max-width: 95%;
             color: $gray-900;
             // @media screen and (max-width:768px) {
             //     @include text-xl-medium;
