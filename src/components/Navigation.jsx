@@ -99,9 +99,9 @@ export default function Navigation() {
                                 </div>
                             )}
                         </div>
-                        <div className={Styles.search} onClick={() => setIsSearchMenu(true)}>
+                        {/* <div className={Styles.search} onClick={() => setIsSearchMenu(true)}>
                             <IoIosSearch />
-                        </div>
+                        </div> */}
                     </div>
                     {!isMenu && (
                         <div className={Styles.menu} onClick={() => setIsMenu(true)}>
