@@ -1,9 +1,14 @@
-// App.jsx
 import "./App.css";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
-import { Outlet } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import News from "./pages/News";
+import About from "./pages/About";
+import Course from "./pages/Course";
+import ScrollToTop from "./components/ScrollToTop"; 
+import Languages from "./pages/Languages";
+import Registration from "./pages/Registration";
 
 function App() {
   return (
@@ -11,8 +16,14 @@ function App() {
       <Navigation />
       <ScrollToTop />
       <div className="content">
-        {/* Outlet serves as a placeholder for nested routes */}
-        <Outlet />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/language" element={<Languages />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="/course/:language" element={<Course />} />
+        </Routes>
       </div>
       <Footer />
     </div>
