@@ -3,7 +3,7 @@
 
 .container {
     .content {
-        max-width: 124rem;
+        max-width: calc(124rem/1.6);
         position: relative;
         margin: 0 auto;
         .hero {
@@ -43,8 +43,8 @@
             .image_section,
             .text_section {
                 flex: 1 1 50%;
-                max-width: 62rem;
-                min-width: 40rem;
+                max-width: calc(62rem/1.6);
+                min-width: calc(40rem/1.6);
             }
             .image_section {
                 order: 1;

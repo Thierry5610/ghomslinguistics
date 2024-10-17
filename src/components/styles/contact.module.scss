@@ -11,8 +11,8 @@
     align-items: center;
     .content {
         background-color: $white;
-        max-width: 90rem;
-        min-width: 62rem;
+        max-width: calc(90rem/1.6);
+        min-width: calc(62rem/1.6);
         max-height: 90vh;
         overflow-y: auto;
         border-radius: $spacing-2;
@@ -55,10 +55,10 @@
                 color: $gray-500;
                 padding: $spacing-4;
                 outline: none;
-                min-height: 20rem;
+                min-height: calc(20rem/1.6);
             }
             .button {
-                padding: .8rem 1.6rem;
+                padding: calc(.8rem/1.6) calc(1.6rem/1.6);
                 @include text-md-regular;
                 color: $gray-900;
                 background-color: $white;

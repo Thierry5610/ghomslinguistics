@@ -53,9 +53,9 @@ export default function Navigation() {
     }, []);
 
     const changeLanguage = (language) => {
+        //setIsLangMenu(false);
         i18n.changeLanguage(language);
         setLang(language);
-        setIsLangMenu(false);
     };
 
     return (

@@ -6,7 +6,7 @@
     background-color: $gray-950;
     padding: $spacing-8 $spacing-10 $spacing-4 $spacing-10;
     .content {
-        max-width: 124rem;
+        max-width: calc(124rem/1.6);
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -24,7 +24,7 @@
                 justify-content: center;
                 align-items: center;
                 .logo {
-                    height: 15rem;
+                    height: calc(15rem/1.6);
                     img {
                         height: 100%;
                         width: 100%;
@@ -85,8 +85,8 @@
     align-items: center;
     .content {
         background-color: $white;
-        max-width: 90rem;
-        min-width: 62rem;
+        max-width: calc(90rem/1.6);
+        min-width: calc(62rem/1.6);
         max-height: 90vh;
         overflow-y: auto;
         border-radius: $spacing-2;
@@ -103,9 +103,9 @@
         .close_button {
             cursor: pointer;
             position: absolute;
-            right: 2.5rem;
-            top: 2.5rem;
-            padding: .5rem;
+            right: calc(2.5rem/1.6);
+            top: calc(2.5rem/1.6);
+            padding: calc(.5rem/1.6);
             border: 1.5px solid $gray-700;
             display: flex;
             justify-content: center;
@@ -141,10 +141,10 @@
                 color: $gray-500;
                 padding: $spacing-4;
                 outline: none;
-                min-height: 20rem;
+                min-height: calc(20rem/1.6);
             }
             button {
-                padding: .8rem 1.6rem;
+                padding: calc(.8rem/1.6) calc(1.6rem/1.6);
                 @include text-md-regular;
                 color: $gray-900;
                 background-color: $white;

@@ -4,7 +4,7 @@
 .container {
     display: flex;
     padding: $spacing-4;
-    max-width: 124rem;
+    max-width: calc(124rem/1.6);
     @media screen and (min-width:1000px) {
         gap: $spacing-12;
     }
@@ -32,7 +32,7 @@
     .searchIcon {
         cursor: pointer;
         color: $blue-500;
-        font-size: 1.5rem;
+        font-size: calc(1.5rem/1.6);
     }
 }
 
@@ -80,7 +80,7 @@
         margin-bottom: $spacing-4;
     
         .entryTitle {
-            font-size: 1.5rem;
+            font-size: calc(1.5rem/1.6);
             @include text-lg-regular;
             color: $blue-500;
             margin-bottom: $spacing-2;

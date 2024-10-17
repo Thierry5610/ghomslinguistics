@@ -46,7 +46,7 @@ $gray-950: #262626;
 
 //spacing
 
-$grid-unit: .4rem;
+$grid-unit: calc(.4rem/1.6);
 $spacing-1: 1 * $grid-unit;
 $spacing-2: 2 * $grid-unit;
 $spacing-3: 3 * $grid-unit;

@@ -17,7 +17,7 @@
         background-color: $white;
         //border-radius: $spacing-2;
         padding: $spacing-10 $spacing-8;
-        max-width: 124rem;
+        max-width: calc(124rem/1.6);
         position: relative;
         height: 100dvh;
         width: 100%;       
@@ -56,7 +56,7 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             padding: $spacing-7;
             width: calc(50% - $spacing-7);
-            min-width: 30rem;
+            min-width: calc(30rem/1.6);
             display: flex;
             flex-direction: column;
             transition: all 0.3s ease;
