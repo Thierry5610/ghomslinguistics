@@ -15,7 +15,8 @@
             justify-content: center;
             position: relative;
             h2 {
-                @include heading-1($white)
+                @include heading-1($white);
+                text-align: center;
             }
             img {
                 position: absolute;
