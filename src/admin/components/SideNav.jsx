@@ -27,8 +27,8 @@ const SideNav= () => {
         }
     ]
     return (
-        <div className="h-full w-fit p-6 rounded-lg bg-stone-900 flex flex-col gap-4">
-            <Logo/>
+        <div className="h-full hidden md:flex w-fit p-6  rounded-lg bg-stone-900 flex-col gap-4">
+            {/* <Logo/> */}
             {paths.map((path)=>(
                 <SideNavItem icon={path.icon} to={path.name} key={path.name} id={path.name+"side"}>{path.name}</SideNavItem>
             ))}
