@@ -54,7 +54,7 @@ export default function Footer() {
                             <div className={Styles.links}>
                                 <div>{t('footer.address.street')}</div> {/* Translate street address */}
                                 <div>{t('footer.address.city')}</div> {/* Translate city */}
-                                <a href='mailto:olivtsanga@ghomslinguistics.com'>olivtsanga@ghomslinguistics.com</a>
+                                <a href='mailto:contact@ghomslinguistics.com'>contact@ghomslinguistics.com</a>
                                 <div>{t('footer.phone')}</div> {/* Translate phone number */}
                             </div>
                         </div>

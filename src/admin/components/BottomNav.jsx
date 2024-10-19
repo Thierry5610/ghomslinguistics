@@ -45,19 +45,26 @@ const BottomNav = () => {
 const BottomNavItem = ({children,to,setPill,id}) => {
     const ref = useRef(null)
     const location = useLocation()
-    useEffect(()=>{
+    
+    useEffect(() => {
         const el = document.getElementById(id)
-        const ismatch = el.href.toString().includes(location.pathname)
-        const {height, width} = el.getBoundingClientRect()
-        if(ismatch){
+        
+        if (!el) return // Check if element exists
+        
+        const elementPath = new URL(el.href).pathname // Extract pathname from href
+        const isMatch = elementPath === location.pathname // Directly compare paths
+        
+        if (isMatch) {
+            const { height, width, left } = el.getBoundingClientRect()
             setPill({
                 height,
                 width,
                 left: el.offsetLeft,
-                opacity:1
+                opacity: 1
             })
         }
-    },[location])
+    }, [location.pathname]) // Trigger only when location changes
+    
 
     return(
         <Link ref={ref} to={to} id={id} className="text-3xl z-10 text-stone-900 p-4">

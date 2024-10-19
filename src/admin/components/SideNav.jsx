@@ -37,17 +37,20 @@ const SideNav= () => {
 }
 
 const SideNavItem = ({children,to,icon,id}) => {
-    const [isActive,setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(false)
     const location = useLocation()
-    useEffect(()=>{
+    
+    useEffect(() => {
         const el = document.getElementById(id)
-        const match = el.href.toString().includes(location.pathname)
-        if(match){
-            setIsActive(true)
-        }else {
-            setIsActive(false)
-        }
-    },[location])
+    
+        if (!el) return // Check if element exists
+    
+        const elementPath = new URL(el.href).pathname // Extract pathname from href
+        const isMatch = elementPath === location.pathname // Directly compare paths
+    
+        setIsActive(isMatch) // Set state based on match
+    }, [location.pathname]) // Trigger only when location changes
+    
     return(
         <Link id={id} to={to} className={`text-base transition-all duration-500 flex gap-2 items-center content-start ${!isActive?'hover:bg-stone-800 ': ''} text-stone-200 px-6 py-2 rounded-full ${isActive?'bg-amber-500 capitalize hover:bg-amber-500 text-stone-900 ':''}`}>
             {icon}

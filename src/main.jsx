@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.jsx';
-import Dashboard from './admin/Dashboard.jsx';
 import Home from './pages/Home';
 import News from './pages/News';
 import About from './pages/About';
@@ -12,6 +11,7 @@ import Languages from './pages/Languages';
 import Registration from './pages/Registration';
 import './i18n';
 import Admin from './admin/Admin.jsx';
+import Dashboard from './admin/pages/Dashboard.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="course/:language" element={<Course />} />
         </Route>
         <Route path="admin" element={<Admin />}>
-          <Route path='dashboard'/>
+          <Route path='dashboard' element={<Dashboard/>} />
           <Route path='courses'/>
           <Route path='news'/>
           <Route path='settings'/>
