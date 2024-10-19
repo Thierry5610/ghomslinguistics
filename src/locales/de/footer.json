@@ -7,14 +7,14 @@
             "city": "Douala, Kamerun"
         },
         "phone": "+237 6 93 07 17 89 / +49 176 14267516",
-        "latest_news": "Neueste Nachrichten",
+        "latest_news": "Letzten News",
         "news": {
-            "location": "Yaoundé",
+            "location": "Jaunde",
             "start_date": "Nächstes Schulstartdatum ist der {{date}}",
             "course_start": "Nächster Kurs beginnt am {{date}}"
         },
         "menu": "Menü",
-        "data_protection": "Datenschutz",
+        "data_protection": "Datenschutzerklärung",
         "contact": "Kontakt",
         "copyright": "Urheberrecht © {{year}} Ghoms Linguistics"
     }

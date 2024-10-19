@@ -1,15 +1,15 @@
 {
     "hero": {
         "heading": "Über uns",
-        "paragraph": "„Wir glauben, dass Sprache Brücken baut und Wege zu neuen Möglichkeiten öffnet.“"
+        "paragraph": "„Wir glauben daran, dass Sprache Brücken baut und Wege zu neuen Möglichkeiten eröffnet.“"
     },
     "city_description": {
         "Yaoundé": {
-            "heading": "Eindruck von der Schule in Yaoundé",
+            "heading": "Eindruck Schule Yaoundé",
             "description": "Die Sprachschule in Yaoundé ist modern ausgestattet und bietet klimatisierte Klassenzimmer für eine komfortable Lernumgebung. Die Sprachkurse sind so gestaltet, dass sie effektiv sind, unter Verwendung interaktiver Lehrmethoden und neuester Technologie. Kleine Gruppen ermöglichen persönliche Betreuung und fördern schnelle Lernfortschritte."
         },
         "Douala": {
-            "heading": "Eindruck von der Schule in Douala",
+            "heading": "Eindruck Schule Douala",
             "description": "Die Sprachschule in Douala bietet hochmoderne Einrichtungen und eine lebendige Atmosphäre, die interaktives Lernen fördert. Unsere engagierten Lehrkräfte nutzen innovative Lehrmethoden, um sicherzustellen, dass jeder Schüler in einer unterstützenden Umgebung gedeiht."
         }
     },
@@ -19,7 +19,7 @@
     },
     "team": {
         "Yaoundé": {
-            "heading": "Team in Yaoundé",
+            "heading": "Unser team in Yaoundé",
             "paragraph": "Das Team in Yaoundé ist hochqualifiziert, engagiert und arbeitet harmonisch zusammen, um den Erfolg der Schüler zu fördern. Mit ihrer Leidenschaft und Professionalität schaffen sie eine positive Lernatmosphäre und unterstützen jeden Lernenden individuell.",
             "members": [
                 {
@@ -37,7 +37,7 @@
             ]
         },
         "Douala": {
-            "heading": "Team in Douala",
+            "heading": "Unser team in Douala",
             "paragraph": "Das Team in Douala ist hochqualifiziert, engagiert und arbeitet harmonisch zusammen, um den Erfolg der Schüler zu fördern. Mit ihrer Leidenschaft und Professionalität schaffen sie eine positive Lernatmosphäre und unterstützen jeden Lernenden individuell.",
             "members": [
                 {
