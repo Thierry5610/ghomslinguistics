@@ -14,8 +14,8 @@
         }
     },
     "location_text": {
-        "Yaoundé": "À Yaoundé, nous sommes situés sur la nouvelle route omnisport, à côté de la Pharmacie le Bon Berger.",
-        "Douala": "À Douala, nous sommes situés dans le quartier Ange Raphael, en face de la banque UBA."
+        "Yaoundé": "À Yaoundé, nous sommes situés à la nouvelle route omnisport, à côté de l'immeuble STV.",
+        "Douala": "À Douala, nous sommes situés au quartier Ange Raphael, en face de la banque UBA."
     },
     "team": {
         "Yaoundé": {
@@ -23,16 +23,16 @@
             "paragraph": "L'équipe à Yaoundé est hautement qualifiée, dévouée et travaille harmonieusement ensemble pour promouvoir le succès des étudiants. Avec leur passion et leur professionnalisme, ils créent une atmosphère d'apprentissage positive et soutiennent chaque apprenant individuellement.",
             "members": [
                 {
-                    "name": "SOLANGE MVONDO",
-                    "role": "DESIGNER GRAPHIQUE",
-                    "funFact": "Sortir avec ma meilleure amie à peu près n'importe où.",
+                    "name": "NGO ELONE ROSALIE",
+                    "role": "DIRECTRICE",
+                    "funFact": "Master en langue allemande",
                     "image": "/images/team/Leitung_Yaound.png"
                 },
                 {
-                    "name": "MARIAM FON",
-                    "role": "DESIGNER PRINCIPAL",
-                    "funFact": "Donnez-moi mon skateboard et laissez-moi libre.",
-                    "image": "/images/team/Sekraeterin_Yaound.png"
+                    "name": "TIWA LUCIE",
+                    "role": "INSTRUCTRICE DE COURS",
+                    "funFact": "Docteur en langue allemande",
+                    "image": "/images/team/IMG-20241019-WA0030.jpg"
                 }
             ]
         },
@@ -41,10 +41,16 @@
             "paragraph": "L'équipe à Douala est hautement qualifiée, dévouée et travaille harmonieusement ensemble pour promouvoir le succès des étudiants. Avec leur passion et leur professionnalisme, ils créent une atmosphère d'apprentissage positive et soutiennent chaque apprenant individuellement.",
             "members": [
                 {
-                    "name": "SERENA KANDEM",
-                    "role": "DESIGNER GRAPHIQUE",
-                    "funFact": "Sortir avec ma meilleure amie à peu près n'importe où.",
+                    "name": "FONGHO MBOPDA STELLA AUDREY",
+                    "role": "DIRECTRICE",
+                    "funFact": "Licence en informatique",
                     "image": "/images/team/IMG-20241013-WA0010.jpg"
+                },
+                {
+                    "name": "NGATOUSSIA",
+                    "role": "INSTRUCTEUR DE COURS ET ENSEIGNANT DE LANGUE ALLEMANDE",
+                    "funFact": "Candidat au doctorat en langue allemande",
+                    "image": "/images/team/avatar.png"
                 }
             ]
         }

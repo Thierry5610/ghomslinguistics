@@ -51,11 +51,11 @@
     "contactInformationTitle": "Kontaktinformationen",
     "contactInformationText": "Wenn Sie Fragen zu dieser Datenschutz-Erklärung oder zu Ihren personenbezogenen Daten haben, kontaktieren Sie uns bitte unter:",
     "contactDetails": {
-        "name": "GHOMS LINGUISTICS",
-        "addressDouala": "Adresse Douala: Gegenüber der UBA CAMEROUN Universitätsagentur, 3P3P+GQ6, Ange Raphaël, Douala, Kamerun",
-        "addressYaounde": "Adresse Yaoundé: Neue Omnisportstraße nahe der Pharmacie Le Bon Berger, Yaoundé, Kamerun",
-        "email": "E-Mail: contact@ghomslinguistics.com",
-        "phone": "Telefon: +23 7 6 93 07 17 89 / +49 17614267516"
+    "name": "GHOMS LINGUISTICS",
+    "addressDouala": "Adresse Douala: Gegenüber der UBA CAMEROUN Universitätsagentur, Ange Raphaël, Douala, Kamerun",
+    "addressYaounde": "Adresse Yaoundé: Neue Omnisportstraße in der Nähe des STV-Gebäudes, Yaoundé, Kamerun",
+    "email": "Email: contact@ghomslinguistics.com",
+    "phone": "Telefon: +23 7 6 93 07 17 89 / +49 17614267516"
     },
     "acceptButton": "Akzeptieren",
     "contactButton": "Kontakt"

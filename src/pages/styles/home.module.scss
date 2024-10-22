@@ -37,6 +37,7 @@
             gap: $spacing-10;
             h3 {
                 @include heading-1($gray-900);
+                text-align: center;
             }
             .points {
                 display: flex;

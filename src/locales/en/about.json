@@ -14,8 +14,8 @@
         }
     },
     "location_text": {
-        "Yaoundé":"In Yaoundé, we are located on the new omnisport road next to the Pharmacie le Bon Berger.",
-        "Douala": "In Douala we are located in the Ange Raphael district, opposite to the UBA bank."
+        "Yaoundé":"In Yaoundé, we are located at the new omnisport road next to STV.",
+        "Douala": "In Douala, we are located in Ange Raphael, opposite the UBA bank."
     },
     "team": {
         "Yaoundé":{
@@ -23,16 +23,16 @@
             "paragraph": "The team in Yaoundé is highly qualified, dedicated and works harmoniously together to promote student success. With their passion and professionalism, they create a positive learning atmosphere and support each learner individually.",
             "members":[
                 {
-                    "name":"SOLANGE MVONDO",
-                    "role":"GRAPHIC DESIGNER",
-                    "funFact": "Hanging out with my best friend pretty much anywhere.",
+                    "name":"NGO ELONE ROSALIE",
+                    "role":"MANAGER",
+                    "funFact": "Master in German Language",
                     "image": "/images/team/Leitung_Yaound.png"
                 },
                 {
-                    "name":"MARIAM FON",
-                    "role":"LEAD DESIGNER",
-                    "funFact": "Give me my skateboard and set me free.",
-                    "image":"/images/team/Sekraeterin_Yaound.png"
+                    "name":"TIWA LUCIE",
+                    "role":"COURSE INSTRUCTOR",
+                    "funFact": "Doctor in German Language",
+                    "image":"/images/team/IMG-20241019-WA0030.jpg"
                 }
             ]
         },
@@ -41,10 +41,16 @@
             "paragraph": "The team in Douala is highly qualified, dedicated and works harmoniously together to promote student success. With their passion and professionalism, they create a positive learning atmosphere and support each learner individually.",
             "members":[
                 {
-                    "name":"SERENA KANDEM",
-                    "role":"GRAPHIC DESIGNER",
-                    "funFact": "Hanging out with my best friend pretty much anywhere.",
+                    "name":"FONGHO MBOPDA STELLA AUDREY",
+                    "role":"MANAGER",
+                    "funFact": "Bsc. Computer Science",
                     "image":"/images/team/IMG-20241013-WA0010.jpg"
+                },
+                {
+                    "name":"NGATOUSSIA",
+                    "role":"COURSE INSTRUCTOR AND GERMAN LANGUAGE TEACHER",
+                    "funFact": "Doctoral Candidate German Language",
+                    "image":"/images/team/avatar.png"
                 }
             ]    
         }    

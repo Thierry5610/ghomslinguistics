@@ -14,37 +14,43 @@
         }
     },
     "location_text": {
-        "Yaoundé": "In Yaoundé befinden wir uns in der neuen Omnisportstraße, neben der Pharmacie le Bon Berger.",
+        "Yaoundé": "In Yaoundé befinden wir uns in der neuen Omnisportstraße, neben dem STV-Gebäude.",
         "Douala": "In Douala sind wir im Stadtteil Ange Raphael, gegenüber der UBA-Bank."
     },
     "team": {
         "Yaoundé": {
-            "heading": "Unser team in Yaoundé",
-            "paragraph": "Das Team in Yaoundé ist hochqualifiziert, engagiert und arbeitet harmonisch zusammen, um den Erfolg der Schüler zu fördern. Mit ihrer Leidenschaft und Professionalität schaffen sie eine positive Lernatmosphäre und unterstützen jeden Lernenden individuell.",
+            "heading": "Team in Yaoundé",
+            "paragraph": "Das Team in Yaoundé ist hochqualifiziert, engagiert und arbeitet harmonisch zusammen, um den Erfolg der Studierenden zu fördern. Mit ihrer Leidenschaft und Professionalität schaffen sie eine positive Lernatmosphäre und unterstützen jeden Lernenden individuell.",
             "members": [
                 {
-                    "name": "SOLANGE MVONDO",
-                    "role": "GRAPHIC DESIGNER",
-                    "funFact": "Mit meiner besten Freundin überall abhängen.",
+                    "name": "NGO ELONE ROSALIE",
+                    "role": "LEITUNG",
+                    "funFact": "Master in deutscher Sprache",
                     "image": "/images/team/Leitung_Yaound.png"
                 },
                 {
-                    "name": "MARIAM FON",
-                    "role": "LEAD DESIGNER",
-                    "funFact": "Gib mir mein Skateboard und lass mich frei.",
-                    "image": "/images/team/Sekraeterin_Yaound.png"
+                    "name": "TIWA LUCIE",
+                    "role": "KURSLEHRERIN",
+                    "funFact": "Doktorin der deutschen Sprache",
+                    "image": "/images/team/IMG-20241019-WA0030.jpg"
                 }
             ]
         },
         "Douala": {
-            "heading": "Unser team in Douala",
-            "paragraph": "Das Team in Douala ist hochqualifiziert, engagiert und arbeitet harmonisch zusammen, um den Erfolg der Schüler zu fördern. Mit ihrer Leidenschaft und Professionalität schaffen sie eine positive Lernatmosphäre und unterstützen jeden Lernenden individuell.",
+            "heading": "Team in Douala",
+            "paragraph": "Das Team in Douala ist hochqualifiziert, engagiert und arbeitet harmonisch zusammen, um den Erfolg der Studierenden zu fördern. Mit ihrer Leidenschaft und Professionalität schaffen sie eine positive Lernatmosphäre und unterstützen jeden Lernenden individuell.",
             "members": [
                 {
-                    "name": "SERENA KANDEM",
-                    "role": "GRAPHIC DESIGNER",
-                    "funFact": "Mit meiner besten Freundin überall abhängen.",
+                    "name": "FONGHO MBOPDA STELLA AUDREY",
+                    "role": "LEITUNG",
+                    "funFact": "B.Sc. Informatik",
                     "image": "/images/team/IMG-20241013-WA0010.jpg"
+                },
+                {
+                    "name": "NGATOUSSIA",
+                    "role": "KURSLEHRERIN UND DEUTSCHLEHRER",
+                    "funFact": "Doktorand in deutscher Sprache",
+                    "image": "/images/team/avatar.png"
                 }
             ]
         }
