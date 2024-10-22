@@ -1,9 +1,9 @@
 {
     "navigation": {
-        "home": "Startseite",
-        "news": "Nachrichten",
-        "registration": "Registrierung",
-        "course": "Kurs",
+        "home": "Home",
+        "news": "News",
+        "registration": "Anmeldung",
+        "course": "Sprachkurse",
         "about_us": "Über uns"
     },
     "languages": {
