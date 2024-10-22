@@ -211,6 +211,7 @@
                     .card_content {
                         padding: $spacing-4;
                         background-color: $white;
+                        text-align: center;
                         h4 {
                             @include text-lg-regular;
                             color: $gray-900;
