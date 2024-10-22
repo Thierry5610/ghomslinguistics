@@ -10,8 +10,9 @@
         "latest_news": "Dernières nouvelles",
         "news": {
             "location": "Yaoundé",
-            "start_date": "La prochaine date de début d'école est le {{date}}",
-            "course_start": "Le prochain cours commence le {{date}}"
+            "start_date": "La prochaine date de début des cours est le 17 juin 2024",
+            "course_start": "Le prochain cours commence le 1er avril"
+
         },
         "menu": "Menu",
         "data_protection": "Protection des données",

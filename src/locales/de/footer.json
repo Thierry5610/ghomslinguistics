@@ -10,8 +10,8 @@
         "latest_news": "Letzten News",
         "news": {
             "location": "Jaunde",
-            "start_date": "Nächstes Schulstartdatum ist der {{date}}",
-            "course_start": "Nächster Kurs beginnt am {{date}}"
+            "start_date": "Nächstes Schulstartdatum ist der 17. Juni 2024",
+            "course_start": "Nächster Kurs beginnt am 1. April"
         },
         "menu": "Menü",
         "data_protection": "Datenschutzerklärung",

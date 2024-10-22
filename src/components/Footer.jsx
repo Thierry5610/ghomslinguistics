@@ -62,8 +62,8 @@ export default function Footer() {
                             <h3>{t('footer.latest_news')}</h3> {/* Translate heading */}
                             <div className={Styles.links}>
                                 <div>{t('footer.news.location')}</div> {/* Translate location */}
-                                <Link to="/news">{t('footer.news.start_date', { date: 'June 17, 2024' })}</Link>
-                                <Link to="/news">{t('footer.news.course_start', { date: 'April 1st' })}</Link>
+                                <Link to="/news">{t('footer.news.start_date')}</Link>
+                                <Link to="/news">{t('footer.news.course_start')}</Link>
                             </div>
                         </div>
                         <div className={Styles.links_box}>
