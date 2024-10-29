@@ -5,7 +5,7 @@ import {useEffect, useRef, useState } from "react"
 
 const BottomNav = () => {
     const { scrollY } = useScroll()
-    const [hidden, setHidden] = useState(true)
+    const [hidden, setHidden] = useState(false)
     useMotionValueEvent(scrollY,'change',(latest)=>{
         // console.log(`latest: ${latest} previous ${scrollY.getPrevious()}`)
         if(latest<scrollY.getPrevious()){

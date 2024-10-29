@@ -6,7 +6,7 @@ import  './styles/styles.css'
 export default function Admin() {
     return(
         <div className="min-h-screen max-w-screen-xl mx-auto flex items-start bg-stone-100">
-            <div className="flex w-full">
+            <div className="flex w-full min-h-screen">
                 <div className="hidden relative md:block w-64 flex-shrink-0"><SideNav/></div>
                 <div className="flex-1 overflow-x-hidden items-center justify-center"><Outlet/></div>
             </div>

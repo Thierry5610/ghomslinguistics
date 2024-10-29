@@ -92,7 +92,7 @@ const Dashboard = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-gray-600">{stat.title}</h3>
-                  <p className="text-2xl font-semibold text-gray-900 mt-1">{stat.value}</p>
+                  <p className="text-2xl font-medium text-gray-900 mt-1">{stat.value}</p>
                 </div>
               </div>
             </div>
@@ -101,17 +101,17 @@ const Dashboard = () => {
       </div>
 
       {/* Announcements Section */}
-      <div className="bg-white rounded-lg shadow">
+      <div className="bg-white rounded-lg shadow text-sm">
         <div className="flex justify-between items-center p-4 border-b">
-          <h2 className="text-lg font-bold text-gray-900">Announcement</h2>
-          <button className="text-amber-500 text-sm">See All Announcement</button>
+          <h2 className="text-base font-medium text-gray-900">Announcement</h2>
+          <button className="text-amber-500 text-xs">See All Announcement</button>
         </div>
         <div className="divide-y">
           {announcements.map((announcement, index) => (
             <div key={index} className="flex items-center justify-between p-4 hover:bg-gray-50">
               <div className="flex-1">
-                <h3 className="font-medium text-gray-900 mb-1">{announcement.title}</h3>
-                <p className="text-sm text-gray-500">{announcement.time}</p>
+                <h3 className="font-semi-bold text-gray-900 mb-1">{announcement.title}</h3>
+                <p className="text-xs text-gray-500">{announcement.time}</p>
               </div>
               <div className="flex items-center gap-2">
                 <PinIcon className="w-4 h-4 text-gray-400" />
@@ -125,9 +125,9 @@ const Dashboard = () => {
       </div>
 
       {/* Students Table */}
-      <div className="bg-white rounded-lg shadow">
+      <div className="bg-white rounded-lg shadow text-sm">
         <div className="flex justify-between items-center p-4 border-b">
-          <h2 className="text-lg font-bold text-gray-900">Current Students</h2>
+          <h2 className="text-base font-medium text-gray-900">Current Students</h2>
           <button className="flex items-center px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600">
             <Plus className="w-4 h-4 mr-2" />
             Add Student
@@ -135,14 +135,14 @@ const Dashboard = () => {
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-gray-50 text-sm text-gray-600">
+            <thead className="bg-gray-100">
               <tr>
-                <th className="px-4 py-3 text-left">Name</th>
-                <th className="px-4 py-3 text-left">Course</th>
-                <th className="px-4 py-3 text-left">Start Date</th>
-                <th className="px-4 py-3 text-left">End Date</th>
-                <th className="px-4 py-3 text-left">Price</th>
-                <th className="px-4 py-3 text-left">Status</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Course</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Start Date</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">End Date</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
               </tr>
             </thead>
             <tbody className="divide-y">
