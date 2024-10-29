@@ -177,7 +177,7 @@ const CoursesPage = () => {
                 <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Enrollment</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Price</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Status</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Actions</th>
+                {/* <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Actions</th> */}
               </tr>
             </thead>
             <tbody className="divide-y text-sm text-nowrap divide-stone-200">
@@ -218,11 +218,11 @@ const CoursesPage = () => {
                       {course.status}
                     </span>
                   </td>
-                  <td className="px-6 py-4">
+                  {/* <td className="px-6 py-4">
                     <button className="text-gray-400 hover:text-gray-600">
                       <MoreVertical className="w-5 h-5" />
                     </button>
-                  </td>
+                  </td> */}
                 </tr>
               ))}
             </tbody>
