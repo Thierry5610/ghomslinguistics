@@ -33,7 +33,7 @@ const BottomNav = () => {
         }
     ]
     return(
-        <div className="flex md:hidden border border-stone-500 p-3 rounded-full shadow-md bg-white absolute left-1/2 bottom-[5%] -translate-x-1/2">
+        <div className="flex md:hidden border border-stone-500 p-3 rounded-full shadow-md bg-white fixed left-1/2 bottom-[5%] -translate-x-1/2">
             {paths.map((path)=>(
                 <BottomNavItem id={path.name} to={path.name} setPill={setPillPos} key={path.name}>{path.icon}</BottomNavItem>
             ))}

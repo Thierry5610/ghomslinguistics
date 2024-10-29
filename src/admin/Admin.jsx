@@ -5,9 +5,11 @@ import  './styles/styles.css'
 
 export default function Admin() {
     return(
-        <div className="p-6 h-screen flex items-start bg-stone-100">
-            <SideNav/>
-                <Outlet/>
+        <div className="min-h-screen max-w-full flex items-start bg-stone-100">
+            <div className="flex max-w-full">
+                <div className="hidden md:block w-64 flex-shrink-0"><SideNav/></div>
+                <div className="flex-1 overflow-x-hidden"><Outlet/></div>
+            </div>
             <BottomNav/>
         </div>
     )
