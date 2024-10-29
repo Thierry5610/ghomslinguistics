@@ -126,14 +126,14 @@ const CoursesPage = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-semi-bold text-gray-900">Courses</h1>
-        <button className="flex items-center px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors">
+        <button className="flex text-sm items-center px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors">
           <Plus className="w-4 h-4 mr-2" />
           Add Course
         </button>
       </div>
 
       {/* Search and Filters */}
-      <div className="flex flex-col sm:flex-row gap-4 text-sm">
+      <div className="flex flex-col sm:flex-row gap-4 text-gray-700 text-sm">
         {/* Search */}
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
