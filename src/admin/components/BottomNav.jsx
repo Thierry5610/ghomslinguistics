@@ -67,7 +67,7 @@ const BottomNavItem = ({children,to,setPill,id}) => {
     
 
     return(
-        <Link ref={ref} to={to} id={id} className="text-xl z-10 text-stone-900 p-2">
+        <Link ref={ref} to={to} id={id} className="text-2xl z-10 text-stone-800 p-3">
             {children}
         </Link>
     )
