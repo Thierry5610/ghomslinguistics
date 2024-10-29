@@ -12,6 +12,7 @@ import Registration from './pages/Registration';
 import './i18n';
 import Admin from './admin/Admin.jsx';
 import Dashboard from './admin/pages/Dashboard.jsx';
+import CoursesPage from './admin/pages/Courses.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -28,7 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Route>
         <Route path="admin" element={<Admin />}>
           <Route path='dashboard' element={<Dashboard/>} />
-          <Route path='courses'/>
+          <Route path='courses' element={<CoursesPage/>}/>
           <Route path='news'/>
           <Route path='settings'/>
           <Route path ='students'/>
