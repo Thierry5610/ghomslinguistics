@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Plus, Pencil, Trash2, X } from 'lucide-react';
+import { ActionButton, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 
 const Students = () => {
   const [students, setStudents] = useState([
@@ -83,94 +84,75 @@ const Students = () => {
     <div className="max-w-6xl mx-auto p-4 space-y-4">
       {/* Header */}
       <div className="flex justify-between items-center">
-        <h1 className="text-xl font-semibold text-gray-800">Students</h1>
-        <button
-          onClick={() => {
-            setCurrentStudent({});
-            setErrors({});
-            setShowModal(true);
-          }}
-          className="flex items-center gap-2 px-3 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600"
-        >
-          <Plus size={16} />
-          <span className="text-sm">Add Student</span>
-        </button>
+        <PageHeading text={"Students"}/>
+
+        <ActionButton 
+          label={"Add Student"} 
+          icon={Plus} 
+          onClick={
+            ()=>{
+              setCurrentStudent({});
+              setErrors({});
+              setShowModal(true);
+            }
+          }
+        />
       </div>
 
       {/* Search */}
-      <div className="relative">
-        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-        <input
-          type="text"
-          placeholder="Search students by name, email, or phone..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm"
-        />
-      </div>
+      <SearchBar
+        placeholder={"Search students by name, email, or phone..."}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        value={searchQuery}
+      />
 
       {/* Table */}
       <div className="overflow-x-auto bg-white rounded-lg shadow">
         <table className="w-full">
-          <thead className="bg-stone-50">
-            <tr>
-              <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Name</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Contact Info</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Course</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Status</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Enrollment</th>
-              <th className="px-4 py-3 text-right text-sm font-medium text-gray-500">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-200">
+          <TableHead entries={["Name","Contact Info","Course","Status","Enrollment","Actions"]}/>
+          <TableBody>
             {filteredStudents.map(student => (
-              <tr key={student.id} className="hover:bg-stone-50">
-                <td className="px-4 py-3">
+              <TableRow key={student.id}>
+                <TableData>
                   <div className="text-sm text-gray-900">{student.name}</div>
                   <div className="text-xs text-gray-500">{student.dateOfBirth}</div>
-                </td>
-                <td className="px-4 py-3">
+                </TableData>
+                <TableData>
                   <div className="text-sm text-gray-600">{student.email}</div>
                   <div className="text-sm text-gray-600">{student.phone}</div>
-                </td>
-                <td className="px-4 py-3 text-sm text-gray-600">{student.course}</td>
-                <td className="px-4 py-3">
-                  <span className={`inline-flex px-2 py-1 text-xs rounded-full ${
-                    student.status === 'Active' ? 'bg-green-100 text-green-800' :
-                    student.status === 'Inactive' ? 'bg-gray-100 text-gray-800' :
-                    student.status === 'On Leave' ? 'bg-yellow-100 text-yellow-800' :
-                    student.status === 'Graduated' ? 'bg-blue-100 text-blue-800' :
-                    'bg-red-100 text-red-800'
-                  }`}>
-                    {student.status}
-                  </span>
-                </td>
-                <td className="px-4 py-3 text-sm text-gray-600">{student.enrollmentDate}</td>
-                <td className="px-4 py-3 text-right space-x-2">
-                  <button
-                    onClick={() => {
-                      setCurrentStudent(student);
-                      setErrors({});
-                      setShowModal(true);
-                    }}
-                    className="text-gray-400 hover:text-amber-500"
-                  >
-                    <Pencil size={16} />
-                  </button>
-                  <button
-                    onClick={() => {
-                      if (window.confirm('Delete this student?')) {
-                        setStudents(students.filter(s => s.id !== student.id));
-                      }
-                    }}
-                    className="text-gray-400 hover:text-red-500"
-                  >
-                    <Trash2 size={16} />
-                  </button>
-                </td>
-              </tr>
+                </TableData>
+                <TableData>{student.course}</TableData>
+                <TableData>
+                  <StatusPill status={student.status}/>
+                </TableData>
+                <TableData>{student.enrollmentDate}</TableData>
+                <TableData>
+                  <div className='flex gap-2'>
+                    <button
+                      onClick={() => {
+                        setCurrentStudent(student);
+                        setErrors({});
+                        setShowModal(true);
+                      }}
+                      className="text-gray-400 hover:text-amber-500"
+                    >
+                      <Pencil size={16} />
+                    </button>
+                    <button
+                      onClick={() => {
+                        if (window.confirm('Delete this student?')) {
+                          setStudents(students.filter(s => s.id !== student.id));
+                        }
+                      }}
+                      className="text-gray-400 hover:text-red-500"
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  </div>
+                </TableData>
+              </TableRow>
             ))}
-          </tbody>
+          </TableBody>
         </table>
       </div>
 

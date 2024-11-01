@@ -1,6 +1,7 @@
 import React from 'react';
 import { Plus, PinIcon, MoreVertical} from 'lucide-react';
 import { announcements, stats, studentData } from '../db';
+import { ActionButton, SectionHeading, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 
 const Dashboard = () => {
   return (
@@ -28,8 +29,8 @@ const Dashboard = () => {
       {/* Announcements Section */}
       <div className="bg-white rounded-lg shadow text-sm">
         <div className="flex justify-between items-center p-4 border-b">
-          <h2 className="text-base font-medium text-gray-900">Announcement</h2>
-          <button className="text-amber-500 text-xs">See All Announcement</button>
+          <SectionHeading text={"Announcement"}/>
+          <ActionButton label={"See All Announcement"} link={true}/>
         </div>
         <div className="divide-y">
           {announcements.map((announcement, index) => (
@@ -52,40 +53,26 @@ const Dashboard = () => {
       {/* Students Table */}
       <div className="bg-white rounded-lg shadow text-sm">
         <div className="flex justify-between items-center p-4 border-b">
-          <h2 className="text-base font-medium text-gray-900">Current Students</h2>
-          <button className="flex items-center px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600">
-            <Plus className="w-4 h-4 mr-2" />
-            Add Student
-          </button>
+          <SectionHeading text={"Current Students"}/>
+          <ActionButton icon={Plus} label={"Add Student"}/>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Course</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Start Date</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">End Date</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y">
+            <TableHead entries={["Name","Course","Start Date","End Date","Price","Status"]}/>
+            <TableBody>
               {studentData.map((student) => (
-                <tr key={student.id} className="hover:bg-gray-50">
-                  <td className="px-4 py-3 text-gray-900">{student.name}</td>
-                  <td className="px-4 py-3 text-gray-900">{student.course}</td>
-                  <td className="px-4 py-3 text-gray-900">{student.startDate}</td>
-                  <td className="px-4 py-3 text-gray-900">{student.endDate}</td>
-                  <td className="px-4 py-3 text-gray-900">{student.price}</td>
-                  <td className="px-4 py-3">
-                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800">
-                      {student.status}
-                    </span>
-                  </td>
-                </tr>
+                <TableRow key={student.id}>
+                  <TableData>{student.name}</TableData>
+                  <TableData>{student.course}</TableData>
+                  <TableData>{student.startDate}</TableData>
+                  <TableData>{student.endDate}</TableData>
+                  <TableData>{student.price}</TableData>
+                  <TableData>
+                    <StatusPill status={student.status}/>
+                  </TableData>
+                </TableRow>
               ))}
-            </tbody>
+            </TableBody>
           </table>
         </div>
       </div>
