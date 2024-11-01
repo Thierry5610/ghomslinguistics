@@ -11,7 +11,6 @@ import {
 import { initialCourses } from '../db';
 import AddCourseModal from '../components/AddCourseModal';
 import { ActionButton, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
-import AddCoursePopUp from '../components/AddCoursePopUp';
 
 const CoursesPage = () => {
   // Mock data for courses
@@ -134,7 +133,7 @@ const CoursesPage = () => {
           </div>
         </div>
       </div>
-      <AddCoursePopUp isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} onAddCourse={handleAddCourse}/>
+      <AddCourseModal isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} onAddCourse={handleAddCourse}/>
     </>
   );
 };

@@ -1,5 +1,5 @@
-import { Search } from 'lucide-react';
-import React, { Children } from 'react';
+import { CircleX, Search } from 'lucide-react';
+import React from 'react';
 
 // Reusable ActionButton Component
 const ActionButton = ({ link,label, icon: Icon, onClick, className = '' }) => (
@@ -16,6 +16,11 @@ const ActionButton = ({ link,label, icon: Icon, onClick, className = '' }) => (
   </>
 );
 
+const CloseButton = ({onClick}) => (
+  <button onClick={onClick} className="absolute right-3 top-3 text-lg text-gray-700 hover:text-red-500">
+    <CircleX />
+  </button>
+)
 const SectionHeading = ({text}) => (
   <h2 className="text-base font-medium text-gray-900">{text}</h2>
 )
@@ -150,6 +155,20 @@ const InputElement = ({type,inputName,value,placeholder,onChange,error,options})
           {<span className='text-xs text-red-500'>{error}</span>}
         </div>
       );
+    case 'tel': 
+    return(
+      <div className='flex flex-col gap-1 items-start'>
+        <input
+        type="tel"
+        name={inputName}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className={`p-2 placeholder:text-gray-500 border outline-none w-full rounded-md ${borderStyle}`}
+        />
+        {<span className='text-xs text-red-500'>{error}</span>}
+      </div>
+    );
     case 'select': 
       return(
         <div className='flex flex-col gap-1 items-start'>
@@ -195,4 +214,4 @@ const InputElement = ({type,inputName,value,placeholder,onChange,error,options})
       )
   }
 }
-export {ActionButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement};
+export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement};
