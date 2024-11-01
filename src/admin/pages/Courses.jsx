@@ -2,86 +2,17 @@ import React, { useState } from 'react';
 import { 
   Search, 
   Plus, 
-  Filter,
   ChevronDown,
   Clock,
   Users,
-  BookOpen,
   Calendar,
   DollarSign,
-  MoreVertical,
-  CircleX
 } from 'lucide-react';
+import { initialCourses } from '../db';
+import AddCourseModal from '../components/AddCourseModal';
 
 const CoursesPage = () => {
   // Mock data for courses
-  const initialCourses = [
-    {
-      id: 1,
-      name: 'English B2',
-      language: 'English',
-      level: 'B2',
-      instructor: 'Dr. Sarah Wilson',
-      duration: '12 weeks',
-      schedule: 'Mon, Wed, Fri',
-      time: '09:00 - 10:30',
-      enrolled: 18,
-      capacity: 25,
-      price: 799,
-      status: 'Active',
-      startDate: '2024-03-15',
-      type: 'Group'
-    },
-    {
-      id: 2,
-      name: 'German A1',
-      language: 'German',
-      level: 'A1',
-      instructor: 'Prof. Hans Mueller',
-      duration: '10 weeks',
-      schedule: 'Tue, Thu',
-      time: '14:00 - 16:00',
-      enrolled: 12,
-      capacity: 20,
-      price: 699,
-      status: 'Enrolling',
-      startDate: '2024-04-01',
-      type: 'Group'
-    },
-    {
-      id: 3,
-      name: 'English C1',
-      language: 'English',
-      level: 'C1',
-      instructor: 'Dr. John Smith',
-      duration: '16 weeks',
-      schedule: 'Mon, Wed, Fri',
-      time: '11:00 - 12:30',
-      enrolled: 15,
-      capacity: 15,
-      price: 999,
-      status: 'Full',
-      startDate: '2024-03-20',
-      type: 'Group'
-    },
-    {
-      id: 4,
-      name: 'German B1',
-      language: 'German',
-      level: 'B1',
-      instructor: 'Prof. Anna Schmidt',
-      duration: '12 weeks',
-      schedule: 'Tue, Thu',
-      time: '18:00 - 19:30',
-      enrolled: 8,
-      capacity: 20,
-      price: 799,
-      status: 'Active',
-      startDate: '2024-03-10',
-      type: 'Group'
-    }
-  ];
-
   const [courses, setCourses] = useState(initialCourses);
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
@@ -89,6 +20,10 @@ const CoursesPage = () => {
     level: '',
     status: ''
   });
+  const [isAddModalOpen,setIsAddModalOpen] = useState(false)
+  const handleAddCourse = (newCourse) => {
+    setCourses([...courses, { ...newCourse, id: Date.now()}]);
+  };
 
   // Filter options
   const filterOptions = {
@@ -128,7 +63,7 @@ const CoursesPage = () => {
         {/* Header */}
         <div className="flex justify-between items-center">
           <h1 className="text-xl font-semi-bold text-gray-900">Courses</h1>
-          <button className="flex text-sm items-center px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors">
+          <button onClick={()=>setIsAddModalOpen(true)} className="flex text-sm items-center px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors">
             <Plus className="w-4 h-4 mr-2" />
             Add Course
           </button>
@@ -232,18 +167,11 @@ const CoursesPage = () => {
           </div>
         </div>
       </div>
-      {/* {
-        <div className="inset-0 bg-black opacity-40 fixed z-20 flex items-center justify-center">
-          <div className='md:p-6 relative p-3 max-h-dvh md:max-h-[100vh-3rem] max-w-full md:max-w-[100vw-3rem] bg-white md:rounded-lg'>
-            <div className='absolute right-3 top-3 text-lg text-gray-700 hover:text-red-500'><CircleX /></div>
-            <div>
-              
-            </div>
-          </div>
-        </div>
-      } */}
+      <AddCourseModal isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} onAddCourse={handleAddCourse}/>
     </>
   );
 };
 
 export default CoursesPage;
+
+

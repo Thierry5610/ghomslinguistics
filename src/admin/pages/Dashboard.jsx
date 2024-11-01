@@ -1,83 +1,8 @@
 import React from 'react';
-import { Plus, PinIcon, MoreVertical, Users, BookOpen, BookText, DollarSign } from 'lucide-react';
+import { Plus, PinIcon, MoreVertical} from 'lucide-react';
+import { announcements, stats, studentData } from '../db';
 
 const Dashboard = () => {
-  // Mock data
-  const stats = [
-    { 
-      title: 'Active Students', 
-      value: '234',
-      icon: Users,
-      color: 'bg-blue-100 text-blue-600'
-    },
-    { 
-      title: 'Active Courses', 
-      value: '12',
-      icon: BookOpen,
-      color: 'bg-green-100 text-green-600'
-    },
-    { 
-      title: 'Publications', 
-      value: '45',
-      icon: BookText,
-      color: 'bg-purple-100 text-purple-600'
-    },
-    { 
-      title: 'Total Revenue', 
-      value: '$45,678',
-      icon: DollarSign,
-      color: 'bg-amber-100 text-amber-600'
-    }
-  ];
-
-  const announcements = [
-    { 
-      title: 'Outing schedule for every department',
-      time: '5 Minutes ago',
-      pinned: true
-    },
-    { 
-      title: 'Meeting HR Department',
-      time: 'Yesterday, 12:30 PM',
-      pinned: true
-    },
-    { 
-      title: 'IT Department need two more talents for UX/UI Designer position',
-      time: 'Yesterday, 09:15 AM',
-      pinned: true
-    }
-  ];
-
-  const studentData = [
-    { 
-      id: 1,
-      name: 'John Doe',
-      course: 'Advanced English',
-      startDate: '2024-01-15',
-      endDate: '2024-06-15',
-      price: '$599',
-      status: 'Active'
-    },
-    { 
-      id: 2,
-      name: 'Sarah Smith',
-      course: 'Business French',
-      startDate: '2024-02-01',
-      endDate: '2024-07-01',
-      price: '$699',
-      status: 'Active'
-    },
-    { 
-      id: 3,
-      name: 'Mike Johnson',
-      course: 'Beginner Spanish',
-      startDate: '2024-01-10',
-      endDate: '2024-06-10',
-      price: '$499',
-      status: 'Active'
-    }
-  ];
-
   return (
     <div className="p-6 space-y-6">
       {/* Stats Grid */}
