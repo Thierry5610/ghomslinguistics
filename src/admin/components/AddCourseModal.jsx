@@ -70,7 +70,7 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
 
   return (
     <div className="inset-0 bg-black bg-opacity-70 fixed z-20 flex items-center justify-center">
-      <div className="md:p-10 relative p-6 max-h-[100dvh] md:max-h-[90vh] max-w-full md:max-w-[100vw-3rem] bg-white rounded-lg overflow-y-auto">
+      <div className="md:p-10 relative p-6 h-[100dvh] md:max-h-[90vh] md:min-w-[50%] md:w-auto w-full md:max-w-[100vw-3rem] bg-white rounded-lg overflow-y-auto">
         <CloseButton onClick={() => setIsOpen(false)}/>
 
         <div>

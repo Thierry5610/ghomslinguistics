@@ -57,7 +57,7 @@ export default function AddStudentModal({ students,setCurrentStudent, showModal,
       if (!showModal) return null;
     return(
         <div className="inset-0 bg-black bg-opacity-70 fixed z-20 flex items-center justify-center">
-        <div className="md:p-10 relative p-6 max-h-[100dvh] md:max-h-[90vh] max-w-full md:max-w-[100vw-3rem] text-sm bg-white rounded-lg overflow-y-auto">
+        <div className="md:p-10 p-6 relative h-[100dvh] md:max-h-[90vh] md:min-w-[50%] md:w-auto w-full md:max-w-[100vw-3rem] text-sm bg-white rounded-lg overflow-y-auto">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg text-gray-800 flex gap-2 items-center my-6">
                 <GraduationCap className="text-amber-500" />
