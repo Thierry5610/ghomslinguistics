@@ -37,6 +37,18 @@ const useValidation = () => {
     return true;
   };
 
+  const validatePhone = (fieldName, value) => {
+    const phoneRegex = /^\+?[\d\s-]{10,}$/;
+    if (!phoneRegex.test(value)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [fieldName]: `Invalid phone format for ${fieldName}`,
+      }));
+      return false;
+    }
+    return true;
+  };
+
   const clearError = (fieldName) => {
     setErrors((prevErrors) => {
       const newErrors = { ...prevErrors };
@@ -50,6 +62,7 @@ const useValidation = () => {
     validateEmpty,
     validateNumber,
     validateEmail,
+    validatePhone,
     clearError,
   };
 };
