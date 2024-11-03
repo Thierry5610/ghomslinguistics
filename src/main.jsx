@@ -30,7 +30,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="course/:language" element={<Course />} />
         </Route>
         <Route path="admin" element={<Admin />}>
-          <Route path='dashboard' element={<Dashboard/>} />
+          <Route index element={<Dashboard/>} />
+          <Route path='dashboard' index element={<Dashboard/>} />
           <Route path='courses' element={<CoursesPage/>}/>
           <Route path='news' element={<Announcements/>}/>
           <Route path='settings'/>

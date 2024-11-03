@@ -1,12 +1,12 @@
-import React from 'react';
-import { Twitter, Edit2, Trash2, ExternalLink, Plus } from 'lucide-react';
+import React, { useState } from 'react';
+import { Edit2, Trash2, ExternalLink, Plus } from 'lucide-react';
 import { ActionButton, DisplaySocial, PageHeading } from '../components/Atoms';
 import { announcementsDetailed } from '../db';
 
 const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
   <div className="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow">
     <div className="flex justify-between items-start mb-4">
-      <h2 className="text-basetext-gray-900">{announcement.headline}</h2>
+      <h2 className="md:text-base text-sm text-gray-900">{announcement.headline}</h2>
       <div className="flex gap-2">
         <button 
           onClick={() => onEdit(announcement.id)}
@@ -25,15 +25,15 @@ const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
     
     <div className="flex gap-6">
       <div className="flex-1">
-        <p className="text-sm text-gray-500 mb-4">{announcement.text}</p>
+        <p className="md:text-sm text-xs text-gray-500 mb-4">{announcement.text}</p>
         <a 
           href={announcement.socialLink} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-amber-500 hover:text-amber-600 font-medium"
+          className="inline-flex items-center gap-2 text-xs md:text-sm text-amber-500 hover:text-amber-600 font-medium"
         >
           <DisplaySocial social={announcement.socialNetwork}/>
-          <span>View on {announcement.socialNetwork}</span>
+          <span className='hidden md:inline'>View on {announcement.socialNetwork}</span>
           <ExternalLink size={14} />
         </a>
       </div>
@@ -50,7 +50,10 @@ const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
 );
 
 const Announcements = () => {
- const announcements = announcementsDetailed
+ const [announcements,setAnnouncements] = useState(announcementsDetailed)
+ const [currentAnnoucment,setCurrentAnnoucement] = useState(null)
+ const [isModalOpen,setIsModalOpen] = useState(false)
+
   const handleEdit = (id) => {
     console.log('Edit announcement:', id);
   };
@@ -60,7 +63,7 @@ const Announcements = () => {
   };
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-6">
     <div className='flex justify-between w-full'>
         <PageHeading text={"Announcements"}/>
         <ActionButton icon={Plus} label={"Annoucement"}/>
