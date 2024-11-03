@@ -6,7 +6,7 @@ import { announcementsDetailed } from '../db';
 const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
   <div className="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow">
     <div className="flex justify-between items-start mb-4">
-      <h2 className="md:text-base text-sm text-gray-900">{announcement.headline}</h2>
+      <h2 className="md:text-base font-medium text-sm text-gray-900">{announcement.headline}</h2>
       <div className="flex gap-2">
         <button 
           onClick={() => onEdit(announcement.id)}
@@ -33,7 +33,7 @@ const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
           className="inline-flex items-center gap-2 text-xs md:text-sm text-amber-500 hover:text-amber-600 font-medium"
         >
           <DisplaySocial social={announcement.socialNetwork}/>
-          <span className='hidden md:inline'>View on {announcement.socialNetwork}</span>
+          <span>View on {announcement.socialNetwork}</span>
           <ExternalLink size={14} />
         </a>
       </div>
