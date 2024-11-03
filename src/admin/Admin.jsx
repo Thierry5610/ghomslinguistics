@@ -23,7 +23,7 @@ export default function Admin() {
 function Header() {
     return(
         <div className="flex justify-between items-center w-full">
-            <h2 className="gray-800 font-semibold tex-xl md:text-2xl">Welcome back Admin 👋</h2>
+            <h2 className="gray-800 font-semibold text-2xl">Welcome back Admin 👋</h2>
             <div>
                 <div className="bg-gray-200 p-2 rounded-full">
                     <User2 size={24} className="text-gray-700"/>
