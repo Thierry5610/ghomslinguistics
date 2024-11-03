@@ -3,21 +3,24 @@ import { Users, CircleX, Globe2, School, CalendarDays, DollarSignIcon, User, Clo
 import { CloseButton, InputContainer, InputElement } from './Atoms';
 import useValidation from '../utils/useValidation';
 
-const AddCourseModal = ({ isOpen, setIsOpen, onAddCourse }) => {
+const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isOpen, setIsOpen}) => {
   const initialFormState = {
-    name: '',
-    language: '',
-    level: '',
-    instructor: '',
-    duration: '',
-    schedule: '',
-    time: '',
-    capacity: '',
-    price: '',
-    startDate: '',
-    type: 'Group'
+    id: currentCourse?.id || '',
+    name: currentCourse?.name || '',
+    language: currentCourse?.language || '',
+    level: currentCourse?.level || '',
+    instructor: currentCourse?.instructor || '',
+    duration: currentCourse?.duration || '',
+    schedule: currentCourse?.schedule || '',
+    time: currentCourse?.time || '',
+    capacity: currentCourse?.capacity || '',
+    price: currentCourse?.price || '',
+    status: currentCourse?.status || '',
+    enrolled: currentCourse?.enrolled || '',
+    startDate: currentCourse?.startDate || '',
+    type: currentCourse?.type || 'Group'
   };
-
+  const statuses = ['Active', 'Full','Enrolling']
   const { errors, validateEmpty, validateNumber, clearError } = useValidation()
   const [formData, setFormData] = useState(initialFormState);
 
@@ -32,6 +35,8 @@ const AddCourseModal = ({ isOpen, setIsOpen, onAddCourse }) => {
       validateEmpty('instructor', formData.instructor),
       validateEmpty('duration', formData.duration),
       validateEmpty('schedule', formData.schedule),
+      validateEmpty('status',formData.status),
+      validateNumber('enrolled',formData.enrolled),
       validateEmpty('time', formData.time),
       validateNumber('capacity', formData.capacity),
       validateNumber('price', formData.price),
@@ -39,16 +44,14 @@ const AddCourseModal = ({ isOpen, setIsOpen, onAddCourse }) => {
     ].every(Boolean);
 
     if (isFormValid) {
-      const newCourse = {
-        id: Date.now(),
-        ...formData,
-        enrolled: 0,
-        status: 'Enrolling'
-      };
-
-      onAddCourse(newCourse);
-      setFormData(initialFormState);
+      if (formData.id) {
+        setCourses(courses.map(c => c.id === formData.id ? formData : c));
+      } else {
+        setCourses([...courses, { ...formData, id: Date.now() }]);
+      }
+      setCurrrentCourse(null)
       setIsOpen(false);
+      setFormData(initialFormState);
     }
   };
 
@@ -73,7 +76,7 @@ const AddCourseModal = ({ isOpen, setIsOpen, onAddCourse }) => {
         <div>
           <h2 className="text-lg text-gray-800 flex gap-2 items-center my-6">
             <Globe2 className="text-amber-500" />
-            <span>Add New Language Course</span>
+            <span>{!formData.id?'Add New Language Course':'Edit Course'}</span>
           </h2>
 
           <form onSubmit={handleSubmit} className="text-sm text-gray-800 space-y-4">
@@ -183,12 +186,35 @@ const AddCourseModal = ({ isOpen, setIsOpen, onAddCourse }) => {
                     />
                 </InputContainer>
             </div>
+            <div className='grid gap-4 grid-cols-2'>
+            <InputContainer inputName={"enrolled"} icon={Users} label={"Enrolled"}>
+              <InputElement
+                  placeholder={"Enrolled"}
+                  value={formData.enrolled}
+                  onChange={handleChange}
+                  inputName={"enrolled"}
+                  type={"number"}
+                  error={errors.price}
+              />
+            </InputContainer>
+            <InputContainer icon={Clock3} inputName={"status"} label={"Status"}>
+              <InputElement 
+                  type={"select"} 
+                  options={statuses} 
+                  onChange={handleChange}
+                  inputName={"status"}
+                  value={formData.status}
+                  placeholder={"Select Status"}
+                  error={errors.time}
+              />
+            </InputContainer>  
+            </div>
             <div className="flex gap-3 flex-wrap items-center justify-end pt-4">
               <button type="button" onClick={() => setIsOpen(false)} className="p-2 border border-gray-300 text-gray-800 rounded-md hover:bg-gray-50">
                 Cancel
               </button>
               <button type="submit" className="p-2 bg-amber-500 border border-amber-500 text-white rounded-md hover:bg-amber-600">
-                Add Course
+                {formData.id?'EditCourse':'Add Course'}
               </button>
             </div>
           </form>

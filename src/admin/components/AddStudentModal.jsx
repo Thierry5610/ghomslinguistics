@@ -19,7 +19,7 @@ export default function AddStudentModal({ students,setCurrentStudent, showModal,
     const { errors, validatePhone, validateEmpty, validateEmail, validateNumber, clearError } = useValidation()
 
     const handleSubmit = (e) => {
-        console.log(formData)
+        //console.log(formData)
         e.preventDefault();
         // Run validations
         const isFormValid = [

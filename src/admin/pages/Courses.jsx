@@ -7,6 +7,8 @@ import {
   Users,
   Calendar,
   DollarSign,
+  Pencil,
+  Trash2,
 } from 'lucide-react';
 import { initialCourses } from '../db';
 import AddCourseModal from '../components/AddCourseModal';
@@ -15,6 +17,7 @@ import { ActionButton, PageHeading, SearchBar, StatusPill, TableBody, TableData,
 const CoursesPage = () => {
   // Mock data for courses
   const [courses, setCourses] = useState(initialCourses);
+  const [currentCourse,setCurrentCourse] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
     language: '',
@@ -22,9 +25,6 @@ const CoursesPage = () => {
     status: ''
   });
   const [isAddModalOpen,setIsAddModalOpen] = useState(false)
-  const handleAddCourse = (newCourse) => {
-    setCourses([...courses, { ...newCourse, id: Date.now()}]);
-  };
 
   // Filter options
   const filterOptions = {
@@ -88,7 +88,7 @@ const CoursesPage = () => {
           <div className="overflow-x-auto">
             <table className="w-full">
               <TableHead
-                entries={["Course","Schedule","Enrollment","Price","Status"]}
+                entries={["Course","Schedule","Enrollment","Price","Status","Actions"]}
               />
               <TableBody>
                 {filteredCourses.map((course) => (
@@ -126,6 +126,29 @@ const CoursesPage = () => {
                     <TableData>
                       <StatusPill status={course.status}/>
                     </TableData>
+                    <TableData>
+                    <div className='flex gap-2'>
+                      <button
+                        onClick={() => {
+                          setCurrentCourse(course);
+                          setIsAddModalOpen(true);
+                        }}
+                        className="text-gray-400 hover:text-amber-500"
+                      >
+                        <Pencil size={16} />
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (window.confirm('Delete this course?')) {
+                            setCourses(courses.filter(c => c.id !== course.id));
+                          }
+                        }}
+                        className="text-gray-400 hover:text-red-500"
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    </div>
+                  </TableData>
                   </TableRow>
                 ))}
               </TableBody>
@@ -133,7 +156,7 @@ const CoursesPage = () => {
           </div>
         </div>
       </div>
-      <AddCourseModal isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} onAddCourse={handleAddCourse}/>
+      {isAddModalOpen&&<AddCourseModal setCourses={setCourses} currentCourse={currentCourse} setCurrrentCourse={setCurrentCourse} isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} courses={courses}/>}
     </>
   );
 };
