@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Plus, Pencil, Trash2, X } from 'lucide-react';
-import { ActionButton, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
+import { ActionButton, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 import AddStudentModal from '../components/AddStudentModal';
 
 const Students = () => {
@@ -121,9 +121,7 @@ const Students = () => {
 
         {/* Empty State */}
         {filteredStudents.length === 0 && (
-          <div className="text-center py-8 bg-stone-50 rounded-lg">
-            <p className="text-gray-500 text-sm">No students found</p>
-          </div>
+          <EmptyState text={"No students found"}/>
         )}
       </div>
       {showModal && (

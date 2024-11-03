@@ -236,4 +236,10 @@ const DisplaySocial = ({ social, size = 16 }) => {
   }
 };
 
-export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement,DisplaySocial};
+const EmptyState = ({text}) => (
+  <div className="text-center py-8 bg-stone-50 rounded-lg">
+    <p className="text-gray-500 text-sm">{text}</p>
+  </div>
+)
+
+export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement,DisplaySocial,EmptyState};

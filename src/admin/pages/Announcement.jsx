@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Edit2, Trash2, ExternalLink, Plus } from 'lucide-react';
-import { ActionButton, DisplaySocial, PageHeading } from '../components/Atoms';
+import { ActionButton, DisplaySocial, EmptyState, PageHeading } from '../components/Atoms';
 import { announcementsDetailed } from '../db';
 
 const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
@@ -77,6 +77,9 @@ const Announcements = () => {
             onDelete={handleDelete}
           />
         ))}
+        {
+          announcements.length === 0 && <EmptyState text={"No annoucements found"}/>
+        }
       </div>
     </div>
     );

@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { initialCourses } from '../db';
 import AddCourseModal from '../components/AddCourseModal';
-import { ActionButton, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
+import { ActionButton, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 
 const CoursesPage = () => {
   // Mock data for courses
@@ -155,6 +155,10 @@ const CoursesPage = () => {
             </table>
           </div>
         </div>
+        {/* Empty State */}
+        {filteredCourses.length === 0 && (
+          <EmptyState text={"No courses found"}/>
+        )}
       </div>
       {isAddModalOpen&&<AddCourseModal setCourses={setCourses} currentCourse={currentCourse} setCurrrentCourse={setCurrentCourse} isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} courses={courses}/>}
     </>
