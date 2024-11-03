@@ -142,4 +142,23 @@ const initialCourses = [
       status: 'Active'
     }
   ];
-export {initialCourses,studentData,announcements,stats}
+
+  const announcementsDetailed = [
+    {
+      id: 1,
+      headline: "New Feature Release",
+      text: "We're excited to announce our latest feature that will revolutionize how you work. This update includes improvements to the user interface and better performance.",
+      image: "https://picsum.photos/400/400",
+      socialLink: "https://twitter.com/example/status/1",
+      socialNetwork: 'Twitter'
+    },
+    {
+      id: 2,
+      headline: "Company Milestone Achieved",
+      text: "We're proud to announce that we've reached 1 million active users! Thank you to our amazing community for your continued support and trust.",
+      image: "https://picsum.photos/400/400",
+      socialLink: "https://twitter.com/example/status/2",
+      socialNetwork: 'Twitter'
+    },
+  ];
+export {initialCourses,studentData,announcements,stats,announcementsDetailed}

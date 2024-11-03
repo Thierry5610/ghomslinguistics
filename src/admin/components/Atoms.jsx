@@ -1,4 +1,4 @@
-import { CircleX, Search } from 'lucide-react';
+import { CircleX, Facebook, Github, Globe2, Instagram, Linkedin, Search, Twitter, Youtube } from 'lucide-react';
 import React from 'react';
 
 // Reusable ActionButton Component
@@ -214,4 +214,26 @@ const InputElement = ({type,inputName,value,placeholder,onChange,error,options})
       )
   }
 }
-export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement};
+
+const DisplaySocial = ({ social, size = 16 }) => {
+  const baseStyle = "transition-colors duration-200";
+  
+  switch(social) {
+    case 'Facebook':
+      return <Facebook size={size} className={`${baseStyle} text-gray-600 hover:text-[#1877F2]`} />
+    case 'Twitter':
+      return <Twitter size={size} className={`${baseStyle} text-gray-600 hover:text-[#1DA1F2]`} />
+    case 'Instagram':
+      return <Instagram size={size} className={`${baseStyle} text-gray-600 hover:text-[#E4405F]`} />
+    case 'Linkedin':
+      return <Linkedin size={size} className={`${baseStyle} text-gray-600 hover:text-[#0A66C2]`} />
+    case 'Youtube':
+      return <Youtube size={size} className={`${baseStyle} text-gray-600 hover:text-[#FF0000]`} />
+    case 'Github':
+      return <Github size={size} className={`${baseStyle} text-gray-600 hover:text-[#181717]`} />
+    default:
+      return <Globe2 size={size} className={`${baseStyle} text-gray-600 hover:text-gray-900`} />
+  }
+};
+
+export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement,DisplaySocial};
