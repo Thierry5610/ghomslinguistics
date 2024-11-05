@@ -30,10 +30,10 @@ const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
           href={announcement.socialLink} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-xs md:text-sm text-amber-500 hover:text-amber-600 font-medium"
+          className="inline-flex items-center gap-1 text-xs md:text-sm text-amber-500 hover:text-amber-600 font-medium"
         >
           <DisplaySocial social={announcement.socialNetwork}/>
-          <span>View on {announcement.socialNetwork}</span>
+          <span>{announcement.socialNetwork}</span>
           <ExternalLink size={14} />
         </a>
       </div>
@@ -66,7 +66,7 @@ const Announcements = () => {
     <div className="space-y-6">
     <div className='flex justify-between w-full'>
         <PageHeading text={"Announcements"}/>
-        <ActionButton icon={Plus} label={"Annoucement"}/>
+        <ActionButton icon={Plus} label={"New"}/>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {announcements.map(announcement => (
