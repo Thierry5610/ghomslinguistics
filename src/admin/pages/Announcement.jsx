@@ -4,7 +4,7 @@ import { ActionButton, DisplaySocial, EmptyState, PageHeading } from '../compone
 import { announcementsDetailed } from '../db';
 
 const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
-  <div className="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow">
+  <div className="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow h-full">
     <div className="flex justify-between items-start mb-4">
       <h2 className="md:text-base font-medium text-sm text-gray-900">{announcement.headline}</h2>
       <div className="flex gap-2">
@@ -68,14 +68,15 @@ const Announcements = () => {
         <PageHeading text={"Announcements"}/>
         <ActionButton icon={Plus} label={"New"}/>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="flex flex-wrap gap-4 justify-between items-stretch">
         {announcements.map(announcement => (
-          <AnnouncementCard
-            key={announcement.id}
-            announcement={announcement}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-          />
+          <div className='basis-[49%] flex-1' key={announcement.id}>
+            <AnnouncementCard
+              announcement={announcement}
+              onEdit={handleEdit}
+              onDelete={handleDelete}
+            />
+          </div>
         ))}
         {
           announcements.length === 0 && <EmptyState text={"No annoucements found"}/>
