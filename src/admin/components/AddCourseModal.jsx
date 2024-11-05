@@ -214,7 +214,7 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
                 Cancel
               </button>
               <button type="submit" className="p-2 bg-amber-500 border border-amber-500 text-white rounded-md hover:bg-amber-600">
-                {formData.id?'EditCourse':'Add Course'}
+                {formData.id?'Edit Course':'Add Course'}
               </button>
             </div>
           </form>

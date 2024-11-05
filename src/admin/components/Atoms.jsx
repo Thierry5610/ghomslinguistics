@@ -169,6 +169,20 @@ const InputElement = ({type,inputName,value,placeholder,onChange,error,options})
         {<span className='text-xs text-red-500'>{error}</span>}
       </div>
     );
+    case 'url': 
+    return(
+      <div className='flex flex-col gap-1 items-start'>
+        <input
+        type="url"
+        name={inputName}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className={`p-2 placeholder:text-gray-500 border outline-none w-full rounded-md ${borderStyle}`}
+        />
+        {<span className='text-xs text-red-500'>{error}</span>}
+      </div>
+    );
     case 'select': 
       return(
         <div className='flex flex-col gap-1 items-start'>
@@ -214,7 +228,25 @@ const InputElement = ({type,inputName,value,placeholder,onChange,error,options})
       )
   }
 }
-
+const TextArea = ({maxlength,inputName,value,placeholder,onChange,error,rows,cols,resizable})=> {
+  const borderStyle = error? 'border-red-500': 'border-gray-500';
+  return(
+    <div className='flex flex-col gap-1 items-start'>
+      <textarea
+        name={inputName}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        maxLength={maxlength}
+        cols={cols}
+        style={{resize:resizable?'':'none'}}
+        rows={rows}
+        className={`p-4 placeholder:text-gray-500 border outline-none w-full ${borderStyle}`}
+      >{placeholder}</textarea>
+      {<span className='text-xs text-red-500'>{error}</span>}
+    </div>
+  )
+}
 const DisplaySocial = ({ social, size = 16 }) => {
   const baseStyle = "transition-colors duration-200";
   
@@ -242,4 +274,4 @@ const EmptyState = ({text}) => (
   </div>
 )
 
-export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement,DisplaySocial,EmptyState};
+export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement,TextArea,DisplaySocial,EmptyState};

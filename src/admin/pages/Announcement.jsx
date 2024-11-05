@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Edit2, Trash2, ExternalLink, Plus } from 'lucide-react';
 import { ActionButton, DisplaySocial, EmptyState, PageHeading } from '../components/Atoms';
 import { announcementsDetailed } from '../db';
+import AddAnnouncementModal from '../components/AddAnnouncementModal';
 
 const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
   <div className="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow h-full">
@@ -50,39 +51,55 @@ const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
 );
 
 const Announcements = () => {
- const [announcements,setAnnouncements] = useState(announcementsDetailed)
- const [currentAnnoucment,setCurrentAnnoucement] = useState(null)
- const [isModalOpen,setIsModalOpen] = useState(false)
+ const [announcements, setAnnouncements] = useState(announcementsDetailed);
+ const [currentAnnouncement, setCurrentAnnouncement] = useState(null);
+ const [isOpen, setIsOpen] = useState(false);
 
-  const handleEdit = (id) => {
-    console.log('Edit announcement:', id);
+  const handleEdit = (announcement) => {
+    setCurrentAnnouncement(announcement);
+    setIsOpen(true);
+    console.log('Edit announcement:', announcement);
   };
 
-  const handleDelete = (id) => {
-    console.log('Delete announcement:', id);
+  const handleDelete = (announcement) => {
+    if (window.confirm('Delete this announcement?')) {
+      setAnnouncements(announcements.filter(a => a.id !== announcement.id));
+    }
+    console.log('Delete announcement:', announcement);
   };
 
   return (
-    <div className="space-y-6">
-    <div className='flex justify-between w-full'>
-        <PageHeading text={"Announcements"}/>
-        <ActionButton icon={Plus} label={"New"}/>
-    </div>
-    <div className="flex flex-wrap gap-4 justify-between items-stretch">
-        {announcements.map(announcement => (
-          <div className='basis-[49%] flex-1' key={announcement.id}>
-            <AnnouncementCard
-              announcement={announcement}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-            />
+      <>
+        <div className="space-y-6">
+          <div className='flex justify-between w-full'>
+              <PageHeading text={"Announcements"}/>
+              <ActionButton icon={Plus} label={"New"} onClick={() => setIsOpen(true)}/>
           </div>
-        ))}
-        {
-          announcements.length === 0 && <EmptyState text={"No annoucements found"}/>
-        }
-      </div>
-    </div>
+          <div className="flex flex-wrap gap-4 justify-between items-stretch">
+              {announcements.map(announcement => (
+                <div className='basis-[49%] flex-1' key={announcement.id}>
+                  <AnnouncementCard
+                    announcement={announcement}
+                    onEdit={() => handleEdit(announcement)}
+                    onDelete={() => handleDelete(announcement)}
+                  />
+                </div>
+              ))}
+              {
+                announcements.length === 0 && <EmptyState text={"No announcements found"}/>
+              }
+          </div>
+        </div>
+        {isOpen &&
+        <AddAnnouncementModal 
+          announcements={announcements}
+          setAnnouncements={setAnnouncements}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          currentAnnouncement={currentAnnouncement}
+          setCurrentAnnouncement={setCurrentAnnouncement}
+        />}
+      </>
     );
 }
 export default Announcements;
