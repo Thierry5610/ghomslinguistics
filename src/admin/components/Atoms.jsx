@@ -1,5 +1,5 @@
 import { CircleX, Facebook, Github, Globe2, Instagram, Linkedin, Search, Twitter, Youtube } from 'lucide-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Reusable ActionButton Component
 const ActionButton = ({ link,label, icon: Icon, onClick, className = '' }) => (
@@ -274,4 +274,29 @@ const EmptyState = ({text}) => (
   </div>
 )
 
-export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement,TextArea,DisplaySocial,EmptyState};
+const NumberCounter = ({ number, duration = 2000 }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    // Calculate step size and interval duration based on the target number and duration
+    const step = Math.max(1, Math.floor(number / (duration / 50))); // Set a minimum step of 1
+    const intervalTime = Math.min(50, duration / (number / step)); // Set a minimum interval of 50ms for smoother updates
+
+    const interval = setInterval(() => {
+      setCount(prevCount => {
+        if (prevCount + step >= number) {
+          clearInterval(interval); // Stop when target is reached
+          return number;
+        }
+        return prevCount + step;
+      });
+    }, intervalTime);
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, [number, duration]);
+
+  return <>{count}</>;
+};
+
+
+export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement,TextArea,DisplaySocial,EmptyState,NumberCounter};

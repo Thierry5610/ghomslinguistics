@@ -88,7 +88,7 @@ const initialCourses = [
     },
     { 
       title: 'Total Revenue', 
-      value: '$45,678',
+      value: '45678',
       icon: DollarSign,
       color: 'bg-amber-100 text-amber-600'
     }

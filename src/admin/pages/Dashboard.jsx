@@ -1,7 +1,7 @@
 import React from 'react';
 import { Plus, PinIcon, MoreVertical} from 'lucide-react';
 import { announcements, stats, studentData } from '../db';
-import { ActionButton, SectionHeading, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
+import { ActionButton, NumberCounter, SectionHeading, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 
 const Dashboard = () => {
   return (
@@ -18,7 +18,9 @@ const Dashboard = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-gray-600">{stat.title}</h3>
-                  <p className="text-2xl font-medium text-gray-900 mt-1">{stat.value}</p>
+                  <p className="text-2xl font-medium text-gray-900 mt-1">
+                    <NumberCounter number={parseInt(stat.value,10)}/>
+                  </p>
                 </div>
               </div>
             </div>
