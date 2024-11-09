@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Users, CircleX, Globe2, School, CalendarDays, DollarSignIcon, User, Clock3 } from 'lucide-react';
 import { CloseButton, InputContainer, InputElement } from './Atoms';
 import useValidation from '../utils/useValidation';
+import { addCourse, updateCourse } from '../../SupabaseServices';
 
 const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isOpen, setIsOpen}) => {
   const initialFormState = {
-    id: currentCourse?.id || '',
+    ...(currentCourse?.id ? { id: currentCourse.id } : {}),
     name: currentCourse?.name || '',
     language: currentCourse?.language || '',
     level: currentCourse?.level || '',
@@ -13,10 +14,10 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
     duration: currentCourse?.duration || '',
     schedule: currentCourse?.schedule || '',
     time: currentCourse?.time || '',
-    capacity: currentCourse?.capacity || '',
-    price: currentCourse?.price || '',
+    capacity: currentCourse?.capacity || 0,
+    price: currentCourse?.price || 0,
     status: currentCourse?.status || '',
-    enrolled: currentCourse?.enrolled || '',
+    enrolled: currentCourse?.enrolled || 0,
     startDate: currentCourse?.startDate || '',
     type: currentCourse?.type || 'Group'
   };
@@ -24,7 +25,7 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
   const { errors, validateEmpty, validateNumber, clearError } = useValidation()
   const [formData, setFormData] = useState(initialFormState);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Run validations
@@ -44,10 +45,15 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
     ].every(Boolean);
 
     if (isFormValid) {
+      const course = {...formData}
+      console.log(formData)
       if (formData.id) {
+        await updateCourse(currentCourse.id, course);
         setCourses(courses.map(c => c.id === formData.id ? formData : c));
       } else {
-        setCourses([...courses, { ...formData, id: Date.now() }]);
+        const newCourse = await addCourse(course);
+        console.log(newCourse)
+        setCourses([...courses, newCourse[0]]);
       }
       setCurrrentCourse(null)
       setIsOpen(false);

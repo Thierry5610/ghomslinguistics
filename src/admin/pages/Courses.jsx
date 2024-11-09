@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   Search, 
   Plus, 
@@ -10,13 +10,13 @@ import {
   Pencil,
   Trash2,
 } from 'lucide-react';
-import { initialCourses } from '../db';
 import AddCourseModal from '../components/AddCourseModal';
 import { ActionButton, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
+import { deleteCourse, getCourses } from '../../SupabaseServices';
 
 const CoursesPage = () => {
   // Mock data for courses
-  const [courses, setCourses] = useState(initialCourses);
+  const [courses, setCourses] = useState([]);
   const [currentCourse,setCurrentCourse] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
@@ -25,6 +25,21 @@ const CoursesPage = () => {
     status: ''
   });
   const [isAddModalOpen,setIsAddModalOpen] = useState(false)
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      const data = await getCourses();
+      setCourses(data || []);
+    };
+    fetchCourses();
+  }, []);
+
+  const handleDeleteCourse = async (course) => {
+    if (window.confirm('Delete this course?')) {
+      await deleteCourse(course.id);
+      setCourses(courses.filter(c => c.id !== course.id));
+    }
+  };
 
   // Filter options
   const filterOptions = {
@@ -138,11 +153,7 @@ const CoursesPage = () => {
                         <Pencil size={16} />
                       </button>
                       <button
-                        onClick={() => {
-                          if (window.confirm('Delete this course?')) {
-                            setCourses(courses.filter(c => c.id !== course.id));
-                          }
-                        }}
+                        onClick={()=>handleDeleteCourse(course)}
                         className="text-gray-400 hover:text-red-500"
                       >
                         <Trash2 size={16} />

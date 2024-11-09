@@ -2,20 +2,22 @@ import React, { useState } from 'react';
 import { Users, CircleX, Globe2, School, CalendarDays, DollarSignIcon, User, Clock3 } from 'lucide-react';
 import { CloseButton, InputContainer, InputElement, TextArea } from './Atoms';
 import useValidation from '../utils/useValidation';
+import { addAnnouncement, updateAnnouncement } from '../../SupabaseServices';
 
 const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncements, setCurrentAnnouncement, isOpen, setIsOpen }) => {
   const initialFormState = {
-    id: currentAnnouncement?.id || '',
+    ...(currentAnnouncement?.id ? { id: currentAnnouncement.id } : {}),
     headline: currentAnnouncement?.headline || '',
     text: currentAnnouncement?.text || '',
     image: currentAnnouncement?.image || '',
     socialLink: currentAnnouncement?.socialLink || '',
-    socialNetwork: currentAnnouncement?.socialNetwork || ''
+    socialNetwork: currentAnnouncement?.socialNetwork || '',
+    pinned: currentAnnouncement?.pinned || false
   };
   const { errors, validateEmpty, clearError } = useValidation();
   const [formData, setFormData] = useState(initialFormState);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Run validations
@@ -28,10 +30,14 @@ const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncem
     ].every(Boolean);
 
     if (isFormValid) {
+      const announcement = {...formData}
       if (formData.id) {
+        await updateAnnouncement(currentAnnouncement.id, announcement);
         setAnnouncements(announcements.map(a => a.id === formData.id ? formData : a));
       } else {
-        setAnnouncements([...announcements, { ...formData, id: Date.now() }]);
+        const newAnnouncement = await addAnnouncement(announcement);
+        console.log(newAnnouncement)
+        setAnnouncements([...announcements, newAnnouncement[0]]);
       }
       setCurrentAnnouncement(null);
       setIsOpen(false);

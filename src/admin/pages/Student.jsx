@@ -1,37 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Search, Plus, Pencil, Trash2, X } from 'lucide-react';
 import { ActionButton, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 import AddStudentModal from '../components/AddStudentModal';
+import { deleteStudent, getStudents } from '../../SupabaseServices';
 
 const Students = () => {
-  const [students, setStudents] = useState([
-    {
-      id: 1,
-      name: 'John Doe',
-      email: 'john@example.com',
-      phone: '+1 234-567-8900',
-      course: 'English B2',
-      enrollmentDate: '2024-01-15',
-      status: 'Active',
-      address: '123 Main St, City',
-      dateOfBirth: '1995-06-20'
-    },
-    {
-      id: 2,
-      name: 'Jane Smith',
-      email: 'jane@example.com',
-      phone: '+1 234-567-8901',
-      course: 'French A1',
-      enrollmentDate: '2024-02-01',
-      status: 'Active',
-      address: '456 Oak Ave, Town',
-      dateOfBirth: '1998-03-15'
-    },
-  ]);
+  const [students, setStudents] = useState([]);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [currentStudent, setCurrentStudent] = useState(null);
+
+  useEffect(() => {
+    const fetchStudents = async () => {
+      const data = await getStudents();
+      setStudents(data || []);
+    };
+    fetchStudents();
+  }, []);
+
+  const handleDeleteStudent = async (student) => {
+    if (window.confirm('Delete this course?')) {
+      await deleteStudent(student.id);
+      setStudents(students.filter(c => c.id !== student.id));
+    }
+  };
 
   const courses = ['English B2', 'French A1', 'German A1', 'Spanish A2', 'Italian B1'];
   const statuses = ['Active', 'Inactive', 'On Leave', 'Graduated', 'Withdrawn'];
@@ -100,11 +93,7 @@ const Students = () => {
                         <Pencil size={16} />
                       </button>
                       <button
-                        onClick={() => {
-                          if (window.confirm('Delete this student?')) {
-                            setStudents(students.filter(s => s.id !== student.id));
-                          }
-                        }}
+                        onClick={() => {handleDeleteStudent(student)}}
                         className="text-gray-400 hover:text-red-500"
                       >
                         <Trash2 size={16} />

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Edit2, Trash2, ExternalLink, Plus } from 'lucide-react';
 import { ActionButton, DisplaySocial, EmptyState, PageHeading } from '../components/Atoms';
 import { announcementsDetailed } from '../db';
 import AddAnnouncementModal from '../components/AddAnnouncementModal';
+import { getAnnouncements } from '../../SupabaseServices';
 
 const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
   <div className="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow h-full">
@@ -55,14 +56,23 @@ const Announcements = () => {
  const [currentAnnouncement, setCurrentAnnouncement] = useState(null);
  const [isOpen, setIsOpen] = useState(false);
 
-  const handleEdit = (announcement) => {
+ useEffect(() => {
+  const fetchAnnouncements = async () => {
+    const data = await getAnnouncements();
+    setAnnouncements(data || []);
+  };
+  fetchAnnouncements();
+}, []);
+
+const handleEdit = (announcement) => {
     setCurrentAnnouncement(announcement);
     setIsOpen(true);
     console.log('Edit announcement:', announcement);
   };
 
-  const handleDelete = (announcement) => {
+  const handleDelete = async (announcement) => {
     if (window.confirm('Delete this announcement?')) {
+      await deleteAnnouncement(announcement.id)
       setAnnouncements(announcements.filter(a => a.id !== announcement.id));
     }
     console.log('Delete announcement:', announcement);

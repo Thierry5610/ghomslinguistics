@@ -2,10 +2,11 @@ import { useState } from "react";
 import { CloseButton, InputContainer, InputElement } from "./Atoms";
 import useValidation from "../utils/useValidation";
 import { BookTypeIcon, GraduationCap } from "lucide-react";
+import { addStudent, updateStudent } from "../../SupabaseServices";
 
 export default function AddStudentModal({ students,setCurrentStudent, showModal,courses,statuses,currentStudent,setStudents,setShowModal}){
     const initialStudent = {
-        id: currentStudent?.id || '',
+      ...(currentStudent?.id ? { id: currentStudent.id } : {}),
         name: currentStudent?.name||'',
         email: currentStudent?.email|| '',
         phone: currentStudent?.phone || '',
@@ -18,7 +19,7 @@ export default function AddStudentModal({ students,setCurrentStudent, showModal,
     const [formData,setFormData] = useState(initialStudent)
     const { errors, validatePhone, validateEmpty, validateEmail, validateNumber, clearError } = useValidation()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         //console.log(formData)
         e.preventDefault();
         // Run validations
@@ -33,10 +34,14 @@ export default function AddStudentModal({ students,setCurrentStudent, showModal,
           ].every(Boolean);
     
         if (isFormValid) {
+          const student = {...formData}
             if (formData.id) {
+                await updateStudent(currentStudent.id, student);
                 setStudents(students.map(s => s.id === formData.id ? formData : s));
               } else {
-                setStudents([...students, { ...formData, id: Date.now() }]);
+                const newStudent = await addStudent(student);
+                console.log(newStudent)
+                setStudents([...students, newStudent[0]]);
               }
             setCurrentStudent(null)
             setShowModal(false);
