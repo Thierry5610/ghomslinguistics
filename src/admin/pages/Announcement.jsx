@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Edit2, Trash2, ExternalLink, Plus } from 'lucide-react';
+import { Edit2, Trash2, ExternalLink, Plus, Pin } from 'lucide-react';
 import { ActionButton, DisplaySocial, EmptyState, PageHeading } from '../components/Atoms';
 import { announcementsDetailed } from '../db';
 import AddAnnouncementModal from '../components/AddAnnouncementModal';
-import { getAnnouncements } from '../../SupabaseServices';
+import { getAnnouncements, updateAnnouncement } from '../../SupabaseServices';
 
-const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
+const AnnouncementCard = ({ announcement, onEdit, onDelete, onTogglePin }) => (
   <div className="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow h-full">
     <div className="flex justify-between items-start mb-4">
       <h2 className="md:text-base font-medium text-sm text-gray-900">{announcement.headline}</h2>
@@ -22,6 +22,19 @@ const AnnouncementCard = ({ announcement, onEdit, onDelete }) => (
         >
           <Trash2 size={16} />
         </button>
+        {announcement.pinned?        
+        <button 
+          onClick={() => onTogglePin(announcement.id)}
+          className="p-2 text-green-500 rounded-full bg-green-50 transition-colors"
+        >
+          <Pin size={16} />
+        </button>:
+        <button 
+          onClick={() => onTogglePin(announcement.id)}
+          className="p-2 text-gray-500 hover:text-green-500 rounded-full hover:bg-green-50 transition-colors"
+        >
+          <Pin size={16} />
+        </button>}
       </div>
     </div>
     
@@ -64,6 +77,14 @@ const Announcements = () => {
   fetchAnnouncements();
 }, []);
 
+const handlePinToggle = async (announcement) => {
+  const updatedAnnouncement = { ...announcement, pinned: !announcement.pinned };
+  await updateAnnouncement(announcement.id, updatedAnnouncement);
+  setAnnouncements(prev =>
+    prev.map(a => (a.id === announcement.id ? updatedAnnouncement : a))
+  );
+};
+
 const handleEdit = (announcement) => {
     setCurrentAnnouncement(announcement);
     setIsOpen(true);
@@ -92,6 +113,7 @@ const handleEdit = (announcement) => {
                     announcement={announcement}
                     onEdit={() => handleEdit(announcement)}
                     onDelete={() => handleDelete(announcement)}
+                    onTogglePin={()=>handlePinToggle(announcement)}
                   />
                 </div>
               ))}

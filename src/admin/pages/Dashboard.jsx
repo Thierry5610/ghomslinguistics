@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Plus, PinIcon, MoreVertical} from 'lucide-react';
-import { announcements, stats, studentData } from '../db';
+import { announcements, studentData } from '../db';
 import { ActionButton, NumberCounter, SectionHeading, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
+import { getAnnouncements, getCourses, getStats, getStudents } from '../../SupabaseServices';
+import { formatDistanceToNow } from 'date-fns';
+import { useNavigate } from 'react-router';
+
 
 const Dashboard = () => {
+  const [stats,setStats] = useState([])
+  const [announcements,setAnnouncements] = useState([])
+  const [students,setStudents] = useState([])
+  const [courses,setCourses] = useState([])
+  const navigate = useNavigate()
+  useEffect(() => {
+    const fetchStats = async () => {
+      const data = await getStats();
+      setStats(data || []);
+      const data2 = await getAnnouncements();
+      setAnnouncements(data2 || []);
+      const data3 = await getStudents();
+      setStudents(data3 || [])
+      const data4 = await getCourses();
+      setCourses(data4 || [])
+    };
+    fetchStats()
+  }, []);
   return (
     <div className="space-y-6">
       {/* Stats Grid */}
@@ -32,14 +54,17 @@ const Dashboard = () => {
       <div className="bg-white rounded-lg shadow text-sm">
         <div className="flex justify-between items-center p-4 border-b">
           <SectionHeading text={"Announcement"}/>
-          <ActionButton label={"See All Announcement"} link={true}/>
+          <ActionButton label={"See All Announcement"} link={true} onClick={()=>navigate('/admin/news')}/>
         </div>
         <div className="divide-y">
-          {announcements.map((announcement, index) => (
+          {announcements.filter(a=>a.pinned).map((announcement, index) => (
             <div key={index} className="flex items-center justify-between p-4 hover:bg-gray-50">
               <div className="flex-1">
-                <h3 className="font-semi-bold text-gray-900 mb-1">{announcement.title}</h3>
-                <p className="text-xs text-gray-500">{announcement.time}</p>
+                <h3 className="font-semi-bold text-gray-900 mb-1">{announcement.headline}</h3>
+                {/* <p className="text-xs text-gray-500">{announcement.created_at}</p> */}
+                <p className="text-xs text-gray-500">
+                {formatDistanceToNow(new Date(announcement.created_at))} ago
+                </p>
               </div>
               <div className="flex items-center gap-2">
                 <PinIcon className="w-4 h-4 text-gray-400" />
@@ -56,24 +81,26 @@ const Dashboard = () => {
       <div className="bg-white rounded-lg shadow text-sm">
         <div className="flex justify-between items-center p-4 border-b">
           <SectionHeading text={"Current Students"}/>
-          <ActionButton icon={Plus} label={"Add Student"}/>
+          <ActionButton icon={Plus} label={"Add Student"} onClick={()=>navigate('/admin/students')}/>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
-            <TableHead entries={["Name","Course","Start Date","End Date","Price","Status"]}/>
+            <TableHead entries={["Name","Course","Enrollment","Price","Status"]}/>
             <TableBody>
-              {studentData.map((student) => (
-                <TableRow key={student.id}>
-                  <TableData>{student.name}</TableData>
-                  <TableData>{student.course}</TableData>
-                  <TableData>{student.startDate}</TableData>
-                  <TableData>{student.endDate}</TableData>
-                  <TableData>{student.price}</TableData>
-                  <TableData>
-                    <StatusPill status={student.status}/>
-                  </TableData>
-                </TableRow>
-              ))}
+              {students.map((student) => {
+                const course = courses.find(course => course.id === student.course);
+                return(
+                  <TableRow key={student.id}>
+                    <TableData>{student.name}</TableData>
+                    <TableData>{course? course.name : "N/A"}</TableData>
+                    <TableData>{student.enrollmentDate}</TableData>
+                    <TableData>{course ? course.price : "N/A"}</TableData>
+                    <TableData>
+                      <StatusPill status={student.status}/>
+                    </TableData>
+                  </TableRow>
+                )
+              })}
             </TableBody>
           </table>
         </div>

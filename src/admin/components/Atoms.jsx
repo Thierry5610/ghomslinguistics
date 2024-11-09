@@ -11,7 +11,7 @@ const ActionButton = ({ link,label, icon: Icon, onClick, className = '' }) => (
       {Icon && <Icon size={16} />}
       <span className="text-sm">{label}</span>
     </button>):(
-      <button onClick={onclick} className={`text-amber-500 text-xs ${className}`}>{label}</button>
+      <button onClick={onClick} className={`text-amber-500 text-xs ${className}`}>{label}</button>
     )}
   </>
 );
@@ -109,7 +109,21 @@ const InputContainer = ({children,inputName,icon:Icon,label}) => {
     </div>
     )
 }
-
+const ComplexSelect = ({inputName,value,placeholder,onChange,error,options}) => {
+  const borderStyle = error? 'border-red-500': 'border-gray-500';
+  return (<div className='flex flex-col gap-1 items-start'>
+    <select
+      name={inputName}
+      value={value}
+      onChange={onChange}
+      className={"p-2 border outline-none w-full rounded-md "+borderStyle}
+    >
+      <option value="">{placeholder}</option>
+      {options.map((option,index)=>(<option key={index} value={option.id}>{option.name}</option>))}
+    </select>
+    {<span className='text-xs text-red-500'>{error}</span>}
+  </div>)
+}
 const InputElement = ({type,inputName,value,placeholder,onChange,error,options}) => {
   const borderStyle = error? 'border-red-500': 'border-gray-500';
   switch(type){
@@ -299,4 +313,4 @@ const NumberCounter = ({ number, duration = 2000 }) => {
 };
 
 
-export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement,TextArea,DisplaySocial,EmptyState,NumberCounter};
+export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement,TextArea,DisplaySocial,EmptyState,NumberCounter,ComplexSelect};

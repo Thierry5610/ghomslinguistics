@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Search, Plus, Pencil, Trash2, X } from 'lucide-react';
 import { ActionButton, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 import AddStudentModal from '../components/AddStudentModal';
-import { deleteStudent, getStudents } from '../../SupabaseServices';
+import { deleteStudent, getCourseNames, getStudents } from '../../SupabaseServices';
 
 const Students = () => {
   const [students, setStudents] = useState([]);
-
+  const [courses,setCourses] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [currentStudent, setCurrentStudent] = useState(null);
@@ -15,10 +15,12 @@ const Students = () => {
     const fetchStudents = async () => {
       const data = await getStudents();
       setStudents(data || []);
+      const data2 = await getCourseNames();
+      setCourses(data2 || [])
     };
     fetchStudents();
   }, []);
-
+  
   const handleDeleteStudent = async (student) => {
     if (window.confirm('Delete this course?')) {
       await deleteStudent(student.id);
@@ -26,10 +28,23 @@ const Students = () => {
     }
   };
 
-  const courses = ['English B2', 'French A1', 'German A1', 'Spanish A2', 'Italian B1'];
+  // const courses = ['English B2', 'French A1', 'German A1', 'Spanish A2', 'Italian B1'];
+  console.log(courses)
+
+  const displayStudents = students.map((student) => {
+    // Find the course object that matches the student's course ID
+    const course = courses.find((c) => c.id === student.course);
+    
+    // Return a new student object with the course ID replaced by the course name
+    return {
+      ...student,
+      course: course ? course.name : student.course, // If no match, keep the original course ID
+    };
+  });
+
   const statuses = ['Active', 'Inactive', 'On Leave', 'Graduated', 'Withdrawn'];
 
-  const filteredStudents = students.filter(student =>
+  const filteredStudents = displayStudents.filter(student =>
     student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     student.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
     student.phone.toLowerCase().includes(searchQuery.toLowerCase())

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CloseButton, InputContainer, InputElement } from "./Atoms";
+import { CloseButton, ComplexSelect, InputContainer, InputElement } from "./Atoms";
 import useValidation from "../utils/useValidation";
 import { BookTypeIcon, GraduationCap } from "lucide-react";
 import { addStudent, updateStudent } from "../../SupabaseServices";
@@ -88,14 +88,23 @@ export default function AddStudentModal({ students,setCurrentStudent, showModal,
                 <InputElement inputName="address" value={formData.address} type={"text"} onChange={handleChange} error={errors.address}/>
             </InputContainer>
             <InputContainer inputName="course" label={"Course"}>
-                <InputElement
+                {/* <InputElement
                     type={"select"} 
-                    options={courses} 
+                    options={courses.map(c=>c.name)} 
                     onChange={handleChange}
                     inputName={"course"}
-                    value={formData.course}
+                    value={formData.course.id}
                     placeholder={"Select Course"}
                     error={errors.course}
+                /> */}
+                <ComplexSelect
+                  type={"select"} 
+                  options = {courses}
+                  onChange={handleChange}
+                  inputName={"course"}
+                  value={formData.course}
+                  placeholder={"Select Course"}
+                  error={errors.course}
                 />
             </InputContainer>
             <InputContainer inputName="enrollmentDate" label={"Enrollment Date"}>

@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { BookOpen, BookText, DollarSign, Users } from "lucide-react";
 
 // Initialize the Supabase client
 const supabaseUrl = 'https://egicbbdzvszonimqatjc.supabase.co';
@@ -95,6 +96,24 @@ export const deleteAnnouncement = async (announcementId) => {
     return data;
 };
 
+
+export const getCourseNames = async () => {
+    const { data, error } = await supabase
+      .from('Courses')
+      .select('id, name');
+  
+    if (error) {
+      console.error('Error fetching courses:', error);
+      return [];
+    }
+  
+    return data.map(course => ({
+      id: course.id,
+      name: course.name
+    }));
+  };
+
+
 // --- Statistics Calculation ---
 
 export const getStats = async () => {
@@ -120,25 +139,25 @@ export const getStats = async () => {
             { 
                 title: 'Active Students', 
                 value: activeStudents,
-                icon: 'Users',
+                icon: Users,
                 color: 'bg-blue-100 text-blue-600'
             },
             { 
                 title: 'Active Courses', 
                 value: activeCourses,
-                icon: 'BookOpen',
+                icon: BookOpen,
                 color: 'bg-green-100 text-green-600'
             },
             { 
                 title: 'Publications', 
                 value: totalPublications,
-                icon: 'BookText',
+                icon: BookText,
                 color: 'bg-purple-100 text-purple-600'
             },
             { 
                 title: 'Total Revenue', 
                 value: totalRevenue,
-                icon: 'DollarSign',
+                icon: DollarSign,
                 color: 'bg-amber-100 text-amber-600'
             }
         ];
