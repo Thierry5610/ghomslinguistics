@@ -229,6 +229,13 @@ const InputElement = ({type,inputName,value,placeholder,onChange,error,options})
     case 'time': 
       return(
         <div className='flex flex-col gap-1 items-start'>
+          <input
+            type="time"
+            name={inputName}
+            value={value}
+            onChange={onChange}
+            className={`p-2 placeholder:text-gray-500 border outline-none w-full rounded-md ${borderStyle}`}
+          />
           {<span className='text-xs text-red-500'>{error}</span>}
         </div>
       );

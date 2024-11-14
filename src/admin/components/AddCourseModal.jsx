@@ -11,15 +11,15 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
     language: currentCourse?.language || '',
     level: currentCourse?.level || '',
     instructor: currentCourse?.instructor || '',
-    duration: currentCourse?.duration || '',
-    schedule: currentCourse?.schedule || '',
-    time: currentCourse?.time || '',
+    location: currentCourse?.location || '',
+    startTime: currentCourse?.startTime || '',
+    endTime: currentCourse?.endTime || '',
     capacity: currentCourse?.capacity || 0,
     price: currentCourse?.price || 0,
     status: currentCourse?.status || '',
     enrolled: currentCourse?.enrolled || 0,
     startDate: currentCourse?.startDate || '',
-    type: currentCourse?.type || 'Group'
+    endDate: currentCourse?.endDate || '',
   };
   const statuses = ['Active', 'Full','Enrolling']
   const { errors, validateEmpty, validateNumber, clearError } = useValidation()
@@ -34,14 +34,15 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
       validateEmpty('language', formData.language),
       validateEmpty('level', formData.level),
       validateEmpty('instructor', formData.instructor),
-      validateEmpty('duration', formData.duration),
-      validateEmpty('schedule', formData.schedule),
+      validateEmpty('location', formData.location),
       validateEmpty('status',formData.status),
       validateNumber('enrolled',formData.enrolled),
-      validateEmpty('time', formData.time),
+      validateEmpty('startTime', formData.startTime),
+      validateEmpty('endTime', formData.endTime),
       validateNumber('capacity', formData.capacity),
       validateNumber('price', formData.price),
       validateEmpty('startDate', formData.startDate),
+      validateEmpty('endDate', formData.endDate),
     ].every(Boolean);
 
     if (isFormValid) {
@@ -124,53 +125,6 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
                 <InputElement type={"text"}  placeholder="Instructor" inputName={"instructor"} value={formData.instructor} onChange={handleChange} error={errors.instructor}/>
             </InputContainer>
             <div className="grid grid-cols-2 gap-4">
-                <InputContainer icon={Users} inputName={"duration"} label={"Duration"}>
-                    <InputElement 
-                        type={"select"} 
-                        options={["8 weeks","10 weeks","12 weeks","16 weeks"]} 
-                        onChange={handleChange}
-                        inputName={"duration"}
-                        value={formData.duration}
-                        placeholder={"Select Duration"}
-                        error={errors.duration}
-                    />
-                </InputContainer>
-                <InputContainer icon={CalendarDays} inputName={"schedule"} label={"Schedule"}>
-                    <InputElement 
-                        type={"select"} 
-                        options={["Mon, Wed, Fri","Tue, Thu"]} 
-                        onChange={handleChange}
-                        inputName={"schedule"}
-                        value={formData.schedule}
-                        placeholder={"Select Schedule"}
-                        error={errors.schedule}
-                    />
-                </InputContainer>
-            </div>   
-            <div className="grid grid-cols-2 gap-4">
-                <InputContainer icon={Clock3} inputName={"time"} label={"Time"}>
-                    <InputElement 
-                        type={"select"} 
-                        options={["09:00 - 10:30","11:00 - 12:30","14:00 - 16:00","18:00 - 19:30"]} 
-                        onChange={handleChange}
-                        inputName={"time"}
-                        value={formData.time}
-                        placeholder={"Select Time"}
-                        error={errors.time}
-                    />
-                </InputContainer>  
-                <InputContainer inputName={"capacity"} icon={User} label={"Capacity"}>
-                    <InputElement
-                        placeholder={"Capacity"}
-                        value={formData.capacity}
-                        onChange={handleChange}
-                        inputName={"capacity"}
-                        type={"number"}
-                        error={errors.capacity}
-                    />
-                </InputContainer>
-            </div>    
-            <div className="grid grid-cols-2 gap-4">
                 <InputContainer inputName={"price"} icon={DollarSignIcon} label={"Price"}>
                     <InputElement
                         placeholder={"Price"}
@@ -179,6 +133,49 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
                         inputName={"price"}
                         type={"number"}
                         error={errors.price}
+                    />
+                </InputContainer>
+                <InputContainer icon={CalendarDays} inputName={"location"} label={"Location"}>
+                    <InputElement 
+                        type={"select"} 
+                        options={["Douala","Yaoundé"]} 
+                        onChange={handleChange}
+                        inputName={"location"}
+                        value={formData.location}
+                        placeholder={"Select Location"}
+                        error={errors.location}
+                    />
+                </InputContainer>
+            </div>   
+            <div className="grid grid-cols-2 gap-4">
+              <InputContainer icon={Clock3} inputName={"endTime"} label={"End Time"}>
+                  <InputElement
+                    type={"time"}
+                    onChange={handleChange}
+                    inputName={"endTime"}
+                    value={formData.endTime}
+                    error={errors.endTime}
+                  />
+                </InputContainer>  
+                <InputContainer icon={Clock3} inputName={"startTime"} label={"Start Time"}>
+                  <InputElement
+                    type={"time"}
+                    onChange={handleChange}
+                    inputName={"startTime"}
+                    value={formData.startTime}
+                    error={errors.startTime}
+                  />
+                </InputContainer>
+            </div>    
+            <div className="grid grid-cols-2 gap-4">
+            <InputContainer inputName={"endDate"} icon={CalendarDays} label={"End Date"}>
+                    <InputElement
+                        placeholder={"End Date"}
+                        value={formData.endDate}
+                        onChange={handleChange}
+                        inputName={"endDate"}
+                        type={"date"}
+                        error={errors.endDate}
                     />
                 </InputContainer>
                 <InputContainer inputName={"startDate"} icon={CalendarDays} label={"Start Date"}>
@@ -193,16 +190,27 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
                 </InputContainer>
             </div>
             <div className='grid gap-4 grid-cols-2'>
-            <InputContainer inputName={"enrolled"} icon={Users} label={"Enrolled"}>
-              <InputElement
-                  placeholder={"Enrolled"}
-                  value={formData.enrolled}
-                  onChange={handleChange}
-                  inputName={"enrolled"}
-                  type={"number"}
-                  error={errors.price}
-              />
-            </InputContainer>
+              <InputContainer inputName={"capacity"} icon={User} label={"Capacity"}>
+                    <InputElement
+                        placeholder={"Capacity"}
+                        value={formData.capacity}
+                        onChange={handleChange}
+                        inputName={"capacity"}
+                        type={"number"}
+                        error={errors.capacity}
+                    />
+                </InputContainer>
+              <InputContainer inputName={"enrolled"} icon={Users} label={"Enrolled"}>
+                <InputElement
+                    placeholder={"Enrolled"}
+                    value={formData.enrolled}
+                    onChange={handleChange}
+                    inputName={"enrolled"}
+                    type={"number"}
+                    error={errors.price}
+                />
+              </InputContainer>
+            </div>
             <InputContainer icon={Clock3} inputName={"status"} label={"Status"}>
               <InputElement 
                   type={"select"} 
@@ -214,7 +222,6 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
                   error={errors.time}
               />
             </InputContainer>  
-            </div>
             <div className="flex gap-3 flex-wrap items-center justify-end pt-4">
               <button type="button" onClick={() => setIsOpen(false)} className="p-2 border border-gray-300 text-gray-800 rounded-md hover:bg-gray-50">
                 Cancel

@@ -103,7 +103,7 @@ const CoursesPage = () => {
           <div className="overflow-x-auto">
             <table className="w-full">
               <TableHead
-                entries={["Course","Schedule","Enrollment","Price","Status","Actions"]}
+                entries={["Course","Location","Enrollment","Price","Status","Actions"]}
               />
               <TableBody>
                 {filteredCourses.map((course) => (
@@ -118,11 +118,11 @@ const CoursesPage = () => {
                       <div className="flex flex-col text-sm">
                         <div className="flex items-center">
                           <Calendar className="w-4 h-4 mr-1" />
-                          {course.schedule}
+                          {course.location}
                         </div>
                         <div className="flex items-center text-gray-500 text-xs">
                           <Clock className="w-4 h-4 mr-1" />
-                          {course.time}
+                          {`${course.startTime}-${course.endTime}`}
                         </div>
                       </div>
                     </TableData>
