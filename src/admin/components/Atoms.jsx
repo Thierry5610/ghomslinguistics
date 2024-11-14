@@ -220,7 +220,7 @@ const InputElement = ({type,inputName,value,placeholder,onChange,error,options})
             name={inputName}
             value={value}
             onChange={onChange}
-            min={new Date().toISOString().split('T')[0]}
+            // min={new Date().toISOString().split('T')[0]}
             className={"p-2 placeholder:text-gray-500 border outline-none w-full rounded-md "+borderStyle}
           />    
           {<span className='text-xs text-red-500'>{error}</span>}
