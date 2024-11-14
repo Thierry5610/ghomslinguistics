@@ -7,6 +7,7 @@ const RegisterModal = ({ course, onClose }) => {
     const { t } = useTranslation('registerModal');
 
     useEffect(() => {
+        console.log(course)
         document.body.style.overflow = 'hidden';
         return () => {
             document.body.style.overflow = 'unset';

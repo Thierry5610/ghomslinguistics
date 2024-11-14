@@ -8,5 +8,7 @@
     "durationLabel": "Durée",
     "priceLabel": "Prix",
     "registerButton": "S'inscrire maintenant",
-    "hoursPerDay": "{{duration}} heures/jour"
+    "hoursPerDay": "{{duration}} heures/jour",
+    "emptyState": "Aucun cours à afficher"
+
 }

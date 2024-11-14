@@ -14,6 +14,7 @@ export default function Course() {
     const [activeTabToggleID, setActiveTabToggleID] = useState([]);
     const [languageData, setLanguageData] = useState({});
     const [tabArray, setTabArray] = useState([]);
+    const [selectedCourse,setSelectedCourse] = useState(null)
     const [isCoursesModalOpen,setIsCoursesModalOpen] = useState(false)
     const [isRegisterModalOpen,setIsRegisterModalOpen] = useState(false)
     
@@ -110,8 +111,8 @@ export default function Course() {
                     </div>
                 </div>
             </div>
-            {isCoursesModalOpen&&<RegisterCourseModal onOpenCta={()=>{setIsCoursesModalOpen(false);setIsRegisterModalOpen(true)}} language={language} onClose={()=>setIsCoursesModalOpen(false)}/>}
-            {isRegisterModalOpen&&<RegisterModal onClose={()=>setIsRegisterModalOpen(false)}/>}
+            {isCoursesModalOpen&&<RegisterCourseModal onOpenCta={()=>{setIsCoursesModalOpen(false);setIsRegisterModalOpen(true)}} language={language} onClose={()=>setIsCoursesModalOpen(false)} setCourse={setSelectedCourse}/>}
+            {isRegisterModalOpen&&<RegisterModal course={selectedCourse} onClose={()=>setIsRegisterModalOpen(false)}/>}
         </>
     );
 }

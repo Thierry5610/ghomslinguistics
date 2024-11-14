@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Styles from './styles/registercoursemodal.module.scss';
 import { IoMdClose } from 'react-icons/io';
 import { LuCalendarDays, LuClock, LuMapPin, LuTag } from 'react-icons/lu';
+import { getCourses } from '../SupabaseServices';
+import { stripYear } from '../utils/quickUtils';
 
-export default function RegisterCourseModal({ language, onClose, onOpenCta }) {
+export default function RegisterCourseModal({ language, onClose, onOpenCta,setCourse }) {
     const { t } = useTranslation('registerCourseModal');
-
+    const [courses,setCourses] = useState([])
     useEffect(() => {
         document.body.style.overflow = 'hidden';
         return () => {
@@ -15,41 +17,15 @@ export default function RegisterCourseModal({ language, onClose, onOpenCta }) {
     }, []);
 
     // Array of course objects
-    const courses = [
-        {
-            level: "A1",
-            location: "Yaoundé",
-            startDate: "01/03",
-            endDate: "01/04",
-            duration: 4,
-            price: "200000 XAF"
-        },
-        {
-            level: "B1",
-            location: "Douala",
-            startDate: "01/03",
-            endDate: "01/04",
-            duration: 4,
-            price: "120000 XAF"
-        },
-        {
-            level: "C1",
-            location: "Yaoundé",
-            startDate: "05/03",
-            endDate: "05/04",
-            duration: 5,
-            price: "250000 XAF"
-        },
-        {
-            level: "A2",
-            location: "Douala",
-            startDate: "10/03",
-            endDate: "10/04",
-            duration: 3,
-            price: "150000 XAF"
-        }
-    ];
-
+    useEffect(() => {
+        const fetchCourses = async () => {
+          const data = await getCourses();
+          const filterLanguage = data.filter(datum=>datum.language.toLowerCase()===language.toLowerCase())
+          setCourses(filterLanguage || []);
+        };
+        fetchCourses();
+      }, []);
+    
     return (
         <div className={Styles.container}>
             <div className={Styles.content}>
@@ -58,25 +34,29 @@ export default function RegisterCourseModal({ language, onClose, onOpenCta }) {
                 </div>
                 <h1>{language=='english'?t('registerTitle.english'):t('registerTitle.german')}</h1>
                 <div className={Styles.cards}>
-                    {courses.map((course, index) => (
+                    {courses.length>0?courses.map((course, index) => (
                         <CourseCard
                             key={index}
                             level={course.level}
                             location={course.location}
                             startDate={course.startDate}
                             endDate={course.endDate}
-                            duration={course.duration}
+                            startTime={course.startTime}
+                            endTime={course.endTime}
                             price={course.price}
-                            action={onOpenCta}
+                            action={()=>{
+                                setCourse(course)
+                                onOpenCta()
+                            }}
                         />
-                    ))}
+                    )):<div>{t('emptyState')}</div>}
                 </div>
             </div>
         </div>
     );
 }
 
-function CourseCard({ level, startDate, endDate, location, duration, price, action }) {
+function CourseCard({ level, startDate, endDate, location, startTime, endTime, price, action }) {
     const { t } = useTranslation('registerCourseModal');
 
     return (
@@ -94,14 +74,14 @@ function CourseCard({ level, startDate, endDate, location, duration, price, acti
                     <LuCalendarDays />
                     <div className={Styles.cardItemText}>
                         <span className={Styles.cardItemLabel}>{t('dateLabel')}</span>
-                        <span className={Styles.cardItemValue}>{`${startDate} - ${endDate}`}</span>
+                        <span className={Styles.cardItemValue}>{`${stripYear(startDate)} - ${stripYear(endDate)}`}</span>
                     </div>
                 </div>
                 <div className={Styles.cardItem}>
                     <LuClock />
                     <div className={Styles.cardItemText}>
                         <span className={Styles.cardItemLabel}>{t('durationLabel')}</span>
-                        <span className={Styles.cardItemValue}>{t('hoursPerDay', { duration })}</span>
+                        <span className={Styles.cardItemValue}>{`${startTime} - ${endTime}`}</span>
                     </div>
                 </div>
                 <div className={Styles.cardItem}>
