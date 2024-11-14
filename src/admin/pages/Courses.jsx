@@ -11,20 +11,22 @@ import {
   Trash2,
 } from 'lucide-react';
 import AddCourseModal from '../components/AddCourseModal';
-import { ActionButton, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
+import { ActionButton, ConfirmAlert, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 import { deleteCourse, getCourses } from '../../SupabaseServices';
 
+
 const CoursesPage = () => {
-  // Mock data for courses
   const [courses, setCourses] = useState([]);
-  const [currentCourse,setCurrentCourse] = useState(null);
+  const [currentCourse, setCurrentCourse] = useState(null);
+  const [courseToDelete, setCourseToDelete] = useState(null); // Track the course to delete
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
     language: '',
     level: '',
     status: ''
   });
-  const [isAddModalOpen,setIsAddModalOpen] = useState(false)
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isConfirmAlertOpen, setIsConfirmAlertOpen] = useState(false); // Track if confirm alert is open
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -34,10 +36,17 @@ const CoursesPage = () => {
     fetchCourses();
   }, []);
 
-  const handleDeleteCourse = async (course) => {
-    if (window.confirm('Delete this course?')) {
-      await deleteCourse(course.id);
-      setCourses(courses.filter(c => c.id !== course.id));
+  const openConfirmAlert = (course) => {
+    setCourseToDelete(course); 
+    setIsConfirmAlertOpen(true);
+  };
+
+  const handleDeleteConfirmed = async (confirmed) => {
+    setIsConfirmAlertOpen(false);
+    if (confirmed && courseToDelete) {
+      await deleteCourse(courseToDelete.id);
+      setCourses(courses.filter(c => c.id !== courseToDelete.id));
+      setCourseToDelete(null);
     }
   };
 
@@ -48,7 +57,6 @@ const CoursesPage = () => {
     status: ['Active', 'Enrolling', 'Full']
   };
 
-  // Filter courses based on search and filters
   const filteredCourses = courses.filter(course => {
     const matchesSearch = course.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          course.instructor.toLowerCase().includes(searchTerm.toLowerCase());
@@ -59,14 +67,13 @@ const CoursesPage = () => {
     return matchesSearch && matchesLanguage && matchesLevel && matchesStatus;
   });
 
- 
   return (
     <>
       <div className="space-y-6">
         {/* Header */}
         <div className="flex justify-between items-center">
           <PageHeading text={"Courses"}/>
-          <ActionButton label={"Add Course"} icon={Plus} onClick={()=>setIsAddModalOpen(true)}/>
+          <ActionButton label={"Add Course"} icon={Plus} onClick={() => setIsAddModalOpen(true)}/>
         </div>
 
         {/* Search and Filters */}
@@ -102,9 +109,7 @@ const CoursesPage = () => {
         <div className="bg-white rounded-lg shadow overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <TableHead
-                entries={["Course","Location","Enrollment","Price","Status","Actions"]}
-              />
+              <TableHead entries={["Course","Location","Enrollment","Price","Status","Actions"]}/>
               <TableBody>
                 {filteredCourses.map((course) => (
                   <TableRow key={course.id}>
@@ -142,40 +147,57 @@ const CoursesPage = () => {
                       <StatusPill status={course.status}/>
                     </TableData>
                     <TableData>
-                    <div className='flex gap-2'>
-                      <button
-                        onClick={() => {
-                          setCurrentCourse(course);
-                          setIsAddModalOpen(true);
-                        }}
-                        className="text-gray-400 hover:text-amber-500"
-                      >
-                        <Pencil size={16} />
-                      </button>
-                      <button
-                        onClick={()=>handleDeleteCourse(course)}
-                        className="text-gray-400 hover:text-red-500"
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    </div>
-                  </TableData>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => {
+                            setCurrentCourse(course);
+                            setIsAddModalOpen(true);
+                          }}
+                          className="text-gray-400 hover:text-amber-500"
+                        >
+                          <Pencil size={16} />
+                        </button>
+                        <button
+                          onClick={() => openConfirmAlert(course)}
+                          className="text-gray-400 hover:text-red-500"
+                        >
+                          <Trash2 size={16} />
+                        </button>
+                      </div>
+                    </TableData>
                   </TableRow>
                 ))}
               </TableBody>
             </table>
           </div>
         </div>
+        
         {/* Empty State */}
         {filteredCourses.length === 0 && (
           <EmptyState text={"No courses found"}/>
         )}
       </div>
-      {isAddModalOpen&&<AddCourseModal setCourses={setCourses} currentCourse={currentCourse} setCurrrentCourse={setCurrentCourse} isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} courses={courses}/>}
+
+      {isAddModalOpen && (
+        <AddCourseModal 
+          setCourses={setCourses} 
+          currentCourse={currentCourse} 
+          setCurrrentCourse={setCurrentCourse} 
+          isOpen={isAddModalOpen} 
+          setIsOpen={setIsAddModalOpen} 
+          courses={courses}
+        />
+      )}
+
+      {isConfirmAlertOpen && (
+        <ConfirmAlert 
+          heading="Confirm Deletion" 
+          text={`Are you sure you want to delete ${courseToDelete?.name}?`} 
+          onConfirm={handleDeleteConfirmed} 
+        />
+      )}
     </>
   );
 };
 
 export default CoursesPage;
-
-

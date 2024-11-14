@@ -147,16 +147,7 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
                     />
                 </InputContainer>
             </div>   
-            <div className="grid grid-cols-2 gap-4">
-              <InputContainer icon={Clock3} inputName={"endTime"} label={"End Time"}>
-                  <InputElement
-                    type={"time"}
-                    onChange={handleChange}
-                    inputName={"endTime"}
-                    value={formData.endTime}
-                    error={errors.endTime}
-                  />
-                </InputContainer>  
+            <div className="grid grid-cols-2 gap-4"> 
                 <InputContainer icon={Clock3} inputName={"startTime"} label={"Start Time"}>
                   <InputElement
                     type={"time"}
@@ -166,18 +157,17 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
                     error={errors.startTime}
                   />
                 </InputContainer>
+                <InputContainer icon={Clock3} inputName={"endTime"} label={"End Time"}>
+                  <InputElement
+                    type={"time"}
+                    onChange={handleChange}
+                    inputName={"endTime"}
+                    value={formData.endTime}
+                    error={errors.endTime}
+                  />
+                </InputContainer> 
             </div>    
             <div className="grid grid-cols-2 gap-4">
-            <InputContainer inputName={"endDate"} icon={CalendarDays} label={"End Date"}>
-                    <InputElement
-                        placeholder={"End Date"}
-                        value={formData.endDate}
-                        onChange={handleChange}
-                        inputName={"endDate"}
-                        type={"date"}
-                        error={errors.endDate}
-                    />
-                </InputContainer>
                 <InputContainer inputName={"startDate"} icon={CalendarDays} label={"Start Date"}>
                     <InputElement
                         placeholder={"Start Date"}
@@ -186,6 +176,16 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
                         inputName={"startDate"}
                         type={"date"}
                         error={errors.startDate}
+                    />
+                </InputContainer>
+                <InputContainer inputName={"endDate"} icon={CalendarDays} label={"End Date"}>
+                    <InputElement
+                        placeholder={"End Date"}
+                        value={formData.endDate}
+                        onChange={handleChange}
+                        inputName={"endDate"}
+                        type={"date"}
+                        error={errors.endDate}
                     />
                 </InputContainer>
             </div>

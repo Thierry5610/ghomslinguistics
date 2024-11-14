@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Plus, PinIcon, MoreVertical} from 'lucide-react';
-import { announcements, studentData } from '../db';
 import { ActionButton, NumberCounter, SectionHeading, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 import { getAnnouncements, getCourses, getStats, getStudents } from '../../SupabaseServices';
 import { formatDistanceToNow } from 'date-fns';
@@ -105,6 +104,34 @@ const Dashboard = () => {
           </table>
         </div>
       </div>
+
+      {/* Courses Table */}
+      <div className="bg-white rounded-lg shadow text-sm">
+        <div className="flex justify-between items-center p-4 border-b">
+          <SectionHeading text={"Current Courses"}/>
+          <ActionButton icon={Plus} label={"Add Course"} onClick={()=>navigate('/admin/courses')}/>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <TableHead entries={["Course","Location","Enrollment","Price","Status"]}/>
+            <TableBody>
+              {courses.map((course) => {
+                return(
+                  <TableRow key={course.id}>
+                    <TableData>{course.name}</TableData>
+                    <TableData>{course.location}</TableData>
+                    <TableData>{course.enrolled}/{course.capacity}</TableData>
+                    <TableData>{course.price}</TableData>
+                    <TableData>
+                      <StatusPill status={course.status}/>
+                    </TableData>
+                  </TableRow>
+                )
+              })}
+            </TableBody>
+          </table>
+        </div>
+      </div>      
     </div>
   );
 };

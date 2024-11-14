@@ -1,4 +1,4 @@
-import { CircleX, Facebook, Github, Globe2, Instagram, Linkedin, Search, Twitter, Youtube } from 'lucide-react';
+import { Check, CircleX, Facebook, Github, Globe2, Info, Instagram, Linkedin, Search, TriangleAlert, Twitter, X, Youtube } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 // Reusable ActionButton Component
@@ -318,6 +318,114 @@ const NumberCounter = ({ number, duration = 2000 }) => {
 
   return <>{count}</>;
 };
+
+export function Alert({type,heading,text}) {
+  const [show,setShow] = useState(true)
+  const close = () => {
+    setShow(false)
+  }
+  let colorCode = ''
+  switch(type){
+    case 'error':
+      return(
+        <>
+         {show&&<div className={`fixed inset-0 backdrop-blur-md bg-black bg-opacity-20 flex items-center justify-center`}>
+            <div className={`rounded-sm bg-red-100 border-l-4 flex gap-4 border-l-red-500 relative p-8`}>
+                <div className={`text-red-500 self-start`}><Info/></div>
+                <div className={`space-y-3 text-red-500 flex-1`}>
+                  <h4 className={`font-medium`}>{heading}</h4>
+                  <p className={`text-sm`}>{text}</p>
+                </div>
+                <div onClick={close} className={`text-red-500 hover:text-red-600 cursor-pointer absolute right-2 top-2 text-sm`}><X/></div>
+            </div>
+          </div>}
+        </>
+      )
+      break;
+    case 'warning':
+      return(
+        <>
+          {show&&<div className={`fixed inset-0 backdrop-blur-md z-50 bg-black bg-opacity-20 flex items-center justify-center`}>
+            <div className={`rounded-sm bg-yellow-50 border-l-4 flex gap-4 border-l-yellow-500 relative p-8`}>
+                <div className={`text-yellow-500 self-start`}><TriangleAlert/></div>
+                <div className={`space-y-3 text-yellow-500 flex-1`}>
+                  <h4 className={`font-medium`}>{heading}</h4>
+                  <p className={`text-sm`}>{text}</p>
+                </div>
+                <div onClick={close} className={`text-yellow-500 hover:text-yellow-600 cursor-pointer absolute right-2 top-2 text-sm`}><X/></div>
+            </div>
+          </div>}        
+        </>
+      )
+      break;
+    case 'success':
+      return(
+        <>
+          {show&&<div className={`fixed inset-0 backdrop-blur-md bg-black bg-opacity-20 flex items-center justify-center`}>
+            <div className={`rounded-sm bg-green-100 border-l-4 flex gap-4 border-l-green-500 relative p-8`}>
+                <div className={`text-green-500 self-start`}><Check/></div>
+                <div className={`space-y-3 text-green-500 flex-1`}>
+                  <h4 className={`font-medium`}>{heading}</h4>
+                  <p className={`text-sm`}>{text}</p>
+                </div>
+                <div onClick={close} className={`text-green-500 hover:text-green-600 cursor-pointer absolute right-2 top-2 text-sm`}><X/></div>
+            </div>
+          </div>}        
+        </>
+      )
+  }
+
+}
+
+export function ConfirmAlert({ heading, text, onConfirm }) {
+  const [show, setShow] = useState(true);
+
+  const handleConfirm = () => {
+    setShow(false);
+    onConfirm(true); // Resolve with `true` when confirmed
+  };
+
+  const handleCancel = () => {
+    setShow(false);
+    onConfirm(false); // Resolve with `false` when canceled
+  };
+
+  return (
+    show && (
+      <div className="fixed inset-0 backdrop-blur-md bg-black bg-opacity-20 flex items-center justify-center">
+        <div className="rounded-sm bg-yellow-50 border-l-4 border-yellow-500 p-8 flex gap-4 relative">
+          <div className="text-yellow-500 self-start">
+            <TriangleAlert className="w-6 h-6" />
+          </div>
+          <div className="flex flex-col gap-4 text-yellow-700 flex-1">
+            <h4 className="font-medium">{heading}</h4>
+            <p className="text-sm">{text}</p>
+            <div className="flex gap-4 text-sm mt-2">
+              <button
+                className="px-4 py-2 text-yellow-500 border-yellow-500 hover:text-white hover:bg-yellow-500 border rounded-md"
+                onClick={handleConfirm}
+              >
+                Confirm
+              </button>
+              <button
+                className="px-4 py-2 text-yellow-500 border-yellow-500 hover:text-white hover:bg-yellow-500 border rounded-md"
+                onClick={handleCancel}
+              >
+                Cancel
+              </button>
+          </div>
+          </div>
+          <button
+            className="text-yellow-500 hover:text-yellow-600 cursor-pointer absolute right-2 top-2"
+            onClick={() => setShow(false)}
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+    )
+  );
+}
 
 
 export {ActionButton,CloseButton,SectionHeading,PageHeading,SearchBar,TableHead,TableBody,TableRow,TableData,StatusPill,InputContainer,InputElement,TextArea,DisplaySocial,EmptyState,NumberCounter,ComplexSelect};

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Search, Plus, Pencil, Trash2, X } from 'lucide-react';
-import { ActionButton, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
+import { Plus, Pencil, Trash2 } from 'lucide-react';
+import { ActionButton, ConfirmAlert, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 import AddStudentModal from '../components/AddStudentModal';
 import { deleteStudent, getCourseNames, getStudents } from '../../SupabaseServices';
 
 const Students = () => {
   const [students, setStudents] = useState([]);
-  const [courses,setCourses] = useState([]);
+  const [courses, setCourses] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [showConfirmAlert, setShowConfirmAlert] = useState(false); // State to control ConfirmAlert visibility
   const [currentStudent, setCurrentStudent] = useState(null);
 
   useEffect(() => {
@@ -16,29 +17,30 @@ const Students = () => {
       const data = await getStudents();
       setStudents(data || []);
       const data2 = await getCourseNames();
-      setCourses(data2 || [])
+      setCourses(data2 || []);
     };
     fetchStudents();
   }, []);
-  
-  const handleDeleteStudent = async (student) => {
-    if (window.confirm('Delete this course?')) {
-      await deleteStudent(student.id);
-      setStudents(students.filter(c => c.id !== student.id));
+
+  const handleDeleteClick = (student) => {
+    setCurrentStudent(student);
+    setShowConfirmAlert(true); // Show the confirm alert
+  };
+
+  const confirmDeleteStudent = async () => {
+    if (currentStudent) {
+      await deleteStudent(currentStudent.id);
+      setStudents(students.filter(s => s.id !== currentStudent.id));
+      setShowConfirmAlert(false); // Hide the confirm alert
+      setCurrentStudent(null); // Clear the selected student
     }
   };
 
-  // const courses = ['English B2', 'French A1', 'German A1', 'Spanish A2', 'Italian B1'];
-  console.log(courses)
-
   const displayStudents = students.map((student) => {
-    // Find the course object that matches the student's course ID
     const course = courses.find((c) => c.id === student.course);
-    
-    // Return a new student object with the course ID replaced by the course name
     return {
       ...student,
-      course: course ? course.name : student.course, // If no match, keep the original course ID
+      course: course ? course.name : student.course,
     };
   });
 
@@ -53,33 +55,27 @@ const Students = () => {
   return (
     <>
       <div className="space-y-6">
-        {/* Header */}
         <div className="flex justify-between items-center">
-          <PageHeading text={"Students"}/>
-
+          <PageHeading text={"Students"} />
           <ActionButton 
             label={"Add Student"} 
             icon={Plus} 
-            onClick={
-              ()=>{
-                setCurrentStudent({});
-                setShowModal(true);
-              }
-            }
+            onClick={() => {
+              setCurrentStudent({});
+              setShowModal(true);
+            }}
           />
         </div>
 
-        {/* Search */}
         <SearchBar
           placeholder={"Search students by name, email, or phone..."}
           onChange={(e) => setSearchQuery(e.target.value)}
           value={searchQuery}
         />
 
-        {/* Table */}
         <div className="overflow-x-auto bg-white rounded-lg shadow">
           <table className="w-full">
-            <TableHead entries={["Name","Contact Info","Course","Status","Enrollment","Actions"]}/>
+            <TableHead entries={["Name", "Contact Info", "Course", "Status", "Enrollment", "Actions"]} />
             <TableBody>
               {filteredStudents.map(student => (
                 <TableRow key={student.id}>
@@ -93,7 +89,7 @@ const Students = () => {
                   </TableData>
                   <TableData>{student.course}</TableData>
                   <TableData>
-                    <StatusPill status={student.status}/>
+                    <StatusPill status={student.status} />
                   </TableData>
                   <TableData>{student.enrollmentDate}</TableData>
                   <TableData>
@@ -108,7 +104,7 @@ const Students = () => {
                         <Pencil size={16} />
                       </button>
                       <button
-                        onClick={() => {handleDeleteStudent(student)}}
+                        onClick={() => handleDeleteClick(student)}
                         className="text-gray-400 hover:text-red-500"
                       >
                         <Trash2 size={16} />
@@ -121,13 +117,11 @@ const Students = () => {
           </table>
         </div>
 
-        {/* Modal */}
-
-        {/* Empty State */}
         {filteredStudents.length === 0 && (
-          <EmptyState text={"No students found"}/>
+          <EmptyState text={"No students found"} />
         )}
       </div>
+
       {showModal && (
         <AddStudentModal 
           showModal={showModal} 
@@ -139,7 +133,16 @@ const Students = () => {
           students={students}
           setCurrentStudent={setCurrentStudent}
         />
-      )}    
+      )}
+
+      {showConfirmAlert && (
+        <ConfirmAlert 
+          show={showConfirmAlert} 
+          onConfirm={confirmDeleteStudent} 
+          onCancel={() => setShowConfirmAlert(false)} 
+          message="Are you sure you want to delete this student?"
+        />
+      )}
     </>
   );
 };
