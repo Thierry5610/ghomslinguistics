@@ -12,7 +12,8 @@ const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncem
     image: currentAnnouncement?.image || '',
     socialLink: currentAnnouncement?.socialLink || '',
     socialNetwork: currentAnnouncement?.socialNetwork || '',
-    pinned: currentAnnouncement?.pinned || false
+    pinned: currentAnnouncement?.pinned || false,
+    author: currentAnnouncement?.author || 'admin'
   };
   const { errors, validateEmpty, clearError } = useValidation();
   const [formData, setFormData] = useState(initialFormState);

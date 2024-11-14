@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Styles from './styles/news.module.scss'; 
 import { FaSearch } from 'react-icons/fa';
+import { getAnnouncements } from '../SupabaseServices';
+import { formatDistanceToNow } from 'date-fns';
+import { DisplaySocial } from '../admin/components/Atoms';
+import { Link } from 'lucide-react';
 
 const newsData = [
     {
@@ -44,10 +48,30 @@ const newsData = [
 
 const News = () => {
     const { t } = useTranslation('news');
-
+    const [news,setNews] = useState([])
+    useEffect(()=>{
+        const getData = async () => {
+            const data = await getAnnouncements()
+            setNews(data)
+            console.log(data)
+        }
+        getData()
+    },[])
     return (
         <div className={Styles.container}>
             <div className={Styles.newsContainer}>
+                {news.map((news)=>(
+                    <NewsItemServer
+                        key={news.id}
+                        title={news.headline}
+                        date={formatDistanceToNow(new Date(news.created_at))}
+                        author={news.author}
+                        text={news.text}
+                        imgURL={news.image}
+                        link={news.socialLink}
+                        network={news.socialNetwork}
+                    />
+                ))}
                 {newsData.map((news) => (
                     <NewsItem 
                         key={news.id} 
@@ -109,6 +133,35 @@ function NewsItem({ title, date, author, videoEmbed }) {
             </header>
             <div className={Styles.entryContent}>
                 {videoEmbed}
+            </div>
+        </article>
+    );
+}
+
+
+function NewsItemServer({ title, date, author, text, imgURL,link,network }) {
+    const { t } = useTranslation('news');
+
+    return (
+        <article className={Styles.newsItemServer}>
+            <header className={Styles.entryHeader}>
+                <h2 className={Styles.entryTitle}>{title}</h2>
+                <ul className={Styles.entryMeta}>
+                    <li className={Styles.postedOn}>
+                        <time className={Styles.entryDate}>{date}</time>
+                    </li>
+                    <li className={Styles.postedBy}>
+                        <span className={Styles.author}>{author}</span>
+                    </li>
+                </ul>
+            </header>
+            <div className={Styles.entryContent}>
+                <p>{text}</p>
+                <img src={imgURL} alt="image" />
+            </div>
+            <div className={Styles.foot}>
+                <div><DisplaySocial  size={24} social={network}/></div>
+                <a href={link}><Link/></a>
             </div>
         </article>
     );
