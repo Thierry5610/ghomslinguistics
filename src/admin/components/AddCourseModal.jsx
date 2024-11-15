@@ -207,7 +207,7 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
                     onChange={handleChange}
                     inputName={"enrolled"}
                     type={"number"}
-                    error={errors.price}
+                    error={errors.enrolled}
                 />
               </InputContainer>
             </div>
