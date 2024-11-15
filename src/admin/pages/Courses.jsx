@@ -12,7 +12,8 @@ import {
 } from 'lucide-react';
 import AddCourseModal from '../components/AddCourseModal';
 import { ActionButton, ConfirmAlert, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
-import { deleteCourse, getCourses } from '../../SupabaseServices';
+import { deleteCourse, getCourses, isSession } from '../../SupabaseServices';
+import { useNavigate } from 'react-router';
 
 
 const CoursesPage = () => {
@@ -28,6 +29,19 @@ const CoursesPage = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isConfirmAlertOpen, setIsConfirmAlertOpen] = useState(false); // Track if confirm alert is open
 
+  const navigate = useNavigate()
+  useEffect(() => {
+    const checkSession = async () => {
+      const { data: { session } } = await isSession();
+
+      if (!session) {
+        navigate('/admin');
+      } 
+    };
+
+    checkSession();
+  }, [navigate]);
+  
   useEffect(() => {
     const fetchCourses = async () => {
       const data = await getCourses();

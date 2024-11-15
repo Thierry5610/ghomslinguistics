@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Plus, PinIcon, MoreVertical} from 'lucide-react';
 import { ActionButton, NumberCounter, SectionHeading, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
-import { getAnnouncements, getCourses, getStats, getStudents } from '../../SupabaseServices';
+import { getAnnouncements, getCourses, getStats, getStudents, isSession } from '../../SupabaseServices';
 import { formatDistanceToNow } from 'date-fns';
 import { useNavigate } from 'react-router';
 
@@ -12,6 +12,18 @@ const Dashboard = () => {
   const [students,setStudents] = useState([])
   const [courses,setCourses] = useState([])
   const navigate = useNavigate()
+  useEffect(() => {
+    const checkSession = async () => {
+      const { data: { session } } = await isSession();
+      console.log("session",session)
+      if (!session) {
+        navigate('/admin');
+      } 
+    };
+
+    checkSession();
+  }, [navigate]);
+
   useEffect(() => {
     const fetchStats = async () => {
       const data = await getStats();

@@ -17,6 +17,7 @@ import Students from './admin/pages/Student.jsx';
 import Announcements from './admin/pages/Announcement.jsx';
 import NotFound from './admin/components/NotFound.jsx';
 import Settings from './admin/pages/Settings.jsx';
+import Login from './admin/pages/Login.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -32,7 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="course/:language" element={<Course />} />
         </Route>
         <Route path="admin" element={<Admin />}>
-          <Route index element={<Dashboard/>} />
+          <Route index element={<Login/>} />
           <Route path='dashboard' element={<Dashboard/>} />
           <Route path='courses' element={<CoursesPage/>}/>
           <Route path='news' element={<Announcements/>}/>

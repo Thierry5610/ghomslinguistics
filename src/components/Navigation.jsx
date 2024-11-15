@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { English, French, German } from './Flags';
 import { useTranslation } from 'react-i18next'; // Import useTranslation hook for translations
 import i18n from '../i18n';
+import { User2 } from 'lucide-react';
 
 export default function Navigation() {
     const logoLink = "/images/logo/cropped-GhomLinguisticsLogo_small.png";
@@ -99,6 +100,7 @@ export default function Navigation() {
                                 </div>
                             )}
                         </div>
+                        <Link to="/admin" className={Styles.admin}><User2 size={16}/></Link>
                         {/* <div className={Styles.search} onClick={() => setIsSearchMenu(true)}>
                             <IoIosSearch />
                         </div> */}
@@ -124,6 +126,7 @@ export default function Navigation() {
                             <Link to="/register" onClick={() => setIsMenu(false)}>{t('navigation.registration')}</Link>
                             <Link to="/language" onClick={() => setIsMenu(false)}>{t('navigation.course')}</Link>
                             <Link to="/about" onClick={() => setIsMenu(false)}>{t('navigation.about_us')}</Link>
+                            <Link to="/admin" className={Styles.admin}><User2 size={16}/></Link>
                         </div>
                     </div>
                 </div>

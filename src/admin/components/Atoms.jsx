@@ -155,6 +155,21 @@ const InputElement = ({type,inputName,value,placeholder,onChange,error,options})
           {<span className='text-xs text-red-500'>{error}</span>}
         </div>
       );
+      case 'password': 
+      return(
+        <div className='flex flex-col gap-1 items-start'>
+          <input
+          type="password"
+          name={inputName}
+          value={value}
+        
+          onChange={onChange}
+          placeholder={placeholder}
+          className={`p-2 placeholder:text-gray-500 border outline-none w-full rounded-md ${borderStyle}`}
+          />
+          {<span className='text-xs text-red-500'>{error}</span>}
+        </div>
+      );
     case 'number': 
       return(
         <div className='flex flex-col gap-1 items-start'>
@@ -329,7 +344,7 @@ export function Alert({type,heading,text}) {
     case 'error':
       return(
         <>
-         {show&&<div className={`fixed inset-0 backdrop-blur-md bg-black bg-opacity-20 flex items-center justify-center`}>
+         {show&&<div className={`fixed inset-0 backdrop-blur-md bg-black bg-opacity-20 z-50 flex items-center justify-center`}>
             <div className={`rounded-sm bg-red-100 border-l-4 flex gap-4 border-l-red-500 relative p-8`}>
                 <div className={`text-red-500 self-start`}><Info/></div>
                 <div className={`space-y-3 text-red-500 flex-1`}>
@@ -361,7 +376,7 @@ export function Alert({type,heading,text}) {
     case 'success':
       return(
         <>
-          {show&&<div className={`fixed inset-0 backdrop-blur-md bg-black bg-opacity-20 flex items-center justify-center`}>
+          {show&&<div className={`fixed inset-0 backdrop-blur-md bg-black z-50 bg-opacity-20 flex items-center justify-center`}>
             <div className={`rounded-sm bg-green-100 border-l-4 flex gap-4 border-l-green-500 relative p-8`}>
                 <div className={`text-green-500 self-start`}><Check/></div>
                 <div className={`space-y-3 text-green-500 flex-1`}>

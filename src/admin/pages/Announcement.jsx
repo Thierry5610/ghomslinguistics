@@ -3,7 +3,8 @@ import { Edit2, Trash2, ExternalLink, Plus, Pin } from 'lucide-react';
 import { ActionButton, DisplaySocial, EmptyState, PageHeading, ConfirmAlert } from '../components/Atoms';
 import { announcementsDetailed } from '../db';
 import AddAnnouncementModal from '../components/AddAnnouncementModal';
-import { getAnnouncements, updateAnnouncement, deleteAnnouncement } from '../../SupabaseServices';
+import { getAnnouncements, updateAnnouncement, deleteAnnouncement, isSession } from '../../SupabaseServices';
+import { useNavigate } from 'react-router';
 
 const AnnouncementCard = ({ announcement, onEdit, onDelete, onTogglePin }) => (
   <div className="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow h-full">
@@ -70,6 +71,20 @@ const Announcements = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [announcementToDelete, setAnnouncementToDelete] = useState(null);
   const [isConfirmAlertOpen, setIsConfirmAlertOpen] = useState(false);
+
+  const navigate = useNavigate()
+  useEffect(() => {
+    const checkSession = async () => {
+      const { data: { session } } = await isSession();
+
+      if (!session) {
+        navigate('/admin');
+      } 
+    };
+
+    checkSession();
+  }, [navigate]);
+  
 
   useEffect(() => {
     const fetchAnnouncements = async () => {

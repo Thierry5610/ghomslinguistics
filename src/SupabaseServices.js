@@ -6,6 +6,30 @@ const supabaseUrl = 'https://egicbbdzvszonimqatjc.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVnaWNiYmR6dnN6b25pbXFhdGpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzExNjY1NjIsImV4cCI6MjA0Njc0MjU2Mn0.LCYOyc4Y78iGD_r46AYzAM6fSB5p7GRSQBjMtBJmkvw';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+
+// Authentication
+
+export const login = async (email,password) => {
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+    return {data,error}
+}
+
+export const isSession = async () => {
+    return await supabase.auth.getSession();
+}
+
+export const logOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) console.error(error);
+  };
+
+
+
+
+
 // --- Courses CRUD Operations ---
 
 // Fetch all courses

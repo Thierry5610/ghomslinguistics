@@ -71,7 +71,7 @@
                 align-items: center;
                 gap: $spacing-10;
                 &>div:not(.locale_box),
-                &>a {
+                &>a:not(.admin) {
                     cursor: pointer;
                     text-decoration: none;
                     color: $gray-900;

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Plus, Pencil, Trash2 } from 'lucide-react';
 import { ActionButton, ConfirmAlert, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 import AddStudentModal from '../components/AddStudentModal';
-import { deleteStudent, getCourseNames, getStudents } from '../../SupabaseServices';
+import { deleteStudent, getCourseNames, getStudents, isSession } from '../../SupabaseServices';
+import { useNavigate } from 'react-router';
 
 const Students = () => {
   const [students, setStudents] = useState([]);
@@ -11,6 +12,19 @@ const Students = () => {
   const [showModal, setShowModal] = useState(false);
   const [showConfirmAlert, setShowConfirmAlert] = useState(false); // State to control ConfirmAlert visibility
   const [currentStudent, setCurrentStudent] = useState(null);
+
+  const navigate = useNavigate()
+  useEffect(() => {
+    const checkSession = async () => {
+      const { data: { session } } = await isSession();
+
+      if (!session) {
+        navigate('/admin');
+      } 
+    };
+
+    checkSession();
+  }, [navigate]);
 
   useEffect(() => {
     const fetchStudents = async () => {
