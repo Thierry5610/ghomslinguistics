@@ -5,5 +5,11 @@
     "telephonePlaceholder": "Telefon",
     "emailPlaceholder": "E-Mail",
     "messagePlaceholder": "Nachricht",
-    "registerButton": "Jetzt anmelden"
+    "registerButton": "Jetzt anmelden",
+    "loading": "Wird gesendet...",
+    "closeButton": "Registrierungsfenster schließen",
+    "errorHeading": "Fehler",
+    "mailNotSent": "Registrierungs-E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+    "successHeading": "Erfolg",
+    "mailSentSuccessfully": "Registrierungs-E-Mail erfolgreich gesendet!"
 }

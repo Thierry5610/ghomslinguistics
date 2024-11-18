@@ -334,8 +334,8 @@ const NumberCounter = ({ number, duration = 2000 }) => {
   return <>{count}</>;
 };
 
-export function Alert({type,heading,text}) {
-  const [show,setShow] = useState(true)
+export function Alert({type,heading,text,setShow}) {
+  //const [show,setShow] = useState(true)
   const close = () => {
     setShow(false)
   }
@@ -344,7 +344,7 @@ export function Alert({type,heading,text}) {
     case 'error':
       return(
         <>
-         {show&&<div className={`fixed inset-0 backdrop-blur-md bg-black bg-opacity-20 z-50 flex items-center justify-center`}>
+         {<div className={`fixed inset-0 backdrop-blur-md bg-black bg-opacity-20 z-[20000] flex items-center justify-center`}>
             <div className={`rounded-sm bg-red-100 border-l-4 flex gap-4 border-l-red-500 relative p-8`}>
                 <div className={`text-red-500 self-start`}><Info/></div>
                 <div className={`space-y-3 text-red-500 flex-1`}>
@@ -360,7 +360,7 @@ export function Alert({type,heading,text}) {
     case 'warning':
       return(
         <>
-          {show&&<div className={`fixed inset-0 backdrop-blur-md z-50 bg-black bg-opacity-20 flex items-center justify-center`}>
+          {<div className={`fixed inset-0 backdrop-blur-md z-[20000] bg-black bg-opacity-20 flex items-center justify-center`}>
             <div className={`rounded-sm bg-yellow-50 border-l-4 flex gap-4 border-l-yellow-500 relative p-8`}>
                 <div className={`text-yellow-500 self-start`}><TriangleAlert/></div>
                 <div className={`space-y-3 text-yellow-500 flex-1`}>
@@ -376,7 +376,7 @@ export function Alert({type,heading,text}) {
     case 'success':
       return(
         <>
-          {show&&<div className={`fixed inset-0 backdrop-blur-md bg-black z-50 bg-opacity-20 flex items-center justify-center`}>
+          {<div className={`fixed inset-0 backdrop-blur-md bg-black z-[20000] bg-opacity-20 flex items-center justify-center`}>
             <div className={`rounded-sm bg-green-100 border-l-4 flex gap-4 border-l-green-500 relative p-8`}>
                 <div className={`text-green-500 self-start`}><Check/></div>
                 <div className={`space-y-3 text-green-500 flex-1`}>
@@ -392,8 +392,8 @@ export function Alert({type,heading,text}) {
 
 }
 
-export function ConfirmAlert({ heading, text, onConfirm }) {
-  const [show, setShow] = useState(true);
+export function ConfirmAlert({ heading, text, onConfirm,setShow }) {
+  //const [show, setShow] = useState(true);
 
   const handleConfirm = () => {
     setShow(false);
@@ -406,8 +406,8 @@ export function ConfirmAlert({ heading, text, onConfirm }) {
   };
 
   return (
-    show && (
-      <div className="fixed inset-0 backdrop-blur-md bg-black bg-opacity-20 flex items-center justify-center">
+    (
+      <div className="fixed inset-0 backdrop-blur-md bg-black bg-opacity-20 flex z-[20000] items-center justify-center">
         <div className="rounded-sm bg-yellow-50 border-l-4 border-yellow-500 p-8 flex gap-4 relative">
           <div className="text-yellow-500 self-start">
             <TriangleAlert className="w-6 h-6" />

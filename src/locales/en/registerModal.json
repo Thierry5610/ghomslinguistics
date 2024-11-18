@@ -5,6 +5,12 @@
     "telephonePlaceholder": "Telephone",
     "emailPlaceholder": "Email",
     "messagePlaceholder": "Message",
-    "registerButton": "Register"
+    "registerButton": "Register",
+    "loading": "Submitting...",
+    "closeButton": "Close registration modal",
+    "errorHeading": "Error",
+    "mailNotSent": "Failed to send the registration email. Please try again.",
+    "successHeading": "Success",
+    "mailSentSuccessfully": "Registration email sent successfully!"
   }
   

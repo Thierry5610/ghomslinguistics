@@ -151,10 +151,11 @@ const Students = () => {
 
       {showConfirmAlert && (
         <ConfirmAlert 
-          show={showConfirmAlert} 
+          setShow={setShowConfirmAlert} 
           onConfirm={confirmDeleteStudent} 
+          heading={"Confirm Deletion"}
           onCancel={() => setShowConfirmAlert(false)} 
-          message="Are you sure you want to delete this student?"
+          text="Are you sure you want to delete this student?"
         />
       )}
     </>

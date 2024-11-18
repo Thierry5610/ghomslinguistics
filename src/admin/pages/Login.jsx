@@ -13,6 +13,7 @@ export default function Login() {
         password: ''
     })
     const [error,setError] = useState(null)
+    const [showErrorModal,setShowErrorModal] = useState(false)
     const handleSubmit = async (e) => {
         //console.log(formData)
         e.preventDefault();
@@ -28,6 +29,7 @@ export default function Login() {
             const {data,error} = await login(newUser.email,newUser.password)
             if(error) {
                 setError(error)
+                setShowErrorModal(true)
                 console.log(error)
             }else {
                 console.log("user",data)
@@ -48,7 +50,7 @@ export default function Login() {
       };
     return(
         <>
-            {error&&<Alert type={"error"} heading={"Login Error"} text={error.message}/>}
+            {error&&showErrorModal&&<Alert type={"error"} heading={"Login Error"} text={error.message} setShow={setShowErrorModal}/>}
             <div className="bg-white inset-0 fixed overflow-y-auto z-40 flex items-center justify-center">
                 <div className="flex flex-col gap-6 items-center max-w-screen-xl md:max-w-[70%] w-full p-8">
                     <img src={logo} alt="logo" className="h-32 w-auto"/>

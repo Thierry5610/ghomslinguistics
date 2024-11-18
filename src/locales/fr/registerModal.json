@@ -5,5 +5,11 @@
     "telephonePlaceholder": "Téléphone",
     "emailPlaceholder": "Email",
     "messagePlaceholder": "Message",
-    "registerButton": "S'inscrire"
+    "registerButton": "S'inscrire",
+    "loading": "En cours d'envoi...",
+    "closeButton": "Fermer la fenêtre d'inscription",
+    "errorHeading": "Erreur",
+    "mailNotSent": "Échec de l'envoi de l'email d'inscription. Veuillez réessayer.",
+    "successHeading": "Succès",
+    "mailSentSuccessfully": "E-mail d'inscription envoyé avec succès !"
 }

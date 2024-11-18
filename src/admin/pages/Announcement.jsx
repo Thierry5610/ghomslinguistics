@@ -159,6 +159,7 @@ const Announcements = () => {
           heading="Confirm Deletion" 
           text={`Are you sure you want to delete "${announcementToDelete?.headline}"?`} 
           onConfirm={handleDeleteConfirmed} 
+          setShow={setIsConfirmAlertOpen}
         />
       )}
     </>

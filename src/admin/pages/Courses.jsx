@@ -208,6 +208,7 @@ const CoursesPage = () => {
           heading="Confirm Deletion" 
           text={`Are you sure you want to delete ${courseToDelete?.name}?`} 
           onConfirm={handleDeleteConfirmed} 
+          setShow={setIsConfirmAlertOpen}
         />
       )}
     </>
