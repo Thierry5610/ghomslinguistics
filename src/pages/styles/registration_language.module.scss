@@ -4,83 +4,153 @@
 
 .container {
     @media screen and (min-width: 768px) {
-        padding: $spacing-12 $spacing-8;
+        //padding: $spacing-12 $spacing-8;
 
     }
     .content {
         display: flex;
+        padding: $spacing-8 $spacing-4;
+        flex-direction: column;
+        gap: $spacing-8;
         justify-content: center;
         max-width: calc(124rem/1.6);
         margin: 0 auto;
         flex-wrap: wrap;
         position: relative;
 
-        .image_section {
-            flex: 1 1 50%;
-            max-width: calc(62rem/1.6);
-            min-width: calc(40rem/1.6);
-            position: relative;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+        .heading {
+            @include heading-1($gray-900);
+            text-align: center;
+            align-self: center;
+            margin-bottom: $spacing-10;
         }
-        .text_section {
-            flex: 1 1 50%;
-            max-width: calc(62rem/1.6);
-            border: 1px solid $gray-100;
-            padding: $spacing-12 $spacing-8;
+        .searchBar {
             display: flex;
-            flex-direction: column;
-            gap: $spacing-6;
-            align-items: flex-start;
-            .actions {
-                display: flex;
-                gap: $spacing-4;
-                flex-wrap: wrap;
-                justify-content: center
+            align-items: center;
+            position: relative;
+            align-self: center;
+            width: 90%;
+            @media screen and (min-width:768px) {
+                width: 70%;
             }
-            h2 {
-                @include display-sm-regular;
-                color: $gray-900;
-                @media screen and (max-width:500px) {
-                    @include display-xs-regular;
+            .input {
+                width: 100%;
+                padding: $spacing-2 $spacing-4;
+                @include text-md-regular;
+                border: 1px solid $gray-500;
+                border-radius: 4px;
+                outline: none;
+                transition: border-color 0.3s;
+        
+                &:focus {
+                    border-color: $blue-500;
                 }
             }
-            p {
-                @include text-md-regular;
-                color: $gray-700;
-            }
-            a {
-                text-decoration: none;
-                color: $gray-800;
-                border: 2px solid $gray-950;
-                @include text-md-regular;
-                padding: $spacing-3 $spacing-5;
-
-                &:hover {
-                    background-color: $gray-950;
-                    color: white;
-                }
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            flex-direction: column;
-            //gap: $spacing-12;
-            .image_section,.text_section {
-                flex: 1 1 100%;
-                max-width: none;
-                min-width: auto;
-            }
-
-        }
-        @media screen and (max-width: 500px) {
-            .text_section {
-                gap: $spacing-8;
+        
+            .icon {
+                position: absolute;
+                right: 10px;
+                color: $gray-500;
+                pointer-events: none;
             }
         }
         
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            //padding: $spacing-8;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: $spacing-1;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: $spacing-7;
+            width: calc(50% - $spacing-7);
+            min-width: calc(30rem/1.6);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+
+            @media screen and (max-width:768px) {
+                width: 100%;
+                min-width: auto;
+            } 
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background-color: $blue-500;
+                //background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            }
+
+            // &:hover {
+            //     transform: translateY(-10px);
+            //     box-shadow: 0 20px 35px rgba(108, 99, 255, 0.2);
+            // }
+
+            .cardHeader {
+                @include display-sm-bold;
+                margin-bottom: $spacing-6;
+                color: $gray-900;
+            }
+
+            .cardContent {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: $spacing-6;
+                margin-bottom: $spacing-7;
+            }
+
+            .cardItem {
+                display: flex;
+                align-items: center;
+
+                svg {
+                    font-size: 24px;
+                    color: $blue-500;
+                    margin-right: $spacing-4;
+                    transition: transform 0.3s ease;
+                }
+
+                &:hover svg {
+                    transform: scale(1.2) rotate(5deg);
+                }
+
+                .cardItemText {
+                    display: flex;
+                    flex-direction: column;
+
+                    .cardItemLabel {
+                        @include text-xs-semi-bold;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        color: $gray-400;
+                        margin-bottom: 2px;
+                    }
+
+                    .cardItemValue {
+                        @include text-md-semi-bold;
+                        color: $gray-900;
+                    }
+                }
+            }
+
+            .registerBtn {
+                @include button-1;
+                @include text-md-regular;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+        }
     }
 }

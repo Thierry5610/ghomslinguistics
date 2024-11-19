@@ -56,7 +56,7 @@ export default function RegisterCourseModal({ language, onClose, onOpenCta,setCo
     );
 }
 
-export function CourseCard({ level, startDate, endDate, location, startTime, endTime, price, action }) {
+function CourseCard({ level, startDate, endDate, location, startTime, endTime, price, action }) {
     const { t } = useTranslation('registerCourseModal');
 
     return (

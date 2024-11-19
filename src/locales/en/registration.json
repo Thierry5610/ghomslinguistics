@@ -1,7 +1,6 @@
 {
-    "title": "REGISTRATION FOR OUR LANGUAGE COURSES",
-    "description": "Register for our language courses – new courses start every month! Improve your German skills flexibly and individually. Register now and get started next month!",
-    "languageCourses": "Language Courses",
-    "examPreparation": "Exam Preparation"
+    "searchPlaceholder": "Search courses...",
+    "allCourses": "All Courses",
+    "noCoursesFound": "No courses found."
   }
   
