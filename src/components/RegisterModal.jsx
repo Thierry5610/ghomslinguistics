@@ -7,7 +7,7 @@ import { Alert } from '../admin/components/Atoms';
 
 const RegisterModal = ({ course, onClose }) => {
     const { t } = useTranslation('registerModal');
-    const [user, setUser] = useState({ name: '', surname: '', email: '' });
+    const [user, setUser] = useState({ name: '', surname: '', email: '', phone: '' });
     const [showFailureAlert, setShowFailureAlert] = useState(false);
     const [showSuccessAlert, setShowSuccessAlert] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ const RegisterModal = ({ course, onClose }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!user.name || !user.surname || !user.email) {
+        if (!user.name || !user.surname || !user.email || !user.phone) {
             setShowFailureAlert(true);
             return;
         }
@@ -78,6 +78,13 @@ const RegisterModal = ({ course, onClose }) => {
                             placeholder={t('emailPlaceholder')}
                             value={user.email}
                             onChange={(e) => setUser({ ...user, email: e.target.value })}
+                        />
+                        <input
+                            className={Styles.form_input}
+                            type="tel"
+                            placeholder={t('telephonePlaceholder')}
+                            value={user.phone}
+                            onChange={(e) => setUser({ ...user, phone: e.target.value })}
                         />
                         <button
                             type="submit"
