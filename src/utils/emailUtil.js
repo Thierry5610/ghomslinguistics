@@ -7,7 +7,7 @@ const sendRegistrationEmails = async (course, user) => {
     try {
         // Sending email to the user (first template)
         const userEmailResult = await emailjs.send(
-            'service_x4uz1zi', // Replace with your EmailJS Service ID
+            'service_kxrajqs', // Replace with your EmailJS Service ID
             'template_hkh5xhw', // Replace with the first EmailJS Template ID
             {
                 name,
@@ -27,7 +27,7 @@ const sendRegistrationEmails = async (course, user) => {
 
         // Sending email to GHOMSLINGUISTICS Team (second template)
         const teamEmailResult = await emailjs.send(
-            'service_x4uz1zi', // Replace with your EmailJS Service ID
+            'service_kxrajqs', // Replace with your EmailJS Service ID
             'template_4bvmyaa', // Replace with the second EmailJS Template ID
             {
                 name,
@@ -39,7 +39,7 @@ const sendRegistrationEmails = async (course, user) => {
                 startdate: startDate,
                 enddate: endDate,
                 email: email, // sender's email
-                to_email: 'soyang.thierry4@gmail.com', // Replace with the team's email
+                to_email: 'contact@ghomslinguistics.com', // Replace with the team's email
             },
             'uj3Vv-VMRwkbTlfTa' // Replace with your EmailJS User ID
         );
