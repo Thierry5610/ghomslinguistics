@@ -1,20 +1,50 @@
-import { Check, CircleX, Facebook, Github, Globe2, Info, Instagram, Linkedin, LucideUploadCloud, Search, TriangleAlert, Twitter, Upload, UploadCloud, UploadCloudIcon, X, Youtube } from 'lucide-react';
+import { Check, CircleX, Facebook, Github, Globe2, Info, Instagram, Linkedin, LoaderCircle, LucideUploadCloud, Search, TriangleAlert, Twitter, Upload, UploadCloud, UploadCloudIcon, X, Youtube } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 // Reusable ActionButton Component
-const ActionButton = ({ link,label, icon: Icon, onClick, className = '' }) => (
-  <>
-    {!link?(<button
-      onClick={onClick}
-      className={`flex items-center gap-2 px-3 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 ${className}`}
-    >
-      {Icon && <Icon size={16} />}
-      <span className="text-sm">{label}</span>
-    </button>):(
-      <button onClick={onClick} className={`text-amber-500 text-xs ${className}`}>{label}</button>
-    )}
-  </>
-);
+const ActionButton = ({
+  link,
+  label,
+  secondary = false,
+  icon: Icon,
+  onClick,
+  iconSize = 16,
+  className = '',
+  isLoading = false, // Add a prop to control the loading state
+}) => {
+  const baseStyles = secondary? 'px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50' : 'px-3 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 disabled:opacity-50'
+  return (
+    <>
+      {!link ? (
+        <button
+          onClick={!isLoading ? onClick : undefined} // Prevent clicks when loading
+          className={`flex items-center justify-center gap-2 ${baseStyles} ${className}`}
+          disabled={isLoading} // Disable the button when loading
+        >
+          {isLoading ? (
+            // Spinner using Tailwind utility classes
+            <div className="animate-spin">
+              <LoaderCircle size={iconSize}/>
+            </div>
+          ) : (
+            <>
+              {Icon && <Icon size={iconSize} />}
+              <span>{label}</span>
+            </>
+          )}
+        </button>
+      ) : (
+        <button
+          onClick={!isLoading ? onClick : undefined} // Prevent clicks when loading
+          className={`text-amber-500 text-xs ${className}`}
+          disabled={isLoading} // Disable the button when loading
+        >
+          {label}
+        </button>
+      )}
+    </>
+  );
+};
 
 const CloseButton = ({onClick}) => (
   <button onClick={onClick} className="absolute right-3 top-3 text-lg text-gray-700 hover:text-red-500">

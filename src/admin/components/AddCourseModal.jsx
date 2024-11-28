@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Users, CircleX, Globe2, School, CalendarDays, DollarSignIcon, User, Clock3 } from 'lucide-react';
-import { CloseButton, InputContainer, InputElement } from './Atoms';
+import { ActionButton, CloseButton, InputContainer, InputElement } from './Atoms';
 import useValidation from '../utils/useValidation';
 import { addCourse, updateCourse } from '../../SupabaseServices';
 
-const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isOpen, setIsOpen}) => {
+const AddCourseModal = ({ currentCourse, courses, setCourses, setCurrrentCourse, isOpen, setIsOpen }) => {
+  const [loading, setLoading] = useState(false); // Loading state
+
   const initialFormState = {
     ...(currentCourse?.id ? { id: currentCourse.id } : {}),
     name: currentCourse?.name || '',
@@ -21,8 +23,8 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
     startDate: currentCourse?.startDate || '',
     endDate: currentCourse?.endDate || '',
   };
-  const statuses = ['Active', 'Full','Enrolling']
-  const { errors, validateEmpty, validateNumber, clearError } = useValidation()
+  const statuses = ['Active', 'Full', 'Enrolling'];
+  const { errors, validateEmpty, validateNumber, clearError } = useValidation();
   const [formData, setFormData] = useState(initialFormState);
 
   const handleSubmit = async (e) => {
@@ -35,8 +37,8 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
       validateEmpty('level', formData.level),
       validateEmpty('instructor', formData.instructor),
       validateEmpty('location', formData.location),
-      validateEmpty('status',formData.status),
-      validateNumber('enrolled',formData.enrolled),
+      validateEmpty('status', formData.status),
+      validateNumber('enrolled', formData.enrolled),
       validateEmpty('startTime', formData.startTime),
       validateEmpty('endTime', formData.endTime),
       validateNumber('capacity', formData.capacity),
@@ -46,19 +48,24 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
     ].every(Boolean);
 
     if (isFormValid) {
-      const course = {...formData}
-      console.log(formData)
-      if (formData.id) {
-        await updateCourse(currentCourse.id, course);
-        setCourses(courses.map(c => c.id === formData.id ? formData : c));
-      } else {
-        const newCourse = await addCourse(course);
-        console.log(newCourse)
-        setCourses([...courses, newCourse[0]]);
+      setLoading(true); // Set loading to true
+      const course = { ...formData };
+      try {
+        if (formData.id) {
+          await updateCourse(currentCourse.id, course);
+          setCourses(courses.map((c) => (c.id === formData.id ? formData : c)));
+        } else {
+          const newCourse = await addCourse(course);
+          setCourses([...courses, newCourse[0]]);
+        }
+        setCurrrentCourse(null);
+        setIsOpen(false);
+        setFormData(initialFormState);
+      } catch (error) {
+        console.error('Error updating/adding course:', error);
+      } finally {
+        setLoading(false); // Reset loading state
       }
-      setCurrrentCourse(null)
-      setIsOpen(false);
-      setFormData(initialFormState);
     }
   };
 
@@ -66,7 +73,7 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
 
     // Clear error when user starts typing
@@ -78,12 +85,12 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
   return (
     <div className="inset-0 bg-black bg-opacity-70 fixed z-20 flex items-center justify-center">
       <div className="md:p-10 relative p-6 h-[100dvh] md:max-h-[90vh] md:min-w-[50%] md:w-auto w-full md:max-w-[100vw-3rem] bg-white rounded-lg overflow-y-auto">
-        <CloseButton onClick={() => setIsOpen(false)}/>
+        <CloseButton onClick={() => setIsOpen(false)} />
 
         <div>
           <h2 className="text-lg text-gray-800 flex gap-2 items-center my-6">
             <Globe2 className="text-amber-500" />
-            <span>{!formData.id?'Add New Language Course':'Edit Course'}</span>
+            <span>{!formData.id ? 'Add New Language Course' : 'Edit Course'}</span>
           </h2>
 
           <form onSubmit={handleSubmit} className="text-sm text-gray-800 space-y-4">
@@ -223,12 +230,16 @@ const AddCourseModal = ({ currentCourse,courses,setCourses,setCurrrentCourse,isO
               />
             </InputContainer>  
             <div className="flex gap-3 flex-wrap items-center justify-end pt-4">
-              <button type="button" onClick={() => setIsOpen(false)} className="p-2 border border-gray-300 text-gray-800 rounded-md hover:bg-gray-50">
-                Cancel
-              </button>
-              <button type="submit" className="p-2 bg-amber-500 border border-amber-500 text-white rounded-md hover:bg-amber-600">
-                {formData.id?'Edit Course':'Add Course'}
-              </button>
+              <ActionButton
+                onClick={() => setIsOpen(false)}
+                label="Cancel"
+                secondary={true}
+                isLoading={false} // Cancel button never has a loading state
+              />
+              <ActionButton
+                label={formData.id ? 'Edit Course' : 'Add Course'}
+                isLoading={loading} // Pass loading state here
+              />
             </div>
           </form>
         </div>
