@@ -4,6 +4,7 @@ import useValidation from "../utils/useValidation";
 import { useState } from "react";
 import { login } from "../../SupabaseServices";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Login() {
     const {errors,validateEmail,validateEmpty,clearError} = useValidation()
@@ -53,7 +54,7 @@ export default function Login() {
             {error&&showErrorModal&&<Alert type={"error"} heading={"Login Error"} text={error.message} setShow={setShowErrorModal}/>}
             <div className="bg-white inset-0 fixed overflow-y-auto z-40 flex items-center justify-center">
                 <div className="flex flex-col gap-6 items-center max-w-screen-xl md:max-w-[70%] w-full p-8">
-                    <img src={logo} alt="logo" className="h-32 w-auto"/>
+                    <Link to={"/"}><img src={logo} alt="logo" className="h-32 w-auto"/></Link>
                     <div className="space-y-4 self-stretch">
                         <InputContainer inputName="email" label={"Email"}>
                             <InputElement inputName="email" value={formData.email} type={"email"} onChange={handleChange} error={errors.email}/>
