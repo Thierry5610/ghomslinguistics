@@ -3,8 +3,10 @@
         "logo_alt": "Logo",
         "ghoms_linguistic": "GHOMS LINGUISTIK",
         "address": {
-            "street": "Ange Raphael",
-            "city": "Douala, Kamerun"
+            "street1": "Ange Raphael",
+            "city1": "Douala, Kamerun",
+            "street2": "Nv Rte Omnisport",
+            "city2": "Yaoundé, Kamerun"
         },
         "phone": "+237 6 93 07 17 89 / +49 176 14267516",
         "latest_news": "Letzten News",

@@ -94,8 +94,11 @@ const News = () => {
                 <div>
                     <h4>{t('recentPosts')}</h4>
                     <ul>
-                        <li>{t('nextSchoolStartTitle')}</li>
-                        <li>{t('nextCourseStartTitle')}</li>
+                        {/* <li>{t('nextSchoolStartTitle')}</li>
+                        <li>{t('nextCourseStartTitle')}</li> */}
+                        {news?.map((news,index)=>{
+                            return(<li key={index}>{news?.headline}</li>)
+                        })}
                     </ul>
                 </div>
                 <div>

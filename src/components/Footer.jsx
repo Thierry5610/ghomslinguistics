@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Styles from './styles/footer.module.scss';
 import { Link } from 'react-router-dom';
 import { DataProtectionModal } from './DataProtectionModal';
 import ContactModal from './ContactModal';
 import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
+import { getAnnouncements } from '../SupabaseServices';
 
 export default function Footer() {
     const { t } = useTranslation('footer'); // Get the translation function
     const [isContactModalOpen, setContactModalOpen] = useState(false);
     const [isDataProtectionOpen, setDataProtectionOpen] = useState(false);
     const imageSrc = "/images/logo/cropped-GhomLinguisticsLogo_small.png";
+
+    const [news,setNews] = useState([])
+    useEffect(()=>{
+        const getData = async () => {
+            const data = await getAnnouncements()
+            setNews(data)
+            console.log(data)
+        }
+        getData()
+    },[])
 
     const handleOpenContactModal = () => {
         setContactModalOpen(true);
@@ -52,8 +63,8 @@ export default function Footer() {
                         <div className={Styles.links_box}>
                             <h3>{t('footer.ghoms_linguistic')}</h3> {/* Translate heading */}
                             <div className={Styles.links}>
-                                <div>{t('footer.address.street')}</div> {/* Translate street address */}
-                                <div>{t('footer.address.city')}</div> {/* Translate city */}
+                                <div>{t('footer.address.street1')}</div> {/* Translate street address */}
+                                <div>{t('footer.address.city1')}</div> {/* Translate city */}
                                 <a href='mailto:contact@ghomslinguistics.com'>contact@ghomslinguistics.com</a>
                                 <div>{t('footer.phone')}</div> {/* Translate phone number */}
                             </div>
@@ -61,9 +72,13 @@ export default function Footer() {
                         <div className={Styles.links_box}>
                             <h3>{t('footer.latest_news')}</h3> {/* Translate heading */}
                             <div className={Styles.links}>
-                                <div>{t('footer.news.location')}</div> {/* Translate location */}
-                                <Link to="/news">{t('footer.news.start_date')}</Link>
-                                <Link to="/news">{t('footer.news.course_start')}</Link>
+                                <div>{t('footer.address.street2')}</div> {/* Translate street address */}
+                                <div>{t('footer.address.city2')}</div> {/* Translate city */}
+                                {/* <Link to="/news">{t('footer.news.start_date')}</Link>
+                                <Link to="/news">{t('footer.news.course_start')}</Link> */}
+                                {news?.slice(0, 2).map((element, index) => (
+                                    <Link to="/news" key={index}>{element?.headline}</Link>
+                                ))}
                             </div>
                         </div>
                         <div className={Styles.links_box}>
