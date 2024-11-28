@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Users, CircleX, Globe2, School, CalendarDays, DollarSignIcon, User, Clock3 } from 'lucide-react';
-import { CloseButton, InputContainer, InputElement, TextArea } from './Atoms';
+import { CloseButton, FileInput, InputContainer, InputElement, TextArea } from './Atoms';
 import useValidation from '../utils/useValidation';
-import { addAnnouncement, updateAnnouncement } from '../../SupabaseServices';
+import { addAnnouncement, updateAnnouncement, uploadImage } from '../../SupabaseServices';
 
 const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncements, setCurrentAnnouncement, isOpen, setIsOpen }) => {
   const initialFormState = {
@@ -15,36 +15,54 @@ const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncem
     pinned: currentAnnouncement?.pinned || false,
     author: currentAnnouncement?.author || 'admin'
   };
-  const { errors, validateEmpty, clearError } = useValidation();
+  const { errors, validateEmpty, clearError,validateImage } = useValidation();
   const [formData, setFormData] = useState(initialFormState);
+  const [imageFile,setImageFile] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     // Run validations
     const isFormValid = [
       validateEmpty('headline', formData.headline),
       validateEmpty('text', formData.text),
-      validateEmpty('image', formData.image),
+      //validateImage('image', imageFile),
       validateEmpty('socialLink', formData.socialLink),
       validateEmpty('socialNetwork', formData.socialNetwork),
     ].every(Boolean);
-
-    if (isFormValid) {
-      const announcement = {...formData}
-      if (formData.id) {
-        await updateAnnouncement(currentAnnouncement.id, announcement);
-        setAnnouncements(announcements.map(a => a.id === formData.id ? formData : a));
-      } else {
-        const newAnnouncement = await addAnnouncement(announcement);
-        console.log(newAnnouncement)
-        setAnnouncements([...announcements, newAnnouncement[0]]);
+  
+    if (!isFormValid) return;
+  
+    try {
+      let imageUrl = formData.image; // Retain current image URL if no new image is uploaded
+  
+      // If a new image is uploaded, handle the upload
+      if (imageFile) {
+        imageUrl = await uploadImage(imageFile);
       }
+      
+      const announcement = { ...formData, image: imageUrl };
+  
+      if (formData.id) {
+        // Update existing announcement
+        await updateAnnouncement(formData.id, announcement);
+        setAnnouncements(announcements.map((a) => (a.id === formData.id ? announcement : a)));
+      } else {
+        // Add new announcement
+        const [newAnnouncement] = await addAnnouncement(announcement);
+        setAnnouncements([...announcements, newAnnouncement]);
+      }
+  
+      // Reset form and close modal
       setCurrentAnnouncement(null);
       setIsOpen(false);
       setFormData(initialFormState);
+      setImageFile(null);
+    } catch (error) {
+      console.error('Error submitting announcement:', error.message);
     }
   };
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,6 +74,10 @@ const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncem
     // Clear error when user starts typing
     if (errors[name]) clearError(name);
   };
+
+  const handleImageChange = (e) => {
+      setImageFile(e.target.files[0])
+  }
 
   if (!isOpen) return null;
 
@@ -105,18 +127,7 @@ const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncem
                 error={errors.socialNetwork}
               />
             </InputContainer>
-            <div className="grid gap-4 grid-cols-2">
-              <InputContainer inputName={"image"} label={"Image"}>
-                <InputElement
-                  placeholder={"Image"}
-                  value={formData.image}
-                  onChange={handleChange}
-                  inputName={"image"}
-                  type={"url"}
-                  error={errors.image}
-                />
-              </InputContainer>
-              <InputContainer inputName={"socialLink"} label={"Social link"}>
+            <InputContainer inputName={"socialLink"} label={"Social link"}>
                 <InputElement
                   placeholder={"Social link"}
                   value={formData.socialLink}
@@ -125,8 +136,14 @@ const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncem
                   type={"url"}
                   error={errors.socialLink}
                 />
-              </InputContainer>
-            </div>
+            </InputContainer>
+            <FileInput
+              inputName={"image"}
+              label={"Upload Image"}
+              onChange={handleImageChange}
+              value={imageFile?.name}
+              error={errors.image}
+            />
             <div className="flex gap-3 flex-wrap items-center justify-end pt-4">
               <button type="button" onClick={() => setIsOpen(false)} className="p-2 border border-gray-300 text-gray-800 rounded-md hover:bg-gray-50">
                 Cancel

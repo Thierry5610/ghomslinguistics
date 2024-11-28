@@ -49,6 +49,46 @@ const useValidation = () => {
     return true;
   };
 
+  const validateImage = (fieldName, file, options = {}) => {
+    const { allowedTypes = ['image/jpeg', 'image/png', 'image/gif'], maxSizeMB = 5 } = options;
+
+    if (!file) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [fieldName]: `${fieldName} is required`,
+      }));
+      return false;
+    }
+
+    if (!file.type.startsWith('image/')) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [fieldName]: `${fieldName} must be an image`,
+      }));
+      return false;
+    }
+
+    if (allowedTypes.length > 0 && !allowedTypes.includes(file.type)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [fieldName]: `Invalid image type for ${fieldName}. Allowed types: ${allowedTypes.join(', ')}`,
+      }));
+      return false;
+    }
+
+    if (file.size > maxSizeMB * 1024 * 1024) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [fieldName]: `${fieldName} exceeds the maximum size of ${maxSizeMB}MB`,
+      }));
+      return false;
+    }
+
+    // Clear the error if the image is valid
+    clearError(fieldName);
+    return true;
+  };
+
   const clearError = (fieldName) => {
     setErrors((prevErrors) => {
       const newErrors = { ...prevErrors };
@@ -63,6 +103,7 @@ const useValidation = () => {
     validateNumber,
     validateEmail,
     validatePhone,
+    validateImage, // Added here
     clearError,
   };
 };

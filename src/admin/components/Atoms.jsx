@@ -1,4 +1,4 @@
-import { Check, CircleX, Facebook, Github, Globe2, Info, Instagram, Linkedin, Search, TriangleAlert, Twitter, X, Youtube } from 'lucide-react';
+import { Check, CircleX, Facebook, Github, Globe2, Info, Instagram, Linkedin, LucideUploadCloud, Search, TriangleAlert, Twitter, Upload, UploadCloud, UploadCloudIcon, X, Youtube } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 // Reusable ActionButton Component
@@ -281,6 +281,27 @@ const TextArea = ({maxlength,inputName,value,placeholder,onChange,error,rows,col
       >{placeholder}</textarea>
       {<span className='text-xs text-red-500'>{error}</span>}
     </div>
+  )
+}
+export const FileInput = ({error,inputName,value,onChange,label})=> {
+  return(
+    <div className='flex flex-col gap-1 items-start'>
+      <label 
+        htmlFor={inputName}
+        className='p-2 bg-gray-700 text-white text-xs rounded-md items-center cursor-pointer flex gap-1'
+      >
+        <span><Upload/></span>
+        <span>{label}</span>
+      </label>
+      <input
+        type="file"
+        name={inputName}
+        id={inputName}
+        onChange={onChange}
+        className='hidden'
+      />
+      {error?<span className='text-xs text-red-500'>{error}</span>:<span className='text-xs text-gray-700'>{value}</span>}
+  </div>
   )
 }
 const DisplaySocial = ({ social, size = 16 }) => {

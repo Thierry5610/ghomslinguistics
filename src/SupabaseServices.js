@@ -26,7 +26,21 @@ export const logOut = async () => {
     if (error) console.error(error);
   };
 
+// File uploads
 
+export const uploadImage = async (file) => {
+const { data, error } = await supabase.storage
+    .from('announcement-images')
+    .upload(`public/${Date.now()}_${file.name}`, file);
+
+if (error) {
+    console.error('Error uploading image:', error);
+    throw error;
+}
+
+return `${supabaseUrl}/storage/v1/object/public/announcement-images/${data.path}`;
+};
+  
 
 
 
