@@ -74,7 +74,7 @@ export default function Login() {
                 />
             )}
             <div className="bg-white inset-0 fixed overflow-y-auto z-40 flex items-center justify-center">
-                <div className="flex flex-col gap-6 items-center max-w-screen-xl md:max-w-[70%] w-full p-8">
+                <div className="flex flex-col gap-6 items-center max-w-screen-xl md:max-w-[45%] bg-slate-100 w-full md:p-10 p-8">
                     <Link to={"/"}>
                         <img src={logo} alt="logo" className="h-32 w-auto" />
                     </Link>
