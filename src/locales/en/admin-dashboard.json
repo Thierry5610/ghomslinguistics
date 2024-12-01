@@ -1,0 +1,18 @@
+{
+    "ActiveStudents": "Active Students",
+    "ActiveCourses": "Active Courses",
+    "Publications": "Publications",
+    "TotalRevenue": "Total Revenue",
+    "Announcement": "Announcement",
+    "SeeAllAnnouncements": "See All Announcements",
+    "CurrentStudents": "Current Students",
+    "AddStudent": "Add Student",
+    "CurrentCourses": "Current Courses",
+    "AddCourse": "Add Course",
+    "Name":	"Name",
+    "Course": "Course",
+    "Enrollment": "Enrollment",	
+    "Price":  "Price",
+    "Status": "Status",
+    "Location": "Location"
+}

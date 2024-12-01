@@ -1,0 +1,17 @@
+{
+    "Courses": "Courses",
+    "SearchPlaceholder": "Search courses or instructors...",
+    "AddCourse": "Add Course",
+    "Language": "Language",
+    "Level": "Level",
+    "Name":	"Name",
+    "Course": "Course",
+    "Enrollment": "Enrollment",	
+    "Price":  "Price",
+    "Status": "Status",
+    "Location": "Location",
+    "Actions": "Actions",
+    "DeleteModalPrompt":"Are you sure you want to delete this Course?",
+    "Confirm": "Confirm",
+    "Cancel": "Cancel"
+}

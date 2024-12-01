@@ -1,0 +1,23 @@
+{
+    "Add": "Ajouter un nouveau cours de langue",
+    "Edit": "Modifier le cours",
+    "CourseName": "Nom du cours",
+    "CourseNamePlaceholder": "Nom du cours",
+    "Level": "Niveau",
+    "LevelPlaceholder": "Sélectionner un niveau",
+    "Instructor": "Instructeur",
+    "InstructorPlaceholder": "Instructeur",
+    "Price": "Prix",
+    "Location": "Emplacement",
+    "LocationPlaceholder": "Sélectionner un emplacement",
+    "StartTime": "Heure de début",
+    "EndTime": "Heure de fin",
+    "StartDate": "Date de début",
+    "EndDate": "Date de fin",
+    "Capacity": "Capacité",
+    "Enrolled": "Inscrits",
+    "Status": "Statut",
+    "StatusPlaceholder": "Sélectionner un statut",
+    "Cancel": "Annuler",
+    "AddCourse": "Ajouter un cours"
+}

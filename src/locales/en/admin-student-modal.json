@@ -1,0 +1,15 @@
+{
+    "Add": "Add Student",
+    "Name": "Name",
+    "Email": "Email",
+    "Phone": "Phone",
+    "DateOfBirth": "Date Of Birth",
+    "Address": "Address",
+    "Course": "Course",
+    "CoursePlaceholder": "Select Course",
+    "EnrollmentDate": "Enrollment Date",
+    "Status": "Status",
+    "StatusPlaceholder": "Select Status",
+    "Cancel": "Cancel",
+    "Edit": "Edit Student"
+}

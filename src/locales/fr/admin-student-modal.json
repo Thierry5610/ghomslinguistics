@@ -1,0 +1,15 @@
+{
+    "Add": "Ajouter un étudiant",
+    "Name": "Nom",
+    "Email": "Email",
+    "Phone": "Téléphone",
+    "DateOfBirth": "Date de naissance",
+    "Address": "Adresse",
+    "Course": "Cours",
+    "CoursePlaceholder": "Sélectionner un cours",
+    "EnrollmentDate": "Date d'inscription",
+    "Status": "Statut",
+    "StatusPlaceholder": "Sélectionner un statut",
+    "Cancel": "Annuler",
+    "Edit": "Modifier l'étudiant"
+}

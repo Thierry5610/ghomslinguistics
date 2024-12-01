@@ -1,0 +1,23 @@
+{
+    "Add": "Add New Language Course",
+    "Edit": "Edit Course",
+    "CourseName": "Course Name",
+    "CourseNamePlaceholder": "Course name",
+    "Level": "Level",
+    "LevelPlaceholder": "Select Level",
+    "Instructor": "Instructor",
+    "InstructorPlaceholder": "Instructor",
+    "Price": "Price",
+    "Location": "Location",
+    "LocationPlaceholder": "Select Location",
+    "StartTime": "Start Time",
+    "EndTime": "End Time",
+    "StartDate": "Start Date",
+    "EndDate": "End Date",
+    "Capacity": "Capacity",
+    "Enrolled": "Enrolled",
+    "Status": "Status",
+    "StatusPlaceholder": "Select Status",
+    "Cancel": "Cancel",
+    "AddCourse": "Add Course"
+}

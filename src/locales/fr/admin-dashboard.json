@@ -1,0 +1,18 @@
+{
+    "ActiveStudents": "Étudiants actifs",
+    "ActiveCourses": "Cours actifs",
+    "Publications": "Publications",
+    "TotalRevenue": "Revenu total",
+    "Announcement": "Annonce",
+    "SeeAllAnnouncements": "Voir toutes les annonces",
+    "CurrentStudents": "Étudiants actuels",
+    "AddStudent": "Ajouter un étudiant",
+    "CurrentCourses": "Cours actuels",
+    "AddCourse": "Ajouter un cours",
+    "Name": "Nom",
+    "Course": "Cours",
+    "Enrollment": "Inscription",
+    "Price": "Prix",
+    "Status": "Statut",
+    "Location": "Emplacement"
+}

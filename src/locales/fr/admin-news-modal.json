@@ -1,0 +1,14 @@
+{
+    "Add": "Ajouter une nouvelle annonce",
+    "Title": "Titre",
+    "TitlePlaceholder": "Titre",
+    "Description": "Description",
+    "DescriptionPlaceholder": "Description",
+    "SocialNetwork": "Réseau social",
+    "SocailNetworkPlaceholder": "Réseau social",
+    "SocialLink": "Lien social",
+    "UploadImage": "Télécharger une image",
+    "AddButton": "Ajouter",
+    "Cancel": "Annuler",
+    "Edit": "Modifier"
+}

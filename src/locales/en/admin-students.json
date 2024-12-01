@@ -1,0 +1,14 @@
+{
+    "Students": "Students",
+    "SearchPlaceholder": "Search students by name email, or phone...",
+    "AddStudent": "Add Student",
+    "Name":	"Name",
+    "Course": "Course",
+    "Enrollment": "Enrollment",	
+    "Status": "Status",
+    "ContactInfo": "Contact Info",
+    "Actions": "Actions",
+    "DeleteModalPrompt":"Are you sure you want to delete this Student?",
+    "Confirm": "Confirm",
+    "Cancel": "Cancel"
+}

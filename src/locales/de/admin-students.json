@@ -1,0 +1,14 @@
+{
+    "Students": "Studierende",
+    "SearchPlaceholder": "Studierende nach Name, E-Mail oder Telefon suchen...",
+    "AddStudent": "Hinzufügen",
+    "Name": "Name",
+    "Course": "Kurs",
+    "Enrollment": "Einschreibung",
+    "Status": "Status",
+    "ContactInfo": "Kontaktinformationen",
+    "Actions": "Aktionen",
+    "DeleteModalPrompt": "Möchten Sie diesen Studierenden wirklich löschen?",
+    "Confirm": "Bestätigen",
+    "Cancel": "Abbrechen"
+}
