@@ -110,7 +110,7 @@ const CoursesPage = () => {
                   value={filters[key]}
                   onChange={(e) => setFilters(prev => ({ ...prev, [key]: e.target.value }))}
                 >
-                  <option value="">{key.charAt(0).toUpperCase() + key.slice(1)}</option>
+                  <option value="">{t(`${key.charAt(0).toUpperCase() + key.slice(1)}`)}</option>
                   {options.map(option => (
                     <option key={option} value={option}>{option}</option>
                   ))}

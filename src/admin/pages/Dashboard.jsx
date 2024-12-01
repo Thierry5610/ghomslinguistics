@@ -45,6 +45,22 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
+          switch(stat.title){
+            case 'Active Students':
+              stat = {...stat,heading:t('ActiveStudents')}
+              break;
+            case 'Active Courses':
+              stat = {...stat,heading:t('ActiveCourses')}
+              break;
+            case 'Publications':
+              stat = {...stat,heading:t('Publications')}
+              break;
+            case 'Total Revenue':
+              stat = {...stat,heading:t('TotalRevenue')}
+              break;
+            default:
+              stat = {...stat,heading:stat.title}
+          }
           return (
             <div key={index} className="p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
               <div className="flex items-center space-x-4">
@@ -52,7 +68,7 @@ const Dashboard = () => {
                   <Icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-gray-600">{stat.title}</h3>
+                  <h3 className="text-sm font-medium text-gray-600">{stat.heading}</h3>
                   <p className="text-2xl font-medium text-gray-900 mt-1">
                     <NumberCounter number={parseInt(stat.value,10)}/>
                   </p>
