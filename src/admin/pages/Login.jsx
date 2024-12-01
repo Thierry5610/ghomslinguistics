@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function Login() {
-    const {t} = useTranslation("Login")
+    const {t} = useTranslation("login")
     const { errors, validateEmail, validateEmpty, clearError } = useValidation();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
