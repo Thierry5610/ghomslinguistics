@@ -30,7 +30,7 @@ export default function Registration() {
         const query = e.target.value.toLowerCase();
         setSearchQuery(query);
 
-        const filtered = courses.filter(
+        const filtered = courses?.filter(
             (course) =>
                 course.level.toLowerCase().includes(query) ||
                 course.location.toLowerCase().includes(query) ||
@@ -60,7 +60,7 @@ export default function Registration() {
                         <Search className={Styles.icon} />
                     </div>
                     <div className={Styles.cards}>
-                        {filteredCourses.length > 0 ? (
+                        {filteredCourses?.length > 0 ? (
                             filteredCourses.map((course, index) => (
                                 <CourseCard
                                     key={index}
