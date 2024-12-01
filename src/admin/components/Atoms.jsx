@@ -1,5 +1,6 @@
 import { Check, CircleX, Facebook, Github, Globe2, Info, Instagram, Linkedin, LoaderCircle, LucideUploadCloud, Search, TriangleAlert, Twitter, Upload, UploadCloud, UploadCloudIcon, X, Youtube } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // Reusable ActionButton Component
 const ActionButton = ({
@@ -445,7 +446,7 @@ export function Alert({type,heading,text,setShow}) {
 
 export function ConfirmAlert({ heading, text, onConfirm,setShow }) {
   //const [show, setShow] = useState(true);
-
+  const {t} = useTranslation('adminNews')
   const handleConfirm = () => {
     setShow(false);
     onConfirm(true); // Resolve with `true` when confirmed
@@ -471,13 +472,13 @@ export function ConfirmAlert({ heading, text, onConfirm,setShow }) {
                 className="px-4 py-2 text-yellow-500 border-yellow-500 hover:text-white hover:bg-yellow-500 border rounded-md"
                 onClick={handleConfirm}
               >
-                Confirm
+                {t('Confirm')}
               </button>
               <button
                 className="px-4 py-2 text-yellow-500 border-yellow-500 hover:text-white hover:bg-yellow-500 border rounded-md"
                 onClick={handleCancel}
               >
-                Cancel
+                {t('Cancel')}
               </button>
           </div>
           </div>
