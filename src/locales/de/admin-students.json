@@ -10,5 +10,7 @@
     "Actions": "Aktionen",
     "DeleteModalPrompt": "Möchten Sie diesen Studierenden wirklich löschen?",
     "Confirm": "Bestätigen",
-    "Cancel": "Abbrechen"
+    "Cancel": "Abbrechen",
+    "DeleteHeading": "Löschung bestätigen",
+    "EmptyState": "Keine Studenten gefunden"
 }

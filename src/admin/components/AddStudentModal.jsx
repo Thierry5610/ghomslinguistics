@@ -3,6 +3,7 @@ import { ActionButton, CloseButton, ComplexSelect, InputContainer, InputElement 
 import useValidation from "../utils/useValidation";
 import { BookTypeIcon, GraduationCap } from "lucide-react";
 import { addStudent, updateStudent } from "../../SupabaseServices";
+import { useTranslation } from "react-i18next";
 
 export default function AddStudentModal({
   students,
@@ -14,6 +15,8 @@ export default function AddStudentModal({
   setStudents,
   setShowModal,
 }) {
+
+  const {t} = useTranslation('adminStudentModal')
   const initialStudent = {
     ...(currentStudent?.id ? { id: currentStudent.id } : {}),
     name: currentStudent?.name || "",
@@ -89,13 +92,13 @@ export default function AddStudentModal({
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg text-gray-800 flex gap-2 items-center my-6">
             <GraduationCap className="text-amber-500" />
-            <span>{formData.id ? "Edit Student" : "Add Student"}</span>
+            <span>{formData.id ? t("Edit") : t("Add")}</span>
           </h2>
           <CloseButton onClick={() => setShowModal(false)} />
         </div>
 
         <div className="space-y-4">
-          <InputContainer inputName="name" label={"Name"}>
+          <InputContainer inputName="name" label={t("Name")}>
             <InputElement
               inputName="name"
               value={formData.name}
@@ -104,7 +107,7 @@ export default function AddStudentModal({
               error={errors.name}
             />
           </InputContainer>
-          <InputContainer inputName="email" label={"Email"}>
+          <InputContainer inputName="email" label={t("Email")}>
             <InputElement
               inputName="email"
               value={formData.email}
@@ -113,7 +116,7 @@ export default function AddStudentModal({
               error={errors.email}
             />
           </InputContainer>
-          <InputContainer inputName="phone" label={"Phone"}>
+          <InputContainer inputName="phone" label={t("Phone")}>
             <InputElement
               inputName="phone"
               value={formData.phone}
@@ -122,7 +125,7 @@ export default function AddStudentModal({
               error={errors.phone}
             />
           </InputContainer>
-          <InputContainer inputName="dateOfBirth" label={"Date of Birth"}>
+          <InputContainer inputName="dateOfBirth" label={t("DateOfBirth")}>
             <InputElement
               inputName="dateOfBirth"
               value={formData.dateOfBirth}
@@ -131,7 +134,7 @@ export default function AddStudentModal({
               error={errors.dateOfBirth}
             />
           </InputContainer>
-          <InputContainer inputName="address" label={"Address"}>
+          <InputContainer inputName="address" label={t("Address")}>
             <InputElement
               inputName="address"
               value={formData.address}
@@ -140,18 +143,18 @@ export default function AddStudentModal({
               error={errors.address}
             />
           </InputContainer>
-          <InputContainer inputName="course" label={"Course"}>
+          <InputContainer inputName="course" label={t("Course")}>
             <ComplexSelect
               type={"select"}
               options={courses}
               onChange={handleChange}
               inputName={"course"}
               value={formData.course}
-              placeholder={"Select Course"}
+              placeholder={t("CoursePlaceholder")}
               error={errors.course}
             />
           </InputContainer>
-          <InputContainer inputName="enrollmentDate" label={"Enrollment Date"}>
+          <InputContainer inputName="enrollmentDate" label={t("EnrollmentDate")}>
             <InputElement
               inputName="enrollmentDate"
               value={formData.enrollmentDate}
@@ -160,26 +163,26 @@ export default function AddStudentModal({
               error={errors.enrollmentDate}
             />
           </InputContainer>
-          <InputContainer label={"Status"} inputName="status">
+          <InputContainer label={t("Status")} inputName="status">
             <InputElement
               inputName="status"
               type={"select"}
               options={statuses}
               onChange={handleChange}
               value={formData.status}
-              placeholder={"Select Status"}
+              placeholder={t("StatusPlaceholder")}
               error={errors.status}
             />
           </InputContainer>
           <div className="flex justify-end gap-3 mt-6 text-sm">
             <ActionButton
               onClick={() => setShowModal(false)}
-              label={"Cancel"}
+              label={t("Cancel")}
               secondary={true}
             />
             <ActionButton
               onClick={handleSubmit}
-              label={formData.id ? "Save Changes" : "Add Student"}
+              label={formData.id ? t("Edit") : t("Add")}
               isLoading={loading} // Pass loading state
             />
           </div>

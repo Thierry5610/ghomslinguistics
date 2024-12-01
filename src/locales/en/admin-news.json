@@ -4,5 +4,6 @@
     "DeleteModalHeading": "Confirm Deletion",
     "DeleteModalPrompt":"Are you sure you want to delete this announcement?",
     "Confirm": "Confirm",
-    "Cancel": "Cancel"
+    "Cancel": "Cancel",
+    "EmptyState": "No news found"
 }

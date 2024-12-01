@@ -13,6 +13,7 @@
     "Actions": "Aktionen",
     "DeleteModalPrompt": "Möchten Sie diesen Kurs wirklich löschen?",
     "Confirm": "Bestätigen",
-    "Cancel": "Abbrechen"
-
+    "Cancel": "Abbrechen",
+    "DeleteHeading": "Löschung bestätigen",
+    "EmptyState": "Keine Kurse gefunden"
 }

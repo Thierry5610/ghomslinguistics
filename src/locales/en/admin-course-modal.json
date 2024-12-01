@@ -3,6 +3,8 @@
     "Edit": "Edit Course",
     "CourseName": "Course Name",
     "CourseNamePlaceholder": "Course name",
+    "Language": "Language",
+    "LanguagePlaceholder": "Select Language",
     "Level": "Level",
     "LevelPlaceholder": "Select Level",
     "Instructor": "Instructor",

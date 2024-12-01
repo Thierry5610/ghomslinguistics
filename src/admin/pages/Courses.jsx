@@ -14,9 +14,11 @@ import AddCourseModal from '../components/AddCourseModal';
 import { ActionButton, ConfirmAlert, EmptyState, PageHeading, SearchBar, StatusPill, TableBody, TableData, TableHead, TableRow } from '../components/Atoms';
 import { deleteCourse, getCourses, isSession } from '../../SupabaseServices';
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 
 const CoursesPage = () => {
+  const {t} = useTranslation('adminCourse')
   const [courses, setCourses] = useState([]);
   const [currentCourse, setCurrentCourse] = useState(null);
   const [courseToDelete, setCourseToDelete] = useState(null); // Track the course to delete
@@ -86,8 +88,8 @@ const CoursesPage = () => {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex justify-between items-center">
-          <PageHeading text={"Courses"}/>
-          <ActionButton label={"Add Course"} icon={Plus} onClick={() => setIsAddModalOpen(true)}/>
+          <PageHeading text={t("Courses")}/>
+          <ActionButton label={t("AddCourse")} icon={Plus} onClick={() => setIsAddModalOpen(true)}/>
         </div>
 
         {/* Search and Filters */}
@@ -96,7 +98,7 @@ const CoursesPage = () => {
           <SearchBar
             onChange={(e) => setSearchTerm(e.target.value)}
             value={searchTerm}
-            placeholder={"Search courses or instructors..."}
+            placeholder={t("SearchPlaceholder")}
           />
 
           {/* Filters */}
@@ -123,7 +125,7 @@ const CoursesPage = () => {
         <div className="bg-white rounded-lg shadow overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <TableHead entries={["Course","Location","Enrollment","Price","Status","Actions"]}/>
+              <TableHead entries={[t("Course"),t("Location"),t("Enrollment"),t("Price"),t("Status"),t("Actions")]}/>
               <TableBody>
                 {filteredCourses.map((course) => (
                   <TableRow key={course.id}>
@@ -188,7 +190,7 @@ const CoursesPage = () => {
         
         {/* Empty State */}
         {filteredCourses.length === 0 && (
-          <EmptyState text={"No courses found"}/>
+          <EmptyState text={t("EmptyState")}/>
         )}
       </div>
 
@@ -205,8 +207,8 @@ const CoursesPage = () => {
 
       {isConfirmAlertOpen && (
         <ConfirmAlert 
-          heading="Confirm Deletion" 
-          text={`Are you sure you want to delete ${courseToDelete?.name}?`} 
+          heading={t("DeleteModalPrompt")} 
+          text={t('DeleteModalPrompt')} 
           onConfirm={handleDeleteConfirmed} 
           setShow={setIsConfirmAlertOpen}
         />

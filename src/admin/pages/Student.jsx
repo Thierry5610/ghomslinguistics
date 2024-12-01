@@ -4,8 +4,10 @@ import { ActionButton, ConfirmAlert, EmptyState, PageHeading, SearchBar, StatusP
 import AddStudentModal from '../components/AddStudentModal';
 import { deleteStudent, getCourseNames, getStudents, isSession } from '../../SupabaseServices';
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 const Students = () => {
+  const {t} = useTranslation('adminStudents')
   const [students, setStudents] = useState([]);
   const [courses, setCourses] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -70,9 +72,9 @@ const Students = () => {
     <>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <PageHeading text={"Students"} />
+          <PageHeading text={t("Students")} />
           <ActionButton 
-            label={"Add Student"} 
+            label={t("AddStudent")} 
             icon={Plus} 
             onClick={() => {
               setCurrentStudent({});
@@ -82,14 +84,14 @@ const Students = () => {
         </div>
 
         <SearchBar
-          placeholder={"Search students by name, email, or phone..."}
+          placeholder={t('SearchPlaceHolder')}
           onChange={(e) => setSearchQuery(e.target.value)}
           value={searchQuery}
         />
 
         <div className="overflow-x-auto bg-white rounded-lg shadow">
           <table className="w-full">
-            <TableHead entries={["Name", "Contact Info", "Course", "Status", "Enrollment", "Actions"]} />
+            <TableHead entries={[t("Name"), t("ContactInfo"), t("Course"), t("Status"), t("Enrollment"), t("Actions")]} />
             <TableBody>
               {filteredStudents.map(student => (
                 <TableRow key={student.id}>
@@ -132,7 +134,7 @@ const Students = () => {
         </div>
 
         {filteredStudents.length === 0 && (
-          <EmptyState text={"No students found"} />
+          <EmptyState text={t("EmptyState")} />
         )}
       </div>
 
@@ -153,9 +155,9 @@ const Students = () => {
         <ConfirmAlert 
           setShow={setShowConfirmAlert} 
           onConfirm={confirmDeleteStudent} 
-          heading={"Confirm Deletion"}
+          heading={t("Confirm")}
           onCancel={() => setShowConfirmAlert(false)} 
-          text="Are you sure you want to delete this student?"
+          text={t('DeleteModalPrompt')}
         />
       )}
     </>

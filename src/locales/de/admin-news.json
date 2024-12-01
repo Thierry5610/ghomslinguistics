@@ -4,5 +4,6 @@
     "DeleteModalHeading": "Löschung bestätigen",
     "DeleteModalPrompt": "Möchten Sie diese Ankündigung wirklich löschen?",
     "Confirm": "Bestätigen",
-    "Cancel": "Abbrechen"
+    "Cancel": "Abbrechen",
+    "EmptyState": "Keine Nachrichten gefunden"
 }

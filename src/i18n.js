@@ -97,7 +97,16 @@ i18n
         dataProtectionModal: dataProtectionModalEN,
         navigation: navigationEN,
         footer: footerEN,
-        course: courseEN
+        course: courseEN,
+        adminCourseModal: adminCourseModalEN,
+        adminCourse: adminCourseEN,
+        adminDashboard: adminDashboardEN,
+        adminHeader: adminHeaderEN,
+        adminNewsModal: adminNewsModalEN,
+        adminNews: adminNewsEN,
+        adminSettings: adminSettingsEN,
+        adminStudentModal: adminStudentModalEN,
+        adminStudents: adminStudentsEN
       },
       fr: {
         home: homeFR,
@@ -111,7 +120,16 @@ i18n
         dataProtectionModal: dataProtectionModalFR,
         navigation: navigationFR,
         footer: footerFR,
-        course: courseFR
+        course: courseFR,
+        adminCourseModal: adminCourseModalFR,
+        adminCourse: adminCourseFR,
+        adminDashboard: adminDashboardFR,
+        adminHeader: adminHeaderFR,
+        adminNewsModal: adminNewsModalFR,
+        adminNews: adminNewsFR,
+        adminSettings: adminSettingsFR,
+        adminStudentModal: adminStudentModalFR,
+        adminStudents: adminStudentsFR        
       },
       de: {
         home: homeDE,
@@ -125,7 +143,16 @@ i18n
         dataProtectionModal: dataProtectionModalDE,
         navigation: navigationDE,
         footer: footerDE,
-        course: courseDE
+        course: courseDE,
+        adminCourseModal: adminCourseModalDE,
+        adminCourse: adminCourseDE,
+        adminDashboard: adminDashboardDE,
+        adminHeader: adminHeaderDE,
+        adminNewsModal: adminNewsModalDE,
+        adminNews: adminNewsDE,
+        adminSettings: adminSettingsDE,
+        adminStudentModal: adminStudentModalDE,
+        adminStudents: adminStudentsDE        
       },
     },
     fallbackLng: 'en', // Fallback language

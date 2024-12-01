@@ -4,5 +4,6 @@
     "DeleteModalHeading": "Confirmer la suppression",
     "DeleteModalPrompt": "Êtes-vous sûr de vouloir supprimer cette annonce ?",
     "Confirm": "Confirmer",
-    "Cancel": "Annuler"
+    "Cancel": "Annuler",
+    "EmptyState": "Aucune annonce trouvée"    
 }

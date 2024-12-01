@@ -3,8 +3,10 @@ import { Users, CircleX, Globe2, School, CalendarDays, DollarSignIcon, User, Clo
 import { CloseButton, FileInput, InputContainer, InputElement, TextArea, ActionButton } from './Atoms'; // Ensure ActionButton is imported
 import useValidation from '../utils/useValidation';
 import { addAnnouncement, updateAnnouncement, uploadImage } from '../../SupabaseServices';
+import { useTranslation } from 'react-i18next';
 
 const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncements, setCurrentAnnouncement, isOpen, setIsOpen }) => {
+  const {t} = useTranslation('adminNewsModal')
   const initialFormState = {
     ...(currentAnnouncement?.id ? { id: currentAnnouncement.id } : {}),
     headline: currentAnnouncement?.headline || '',
@@ -91,23 +93,23 @@ const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncem
         <div>
           <h2 className="text-lg text-gray-800 flex gap-2 items-center my-6">
             <Globe2 className="text-amber-500" />
-            <span>{!formData.id ? 'Add New Announcement' : 'Edit Announcement'}</span>
+            <span>{!formData.id ? t('Add') : t('Edit')}</span>
           </h2>
 
           <form onSubmit={handleSubmit} className="text-sm text-gray-800 space-y-4">
-            <InputContainer label={'Title'} inputName={'headline'}>
+            <InputContainer label={t('Title')} inputName={'headline'}>
               <InputElement
                 type={'text'}
-                placeholder="Title"
+                placeholder={t("TitlePlaceholder")}
                 inputName={'headline'}
                 value={formData.headline}
                 onChange={handleChange}
                 error={errors.headline}
               />
             </InputContainer>
-            <InputContainer label={'Description'} inputName={'text'}>
+            <InputContainer label={t('Description')} inputName={'text'}>
               <TextArea
-                placeholder="Description"
+                placeholder={t("DescriptionPlaceholder")}
                 inputName={'text'}
                 value={formData.text}
                 onChange={handleChange}
@@ -118,20 +120,20 @@ const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncem
                 rows={5}
               />
             </InputContainer>
-            <InputContainer inputName={'socialNetwork'} label={'Social Network'}>
+            <InputContainer inputName={'socialNetwork'} label={t('SocialNetwork')}>
               <InputElement
                 type={'select'}
                 options={['Facebook', 'Twitter', 'Instagram', 'Linkedin', 'Youtube', 'Github', 'Other']}
                 onChange={handleChange}
                 inputName={'socialNetwork'}
                 value={formData.socialNetwork}
-                placeholder={'Social Network'}
+                placeholder={t('SocialNetworkPlaceholder')}
                 error={errors.socialNetwork}
               />
             </InputContainer>
-            <InputContainer inputName={'socialLink'} label={'Social link'}>
+            <InputContainer inputName={'socialLink'} label={t('SocialLink')}>
               <InputElement
-                placeholder={'Social link'}
+                placeholder={t('SocialLinkPlaceholder')}
                 value={formData.socialLink}
                 onChange={handleChange}
                 inputName={'socialLink'}
@@ -141,7 +143,7 @@ const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncem
             </InputContainer>
             <FileInput
               inputName={'image'}
-              label={'Upload Image'}
+              label={t('UploadImage')}
               onChange={handleImageChange}
               value={imageFile?.name}
               error={errors.image}
@@ -149,13 +151,13 @@ const AddAnnouncementModal = ({ currentAnnouncement, announcements, setAnnouncem
             <div className="flex gap-3 flex-wrap items-center justify-end pt-4">
               <ActionButton
                 onClick={() => setIsOpen(false)}
-                label={'Cancel'}
+                label={t('Cancel')}
                 secondary={true}
                 isLoading={false}
               />
               <ActionButton
                 onClick={handleSubmit}
-                label={formData.id ? 'Edit' : 'Add'}
+                label={formData.id ? t('Edit') : t('AddButton')}
                 isLoading={loading} // Pass loading state here
               />
             </div>

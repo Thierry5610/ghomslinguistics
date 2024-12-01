@@ -13,5 +13,7 @@
     "Actions": "Actions",
     "DeleteModalPrompt": "Êtes-vous sûr de vouloir supprimer ce cours ?",
     "Confirm": "Confirmer",
-    "Cancel": "Annuler"
+    "Cancel": "Annuler",
+    "DeleteHeading": "Confirmer la suppression",
+    "EmptyState": "Aucun cours trouvé"
 }

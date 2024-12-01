@@ -5,6 +5,7 @@ import { announcementsDetailed } from '../db';
 import AddAnnouncementModal from '../components/AddAnnouncementModal';
 import { getAnnouncements, updateAnnouncement, deleteAnnouncement, isSession } from '../../SupabaseServices';
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 const AnnouncementCard = ({ announcement, onEdit, onDelete, onTogglePin }) => (
   <div className="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow h-full">
@@ -66,6 +67,7 @@ const AnnouncementCard = ({ announcement, onEdit, onDelete, onTogglePin }) => (
 );
 
 const Announcements = () => {
+  const {t} = useTranslation('adminNews')
   const [announcements, setAnnouncements] = useState(announcementsDetailed);
   const [currentAnnouncement, setCurrentAnnouncement] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -125,8 +127,8 @@ const Announcements = () => {
     <>
       <div className="space-y-6">
         <div className='flex justify-between w-full'>
-          <PageHeading text={"Announcements"}/>
-          <ActionButton icon={Plus} label={"New"} onClick={() => setIsOpen(true)}/>
+          <PageHeading text={t("Announcements")}/>
+          <ActionButton icon={Plus} label={t("New")} onClick={() => setIsOpen(true)}/>
         </div>
         <div className="flex flex-wrap gap-4 justify-between items-stretch">
           {announcements.map(announcement => (
@@ -156,8 +158,8 @@ const Announcements = () => {
 
       {isConfirmAlertOpen && (
         <ConfirmAlert 
-          heading="Confirm Deletion" 
-          text={`Are you sure you want to delete "${announcementToDelete?.headline}"?`} 
+          heading={t("Confirm")} 
+          text={t("DeleteModalPrompt")} 
           onConfirm={handleDeleteConfirmed} 
           setShow={setIsConfirmAlertOpen}
         />
