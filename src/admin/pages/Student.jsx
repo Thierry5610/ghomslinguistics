@@ -84,7 +84,7 @@ const Students = () => {
         </div>
 
         <SearchBar
-          placeholder={t('SearchPlaceHolder')}
+          placeholder={t('SearchPlaceholder')}
           onChange={(e) => setSearchQuery(e.target.value)}
           value={searchQuery}
         />

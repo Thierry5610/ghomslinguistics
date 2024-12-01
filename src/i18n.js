@@ -26,6 +26,8 @@ import adminNewsEN from './locales/en/admin-news.json'
 import adminSettingsEN from './locales/en/admin-settings.json'
 import adminStudentModalEN from './locales/en/admin-student-modal.json'
 import adminStudentsEN from './locales/en/admin-students.json'
+import loginEN from './locales/en/login.json'
+import sideNavEN from './locales/en/sidenav.json'
 
 
 
@@ -52,6 +54,8 @@ import adminNewsFR from './locales/fr/admin-news.json'
 import adminSettingsFR from './locales/fr/admin-settings.json'
 import adminStudentModalFR from './locales/fr/admin-student-modal.json'
 import adminStudentsFR from './locales/fr/admin-students.json'
+import loginFR from './locales/fr/login.json'
+import sideNavFR from './locales/fr/sidenav.json'
 
 
 
@@ -78,6 +82,8 @@ import adminNewsDE from './locales/de/admin-news.json'
 import adminSettingsDE from './locales/de/admin-settings.json'
 import adminStudentModalDE from './locales/de/admin-student-modal.json'
 import adminStudentsDE from './locales/de/admin-students.json'
+import loginDE from './locales/de/login.json'
+import sideNavDE from './locales/de/sidenav.json'
 
 // Configure i18next
 i18n
@@ -106,7 +112,9 @@ i18n
         adminNews: adminNewsEN,
         adminSettings: adminSettingsEN,
         adminStudentModal: adminStudentModalEN,
-        adminStudents: adminStudentsEN
+        adminStudents: adminStudentsEN,
+        login: loginEN,
+        sideNav: sideNavEN
       },
       fr: {
         home: homeFR,
@@ -129,7 +137,9 @@ i18n
         adminNews: adminNewsFR,
         adminSettings: adminSettingsFR,
         adminStudentModal: adminStudentModalFR,
-        adminStudents: adminStudentsFR        
+        adminStudents: adminStudentsFR,
+        login: loginFR,
+        sideNav: sideNavFR        
       },
       de: {
         home: homeDE,
@@ -152,12 +162,14 @@ i18n
         adminNews: adminNewsDE,
         adminSettings: adminSettingsDE,
         adminStudentModal: adminStudentModalDE,
-        adminStudents: adminStudentsDE        
+        adminStudents: adminStudentsDE,
+        login: loginDE,
+        sideNav: sideNavDE        
       },
     },
     fallbackLng: 'en', // Fallback language
     supportedLngs: ['en', 'fr', 'de'], // Supported languages
-    ns: ['home', 'about', 'contactModal', 'languages','registration','news','registerCourseModal','registerModal','dataProtectionModal','navigation','footer','course','adminCourseModal', 'adminCourse', 'adminDashboard', 'adminHeader', 'adminNewsModal', 'adminNews', 'adminSettings', 'adminStudentModal', 'adminStudents'], // Namespaces for each page
+    ns: ['home', 'about', 'contactModal', 'languages','registration','news','registerCourseModal','registerModal','dataProtectionModal','navigation','footer','course','adminCourseModal', 'adminCourse', 'adminDashboard', 'adminHeader', 'adminNewsModal', 'adminNews', 'adminSettings', 'adminStudentModal', 'adminStudents','login','sidenav'], // Namespaces for each page
     defaultNS: 'home', // Default namespace
     debug: true, // Turn off in production
     interpolation: {

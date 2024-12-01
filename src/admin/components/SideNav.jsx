@@ -2,27 +2,34 @@ import { LuGraduationCap, LuLayoutGrid, LuNewspaper, LuSettings, LuUsers } from 
 import { Link, useLocation } from "react-router-dom"
 import Logo from "./Logo"
 import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 
 const SideNav= () => {
+    const {t} = useTranslation("sideNav")
     const paths = [
         {
-            name: "dashboard",
+            name: t("Dashboard"),
+            path: "dashboard",
             icon: <LuLayoutGrid/>
         },
         {
-            name: "courses",
+            name: t("Courses"),
+            path: "courses",
             icon: <LuGraduationCap/>
         },
         {
-            name: "students",
+            name: t("Students"),
+            path: "students",
             icon: <LuUsers/>
         },
         {
-            name: "news",
+            name: t("News"),
+            path: "news",
             icon: <LuNewspaper/>
         },
         {
-            name: "settings",
+            name: t("Settings"),
+            path: "settings",
             icon: <LuSettings/>
         }
     ]
@@ -30,7 +37,7 @@ const SideNav= () => {
         <div className="top-6 left-6 bottom-6 sticky h-[calc(100vh-3rem)] hidden md:flex w-fit p-6 rounded-lg bg-stone-900 flex-col gap-4">
             {/* <Logo/> */}
             {paths.map((path)=>(
-                <SideNavItem icon={path.icon} to={path.name} key={path.name} id={path.name+"side"}>{path.name}</SideNavItem>
+                <SideNavItem icon={path.icon} to={path.path} key={path.path} id={path.path+"side"}>{path.name}</SideNavItem>
             ))}
         </div>
     )

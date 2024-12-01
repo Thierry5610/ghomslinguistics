@@ -5,8 +5,10 @@ import { useState } from "react";
 import { login } from "../../SupabaseServices";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Login() {
+    const {t} = useTranslation("Login")
     const { errors, validateEmail, validateEmpty, clearError } = useValidation();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -44,7 +46,7 @@ export default function Login() {
                 }
             } catch (err) {
                 console.error("Unexpected error:", err);
-                setError({ message: "An unexpected error occurred. Please try again later." });
+                setError({ message: t('ErrorMessage') });
                 setShowErrorModal(true);
             } finally {
                 setLoading(false); // Stop loading
@@ -68,7 +70,7 @@ export default function Login() {
             {error && showErrorModal && (
                 <Alert
                     type={"error"}
-                    heading={"Login Error"}
+                    heading={t("ErrorHeading")}
                     text={error.message}
                     setShow={setShowErrorModal}
                 />
@@ -79,7 +81,7 @@ export default function Login() {
                         <img src={logo} alt="logo" className="h-32 w-auto" />
                     </Link>
                     <div className="space-y-4 self-stretch">
-                        <InputContainer inputName="email" label={"Email"}>
+                        <InputContainer inputName="email" label={t("Email")}>
                             <InputElement
                                 inputName="email"
                                 value={formData.email}
@@ -88,7 +90,7 @@ export default function Login() {
                                 error={errors.email}
                             />
                         </InputContainer>
-                        <InputContainer inputName="password" label={"Password"}>
+                        <InputContainer inputName="password" label={t("Password")}>
                             <InputElement
                                 inputName="password"
                                 value={formData.password}
@@ -101,7 +103,7 @@ export default function Login() {
                             isLoading={loading} // Pass the loading state
                             onClick={handleSubmit}
                             className="bg-sky-500 !text-base text-center text-white hover:bg-sky-600 p-2 w-full rounded-md"
-                            label={"Login"}
+                            label={t("Login")}
                         />
                     </div>
                 </div>

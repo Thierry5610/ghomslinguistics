@@ -155,7 +155,6 @@ const CoursesPage = () => {
                     </TableData>
                     <TableData>
                       <div className="flex items-center">
-                        <DollarSign className="w-4 h-4 mr-1 text-gray-500" />
                         {course.price}
                       </div>
                     </TableData>
