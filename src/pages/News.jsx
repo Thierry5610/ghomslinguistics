@@ -6,6 +6,7 @@ import { getAnnouncements } from '../SupabaseServices';
 import { formatDistanceToNow } from 'date-fns';
 import { DisplaySocial } from '../admin/components/Atoms';
 import { Link } from 'lucide-react';
+import VideoLink from '../admin/components/VideoLink';
 
 const newsData = [
     {
@@ -90,6 +91,9 @@ const News = () => {
                         className={Styles.searchInput} 
                     />
                     <FaSearch className={Styles.searchIcon} />
+                </div>
+                <div>
+                    <VideoLink label={t("HowTo")} videoURL={"/videos/howtoregister.mp4"}/>
                 </div>
                 <div>
                     <h4>{t('recentPosts')}</h4>
