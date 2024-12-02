@@ -69,7 +69,7 @@ export default function Navigation() {
                         </div>
                     )}
                     <div className={Styles.logo}>
-                        <img src={logoLink} alt={t('logo_alt')} /> {/* Translate alt text */}
+                        <Link to="/"><img src={logoLink} alt={t('logo_alt')} /></Link> {/* Translate alt text */}
                     </div>
                     <div className={Styles.links}>
                         <Link to="/">{t('navigation.home')}</Link>
