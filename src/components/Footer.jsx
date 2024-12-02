@@ -5,6 +5,7 @@ import { DataProtectionModal } from './DataProtectionModal';
 import ContactModal from './ContactModal';
 import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
 import { getAnnouncements } from '../SupabaseServices';
+import { VideoLink } from '../pages/News';
 
 export default function Footer() {
     const { t } = useTranslation('footer'); // Get the translation function
@@ -86,6 +87,7 @@ export default function Footer() {
                             <div className={Styles.links}>
                                 <Link to="#" onClick={handleOpenDataProtectionModal}>{t('footer.data_protection')}</Link>
                                 <Link to="#" onClick={handleOpenContactModal}>{t('footer.contact')}</Link>
+                                <Link to="#" onClick={(e)=>{e.preventDefault()}}><VideoLink label={t("footer.HowTo")} videoURL={"/videos/howtoregister.mp4"}/></Link>
                             </div>
                         </div>
                     </div>

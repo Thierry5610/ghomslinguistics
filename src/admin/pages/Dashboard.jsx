@@ -70,7 +70,7 @@ const Dashboard = () => {
                 <div>
                   <h3 className="text-sm font-medium text-gray-600">{stat.heading}</h3>
                   <p className="text-2xl font-medium text-gray-900 mt-1">
-                    <NumberCounter number={parseInt(stat.value,10)}/>
+                    {stat.title==='Total Revenue'?<><NumberCounter number={parseInt(stat.value,10)}/> CFA</>:<NumberCounter number={parseInt(stat.value,10)}/>}
                   </p>
                 </div>
               </div>
@@ -123,7 +123,7 @@ const Dashboard = () => {
                     <TableData>{student.name}</TableData>
                     <TableData>{course? course.name : "N/A"}</TableData>
                     <TableData>{student.enrollmentDate}</TableData>
-                    <TableData>{course ? course.price : "N/A"}</TableData>
+                    <TableData>{course ? `${course.price} CFA` : "N/A"}</TableData>
                     <TableData>
                       <StatusPill status={student.status}/>
                     </TableData>
@@ -151,7 +151,7 @@ const Dashboard = () => {
                     <TableData>{course.name}</TableData>
                     <TableData>{course.location}</TableData>
                     <TableData>{course.enrolled}/{course.capacity}</TableData>
-                    <TableData>{course.price}</TableData>
+                    <TableData>{`${course.price} CFA`}</TableData>
                     <TableData>
                       <StatusPill status={course.status}/>
                     </TableData>

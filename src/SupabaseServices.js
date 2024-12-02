@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { BookOpen, BookText, DollarSign, Users } from "lucide-react";
+import { Banknote, BookOpen, BookText, DollarSign, Users } from "lucide-react";
 
 // Initialize the Supabase client
 const supabaseUrl = 'https://egicbbdzvszonimqatjc.supabase.co';
@@ -195,7 +195,7 @@ export const getStats = async () => {
             { 
                 title: 'Total Revenue', 
                 value: totalRevenue,
-                icon: DollarSign,
+                icon: Banknote,
                 color: 'bg-amber-100 text-amber-600'
             }
         ];

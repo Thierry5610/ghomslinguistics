@@ -173,7 +173,7 @@ function NewsItemServer({ title, date, author, text, imgURL,link,network }) {
     );
 }
 
-const VideoLink = ({label,videoURL}) => {
+export const VideoLink = ({label,videoURL}) => {
   const handleOpenVideo = () => {
     // Open a new tab and load the video
     const newWindow = window.open("", "_blank");

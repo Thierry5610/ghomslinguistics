@@ -155,7 +155,7 @@ const CoursesPage = () => {
                     </TableData>
                     <TableData>
                       <div className="flex items-center">
-                        {course.price}
+                        {`${course.price} CFA`}
                       </div>
                     </TableData>
                     <TableData>
