@@ -17,7 +17,7 @@ export default function Footer() {
         const getData = async () => {
             const data = await getAnnouncements()
             setNews(data)
-            console.log(data)
+            //console.log(data)
         }
         getData()
     },[])

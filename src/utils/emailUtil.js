@@ -23,7 +23,7 @@ const sendRegistrationEmails = async (course, user) => {
             'uj3Vv-VMRwkbTlfTa' // Replace with your EmailJS User ID
         );
 
-        console.log('User email sent:', userEmailResult.status, userEmailResult.text);
+        //console.log('User email sent:', userEmailResult.status, userEmailResult.text);
 
         // Sending email to GHOMSLINGUISTICS Team (second template)
         const teamEmailResult = await emailjs.send(
@@ -44,7 +44,7 @@ const sendRegistrationEmails = async (course, user) => {
             'uj3Vv-VMRwkbTlfTa' // Replace with your EmailJS User ID
         );
 
-        console.log('Team email sent:', teamEmailResult.status, teamEmailResult.text);
+        //console.log('Team email sent:', teamEmailResult.status, teamEmailResult.text);
 
         return {
             userEmailStatus: userEmailResult.status,

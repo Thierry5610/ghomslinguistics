@@ -6,7 +6,6 @@ import { getAnnouncements } from '../SupabaseServices';
 import { formatDistanceToNow } from 'date-fns';
 import { DisplaySocial } from '../admin/components/Atoms';
 import { Link } from 'lucide-react';
-import VideoLink from '../admin/components/VideoLink';
 
 const newsData = [
     {
@@ -54,7 +53,7 @@ const News = () => {
         const getData = async () => {
             const data = await getAnnouncements()
             setNews(data)
-            console.log(data)
+            //console.log(data)
         }
         getData()
     },[])
@@ -92,7 +91,7 @@ const News = () => {
                     />
                     <FaSearch className={Styles.searchIcon} />
                 </div>
-                <div>
+                <div style={{cursor:"pointer"}}>
                     <VideoLink label={t("HowTo")} videoURL={"/videos/howtoregister.mp4"}/>
                 </div>
                 <div>
@@ -173,5 +172,33 @@ function NewsItemServer({ title, date, author, text, imgURL,link,network }) {
         </article>
     );
 }
+
+const VideoLink = ({label,videoURL}) => {
+  const handleOpenVideo = () => {
+    // Open a new tab and load the video
+    const newWindow = window.open("", "_blank");
+    if (newWindow) {
+      newWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>Video</title>
+          </head>
+          <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #000;">
+            <video controls autoplay style="max-width: 100%; max-height: 100%;">
+              <source src="${videoURL}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </body>
+        </html>
+      `);
+      newWindow.document.close();
+    }
+  };
+
+  return (
+    <h4 onClick={handleOpenVideo}>{label}</h4>     
+  );
+};
 
 export default News;

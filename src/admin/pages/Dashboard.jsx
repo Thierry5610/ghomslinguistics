@@ -17,7 +17,7 @@ const Dashboard = () => {
   useEffect(() => {
     const checkSession = async () => {
       const { data: { session } } = await isSession();
-      console.log("session",session)
+      //console.log("session",session)
       if (!session) {
         navigate('/admin');
       } 

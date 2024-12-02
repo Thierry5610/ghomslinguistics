@@ -31,7 +31,7 @@ export default function Login() {
         if (isFormValid) {
             setLoading(true); // Start loading
             const newUser = { ...formData };
-            console.log(newUser);
+            //console.log(newUser);
 
             try {
                 const { data, error } = await login(newUser.email, newUser.password);
@@ -39,9 +39,9 @@ export default function Login() {
                 if (error) {
                     setError(error);
                     setShowErrorModal(true);
-                    console.log(error);
+                    //console.log(error);
                 } else {
-                    console.log("user", data);
+                    //console.log("user", data);
                     navigate('/admin/dashboard');
                 }
             } catch (err) {
