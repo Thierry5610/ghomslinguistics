@@ -295,25 +295,44 @@ const InputElement = ({type,inputName,value,placeholder,onChange,error,options})
       )
   }
 }
-const TextArea = ({maxlength,inputName,value,placeholder,onChange,error,rows,cols,resizable})=> {
-  const borderStyle = error? 'border-red-500': 'border-gray-500';
-  return(
+const TextArea = ({maxlength, inputName, value, placeholder, onChange, error, rows, cols, resizable}) => {
+  const borderStyle = error ? 'border-red-500' : 'border-gray-500';
+
+  const handleWordLimit = (event) => {
+    const text = event.target.value;
+    // Split the text by spaces and filter out empty strings
+    const words = text.trim().split(/\s+/);
+    
+    // If the number of words exceeds 100, trim the text to the first 100 words
+    if (words.length > 100) {
+      const truncatedText = words.slice(0, 100).join(' ');
+      onChange({ target: { name: inputName, value: truncatedText } });
+    } else {
+      onChange(event);  // Call the original onChange handler if the word count is under the limit
+    }
+  };
+
+  return (
     <div className='flex flex-col gap-1 items-start'>
       <textarea
         name={inputName}
         value={value}
-        onChange={onChange}
+        onChange={handleWordLimit}  // Use the new word limit handler
         placeholder={placeholder}
-        maxLength={maxlength}
+        //maxLength={maxlength}
         cols={cols}
-        style={{resize:resizable?'':'none'}}
+        style={{resize: resizable ? '' : 'none'}}
         rows={rows}
         className={`p-4 placeholder:text-gray-500 border outline-none w-full ${borderStyle}`}
-      >{placeholder}</textarea>
-      {<span className='text-xs text-red-500'>{error}</span>}
+      >
+        {placeholder}
+      </textarea>
+      {/* Error message is only shown if it exists */}
+      {error && <span className='text-xs text-red-500'>{error}</span>}
     </div>
-  )
-}
+  );
+};
+
 export const FileInput = ({error,inputName,value,onChange,label})=> {
   return(
     <div className='flex flex-col gap-1 items-start'>
