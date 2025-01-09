@@ -92,7 +92,7 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className={Styles.section_2}>
-                        <span>{t('footer.copyright', { year: 2024 })} - </span>
+                        <span>{t('footer.copyright', { year: (new Date()).getFullYear() })} - </span>
                         <Link to="#" onClick={handleOpenDataProtectionModal}>{t('footer.data_protection')}</Link>
                     </div>
                 </div>

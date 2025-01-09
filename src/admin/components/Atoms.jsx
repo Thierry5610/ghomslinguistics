@@ -303,9 +303,9 @@ const TextArea = ({maxlength, inputName, value, placeholder, onChange, error, ro
     // Split the text by spaces and filter out empty strings
     const words = text.trim().split(/\s+/);
     
-    // If the number of words exceeds 100, trim the text to the first 100 words
-    if (words.length > 100) {
-      const truncatedText = words.slice(0, 100).join(' ');
+    // If the number of words exceeds 200, trim the text to the first 100 words
+    if (words.length > 200) {
+      const truncatedText = words.slice(0, 200).join(' ');
       onChange({ target: { name: inputName, value: truncatedText } });
     } else {
       onChange(event);  // Call the original onChange handler if the word count is under the limit
